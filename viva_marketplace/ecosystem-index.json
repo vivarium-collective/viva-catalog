@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T09:53:34+00:00",
+  "generated_at": "2026-09-07T10:59:50+00:00",
   "n_repos": 37,
   "n_cloned": 37,
   "repos": [
@@ -440,7 +440,7 @@
         },
         {
           "name": "GlobalClock",
-          "description": "Track global time for Steps that do not rely on vivarium-core's built-in"
+          "description": "Global clock \u2014 the shared simulation time for manually time-stepped Steps."
         },
         {
           "name": "LQRController",
@@ -709,6 +709,10 @@
           "description": ""
         },
         {
+          "name": "AcceptanceCard",
+          "description": ""
+        },
+        {
           "name": "TestsCard",
           "description": ""
         },
@@ -803,6 +807,10 @@
       ],
       "composites": [
         {
+          "name": "millard_pdmp_baseline",
+          "description": "Whole-cell E. coli composite with v2ecoli's tFBA Metabolism replaced by the Millard 2017 ODE + multi-state LQR controller + FBA-bridge. Phase 1 PDMP milestone: runnable end-to-end; metabolism writeback to WCM bulk is NOT yet wired (separate `central_metabolite_counts` store)."
+        },
+        {
           "name": "ecoli_population",
           "description": "v2ecoli baseline + PopulationAggregator Step. Adds top-level population.* store with total_biomass_gDW, cell_count, biomass_concentration_gL, and OD600. Default cells_per_agent=1.0 preserves literal-sum aggregation so regression tests against the unaggregated baseline remain byte-identical."
         },
@@ -855,8 +863,16 @@
           "description": "v2ecoli baseline_population coupled to the BiRD bioreactor (BiRDTransportProcess) via ReactorCellCoupler. The cell population's metabolic O2/CO2 exchange and the reactor's gas-liquid transport net additively at shared reactor.dissolved_o2/dissolved_co2 stores; the EnvironmentDriver runs in external_store mode (the coupler is the env source) and EnvironmentMirror propagates the reactor-derived boundary concentrations to every agent."
         },
         {
+          "name": "millard_fba_bridge",
+          "description": "v2ecoli-pdmp Phase 1 FBA-BRIDGE composite \u2014 couples the Millard 2017 kinetic\nODE (central carbon + energy metabolism, via pbg-copasi CopasiUTCProcess) with\nv2ecoli's bulk store (via v2ecoli.steps.fba_bridge.FBABridge). Two solvers\nin one PB composite, exchanging state at a documented seam.\n\nSTATUS: BRIDGE PROCESS BUILT + UNIT-TESTED. Standalone bridge works (see\ntests/test_fba_bridge.py \u2014 8 passing tests: mM<->count round-trip, mapping\nload, direction modes, diagnostics). A coupled-pilot RUN of Millard + Bridge\nreaches end-to-end (25 shared metabolites translated each step) but the\nCOPASI solver currently produces NaN at t=0.2s when the bridge fires before\nMillard's first integration step. Open follow-up: ensure bridge interval >\nMillard interval, or convert bridge from Step to Process with a defined\nschedule. See planned_runs.millard-fba-bridge-pilot for the workaround.\n\nFull coupling to v2ecoli's Metabolism process (the kFBA solver consuming the\nbridge-translated bulk pool) remains DEFERRED \u2014 Metabolism requires the full\nWCM context (cache, partition allocator, bulk loaders, unique stores) and is\na substantially larger lift than the bridge itself. The bridge is the\nprerequisite; integration is the next Phase 1 milestone.\n"
+        },
+        {
           "name": "millard2017_metabolism",
           "description": "Standalone Millard et al. 2017 kinetic ODE of E. coli central carbon and energy\nmetabolism (BioModels MODEL1505110000), wrapped as a process-bigraph composite\nvia pbg-copasi's CopasiUTCProcess. The model has 77 species, 68 reactions, 3\ncompartments. Baseline composite for the v2ecoli-pdmp Phase 1 study\n(pdmp-01-metabolism-ode); first investigation-side use of pbg-copasi.\n\nCalibrated reference state (per Millard 2017 Fig 2): K-12 MG1655 on M9\nminimal medium + glucose, dilution rate 0.1 h^-1, pH 7.0, 37C, pO2 > 20%.\nSteady-state should match the published reference fluxes within solver\ntolerance.\n"
+        },
+        {
+          "name": "millard_lqr",
+          "description": "v2ecoli-pdmp Phase 1: Millard 2017 ODE + simplified scalar LQR outer\ncontroller. The LQR drives a biomass-proxy growth-rate estimate toward\nthe Phase 0 M9-glucose reference \u03bc(t) ensemble mean (real data from\n64-replicate baseline).\n\nScope (proof of concept):\n  - 1-state continuous-time LQR (closed-form Riccati solution for the\n    scalar system \u1e8b = a x + b u)\n  - Reads reference \u03bc(t) from v2ecoli/data/phase0_glucose_mu_ref.npy\n  - Computes tracking error + control signal per tick\n  - LOGS the control signal (does NOT yet feed it back into Millard's\n    reaction rates \u2014 closed-loop wiring is a follow-up; needs either a\n    CopasiUTCProcess parameter-mutation feature OR a per-tick model\n    rebuild wrapper)\n\nThis composite ships the LQR algebra + logging + Phase 0 reference\nconsumption. The `lqr-growth-rate-tracking` primary test in pdmp-01\ncan be evaluated against the logged tracking_err once the closed-loop\nstep is wired.\n"
         }
       ],
       "studies": [
@@ -1205,8 +1221,8 @@
       ],
       "counts": {
         "processes": 21,
-        "steps": 81,
-        "composites": 14,
+        "steps": 82,
+        "composites": 17,
         "studies": 71,
         "investigations": 14
       }
