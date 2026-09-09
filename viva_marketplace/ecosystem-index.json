@@ -1,8 +1,29 @@
 {
-  "generated_at": "2026-09-09T10:20:48+00:00",
-  "n_repos": 37,
-  "n_cloned": 37,
+  "generated_at": "2026-09-09T12:48:28+00:00",
+  "n_repos": 49,
+  "n_cloned": 49,
   "repos": [
+    {
+      "name": "pbg-eps-biofilm",
+      "repo": "pbg-eps-biofilm",
+      "source": "https://github.com/vivarium-collective/pbg-eps-biofilm",
+      "homepage": "https://github.com/vivarium-collective/pbg-eps-biofilm",
+      "description": "",
+      "tags": [],
+      "cloned": true,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
     {
       "name": "spatio-flux",
       "repo": "spatio-flux",
@@ -1420,6 +1441,41 @@
       }
     },
     {
+      "name": "viva-basic-processes",
+      "repo": "viva-basic-processes",
+      "source": "https://github.com/vivarium-collective/viva-basic-processes",
+      "homepage": "https://github.com/vivarium-collective/viva-basic-processes",
+      "description": "Reusable, composite-agnostic process-bigraph processes (Clock, Intervention, MathExpression) that auto-register into any pbg workspace",
+      "tags": [],
+      "cloned": true,
+      "processes": [
+        {
+          "name": "Clock",
+          "description": "Emit an integer ``tick`` step counter each update."
+        },
+        {
+          "name": "Intervention",
+          "description": "Apply a specific perturbation to one target store (see module docstring)."
+        }
+      ],
+      "steps": [
+        {
+          "name": "MathExpressionStep",
+          "description": "Evaluate a set of user-configured mathematical expressions as a single Step."
+        }
+      ],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 2,
+        "steps": 1,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
       "name": "viva-biofilm",
       "repo": "viva-biofilm",
       "source": "https://github.com/vivarium-collective/viva-biofilm",
@@ -1670,6 +1726,146 @@
         "composites": 4,
         "studies": 4,
         "investigations": 1
+      }
+    },
+    {
+      "name": "viva-casebook",
+      "repo": "viva-casebook",
+      "source": "https://github.com/vivarium-collective/viva-casebook",
+      "homepage": "https://github.com/vivarium-collective/viva-casebook",
+      "description": "A casebook of capability-testing investigations for the vivarium model-building framework.",
+      "tags": [],
+      "cloned": true,
+      "processes": [
+        {
+          "name": "TemperatureRamp",
+          "description": "Drives the temperature store on a linear ramp t_start \u2192 t_end over `duration`."
+        },
+        {
+          "name": "MonodUptake",
+          "description": "Biomass-coupled Monod uptake: consumes nutrient at q(N)\u00b7biomass and"
+        },
+        {
+          "name": "YieldGrowth",
+          "description": "Converts the uptake flux into biomass at a fixed yield (mass-conserving)."
+        },
+        {
+          "name": "ThermalDeath",
+          "description": "Viability collapses at a rate proportional to excess temperature above a"
+        },
+        {
+          "name": "GlucoseUptake",
+          "description": "Monod uptake of glucose; grows biomass at yield Y."
+        },
+        {
+          "name": "LactoseUptake",
+          "description": "Monod uptake of lactose, GATED by `lac_repression` (default 1.0 = active);"
+        },
+        {
+          "name": "CataboliteRepression",
+          "description": "Sets `lac_repression` from glucose via a Hill switch: ~0 while glucose is"
+        },
+        {
+          "name": "ToggleSwitch",
+          "description": ""
+        },
+        {
+          "name": "CellGrowth",
+          "description": "Monod uptake \u2192 yield-coupled growth, GATED by viability (a dying cell can't grow)."
+        },
+        {
+          "name": "MembraneStress",
+          "description": "A stressor that decays viability at rate k_stress (0 = neutralised)."
+        },
+        {
+          "name": "StemnessFate",
+          "description": ""
+        },
+        {
+          "name": "CellMetabolism",
+          "description": "Model A: cell grows and secretes a metabolite \u2192 a scalar flux (mol/time)."
+        },
+        {
+          "name": "DiffusionField",
+          "description": "Model B: 1-D reaction-diffusion field with a per-grid source input."
+        },
+        {
+          "name": "FluxTranslator",
+          "description": "The TRANSLATOR: cell flux (mol/time) \u2192 field source (mM/time) at the cell's"
+        }
+      ],
+      "steps": [],
+      "composites": [],
+      "studies": [
+        {
+          "name": "multicellular",
+          "description": "Multicellular differentiation phenotype"
+        },
+        {
+          "name": "diauxie",
+          "description": "Diauxic growth (glucose\u2192lactose)"
+        },
+        {
+          "name": "multiscale",
+          "description": "Multiscale coupling via a translator"
+        },
+        {
+          "name": "bistable",
+          "description": "Bistable genetic switch"
+        },
+        {
+          "name": "cell-jostling",
+          "description": "Cell Jostling"
+        },
+        {
+          "name": "growth-and-push",
+          "description": "Growth And Push"
+        },
+        {
+          "name": "shape-dynamics",
+          "description": "Shape Dynamics"
+        },
+        {
+          "name": "diagnosis",
+          "description": "Ambiguous diagnosis (why is biomass low?)"
+        },
+        {
+          "name": "spatial-competition",
+          "description": "Spatial Competition"
+        },
+        {
+          "name": "trap-wrong-reuse",
+          "description": "Trap Wrong Reuse"
+        },
+        {
+          "name": "sbml",
+          "description": "SBML model \u2192 COPASI \u2192 quality"
+        },
+        {
+          "name": "novel-mechanism",
+          "description": "Novel Mechanism"
+        },
+        {
+          "name": "bounded-cell",
+          "description": "Bounded goal-directed cell"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "model-sourcing",
+          "description": "Sourcing a Model Under Contract"
+        },
+        {
+          "name": "agentic-challenges",
+          "description": "Hard agentic-modeling challenges"
+        }
+      ],
+      "counts": {
+        "processes": 14,
+        "steps": 0,
+        "composites": 0,
+        "studies": 13,
+        "investigations": 2
       }
     },
     {
@@ -2535,6 +2731,49 @@
       }
     },
     {
+      "name": "viva-ketchup",
+      "repo": "viva-ketchup",
+      "source": "https://github.com/vivarium-collective/viva-ketchup",
+      "homepage": "https://github.com/vivarium-collective/viva-ketchup",
+      "description": "Process-bigraph wrapper for KETCHUP kinetic parameter estimation (real ktools/IPOPT bridge; k-ecoli74/307 steady-state + FDH/BDH time-series)",
+      "tags": [],
+      "cloned": true,
+      "processes": [],
+      "steps": [
+        {
+          "name": "KetchupEstimator",
+          "description": "Estimate kinetic parameters for a K-FIT metabolic model with KETCHUP."
+        },
+        {
+          "name": "KetchupDynamicEstimator",
+          "description": "Fit enzyme kinetics to **time-course** (NADH-vs-time) data with KETCHUP."
+        }
+      ],
+      "composites": [
+        {
+          "name": "ketchup_dynamic",
+          "description": "Fit enzyme kinetics to time-course NADH data with KETCHUP's dynamic extension (cell-free FDH or BDH)."
+        },
+        {
+          "name": "ketchup_baseline",
+          "description": "Fit kinetic parameters of a K-FIT metabolic model (k-ecoli74 / k-ecoli307) with the real KETCHUP IPOPT solver."
+        },
+        {
+          "name": "ketchup_multistart",
+          "description": "Multistart KETCHUP estimation: re-fit the same model from a different random seed to probe local-optimum sensitivity."
+        }
+      ],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 2,
+        "composites": 3,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
       "name": "viva-lammps",
       "repo": "viva-lammps",
       "source": "https://github.com/vivarium-collective/viva-lammps",
@@ -3134,6 +3373,159 @@
       }
     },
     {
+      "name": "viva-pennylane-adversarial",
+      "repo": "viva-pennylane-adversarial",
+      "source": "https://github.com/vivarium-collective/viva-pennylane-adversarial",
+      "homepage": "https://github.com/vivarium-collective/viva-pennylane-adversarial",
+      "description": "",
+      "tags": [],
+      "cloned": true,
+      "processes": [
+        {
+          "name": "PennyLaneAdversarialProcess",
+          "description": "PennyLane QML classifier with PGD adversarial attack and robust training."
+        }
+      ],
+      "steps": [],
+      "composites": [
+        {
+          "name": "pennylane_adversarial_adversarial_baseline",
+          "description": "Full train \u2192 PGD attack \u2192 adversarial retrain pipeline with default hyperparameters (4 training epochs, epsilon=0.1, 2 adversarial retraining epochs)."
+        },
+        {
+          "name": "pennylane_adversarial_adversarial_robust",
+          "description": "Adversarial robustness pipeline with stronger attack (epsilon=0.2, 20 PGD iterations) and more adversarial retraining (4 epochs)."
+        },
+        {
+          "name": "pennylane_adversarial_adversarial_lightweight",
+          "description": "Lightweight pipeline with reduced circuit (4 qubits, 8 layers) and fewer samples for fast iteration."
+        },
+        {
+          "name": "pennylane_adversarial_adversarial_from_formatted",
+          "description": "Full adversarial pipeline using a pre-formatted dataset artifact produced by ``adversarial datasets format``.  Loads the artifact at generation time and wires the data directly into the composite stores so that``PennyLaneAdversarialProcess`` reads it from its input ports."
+        }
+      ],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 1,
+        "steps": 0,
+        "composites": 4,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "viva-pennylane-data-reuploading",
+      "repo": "viva-pennylane-data-reuploading",
+      "source": "https://github.com/vivarium-collective/viva-pennylane-data-reuploading",
+      "homepage": "https://github.com/vivarium-collective/viva-pennylane-data-reuploading",
+      "description": "",
+      "tags": [],
+      "cloned": true,
+      "processes": [
+        {
+          "name": "PennyLaneDataReuploadingProcess",
+          "description": ""
+        },
+        {
+          "name": "GenotypeToPhenotypeProcess",
+          "description": "Multi-qubit, cross-modality entangled quantum classifier."
+        },
+        {
+          "name": "SurrogateReactionProcess",
+          "description": "Approximate a reaction-diffusion master-equation step with a quantum circuit."
+        },
+        {
+          "name": "MinimalGenomeProcess",
+          "description": "Predict subsystem failure from a gene knockout mask."
+        },
+        {
+          "name": "SpatiotemporalSortingProcess",
+          "description": "Classify 4D (time \u00d7 3D space) cellular trajectories into healthy"
+        }
+      ],
+      "steps": [],
+      "composites": [
+        {
+          "name": "spatiotemporal_state_sorting",
+          "description": "Categorise 4D structural cellular imaging trajectories (time \u00d7 3D space) into healthy or diseased metabolic modes. One re-uploading layer per time frame enables the circuit to track spatial motion through time."
+        },
+        {
+          "name": "pennylane_data_reuploading_baseline",
+          "description": "Standard data-reuploading quantum classifier: 3 layers, 10 training epochs, circle dataset."
+        },
+        {
+          "name": "pennylane_data_reuploading_deep",
+          "description": "Deep data-reuploading classifier: 6 layers, 15 epochs for higher accuracy."
+        },
+        {
+          "name": "pennylane_data_reuploading_lightweight",
+          "description": "Fast data-reuploading classifier: 2 layers, 3 epochs, small dataset for quick smoke testing."
+        },
+        {
+          "name": "genotype_to_phenotype_mapping",
+          "description": "Classify multi-omic expression profiles (transcriptomics, proteomics, metabolomics, epigenomics) into viable vs non-viable cell replication using quantum data re-uploading. Each omic modality occupies one re-uploading layer."
+        },
+        {
+          "name": "minimal_genome_evaluation",
+          "description": "Screen simulated gene knockouts in silico to predict whether a reduced cell subsystem fails. The quantum circuit learns the nonlinear mapping from knockout mask to subsystem-viability status."
+        },
+        {
+          "name": "surrogate_reaction_modeling",
+          "description": "Replace slow reaction-diffusion master-equation (RDME / SSA) solvers with a lightweight quantum function approximator. Encodes current species concentrations and reaction rates, predicts next-step concentrations."
+        }
+      ],
+      "studies": [
+        {
+          "name": "v2ecoli-real-data",
+          "description": "Run a v2ecoli simulation with XArrayEmitter, load the zarr output with\nZarrMultiOmicLoader, map observables to modality slots, and train the\nquantum classifier on real simulated multi-omic data.\n"
+        },
+        {
+          "name": "genotype-phenotype-baseline",
+          "description": "Train Random Forest and Logistic Regression on synthetic multi-omic data\nand report accuracy, AUC-ROC, F1, precision, and recall.\n"
+        },
+        {
+          "name": "quantum-classifier-evaluation",
+          "description": "Train the GenotypeToPhenotypeProcess with M=4 modalities, F=6 features per\nmodality on synthetic data, and compare accuracy, AUC-ROC, F1, precision,\nand recall against RF and LR baselines.\n"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "quantum-multi-omic-classifier",
+          "description": "Quantum Multi-Omic Classifier \u2014 Genotype-to-Phenotype Mapping via Data Re-Uploading"
+        }
+      ],
+      "counts": {
+        "processes": 5,
+        "steps": 0,
+        "composites": 7,
+        "studies": 3,
+        "investigations": 1
+      }
+    },
+    {
+      "name": "viva-ptools",
+      "repo": "viva-ptools",
+      "source": "https://github.com/vivarium-collective/viva-ptools",
+      "homepage": "https://github.com/vivarium-collective/viva-ptools",
+      "description": "Pathway Tools (EcoCyc) Omics-Viewer launcher \u2014 a vivarium-workbench analysis-viewer plugin",
+      "tags": [],
+      "cloned": true,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
       "name": "viva-pysces",
       "repo": "viva-pysces",
       "source": "https://github.com/vivarium-collective/viva-pysces",
@@ -3286,6 +3678,32 @@
       }
     },
     {
+      "name": "viva-simularium",
+      "repo": "viva-simularium",
+      "source": "https://github.com/vivarium-collective/viva-simularium",
+      "homepage": "https://github.com/vivarium-collective/viva-simularium",
+      "description": "Generic Simularium adapters for viva / process-bigraph: emitted trajectories -> .simularium",
+      "tags": [],
+      "cloned": true,
+      "processes": [],
+      "steps": [
+        {
+          "name": "SimulariumAnalysis",
+          "description": "Convert a run's emitted molecule positions to a ``.simularium`` file."
+        }
+      ],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 1,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
       "name": "viva-smoldyn",
       "repo": "viva-smoldyn",
       "source": "https://github.com/vivarium-collective/viva-smoldyn",
@@ -3403,6 +3821,148 @@
       }
     },
     {
+      "name": "viva-torch",
+      "repo": "viva-torch",
+      "source": "https://github.com/vivarium-collective/viva-torch",
+      "homepage": "https://github.com/vivarium-collective/viva-torch",
+      "description": "Neural-network surrogate Processes for process-bigraph \u2014 learn a drop-in approximation of any Process/Composite",
+      "tags": [],
+      "cloned": true,
+      "processes": [
+        {
+          "name": "NeuralProcess",
+          "description": "Approximates a target subsystem's per-step dynamics."
+        }
+      ],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 1,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "viva-tumor-tcell",
+      "repo": "viva-tumor-tcell",
+      "source": "https://github.com/vivarium-collective/viva-tumor-tcell",
+      "homepage": "https://github.com/vivarium-collective/viva-tumor-tcell",
+      "description": "Process-bigraph port of the tumor-tcell tumor-microenvironment ABM, with viva-munk physics",
+      "tags": [],
+      "cloned": true,
+      "processes": [
+        {
+          "name": "DiffusionField",
+          "description": ""
+        },
+        {
+          "name": "TumorTcellPhysics",
+          "description": ""
+        },
+        {
+          "name": "TCellProcess",
+          "description": ""
+        },
+        {
+          "name": "TumorCellProcess",
+          "description": ""
+        },
+        {
+          "name": "DendriticCellProcess",
+          "description": ""
+        }
+      ],
+      "steps": [
+        {
+          "name": "Observables",
+          "description": ""
+        }
+      ],
+      "composites": [
+        {
+          "name": "tumor_tcell_basic",
+          "description": "Small well-mixed chamber of tumor + T cells sharing a diffusing IFNg field; collisions via viva-munk (M1 core-seam demo)."
+        },
+        {
+          "name": "tumor_microenvironment",
+          "description": "CODEX layout: a central tumor mass ringed by T cells over a diffusing IFNg field. pd1_positive_frac + n_tcells select the no-T / 25% PD1+ / 75% PD1+ headline conditions."
+        },
+        {
+          "name": "killing_assay",
+          "description": "Well-mixed in-vitro cytotoxicity assay: tumor cells at a chosen PDL1+ fraction, with or without T cells (matched no-T control)."
+        },
+        {
+          "name": "lymph_node",
+          "description": "Tumor microenvironment plus dendritic cells and a diffusing tumor_debris field \u2014 DCs take up debris and activate."
+        }
+      ],
+      "studies": [
+        {
+          "name": "tumor-microenvironment",
+          "description": "Tumor microenvironment (headline experiment) + full figure suite"
+        },
+        {
+          "name": "killing-assay-cytotoxicity",
+          "description": "In-vitro-style killing / cytotoxicity assay"
+        },
+        {
+          "name": "efficacy-at-scale",
+          "description": "T-cell efficacy vs. PD1+ fraction, at larger scale"
+        },
+        {
+          "name": "tcell-exhaustion",
+          "description": "T-cell exhaustion vs. starting PD1+ fraction"
+        },
+        {
+          "name": "phenotype-conversion",
+          "description": "IFNg secretion and PDL1n->PDL1p conversion"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "tumor-tcell-showcase",
+          "description": "Tumor\u2013T-cell Microenvironment (viva-munk port)"
+        }
+      ],
+      "counts": {
+        "processes": 5,
+        "steps": 1,
+        "composites": 4,
+        "studies": 5,
+        "investigations": 1
+      }
+    },
+    {
+      "name": "viva-uq",
+      "repo": "viva-uq",
+      "source": "https://github.com/vivarium-collective/viva-uq",
+      "homepage": "https://github.com/vivarium-collective/viva-uq",
+      "description": "Portable forward uncertainty quantification (PCE + Sobol) for process-bigraph composites",
+      "tags": [],
+      "cloned": true,
+      "processes": [
+        {
+          "name": "ToySim",
+          "description": "signal = k1**2 + 0.1*k2  (overwrite; no delta)."
+        }
+      ],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 1,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
       "name": "viva-vcell-fvsolver",
       "repo": "viva-vcell-fvsolver",
       "source": "https://github.com/vivarium-collective/viva-vcell-fvsolver",
@@ -3478,6 +4038,144 @@
         "composites": 3,
         "studies": 0,
         "investigations": 0
+      }
+    },
+    {
+      "name": "vivarium-tyssue",
+      "repo": "vivarium-tyssue",
+      "source": "https://github.com/vivarium-collective/vivarium-tyssue",
+      "homepage": "https://github.com/vivarium-collective/vivarium-tyssue",
+      "description": "Vivarium Implementation of a Tyssue Euler Methods",
+      "tags": [],
+      "cloned": true,
+      "processes": [
+        {
+          "name": "EulerSolver",
+          "description": "Generalized Euler solver for Tyssue-based epithelial simulations"
+        },
+        {
+          "name": "CellDivisions",
+          "description": "Randomly triggers cell divisions as a Poisson process at a fixed ``rate``."
+        },
+        {
+          "name": "CellDeaths",
+          "description": "Randomly triggers cell deaths (apoptotic extrusion) as a Poisson process."
+        },
+        {
+          "name": "StochasticLineTension",
+          "description": ""
+        },
+        {
+          "name": "DifferentialAdhesion",
+          "description": "Differential-adhesion cell sorting: drives the ``differential_adhesion``"
+        },
+        {
+          "name": "CellJamming",
+          "description": ""
+        },
+        {
+          "name": "DirectionalLineTension",
+          "description": "Planar-polarised junction tension: line tension graded by the angle"
+        },
+        {
+          "name": "Gillespie",
+          "description": ""
+        },
+        {
+          "name": "TumorCoupling",
+          "description": "Drive tyssue cell events from COPASI reaction fluxes (see module docstring)."
+        }
+      ],
+      "steps": [
+        {
+          "name": "ParameterGradient",
+          "description": "Creates a 1D gradient of chemical or mechanical signal"
+        },
+        {
+          "name": "AnisotropicTension",
+          "description": ""
+        }
+      ],
+      "composites": [
+        {
+          "name": "regulation",
+          "description": "Cylinder sheet with a CellDivisions process that randomly triggers cell division (Poisson rate) above a critical area, driving tissue growth."
+        },
+        {
+          "name": "tumor",
+          "description": "Breast-cancer population ODE (BIOMD0000000903 in COPASI) coupled to a flat 2D tyssue sheet \u2014 per-step birth/death fluxes drive discrete division / apoptosis / differentiation on the mesh (tumor / healthy / stem cell types)."
+        },
+        {
+          "name": "base_solver",
+          "description": "Baseline tyssue vertex model on a cylindrical (vessel) sheet, integrated with the generalized Euler solver. No behaviors \u2014 pure mechanical relaxation."
+        },
+        {
+          "name": "jamming",
+          "description": "Flat sheet with stochastic line tension plus a CellJamming event that, at a trigger time, ramps preferred perimeter toward a jammed (rigid) regime."
+        },
+        {
+          "name": "HRA intestinal crypt (2D)",
+          "description": "A single intestinal crypt of Lieberk\u00fchn, initialized straight from the Human Reference Atlas 2D-FTU illustration \u2014 the real cell layout coloured by real HRA cell type. Note the zonation: stem + neuroendocrine cells at the narrow base, absorptive and goblet cells up the column, tuft cells near the flared villus top."
+        },
+        {
+          "name": "epithelium_2d",
+          "description": "Baseline flat (square) 2D sheet epithelium \u2014 pure mechanical relaxation, no tumor coupling. Control for the tumor-composite comparison study."
+        },
+        {
+          "name": "anisotropic",
+          "description": "Flat sheet with an AnisotropicTension step that biases line tension along a chosen axis, driving oriented (anisotropic) tissue elongation."
+        },
+        {
+          "name": "monolayer_liftoff",
+          "description": "3D monolayer \"lift-off\": a flat epithelial sheet is extruded into a polyhedral monolayer (apical surface at z=0, basal at z=-1) and a high line tension is placed on the apical-surface edges only \u2014 a purse-string that, against cell volume elasticity and face area/contractility, buckles the apical surface out of plane (the first step of lumen / dome morphogenesis). Pure mechanics, no COPASI coupling. Settings from T. Rahman's monolayer_liftoff notebook."
+        },
+        {
+          "name": "HRA colon surface (3D)",
+          "description": "A 3D epithelial sheet draped over the real Human Reference Atlas large-intestine reference organ surface \u2014 the full-resolution organ mesh subdivided into ~15k small, uniform cells so each cell is tiny relative to the whole organ, with cells labelled by the crypt's ASCT+B cell-type proportions. Orbit to inspect the anatomy; this is a real organ shape, not a generated mesh."
+        },
+        {
+          "name": "stochastic",
+          "description": "Flat (square) sheet with Ornstein-Uhlenbeck stochastic line-tension fluctuations on every edge, producing jittery cell-shape dynamics / migration."
+        },
+        {
+          "name": "gradient",
+          "description": "Flat sheet with stochastic line tension and a ParameterGradient step that imposes a linear spatial gradient of preferred perimeter along x."
+        },
+        {
+          "name": "gillespie",
+          "description": "Intestinal-crypt model on a cylindrical vessel: the EulerSolver handles mechanics while a Gillespie process stochastically fires cell-type transitions (stem -> progenitor -> enterocyte/goblet, extrusion) under Wnt- and density-dependent regulation."
+        }
+      ],
+      "studies": [
+        {
+          "name": "tumor-composite",
+          "description": "Build the COPASI-coupled tumor composite and demonstrate, through five visualizations, that BIOMD0000000903 drives discrete cell-fate dynamics on a tyssue 2D epithelial sheet."
+        },
+        {
+          "name": "lumen-liftoff",
+          "description": "Build the 3D monolayer lift-off composite (a flat sheet extruded into a polyhedral monolayer with an apical-edge \"purse-string\" line tension) and demonstrate, through 3D animation, a side profile, and morphology time-series, that the apical surface deforms out of plane against cell-volume elasticity."
+        },
+        {
+          "name": "tumor-vs-baseline",
+          "description": "Compare the COPASI-coupled tumor composite against a mechanics-only baseline epithelial sheet of identical geometry, isolating the effect of the tumor coupling."
+        }
+      ],
+      "investigations": [
+        {
+          "name": "monolayer-liftoff",
+          "description": "3D monolayer lift-off \u2014 apical tension drives epithelial folding"
+        },
+        {
+          "name": "tumor-tyssue",
+          "description": "Tumor population dynamics on a tyssue 2D epithelium"
+        }
+      ],
+      "counts": {
+        "processes": 9,
+        "steps": 2,
+        "composites": 12,
+        "studies": 3,
+        "investigations": 2
       }
     }
   ]
