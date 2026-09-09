@@ -1,5 +1,14 @@
 [
   {
+    "name": "pbg-eps-biofilm",
+    "source": "https://github.com/vivarium-collective/pbg-eps-biofilm.git",
+    "ref": "main",
+    "package": "pbg_eps_biofilm",
+    "homepage": "https://github.com/vivarium-collective/pbg-eps-biofilm",
+    "description": "",
+    "tags": []
+  },
+  {
     "name": "spatio-flux",
     "source": "https://github.com/vivarium-collective/spatio-flux.git",
     "ref": "main",
@@ -45,6 +54,15 @@
     "tags": []
   },
   {
+    "name": "viva-basic-processes",
+    "source": "https://github.com/vivarium-collective/viva-basic-processes.git",
+    "ref": "main",
+    "package": "viva_basic_processes",
+    "homepage": "https://github.com/vivarium-collective/viva-basic-processes",
+    "description": "Reusable, composite-agnostic process-bigraph processes (Clock, Intervention, MathExpression) that auto-register into any pbg workspace",
+    "tags": []
+  },
+  {
     "name": "viva-biofilm",
     "source": "https://github.com/vivarium-collective/viva-biofilm.git",
     "ref": "main",
@@ -69,6 +87,15 @@
     "package": "viva_bioreactordesign",
     "homepage": "https://github.com/vivarium-collective/viva-bioreactordesign",
     "description": "Process-bigraph wrapper for BioReactorDesign (BiRD) bioreactor simulation",
+    "tags": []
+  },
+  {
+    "name": "viva-casebook",
+    "source": "https://github.com/vivarium-collective/viva-casebook.git",
+    "ref": "main",
+    "package": "viva_casebook",
+    "homepage": "https://github.com/vivarium-collective/viva-casebook",
+    "description": "A casebook of capability-testing investigations for the vivarium model-building framework.",
     "tags": []
   },
   {
@@ -159,6 +186,15 @@
     "package": "viva_human_atlas",
     "homepage": "https://github.com/vivarium-collective/viva-human-atlas",
     "description": "HRA/WPP modeling workspace",
+    "tags": []
+  },
+  {
+    "name": "viva-ketchup",
+    "source": "https://github.com/vivarium-collective/viva-ketchup.git",
+    "ref": "main",
+    "package": "viva_ketchup",
+    "homepage": "https://github.com/vivarium-collective/viva-ketchup",
+    "description": "Process-bigraph wrapper for KETCHUP kinetic parameter estimation (real ktools/IPOPT bridge; k-ecoli74/307 steady-state + FDH/BDH time-series)",
     "tags": []
   },
   {
@@ -261,6 +297,33 @@
     "tags": []
   },
   {
+    "name": "viva-pennylane-adversarial",
+    "source": "https://github.com/vivarium-collective/viva-pennylane-adversarial.git",
+    "ref": "main",
+    "package": "viva_pennylane_adversarial",
+    "homepage": "https://github.com/vivarium-collective/viva-pennylane-adversarial",
+    "description": "",
+    "tags": []
+  },
+  {
+    "name": "viva-pennylane-data-reuploading",
+    "source": "https://github.com/vivarium-collective/viva-pennylane-data-reuploading.git",
+    "ref": "main",
+    "package": "viva_pennylane_data_reuploading",
+    "homepage": "https://github.com/vivarium-collective/viva-pennylane-data-reuploading",
+    "description": "",
+    "tags": []
+  },
+  {
+    "name": "viva-ptools",
+    "source": "https://github.com/vivarium-collective/viva-ptools.git",
+    "ref": "main",
+    "package": "viva_ptools",
+    "homepage": "https://github.com/vivarium-collective/viva-ptools",
+    "description": "Pathway Tools (EcoCyc) Omics-Viewer launcher \u2014 a vivarium-workbench analysis-viewer plugin",
+    "tags": []
+  },
+  {
     "name": "viva-pysces",
     "source": "https://github.com/vivarium-collective/viva-pysces.git",
     "ref": "main",
@@ -297,6 +360,15 @@
     "tags": []
   },
   {
+    "name": "viva-simularium",
+    "source": "https://github.com/vivarium-collective/viva-simularium.git",
+    "ref": "main",
+    "package": "viva_simularium",
+    "homepage": "https://github.com/vivarium-collective/viva-simularium",
+    "description": "Generic Simularium adapters for viva / process-bigraph: emitted trajectories -> .simularium",
+    "tags": []
+  },
+  {
     "name": "viva-smoldyn",
     "source": "https://github.com/vivarium-collective/viva-smoldyn.git",
     "ref": "main",
@@ -315,6 +387,33 @@
     "tags": []
   },
   {
+    "name": "viva-torch",
+    "source": "https://github.com/vivarium-collective/viva-torch.git",
+    "ref": "main",
+    "package": "viva_torch",
+    "homepage": "https://github.com/vivarium-collective/viva-torch",
+    "description": "Neural-network surrogate Processes for process-bigraph \u2014 learn a drop-in approximation of any Process/Composite",
+    "tags": []
+  },
+  {
+    "name": "viva-tumor-tcell",
+    "source": "https://github.com/vivarium-collective/viva-tumor-tcell.git",
+    "ref": "main",
+    "package": "viva_tumor_tcell",
+    "homepage": "https://github.com/vivarium-collective/viva-tumor-tcell",
+    "description": "Process-bigraph port of the tumor-tcell tumor-microenvironment ABM, with viva-munk physics",
+    "tags": []
+  },
+  {
+    "name": "viva-uq",
+    "source": "https://github.com/vivarium-collective/viva-uq.git",
+    "ref": "main",
+    "package": "viva_uq",
+    "homepage": "https://github.com/vivarium-collective/viva-uq",
+    "description": "Portable forward uncertainty quantification (PCE + Sobol) for process-bigraph composites",
+    "tags": []
+  },
+  {
     "name": "viva-vcell-fvsolver",
     "source": "https://github.com/vivarium-collective/viva-vcell-fvsolver.git",
     "ref": "main",
@@ -330,6 +429,15 @@
     "package": "viva_yalla",
     "homepage": "https://github.com/vivarium-collective/viva-yalla",
     "description": "Process-bigraph wrapper for a NumPy port of ya||a's pair-wise agent-based morphogenesis simulator",
+    "tags": []
+  },
+  {
+    "name": "vivarium-tyssue",
+    "source": "https://github.com/vivarium-collective/vivarium-tyssue.git",
+    "ref": "master",
+    "package": "vivarium_tyssue",
+    "homepage": "https://github.com/vivarium-collective/vivarium-tyssue",
+    "description": "Vivarium Implementation of a Tyssue Euler Methods",
     "tags": []
   }
 ]
