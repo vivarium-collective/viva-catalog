@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-09T12:51:44+00:00",
+  "generated_at": "2026-09-10T10:14:31+00:00",
   "n_repos": 49,
   "n_cloned": 49,
   "repos": [
@@ -3857,29 +3857,29 @@
       "processes": [
         {
           "name": "DiffusionField",
-          "description": ""
+          "description": "Soluble-field manager (tumor-tcell Fields + LocalField consolidated): deposits each cell's secreted amounts into its field bin, diffuses and decays the 2D IFNg / tumor-debris concentration grids (ng/mL), and samples each cell's local concentration back onto it."
         },
         {
           "name": "TumorTcellPhysics",
-          "description": ""
+          "description": "Cell collisions via a real viva-munk pymunk space (walls, jitter, substeps) plus persistent-random-walk migration, neighbor detection, and membrane / cytotoxic-packet exchange between contacting cells. Replaces tumor-tcell's Neighbors process."
         },
         {
           "name": "TCellProcess",
-          "description": ""
+          "description": "T cell behavior: on contact with a tumor it secretes IFNg and delivers cytotoxic packets; unengaged it migrates; sustained engagement drives PD1n -> PD1p exhaustion (reduced secretion). Ported from tumor_tcell/processes/t_cell.py."
         },
         {
           "name": "TumorCellProcess",
-          "description": ""
+          "description": "Tumor cell behavior: proliferation, IFNg-driven PDL1n -> PDL1p phenotype conversion, and death by apoptosis or accumulated cytotoxic packets (releasing tumor debris). Ported from tumor_tcell/processes/tumor.py."
         },
         {
           "name": "DendriticCellProcess",
-          "description": ""
+          "description": "Dendritic cell behavior: takes up tumor debris from the field and, once enough is internalized, activates and presents MHCI \u2014 the antigen-presentation arm of the lymph-node extension. Ported from tumor_tcell/processes/dendritic_cell.py."
         }
       ],
       "steps": [
         {
           "name": "Observables",
-          "description": ""
+          "description": "Scalar aggregates for the emitter + study Results/Readouts: per-tick cell counts by type/state, PDL1p / PD1p fractions, and peak IFNg, written to an observables store for a SQLiteEmitter to persist."
         }
       ],
       "composites": [
@@ -3894,6 +3894,10 @@
         {
           "name": "killing_assay",
           "description": "Well-mixed in-vitro cytotoxicity assay: tumor cells at a chosen PDL1+ fraction, with or without T cells (matched no-T control)."
+        },
+        {
+          "name": "killing_demo",
+          "description": "Cytotoxic-killing demonstration: MHCI-high PDL1+ tumors against active PD1- T cells at a high T:tumor ratio, so contact-delivered cytotoxic packets exceed the kill threshold and tumors visibly die. A tuned demo of the killing mechanism (killing is rare at the ported defaults, where most tumors are low-MHCI PDL1-)."
         },
         {
           "name": "lymph_node",
@@ -3925,13 +3929,13 @@
       "investigations": [
         {
           "name": "tumor-tcell-showcase",
-          "description": "Tumor\u2013T-cell Microenvironment (viva-munk port)"
+          "description": "Tumor\u2013T-cell Microenvironment (Vivarium 1.0 \u2192 2.0 migration)"
         }
       ],
       "counts": {
         "processes": 5,
         "steps": 1,
-        "composites": 4,
+        "composites": 5,
         "studies": 5,
         "investigations": 1
       }
