@@ -439,15 +439,5 @@
     "homepage": "https://github.com/vivarium-collective/vivarium-tyssue",
     "description": "Vivarium Implementation of a Tyssue Euler Methods",
     "tags": []
-  },
-  {
-    "name": "viva-Mgen",
-    "source": "https://github.com/vivarium-collective/viva-Mgen.git",
-    "ref": "main",
-    "package": "viva_mgen",
-    "homepage": "https://github.com/vivarium-collective/viva-Mgen",
-    "display_name": "viva-Mgen",
-    "description": "Viva-native (process-bigraph) reproduction of the Karr et al. 2012 Mycoplasma genitalium whole-cell model: all ~28 Karr submodels as ReproductionProcess classes composed into one whole-cell composite, with seven figure studies (Fig 1-7) reproduced and gated by Karr-comparison report cards, and a live read-only dashboard.",
-    "tags": ["whole-cell", "reproduction", "mycoplasma-genitalium", "karr-2012", "metabolism", "fba", "chromosome", "expression", "figures"]
   }
 ]
