@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-15T11:30:47+00:00",
-  "n_repos": 49,
-  "n_cloned": 49,
+  "generated_at": "2026-09-15T11:37:29+00:00",
+  "n_repos": 50,
+  "n_cloned": 50,
   "repos": [
     {
       "name": "pbg-eps-biofilm",
@@ -3035,6 +3035,199 @@
         "steps": 0,
         "composites": 6,
         "studies": 6,
+        "investigations": 1
+      }
+    },
+    {
+      "name": "viva-Mgen",
+      "repo": "viva-Mgen",
+      "source": "https://github.com/vivarium-collective/viva-Mgen",
+      "homepage": "https://github.com/vivarium-collective/viva-Mgen",
+      "description": "Viva-native (process-bigraph) reproduction of the Karr et al. 2012 Mycoplasma genitalium whole-cell model \u2014 one study per figure",
+      "tags": [],
+      "cloned": true,
+      "processes": [
+        {
+          "name": "_PoissonDecay",
+          "description": "Shared Poisson species-decay Process. Subclasses set the port name and"
+        },
+        {
+          "name": "TranscriptionReproductionProcess",
+          "description": "Stochastic transcription \u2014 reproduction of Karr 2012 Transcription."
+        },
+        {
+          "name": "ReplicationReproductionProcess",
+          "description": "dNTP-buffered three-phase replication \u2014 reproduction of the emergent cell-cycle regulation Karr 2012 uncovered (Fig 4)."
+        },
+        {
+          "name": "AllocatorProcess",
+          "description": "Central resource allocator \u2014 reproduction of Karr 2012 hybrid partitioning."
+        },
+        {
+          "name": "TranscriptionalRegulationReproductionProcess",
+          "description": "Transcriptional regulation \u2014 reproduction of Karr 2012 TranscriptionalRegulation."
+        },
+        {
+          "name": "RNAProcessingReproductionProcess",
+          "description": "RNA processing \u2014 reproduction of Karr 2012 RNAProcessing."
+        },
+        {
+          "name": "RNAModificationReproductionProcess",
+          "description": "RNA modification \u2014 reproduction of Karr 2012 RNAModification."
+        },
+        {
+          "name": "TRNAAminoacylationReproductionProcess",
+          "description": "tRNA aminoacylation \u2014 reproduction of Karr 2012 tRNAAminoacylation."
+        },
+        {
+          "name": "ReplicationInitiationReproductionProcess",
+          "description": "Replication-initiation oriC assembly \u2014 reproduction of Karr 2012 ReplicationInitiation."
+        },
+        {
+          "name": "DNASupercoilingReproductionProcess",
+          "description": "DNA supercoiling homeostasis \u2014 reproduction of Karr 2012 DNASupercoiling."
+        },
+        {
+          "name": "ChromosomeCondensationReproductionProcess",
+          "description": "Chromosome condensation \u2014 reproduction of Karr 2012 ChromosomeCondensation."
+        },
+        {
+          "name": "ChromosomeSegregationReproductionProcess",
+          "description": "Chromosome segregation \u2014 reproduction of Karr 2012 ChromosomeSegregation."
+        },
+        {
+          "name": "DNADamageReproductionProcess",
+          "description": "DNA damage \u2014 reproduction of Karr 2012 DNADamage."
+        },
+        {
+          "name": "DNARepairReproductionProcess",
+          "description": "DNA repair \u2014 reproduction of Karr 2012 DNARepair."
+        },
+        {
+          "name": "FtsZPolymerizationReproductionProcess",
+          "description": "FtsZ polymerization \u2014 reproduction of Karr 2012 FtsZPolymerization (Surovtsev 2008 kinetic scheme)."
+        },
+        {
+          "name": "CytokinesisReproductionProcess",
+          "description": "Cytokinesis \u2014 reproduction of Karr 2012 Cytokinesis (Li 2007 bind/bend/dissociate model)."
+        },
+        {
+          "name": "HostInteractionReproductionProcess",
+          "description": "Host interaction \u2014 reproduction of Karr 2012 HostInteraction (qualitative, reporting)."
+        },
+        {
+          "name": "ParameterCalculatorReproductionProcess",
+          "description": "Parameter calculator (ParCa) \u2014 reproduction of Karr 2012 FitConstants."
+        },
+        {
+          "name": "ChromosomeDynamicsReproductionProcess",
+          "description": "Chromosome DNA-protein interactions \u2014 coordinate-resolved reproduction of the dynamics behind Karr 2012 Fig 3."
+        },
+        {
+          "name": "MetabolismFbaReproductionProcess",
+          "description": "Flux-balance-analysis metabolism \u2014 reproduction of the Karr 2012 Metabolism submodel."
+        },
+        {
+          "name": "TranslationReproductionProcess",
+          "description": "Stochastic translation \u2014 reproduction of Karr 2012 Translation."
+        },
+        {
+          "name": "ProteinProcessingIReproductionProcess",
+          "description": "Protein Processing I \u2014 reproduction of Karr 2012 ProteinProcessingI."
+        },
+        {
+          "name": "ProteinTranslocationReproductionProcess",
+          "description": "Protein Translocation \u2014 reproduction of Karr 2012 ProteinTranslocation."
+        },
+        {
+          "name": "ProteinProcessingIIReproductionProcess",
+          "description": "Protein Processing II \u2014 reproduction of Karr 2012 ProteinProcessingII."
+        },
+        {
+          "name": "ProteinFoldingReproductionProcess",
+          "description": "Protein Folding \u2014 reproduction of Karr 2012 ProteinFolding."
+        },
+        {
+          "name": "ProteinModificationReproductionProcess",
+          "description": "Protein Modification \u2014 reproduction of Karr 2012 ProteinModification."
+        },
+        {
+          "name": "ProteinActivationReproductionProcess",
+          "description": "Protein Activation \u2014 reproduction of Karr 2012 ProteinActivation."
+        },
+        {
+          "name": "MacromolecularComplexationReproductionProcess",
+          "description": "Macromolecular Complexation \u2014 reproduction of Karr 2012 MacromolecularComplexation."
+        },
+        {
+          "name": "RibosomeAssemblyReproductionProcess",
+          "description": "Ribosome Assembly \u2014 reproduction of Karr 2012 RibosomeAssembly."
+        },
+        {
+          "name": "TerminalOrganelleAssemblyReproductionProcess",
+          "description": "Terminal Organelle Assembly \u2014 reproduction of Karr 2012 TerminalOrganelleAssembly."
+        },
+        {
+          "name": "MassGrowthReproductionProcess",
+          "description": "Cell mass & growth accounting \u2014 reproduction of Karr 2012 CellMass/CellGeometry."
+        }
+      ],
+      "steps": [],
+      "composites": [
+        {
+          "name": "mycoplasma_genitalium",
+          "description": "The whole Mycoplasma genitalium cell: all ~28 Karr-2012 submodel reproductions (metabolism, mass, expression, RNA/protein maturation, DNA replication/repair, cytokinesis, host interaction) wired through shared cell-variable stores. Reused by every figure-study."
+        },
+        {
+          "name": "mycoplasma_parca",
+          "description": "Parameter calculator (ParCa) \u2014 the native reproduction of Karr 2012 FitConstants. Computes the per-gene expression/decay/synthesis panel from the real observed knowledge-base data, fits it under the RNA-mass / DnaA-FtsZ-held / net-supercoiling constraints, and verifies the expression\u2194metabolism feasibility closure. The upstream study whose fitted parameters the seven figure studies consume."
+        }
+      ],
+      "studies": [
+        {
+          "name": "parca-parameter-fitting",
+          "description": "Run the mycoplasma_parca composite: compute the fitted per-gene panel from the decoded knowledge base, report the fit summary (gene count, mRNA/rRNA half-lives, median synthesis rate), the metabolic demand it implies, and the expression\u2194metabolism feasibility closure. "
+        },
+        {
+          "name": "fig3-expression",
+          "description": "Run the fig3_expression composite (transcription + translation + rna_decay +\nprotein_decay) for one hour at the default 1 s interval, gather per-gene mRNA\nand protein counts, and read out mean mRNA per gene, final total protein, the\nprotein-to-mRNA ratio, and the fraction of panel genes expressed.\n"
+        },
+        {
+          "name": "fig4-cell-cycle",
+          "description": "Simulate a population of ~128 single cells with random birth DnaA and dNTP\nlevels by stepping the ReplicationReproductionProcess directly, recover the\nthree Fig 4 single-cell correlations, and render a representative single-cell\ndynamics trajectory through the fig4_cell_cycle composite.\n"
+        },
+        {
+          "name": "fig6-gene-essentiality",
+          "description": "For every metabolic gene with a reference call, run a single-gene FBA knockout\nvia MetabolismFbaReproductionProcess, call it essential when growth_fraction\ndrops below 0.05, cross-tabulate against the reference calls into a 2x2\nconfusion matrix, and score accuracy, sensitivity, and specificity. Also run\nthe fig6_gene_essentiality composite once for a representative essential gene\n(MG_023) to record a canonical baseline and confirm growth collapses.\n"
+        },
+        {
+          "name": "fig1-architecture",
+          "description": "Build the integrated composite, derive the process\u2194cell-variable wiring matrix\ndirectly from the composite document (a genuine Fig 1B-style diagram), count\nthe submodels and the shared/coupled stores, and run the integrated cell to\nconfirm it composes and stays viable.\n"
+        },
+        {
+          "name": "fig2-growth",
+          "description": "Run the fig2_growth composite (metabolism + mass) for one cell cycle, fit the\nexponential growth rate to recover the doubling time, confirm mass doubles over\nthe cycle, and read out the dry-mass composition at division.\n"
+        },
+        {
+          "name": "fig5-energy",
+          "description": "Run the fig5_energy composite for one hour (metabolism/mass at 60 s,\nexpression at 1 s) to time-average ATP/GTP production, then step the\ntranscription and translation processes directly for one hour to tally their\nNTP/GTP consumption, and compute the modeled energy shares and the ATP:GTP\nsynthesis ratio.\n"
+        },
+        {
+          "name": "fig7-kinetic-parameters",
+          "description": "Programmatically identify a growth-limiting reaction in the iPS189 network\n(one whose bound binds when throttled yet whose growth recovers to the\nwild-type plateau before the top of the sweep), sweep its flux bound over\nnp.logspace(-2, 1, 16) with MetabolismFbaReproductionProcess, and read out\nwhether the kcat\u2192growth curve is monotonic, saturating, and has a clear\ndynamic range.\n"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "mgen",
+          "description": "viva-Mgen: reproducing the Karr 2012 M. genitalium whole-cell model, one study per figure"
+        }
+      ],
+      "counts": {
+        "processes": 31,
+        "steps": 0,
+        "composites": 2,
+        "studies": 8,
         "investigations": 1
       }
     },
