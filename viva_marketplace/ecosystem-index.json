@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-14T11:12:31+00:00",
+  "generated_at": "2026-09-15T10:40:39+00:00",
   "n_repos": 49,
   "n_cloned": 49,
   "repos": [
@@ -441,7 +441,7 @@
         },
         {
           "name": "BiRDTransportHours",
-          "description": "``BiRDTransportProcess`` with its update interval read in SECONDS."
+          "description": "BiRD reactor gas-liquid mass-transport node with a seconds->hours time-base adapter. Each step it computes the volumetric mass-transfer coefficient kLa and the Henry's-law saturation concentrations for O2 and CO2 from the reactor geometry, aeration, and hydrodynamics, then applies an explicit-Euler transfer delta kLa*(C*-C)*dt to the dissolved gas stores. All ports and transport physics are inherited verbatim from BiRDTransportProcess; only the interval unit is corrected (s -> h)."
         },
         {
           "name": "FBAFluxCoupler",
@@ -595,7 +595,7 @@
         },
         {
           "name": "ReactorCellCoupler",
-          "description": "Translate between v2ecoli's cell population and the BiRD reactor stores."
+          "description": "Couples v2ecoli's cell population to the BiRD reactor stores (the environment source of truth). Each cycle it passes population biomass through to the reactor, converts the reactor's dissolved gases into the cells' environment concentrations, and integrates the population's net metabolic exchange back into the reactor's dissolved-gas and medium stores."
         },
         {
           "name": "ReactorMillardEnvBridge",
@@ -631,7 +631,7 @@
         },
         {
           "name": "EnvironmentDriver",
-          "description": "Drive ``environment.external_concentrations`` from an external source."
+          "description": "Drives environment.external_concentrations from an external source. In 'external_store' mode (used by reactor_bird_coupled) it is a no-op \u2014 the ReactorCellCoupler owns the environment; in 'synthetic_trajectory' mode it sets concentrations from a deterministic function of time; 'static' mode preserves the baseline composite unchanged."
         },
         {
           "name": "Allocator",
@@ -639,11 +639,11 @@
         },
         {
           "name": "EnvironmentMirror",
-          "description": "Propagate top-level environment.external_concentrations to each agent's boundary.external."
+          "description": "Propagates the top-level environment.external_concentrations down to each agent's boundary.external, so every cell senses the shared environment. Writes are absolute concentrations (overwrite), resolving each driver/coupler molecule id onto the matching bare boundary key."
         },
         {
           "name": "PopulationAggregator",
-          "description": "Aggregate per-cell mass + agent count into reactor-scale observables."
+          "description": "Aggregates per-cell dry mass and agent count into reactor-scale population observables (biomass_concentration_gL, total_biomass_gDW, cell_count, OD600). Applies the cells_per_agent representative-sampling factor and, in representative_doubling mode, a 2**doublings growth factor read from the lineage store \u2014 never mutating per-cell state."
         },
         {
           "name": "V2Step",
