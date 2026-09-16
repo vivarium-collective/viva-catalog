@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T11:37:29+00:00",
+  "generated_at": "2026-09-16T10:28:54+00:00",
   "n_repos": 50,
   "n_cloned": 50,
   "repos": [
@@ -3043,7 +3043,7 @@
       "repo": "viva-Mgen",
       "source": "https://github.com/vivarium-collective/viva-Mgen",
       "homepage": "https://github.com/vivarium-collective/viva-Mgen",
-      "description": "Viva-native (process-bigraph) reproduction of the Karr et al. 2012 Mycoplasma genitalium whole-cell model \u2014 one study per figure",
+      "description": "Viva-native (process-bigraph) reproduction of the Karr et al. 2012 Mycoplasma genitalium whole-cell model",
       "tags": [],
       "cloned": true,
       "processes": [
