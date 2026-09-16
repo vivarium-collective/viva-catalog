@@ -248,7 +248,7 @@
     "ref": "main",
     "package": "viva_Mgen",
     "homepage": "https://github.com/vivarium-collective/viva-Mgen",
-    "description": "Viva-native (process-bigraph) reproduction of the Karr et al. 2012 Mycoplasma genitalium whole-cell model \u2014 one study per figure",
+    "description": "Viva-native (process-bigraph) reproduction of the Karr et al. 2012 Mycoplasma genitalium whole-cell model",
     "tags": []
   },
   {
