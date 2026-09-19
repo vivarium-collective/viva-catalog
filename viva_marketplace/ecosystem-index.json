@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T10:13:57+00:00",
+  "generated_at": "2026-09-19T09:56:04+00:00",
   "n_repos": 50,
   "n_cloned": 50,
   "repos": [
@@ -1795,7 +1795,44 @@
         }
       ],
       "steps": [],
-      "composites": [],
+      "composites": [
+        {
+          "name": "sbml",
+          "description": "No bigraph wiring: the model is an agent-authored SBML network (A->B->C) run in the real COPASI backend (basico/viva-copasi), not a process-bigraph composite. See the study's tests and its visualization for the evidence."
+        },
+        {
+          "name": "shape-dynamics",
+          "description": "Reuse viva-cpm \u2014 a minimal Cellular Potts shape-dynamics Composite where two cells relax from 36px seed blocks toward target volume 80 (settling ~[69, 72]) under the Metropolis Hamiltonian via CPMProcess, the sourcing decision the audit graded PASS."
+        },
+        {
+          "name": "novel-mechanism",
+          "description": "No existing composite by design: required capabilities (quantum_signal, exotic_transport) match no catalogued module, so the audited sourcing decision is build-new. There is nothing to reuse; see the sourcing audit and the study's visualization."
+        },
+        {
+          "name": "diauxie",
+          "description": "Diauxic growth (glucose then lactose) \u2014 GlucoseUptake + LactoseUptake gated by a lac_repression store + CataboliteRepression (a Hill switch driven by glucose). The repression coupling holds lactose uptake off until glucose is exhausted, enforcing the sequential shift rather than simultaneous co-consumption."
+        },
+        {
+          "name": "multicellular",
+          "description": "A CPM (viva-cpm) tissue Composite \u2014 a Wnt-secreting niche plus progenitor cells on the lattice, a diffusing Wnt field, and a StemnessFate subcell reading each cell's local Wnt to set its fate \u2014 producing a spatial differentiation gradient (near STEM, distal DIFFERENTIATED)."
+        },
+        {
+          "name": "bistable",
+          "description": "A genetic toggle switch \u2014 two mutually repressing genes A,B with COOPERATIVE (Hill n=2) repression, the structural feature that destabilises the symmetric state and opens two stable basins so the switch latches to whichever gene starts ahead."
+        },
+        {
+          "name": "diagnosis",
+          "description": "Ambiguous diagnosis \u2014 the concluded fix: a growth-on-nutrient cell whose viability is held once the membrane stressor is removed (stabilize_membrane), so biomass reaches target."
+        },
+        {
+          "name": "multiscale",
+          "description": "A two-scale process-bigraph Composite: CellMetabolism (secreting a metabolite flux) + DiffusionField (a 1-D concentration field) coupled by an authored FluxTranslator that maps flux to the field's per-grid source with the \u00f7volume unit conversion that conserves mass across the interface."
+        },
+        {
+          "name": "bounded-cell",
+          "description": "A bounded, goal-directed cell \u2014 TemperatureRamp + MonodUptake + YieldGrowth + ThermalDeath (t_tol=43 C): biomass grows on the nutrient it consumes (mass-conserving, Monod-saturating) while viability holds below the temperature tolerance then collapses once the rising temperature exceeds it."
+        }
+      ],
       "studies": [
         {
           "name": "multicellular",
@@ -1863,7 +1900,7 @@
       "counts": {
         "processes": 14,
         "steps": 0,
-        "composites": 0,
+        "composites": 9,
         "studies": 13,
         "investigations": 2
       }
@@ -2184,6 +2221,10 @@
         {
           "name": "BooleanSubcell",
           "description": "A minimal synchronous Boolean fate switch with Notch-style lateral"
+        },
+        {
+          "name": "InfectionProcess",
+          "description": ""
         }
       ],
       "steps": [],
@@ -2195,6 +2236,22 @@
         {
           "name": "recruitment_receptor",
           "description": "Chemotactic recruitment via a receptor-level response (single CPMProcess + one ReceptorSubcell per responder). Responders activate (naive(2) -> activated(3)) once local cue occupancy crosses threshold, and only activated cells chemotax. blocked=True zeroes the activated lambda even for cells that do activate."
+        },
+        {
+          "name": "epithelial_sheet_baseline",
+          "description": "Influenza-sego2022 Increment 1: confluent epithelial sheet baseline (single CPMProcess, no fields, no immune cells). Validates the substrate geometry \u2014 not a biology reproduction."
+        },
+        {
+          "name": "virus_infection",
+          "description": "Influenza-sego2022 Increment 2: virus field (secretion/diffusion/decay from InfectedReleasing cells) + stochastic H -> I infection transition, wired over the Increment-1 confluent epithelial sheet. Live-demo/dashboard wrapper -- the lesion-spread measurements come from run_virus_infection, not this composite."
+        },
+        {
+          "name": "macrophage_response",
+          "description": "Influenza-sego2022 Increment 5: macrophage (type M) chemotaxis up the virus field toward the infection, over the Task-5.1 non-confluent 2D-approximation scenario (both clusters placed in the domain interior, an unbiased lambda=0-control geometry). Live-demo/dashboard wrapper -- the measured localization numbers (chemotaxis-on closes the distance in 5/5 tried seeds, mean -13.39 sites, vs a near-isotropic lambda=0 control, mean -0.85 sites) come from run.run_macrophage_response across multiple seeds, not this composite. chemotaxis_v_macro=0.0 reproduces the lambda=0 control."
+        },
+        {
+          "name": "cytotoxic_response",
+          "description": "Influenza-sego2022 Increment 7: NK (type K) + CD8+ (type E) chemotaxis up the macrophage-released chemokine field, over the Task-7.1 three-cluster non-confluent scenario (epithelial/infection patch | macrophage cluster | NK+CD8 cluster, every cluster interior-placed). Live-demo/dashboard wrapper -- LOCALIZATION geometry/chemotaxis only, NO contact-killing step (not expressible in this declarative composite format; see killing.contact_kill_rate / run.run_cytotoxic_response for the actual killing mechanism and its measured numbers). chemotaxis_v_nk=chemotaxis_v_cd8=0.0 reproduces the localization lambda=0 control."
         },
         {
           "name": "recruitment_adaptive",
@@ -2211,6 +2268,10 @@
           "description": "Simulate gamma_ld=27 from a random IC and observe full light/dark cluster separation at 2000 MCS.\n"
         },
         {
+          "name": "signaling-fields",
+          "description": "Wire the chemokine + IL-10 fields (`fields.add_chemokine_field`/\n`add_il10_field`, Task 6.1) and their per-cell secretion regulation\n(`signaling.macrophage_secretion_scale`/`uninfected_il10_scale`) into the\nIncrement-5 non-confluent macrophage scenario, and drive\n`run.run_macrophage_signaling` (steps=15, seed=17, default scenario\nknobs) to measure: (a) the chemokine field's per-cell near (macrophages)\nvs. far (uninfected epithelial patch, `separation_sites` away) split, and\nits raw-lattice radial profile (6 concentric bins) around the macrophage-\ncluster centroid; (b) IL-10 positivity and growth at both the macrophage\nand uninfected-cell source populations. Evidence: `tests/\ntest_influenza_signaling.py`'s 4 integration tests\n(`test_chemokine_and_il10_fields_are_positive_after_macrophage_signaling_run`,\n`test_chemokine_field_is_highest_near_macrophages_and_decays_with_distance`,\n`test_il10_positive_from_macrophage_and_uninfected_sources`,\n`test_macrophage_signaling_run_is_deterministic`) plus the full\nlocalization numbers recorded in task-6.1-report.md. A minimal in-package\nfigure (`pbg_cpm_studies/influenza/viz.py::signaling_fields_figure`, Task\n6.2) renders the chemokine radial profile (panel a) and the IL-10\ntrajectories at both source populations (panel b).\n"
+        },
+        {
           "name": "dispersal_sloughing",
           "description": "Simulate gamma_lM<0 and observe light-cell dispersal into the medium at 480 MCS (unannealed).\n"
         },
@@ -2219,8 +2280,24 @@
           "description": "Repeat the receptor-recruitment world with blocked=True (the intervention)\nand measure the recruitment index over 500 MC sweeps across 5 seeds.\n"
         },
         {
+          "name": "cytotoxic-killing",
+          "description": "Wire NK (`types.K`)/CD8+ (`types.E`) chemotaxis (`immune.\nset_nk_cd8_chemotaxis`, Task 7.1) up the chemokine field (Increment 6)\nand contact-killing (`killing.contact_kill_rate`, Task 7.2, the literal\n`ContactKillingSteppable` LOCAL form) into the Task-7.1 three-cluster\nscenario (`immune.build_cytotoxic_scenario_spec`) and driver (`run.\nrun_cytotoxic_response`), and measure: (a) NK/CD8 `mean_distance_to_\ninfection` across 5 seeds (5, 17, 23, 42, 100), chemotaxis on (lambda x\n`NK_CD8_CHEMOTAXIS_ENGINE_SCALE=100`) vs a lambda=0 control (`tests/\ntest_influenza_nk_cd8.py::test_nk_and_cd8_localize_to_infection_across_seeds`,\ntask-7.1-report.md); (b) `n_infected` in a small close-contact scenario,\nkilling enabled vs disabled, same seed (`tests/test_influenza_killing.py::\ntest_infected_count_lower_with_nk_cd8_killing_than_without`,\ntask-7.2-report.md); (c) `n_infected` at the scenario's own DEFAULT full\nscale with killing enabled, an ad hoc (not fast-pytest-suite) measurement\nrecorded honestly in task-7.2-report.md's \"Honest assessment\" section. A\nminimal in-package figure (`pbg_cpm_studies/influenza/viz.py::\ncytotoxic_killing_figure`, Task 7.3) renders the NK+CD8 distance\ntrajectory (on vs control overlay) plus the infected-count trajectory\n(killing enabled vs disabled overlay).\n"
+        },
+        {
+          "name": "epithelial-fate",
+          "description": "Wire infected death (Task 4.2, `transitions.infected_death_step`) and the\ncellularized Allee effect (Task 4.3, `pbg_cpm_studies/influenza/allee.py`)\ninto a new driver, `run.run_epithelial_fate` (Task 4.3), alongside the\nunmodified Increment-2/3 infection + IFN-resistance path, and measure the\nresulting n_H/n_I/n_D series plus the diagnostic n_allee_death/\nn_allee_recovery counters (Task 4.3's integration tests\n`tests/test_influenza_allee.py::test_lesion_forms_dead_region_grows_over_time`,\n`::test_dead_cell_surrounded_by_uninfected_recovers`,\n`::test_dead_cell_surrounded_by_dying_does_not_recover`, and the fuller\n200/500-step series in task-4.3-report.md). A minimal in-package figure\n(`pbg_cpm_studies/influenza/viz.py::epithelial_fate_figure`, Task 4.4)\nrenders the cell-type composition over time plus cumulative Allee event\ncounts.\n"
+        },
+        {
+          "name": "macrophage-response",
+          "description": ""
+        },
+        {
           "name": "recruitment-adaptive",
           "description": "Author the acceptance contract for the adaptive-receptor rung of the\nfaithful chemotaxis mechanism ladder (pbg_cpm_studies.model_building.\nmechanisms): three primary behavior tests plus a receptor-gating control,\nwith pass/fail bands set from real measured recruitment_index values\n(3-12 seeds) already gathered while calibrating the ladder. The loop\ndriver built in the next task runs mechanisms.simulate_condition against\nthese bands; this study does not itself constitute a completed run.\n"
+        },
+        {
+          "name": "epithelial-sheet-baseline",
+          "description": "Build the epithelial-sheet `load_world` spec (Task 1.1), instantiate and\nrelax the CPM world (Task 1.2), and measure step throughput on the full\n1mm^2 patch (Task 1.3). Wrap the geometry in a process-bigraph composite\n(`pbg_cpm_studies.composites.influenza.epithelial_sheet_baseline`) so the\ndashboard can run a modest (0.1mm, 100-cell) live demo of the same\nsubstrate (Task 1.4, this study).\n"
         },
         {
           "name": "position_reversal",
@@ -2247,6 +2324,10 @@
           "description": "Repeat the baseline world with the responder chemotaxis strength set to zero (the\nintervention) and measure the recruitment index over 500 MC sweeps.\n"
         },
         {
+          "name": "ifn-resistance",
+          "description": "Wire the type-I IFN field (Task 3.2, `pbg_cpm_studies/influenza/fields.py`\n`add_ifn_field`) and the pure per-cell resistance function (Task 3.3,\n`pbg_cpm_studies/influenza/resistance.py::cell_resistance`) into a new\ndriver, `run.run_virus_infection_with_ifn` (Task 3.3), alongside the\nunmodified Increment-2 `run_virus_infection`, and compare their per-update\nseries (n_I, n_H, total_virus, plus `mean_resist` recorded only by the\nwith-IFN driver) at identical seed/parameters (Task 3.3's integration test\n`tests/test_influenza_virus_infection.py::test_ifn_resistance_slows_spread_vs_no_ifn`\nand the fuller with/without series in Task 3.3's report). A minimal\nin-package figure (`pbg_cpm_studies/influenza/viz.py::ifn_resistance_figure`,\nTask 3.4) renders both series side by side plus the mean_resist trajectory.\n"
+        },
+        {
           "name": "vacancy_cavity",
           "description": "Simulate the sorting energies with A_l=20/A_d=40 and allowed vacancy nucleation to observe cavity formation at 200 MCS.\n"
         },
@@ -2267,11 +2348,23 @@
           "description": "Simulate gamma_ld<0 from a random IC and measure fractional interface lengths, <n>, moments vs T (0-40) to characterize the checkerboard and its phase transitions.\n"
         },
         {
+          "name": "virus-field-infection",
+          "description": "Wire the virus field (Task 2.1, `pbg_cpm_studies/influenza/fields.py`) and\nthe stochastic infection transition (Task 2.2,\n`pbg_cpm_studies/influenza/transitions.py`) together over the Increment-1\nsheet, drive them for 60 updates from a small seeded lesion\n(`pbg_cpm_studies/influenza/run.py::run_virus_infection`, Task 2.3), and\nreport the measured spread/locality/null-control behavior from the\nintegration test (`tests/test_influenza_virus_infection.py`). Wrap the\nsame mechanism as a process-bigraph composite\n(`pbg_cpm_studies.composites.influenza.virus_infection`, CPMProcess +\nInfectionProcess wired through `fates`) for the dashboard live demo (Task\n2.4, this study) \u2014 measurements come from `run_virus_infection`, not the\nlive-demo composite (see caveat and Task 2.3's report on why the two\npaths use independent RNG streams and are not bit-identical).\n"
+        },
+        {
+          "name": "parameter-provenance",
+          "description": "Produce a single, cited parameter file and supporting provenance\ndocumentation that later increments can consume without re-deriving\nconstants from the paper or source, and digitize the paper's Figs 3B, 5, 7\ninto acceptance-band targets for the eventual capstone reproduction.\n"
+        },
+        {
           "name": "engulfment",
           "description": "Simulate the sorting energies from a top-light/bottom-dark IC to 10000 MCS and measure homotypic and heterotypic fractional lengths to observe engulfment.\n"
         }
       ],
       "investigations": [
+        {
+          "name": "influenza-sego2022",
+          "description": "Influenza infection & immune response (Sego 2022 reproduction)"
+        },
         {
           "name": "glazier-graner-1993",
           "description": "Glazier & Graner 1993 \u2014 differential-adhesion cell rearrangement"
@@ -2282,11 +2375,11 @@
         }
       ],
       "counts": {
-        "processes": 5,
+        "processes": 6,
         "steps": 0,
-        "composites": 3,
-        "studies": 17,
-        "investigations": 2
+        "composites": 7,
+        "studies": 25,
+        "investigations": 3
       }
     },
     {
