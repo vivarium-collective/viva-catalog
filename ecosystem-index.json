@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-19T09:56:04+00:00",
+  "generated_at": "2026-09-20T10:16:59+00:00",
   "n_repos": 50,
   "n_cloned": 50,
   "repos": [
@@ -2238,20 +2238,28 @@
           "description": "Chemotactic recruitment via a receptor-level response (single CPMProcess + one ReceptorSubcell per responder). Responders activate (naive(2) -> activated(3)) once local cue occupancy crosses threshold, and only activated cells chemotax. blocked=True zeroes the activated lambda even for cells that do activate."
         },
         {
-          "name": "epithelial_sheet_baseline",
-          "description": "Influenza-sego2022 Increment 1: confluent epithelial sheet baseline (single CPMProcess, no fields, no immune cells). Validates the substrate geometry \u2014 not a biology reproduction."
+          "name": "epithelium",
+          "description": "Influenza-sego2022 subsystem 1/5 -- the epithelial tissue substrate: a confluent CPM epithelial sheet (single CPMProcess, no fields, no immune cells). Every other subsystem composes on top of this. Validates the substrate geometry, not a biology reproduction."
         },
         {
-          "name": "virus_infection",
-          "description": "Influenza-sego2022 Increment 2: virus field (secretion/diffusion/decay from InfectedReleasing cells) + stochastic H -> I infection transition, wired over the Increment-1 confluent epithelial sheet. Live-demo/dashboard wrapper -- the lesion-spread measurements come from run_virus_infection, not this composite."
+          "name": "viral_infection",
+          "description": "Influenza-sego2022 subsystem 2/5 -- viral infection on the epithelium: composes the virus field (secretion/diffusion/decay from InfectedReleasing cells) + the stochastic H->I infection transition on top of the epithelial sheet. Live-demo scene; the lesion-spread + IFN/resistance measurements come from run.run_virus_infection / run_virus_infection_with_ifn."
         },
         {
-          "name": "macrophage_response",
-          "description": "Influenza-sego2022 Increment 5: macrophage (type M) chemotaxis up the virus field toward the infection, over the Task-5.1 non-confluent 2D-approximation scenario (both clusters placed in the domain interior, an unbiased lambda=0-control geometry). Live-demo/dashboard wrapper -- the measured localization numbers (chemotaxis-on closes the distance in 5/5 tried seeds, mean -13.39 sites, vs a near-isotropic lambda=0 control, mean -0.85 sites) come from run.run_macrophage_response across multiple seeds, not this composite. chemotaxis_v_macro=0.0 reproduces the lambda=0 control."
+          "name": "innate_immunity",
+          "description": "Influenza-sego2022 subsystem 3/5 -- innate (macrophage) response: adds macrophages (type M) chemotaxing up the virus field toward the infection on top of the viral-infection scene (interior-placed clusters, an unbiased lambda=0-control geometry). Live-demo scene; the measured localization + chemokine/IL-10 signaling numbers come from run.run_macrophage_response / run_macrophage_signaling. chemotaxis_v_macro=0.0 reproduces the lambda=0 control."
         },
         {
-          "name": "cytotoxic_response",
-          "description": "Influenza-sego2022 Increment 7: NK (type K) + CD8+ (type E) chemotaxis up the macrophage-released chemokine field, over the Task-7.1 three-cluster non-confluent scenario (epithelial/infection patch | macrophage cluster | NK+CD8 cluster, every cluster interior-placed). Live-demo/dashboard wrapper -- LOCALIZATION geometry/chemotaxis only, NO contact-killing step (not expressible in this declarative composite format; see killing.contact_kill_rate / run.run_cytotoxic_response for the actual killing mechanism and its measured numbers). chemotaxis_v_nk=chemotaxis_v_cd8=0.0 reproduces the localization lambda=0 control."
+          "name": "cytotoxic_immunity",
+          "description": "Influenza-sego2022 subsystem 4/5 -- cytotoxic (NK + CD8+ T) response: adds NK (type K) + CD8+ (type E) cells chemotaxing up the macrophage-released chemokine field on top of the innate-immunity scene (three interior-placed clusters). Live-demo scene -- LOCALIZATION geometry/chemotaxis only, NO contact-killing step (not expressible in the declarative scene; see killing.contact_kill_rate / run.run_cytotoxic_response for the killing mechanism + measured numbers). chemotaxis_v_nk=chemotaxis_v_cd8=0.0 reproduces the localization control."
+        },
+        {
+          "name": "systemic_ode",
+          "description": "Influenza-sego2022 subsystem 5/5 -- the systemic Price-2015 global (non-spatial) ODE compartment (TNF, ROS, antibody, APC, IL-12, IFN-gamma, CD4+, B, neutrophils) coupled to the epithelial-infection substrate. The hybrid ODE integration + spatial<->ODE coupling + dynamic sig_1 feedback are a custom per-MCS loop (price_ode.GlobalODE), NOT expressible in this declarative scene -- the composite carries the coupled spatial substrate; the ODE mechanism + measured (calibration-pending) numbers come from run.run_global_coupling / run_full_model and viz.global_coupling_figure."
+        },
+        {
+          "name": "full_model",
+          "description": "Influenza-sego2022 -- the full multiscale model: the composition of all five biological subsystems (epithelium + viral_infection + innate_immunity + cytotoxic_immunity + systemic_ode). This composite carries the complete spatial scene; the full per-MCS mechanism (infection/death/Allee, per-cell IL-10-Hill secretion, the hybrid Price-2015 ODE + dynamic sig_1, ODE-driven recruitment, NK/CD8 contact+nearby killing) runs in run.run_full_model, which the capstone reproduction studies (repro-fig3b/5/7) drive and measure against the digitized Fig 3B/5/7 acceptance bands."
         },
         {
           "name": "recruitment_adaptive",
@@ -2280,6 +2288,10 @@
           "description": "Repeat the receptor-recruitment world with blocked=True (the intervention)\nand measure the recruitment index over 500 MC sweeps across 5 seeds.\n"
         },
         {
+          "name": "global-coupling",
+          "description": "Wire `price_ode.GlobalODE` (Task 8.1, the hybrid 10-species integrator,\ndiscrepancy #9) into `run.run_global_coupling`'s per-MCS loop: spatial->\nODE aggregate push (Task 8.2), ODE->spatial dynamic sig_1 feedback (Task\n8.3, discrepancy #11), ODE-driven recruitment (Task 8.4, discrepancy\n#12), and NK/CD8 LOCAL+NEARBY cytotoxic killing (Task 8.5). Measure sig_1's\ndynamic range vs the retired static stub, recruitment inflow/outflow\nrates and population trajectories (default vs boosted eta), and whether\nthe nearby-killing term fires via natural recruitment buildup vs a\ndocumented test-seam override\n(`tests/test_influenza_price_ode.py`, `tests/test_influenza_recruitment.py`,\n`tests/test_influenza_killing.py`, task-8.1 through task-8.5-report.md).\nA minimal in-package figure (`pbg_cpm_studies/influenza/viz.py::\nglobal_coupling_figure`, Task 8.6) renders the systemic ODE species\n(T/X/A/P) and the spatial aggregates (I/M/K/E) plus dynamic sig_1 over\nMCS.\n"
+        },
+        {
           "name": "cytotoxic-killing",
           "description": "Wire NK (`types.K`)/CD8+ (`types.E`) chemotaxis (`immune.\nset_nk_cd8_chemotaxis`, Task 7.1) up the chemokine field (Increment 6)\nand contact-killing (`killing.contact_kill_rate`, Task 7.2, the literal\n`ContactKillingSteppable` LOCAL form) into the Task-7.1 three-cluster\nscenario (`immune.build_cytotoxic_scenario_spec`) and driver (`run.\nrun_cytotoxic_response`), and measure: (a) NK/CD8 `mean_distance_to_\ninfection` across 5 seeds (5, 17, 23, 42, 100), chemotaxis on (lambda x\n`NK_CD8_CHEMOTAXIS_ENGINE_SCALE=100`) vs a lambda=0 control (`tests/\ntest_influenza_nk_cd8.py::test_nk_and_cd8_localize_to_infection_across_seeds`,\ntask-7.1-report.md); (b) `n_infected` in a small close-contact scenario,\nkilling enabled vs disabled, same seed (`tests/test_influenza_killing.py::\ntest_infected_count_lower_with_nk_cd8_killing_than_without`,\ntask-7.2-report.md); (c) `n_infected` at the scenario's own DEFAULT full\nscale with killing enabled, an ad hoc (not fast-pytest-suite) measurement\nrecorded honestly in task-7.2-report.md's \"Honest assessment\" section. A\nminimal in-package figure (`pbg_cpm_studies/influenza/viz.py::\ncytotoxic_killing_figure`, Task 7.3) renders the NK+CD8 distance\ntrajectory (on vs control overlay) plus the infected-count trajectory\n(killing enabled vs disabled overlay).\n"
         },
@@ -2289,7 +2301,7 @@
         },
         {
           "name": "macrophage-response",
-          "description": ""
+          "description": "Wire the macrophage cell type (`types.M`, Task 5.0) and virus-field\nchemotaxis (`immune.set_macrophage_chemotaxis`, Task 5.1) into a\nnon-confluent 2D-approximation scenario\n(`immune.build_macrophage_scenario_spec`, fix round 1: both clusters\ninterior-placed) and driver (`run.run_macrophage_response`, fix round 1:\nfixed non-tuned knobs), and measure the resulting\n`mean_distance_to_infection` series with chemotaxis on (lambda=5000,\n`params.yaml` default) vs off (lambda=0 control), across 5 seeds (5, 17,\n23, 42, 100) (Task 5.1's integration test\n`tests/test_influenza_macrophage.py::test_macrophages_localize_to_infection_across_seeds`,\nwhich asserts ON is negative in every seed, ON < OFF in every seed, and\nthe mean on/off gap exceeds OFF's own seed-to-seed spread; plus the\nminimal 2-cell engine-sanity tests, and the fuller localization-number\ntable recorded in task-5.1-report.md's fix-round-1 section). A minimal\nin-package figure (`pbg_cpm_studies/influenza/viz.py::macrophage_response_figure`,\nTask 5.2) renders the mean-distance-to-infection trajectory (on vs off\noverlay) plus the macrophage centre-of-mass path for a single representative\nrun.\n"
         },
         {
           "name": "recruitment-adaptive",
@@ -2297,7 +2309,7 @@
         },
         {
           "name": "epithelial-sheet-baseline",
-          "description": "Build the epithelial-sheet `load_world` spec (Task 1.1), instantiate and\nrelax the CPM world (Task 1.2), and measure step throughput on the full\n1mm^2 patch (Task 1.3). Wrap the geometry in a process-bigraph composite\n(`pbg_cpm_studies.composites.influenza.epithelial_sheet_baseline`) so the\ndashboard can run a modest (0.1mm, 100-cell) live demo of the same\nsubstrate (Task 1.4, this study).\n"
+          "description": "Build the epithelial-sheet `load_world` spec (Task 1.1), instantiate and\nrelax the CPM world (Task 1.2), and measure step throughput on the full\n1mm^2 patch (Task 1.3). Wrap the geometry in a process-bigraph composite\n(`pbg_cpm_studies.composites.influenza.epithelium`) so the\ndashboard can run a modest (0.1mm, 100-cell) live demo of the same\nsubstrate (Task 1.4, this study).\n"
         },
         {
           "name": "position_reversal",
@@ -2314,6 +2326,10 @@
         {
           "name": "cell_sorting",
           "description": "Simulate the sorting energies from a random IC to 13500 MCS and measure boundary lengths, type correlations, <n> across temperature (2-80) and lambda (0.1-10).\n"
+        },
+        {
+          "name": "repro-fig3b",
+          "description": "Implement `run.repro_fig3b(*, replicas=3, cells_per_side=35, steps=240,\nseed0=0) -> dict` (Task 9.2): loop `replicas` seeds through\n`run.run_full_model(cells_per_side=cells_per_side, steps=steps,\nseed=seed0+i, init_infection_frac=0.05)`; map each run's\n`counts`/`fields`/`ode` sections onto `targets/fig3b.json`'s exact\nobservable keys (`_FIG3B_OBSERVABLE_MAP`); ensemble-mean via\n`bands.aggregate_replicas`; evaluate via `bands.evaluate_study(ensemble,\n\"fig3b\")`. Add `tests/test_influenza_full_model.py::\ntest_repro_fig3b_runs_and_evaluates_bands` (reduced: `replicas=2,\ncells_per_side=15, steps=20`) asserting the ensemble/band_eval dict is\nwell-formed and the uninfected series is non-vacuous (declines under\ninfection) -- NOT that the bands pass, since reduced scale is not\nexpected to. Run that same reduced config directly (not the pytest\nassertions alone) to report the actual per-observable band_eval numbers\nin this study honestly.\n"
         },
         {
           "name": "recruitment-receptor-baseline",
@@ -2340,6 +2356,10 @@
           "description": "Swap J_ll/J_ld so gamma_ld=7.5, simulate from a random IC to 2000 MCS, and compare against normal sorting to demonstrate incomplete sorting.\n"
         },
         {
+          "name": "repro-fig7-infection-fraction",
+          "description": "Implement `run.repro_fig7(*, fracs=(0.001,0.005,0.01,0.05), replicas=3,\ncells_per_side=35, steps=240, seed0=0) -> dict` (Task 9.4): for each\n`frac`, loop `replicas` seeds through `run.run_full_model(\ncells_per_side=cells_per_side, steps=steps, seed=seed0+frac_idx*replicas+r,\ninit_infection_frac=frac, init_viral_load=None)`; map each run's\n`counts`/`fields`/`ode` sections onto `targets/fig7.json`'s exact 4\nobservable keys (reusing `_FIG5_OBSERVABLE_MAP`); ensemble-mean via\n`bands.aggregate_replicas`; filter that fraction's own band subset from\nfig7.json's multi-scenario observable lists (`_fig7_target_subset`,\nraising `ValueError` rather than silently mixing scenarios if a fraction\nhas no matching entries); evaluate via `_evaluate_fig7_subset`. Add\n`tests/test_influenza_full_model.py::\ntest_repro_fig7_infection_fraction_sweep` (reduced:\n`fracs=(0.001,0.05), replicas=1, cells_per_side=12, steps=15`) asserting\nthe by_frac dict has exactly the tested fractions as keys, the monotone\ndose-response holds (`uninfected_final_frac(0.05) <=\nuninfected_final_frac(0.001) + 1e-9`), and `band_eval` is present -- NOT\nthat the bands pass. ALSO add\n`test_fig7_target_subset_scenario_grouping_guard`, a fast unit test\ndirectly exercising `_fig7_target_subset`'s filter (returns only the\nmatching-tag entries) and its raise (unmatched fraction), closing the\nTask-9.3-review-flagged gap that the guard was previously verified only\ninteractively. Run the reduced config directly (not the pytest assertions\nalone) to report the actual per-fraction, per-observable band_eval numbers\nin this study honestly.\n"
+        },
+        {
           "name": "recruitment-adversarial",
           "description": "Run the world with competent responders but the source secretion turned off, and\nconfirm the recruitment index and metric correctly report no recruitment.\n"
         },
@@ -2348,8 +2368,12 @@
           "description": "Simulate gamma_ld<0 from a random IC and measure fractional interface lengths, <n>, moments vs T (0-40) to characterize the checkerboard and its phase transitions.\n"
         },
         {
+          "name": "repro-fig5-viral-load",
+          "description": "Implement `run.repro_fig5(*, loads=(1,10,100,1000,10000), replicas=3,\ncells_per_side=35, steps=240, seed0=0) -> dict` (Task 9.3): for each\n`load`, loop `replicas` seeds through `run.run_full_model(\ncells_per_side=cells_per_side, steps=steps, seed=seed0+load_idx*replicas+r,\ninit_viral_load=load, init_infection_frac=None)`; map each run's\n`counts`/`fields`/`ode` sections onto `targets/fig5.json`'s exact 4\nobservable keys (`_FIG5_OBSERVABLE_MAP`); ensemble-mean via\n`bands.aggregate_replicas`; filter that load's own band subset from\nfig5.json's multi-scenario observable lists (`_fig5_target_subset`,\nraising `ValueError` rather than silently mixing scenarios if a load has\nno matching entries); evaluate via `_evaluate_fig5_subset`. Add\n`tests/test_influenza_full_model.py::test_repro_fig5_viral_load_sweep`\n(reduced: `loads=(1,10000), replicas=1, cells_per_side=12, steps=15`)\nasserting the by_load dict has exactly the tested loads as keys, the\nmonotone dose-response holds (`uninfected_final_frac(10000) <=\nuninfected_final_frac(1) + 1e-9`), and `band_eval` is present -- NOT\nthat the bands pass, since reduced scale is not expected to. Run that\nsame reduced config directly (not the pytest assertions alone) to report\nthe actual per-load, per-observable band_eval numbers in this study\nhonestly.\n"
+        },
+        {
           "name": "virus-field-infection",
-          "description": "Wire the virus field (Task 2.1, `pbg_cpm_studies/influenza/fields.py`) and\nthe stochastic infection transition (Task 2.2,\n`pbg_cpm_studies/influenza/transitions.py`) together over the Increment-1\nsheet, drive them for 60 updates from a small seeded lesion\n(`pbg_cpm_studies/influenza/run.py::run_virus_infection`, Task 2.3), and\nreport the measured spread/locality/null-control behavior from the\nintegration test (`tests/test_influenza_virus_infection.py`). Wrap the\nsame mechanism as a process-bigraph composite\n(`pbg_cpm_studies.composites.influenza.virus_infection`, CPMProcess +\nInfectionProcess wired through `fates`) for the dashboard live demo (Task\n2.4, this study) \u2014 measurements come from `run_virus_infection`, not the\nlive-demo composite (see caveat and Task 2.3's report on why the two\npaths use independent RNG streams and are not bit-identical).\n"
+          "description": "Wire the virus field (Task 2.1, `pbg_cpm_studies/influenza/fields.py`) and\nthe stochastic infection transition (Task 2.2,\n`pbg_cpm_studies/influenza/transitions.py`) together over the Increment-1\nsheet, drive them for 60 updates from a small seeded lesion\n(`pbg_cpm_studies/influenza/run.py::run_virus_infection`, Task 2.3), and\nreport the measured spread/locality/null-control behavior from the\nintegration test (`tests/test_influenza_virus_infection.py`). Wrap the\nsame mechanism as a process-bigraph composite\n(`pbg_cpm_studies.composites.influenza.viral_infection`, CPMProcess +\nInfectionProcess wired through `fates`) for the dashboard live demo (Task\n2.4, this study) \u2014 measurements come from `run_virus_infection`, not the\nlive-demo composite (see caveat and Task 2.3's report on why the two\npaths use independent RNG streams and are not bit-identical).\n"
         },
         {
           "name": "parameter-provenance",
@@ -2377,8 +2401,8 @@
       "counts": {
         "processes": 6,
         "steps": 0,
-        "composites": 7,
-        "studies": 25,
+        "composites": 9,
+        "studies": 29,
         "investigations": 3
       }
     },
@@ -3265,8 +3289,17 @@
           "description": "Cell mass & growth accounting \u2014 reproduction of Karr 2012 CellMass/CellGeometry."
         }
       ],
-      "steps": [],
+      "steps": [
+        {
+          "name": "MgenStructuralStep",
+          "description": "Pack the mgen structural cell (ingredient roster + capsule + chromosome) via pbg_parsimony, wrapping Task 4's build_mgen_pack as a process-bigraph Step. counts_source selects the copy-number provider: 'maritan' (baseline, expression-derived WC-MG-flavoured counts) or 'sim' (this repo's own simulation protein_counts)."
+        }
+      ],
       "composites": [
+        {
+          "name": "mgen_structural",
+          "description": "One-shot 3D whole-cell structural pack of M. genitalium \u2014 the Maritan-2022 ingredient roster (S1/S2) resolved to PDB/AlphaFold structures and packed at true abundance into a single-membrane capsule via the pbg_parsimony (parsimony) engine. counts_source selects the faithful Maritan/WC-MG baseline vs a viva_mgen simulated variant."
+        },
         {
           "name": "mycoplasma_genitalium",
           "description": "The whole Mycoplasma genitalium cell: all ~28 Karr-2012 submodel reproductions (metabolism, mass, expression, RNA/protein maturation, DNA replication/repair, cytokinesis, host interaction) wired through shared cell-variable stores. Reused by every figure-study."
@@ -3306,11 +3339,23 @@
           "description": "Run the fig5_energy composite for one hour (metabolism/mass at 60 s,\nexpression at 1 s) to time-average ATP/GTP production, then step the\ntranscription and translation processes directly for one hour to tally their\nNTP/GTP consumption, and compute the modeled energy shares and the ATP:GTP\nsynthesis ratio.\n"
         },
         {
+          "name": "s01-maritan-baseline",
+          "description": "Run the mgen_structural composite with counts_source=maritan, pack the cell\nwith the real parsimony binary, and confirm the pack places the expected number\nof species at their WC-MG abundances with a single supercoiled chromosome seeded\nfrom the S2 genome.\n"
+        },
+        {
           "name": "fig7-kinetic-parameters",
           "description": "Programmatically identify a growth-limiting reaction in the iPS189 network\n(one whose bound binds when throttled yet whose growth recovers to the\nwild-type plateau before the top of the sweep), sweep its flux bound over\nnp.logspace(-2, 1, 16) with MetabolismFbaReproductionProcess, and read out\nwhether the kcat\u2192growth curve is monotonic, saturating, and has a clear\ndynamic range.\n"
+        },
+        {
+          "name": "s02-reproduction-driven",
+          "description": "Run the mgen_structural composite with counts_source=sim against a viva_mgen\nsteady-state run's protein_counts, pack the cell, and compare per-category\nspecies counts and occupancy to the s01 baseline.\n"
         }
       ],
       "investigations": [
+        {
+          "name": "structural-model",
+          "description": "Structural model of M. genitalium \u2014 reproducing Maritan 2022 with viva-parsimony"
+        },
         {
           "name": "mgen",
           "description": "viva-Mgen: reproducing the Karr 2012 M. genitalium whole-cell model, one study per figure"
@@ -3318,10 +3363,10 @@
       ],
       "counts": {
         "processes": 31,
-        "steps": 0,
-        "composites": 2,
-        "studies": 8,
-        "investigations": 1
+        "steps": 1,
+        "composites": 3,
+        "studies": 10,
+        "investigations": 2
       }
     },
     {
