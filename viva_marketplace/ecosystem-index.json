@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T10:16:59+00:00",
+  "generated_at": "2026-09-21T11:23:50+00:00",
   "n_repos": 50,
   "n_cloned": 50,
   "repos": [
@@ -1337,14 +1337,28 @@
           "description": "Real Artistoo CPM demonstrating differential-adhesion cell sorting: non-motile adhesive cells relax toward a compact aggregate driven by the adhesion + volume constraints."
         }
       ],
-      "studies": [],
-      "investigations": [],
+      "studies": [
+        {
+          "name": "gg-02-sign-and-temperature-controls",
+          "description": "Sign and temperature controls (Fig 7 & Fig 9)"
+        },
+        {
+          "name": "gg-01-differential-adhesion-sorting",
+          "description": "Differential-adhesion cell sorting (Fig 12)"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "glazier-graner-sorting",
+          "description": "Reproducing Glazier & Graner (1993) differential-adhesion cell sorting"
+        }
+      ],
       "counts": {
         "processes": 2,
         "steps": 0,
         "composites": 5,
-        "studies": 0,
-        "investigations": 0
+        "studies": 2,
+        "investigations": 1
       }
     },
     {
@@ -2225,6 +2239,18 @@
         {
           "name": "InfectionProcess",
           "description": ""
+        },
+        {
+          "name": "SystemicODEProcess",
+          "description": ""
+        },
+        {
+          "name": "EpitheliumProcess",
+          "description": "CPMProcess + all-field per-cell readout, raw fields, point deposit,"
+        },
+        {
+          "name": "ImmuneProcess",
+          "description": "Off-lattice immune agents that chemotax up a field gradient."
         }
       ],
       "steps": [],
@@ -2259,7 +2285,7 @@
         },
         {
           "name": "full_model",
-          "description": "Influenza-sego2022 -- the full multiscale model: the composition of all five biological subsystems (epithelium + viral_infection + innate_immunity + cytotoxic_immunity + systemic_ode). This composite carries the complete spatial scene; the full per-MCS mechanism (infection/death/Allee, per-cell IL-10-Hill secretion, the hybrid Price-2015 ODE + dynamic sig_1, ODE-driven recruitment, NK/CD8 contact+nearby killing) runs in run.run_full_model, which the capstone reproduction studies (repro-fig3b/5/7) drive and measure against the digitized Fig 3B/5/7 acceptance bands."
+          "description": "Influenza-sego2022 -- Task 3.2 (influenza-immune-process-composite epic): the process-bigraph Composite wiring EpitheliumProcess + ImmuneProcess (off-lattice M/K/E agents) + SystemicODEProcess (the Price-2015 global ODE) into one runnable document -- the declarative 'swappable' alternative to run.run_full_model's custom per-MCS driver loop, which remains the source-faithful reference the capstone reproduction studies (repro-fig3b/5/7) use."
         },
         {
           "name": "recruitment_adaptive",
@@ -2399,7 +2425,7 @@
         }
       ],
       "counts": {
-        "processes": 6,
+        "processes": 9,
         "steps": 0,
         "composites": 9,
         "studies": 29,
