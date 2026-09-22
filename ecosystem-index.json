@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T11:23:50+00:00",
+  "generated_at": "2026-09-22T10:33:19+00:00",
   "n_repos": 50,
   "n_cloned": 50,
   "repos": [
@@ -2294,16 +2294,16 @@
       ],
       "studies": [
         {
+          "name": "immune-response",
+          "description": "Run the full immune layer (macrophage, NK, CD8+ T cells) on a ~900-cell\nepithelial sheet seeded with an infected patch, and confirm the immune cells\nchemotax toward the infection and cluster against the sheet.\n"
+        },
+        {
           "name": "recruitment-baseline",
           "description": "Simulate the CPM recruitment world (source slab + six responders in the gradient\nzone), equilibrate the secreted field, and measure the recruitment index \u2014\nfraction of responders within 15 px of the source \u2014 over 500 MC sweeps.\n"
         },
         {
           "name": "dispersal_separate",
           "description": "Simulate gamma_ld=27 from a random IC and observe full light/dark cluster separation at 2000 MCS.\n"
-        },
-        {
-          "name": "signaling-fields",
-          "description": "Wire the chemokine + IL-10 fields (`fields.add_chemokine_field`/\n`add_il10_field`, Task 6.1) and their per-cell secretion regulation\n(`signaling.macrophage_secretion_scale`/`uninfected_il10_scale`) into the\nIncrement-5 non-confluent macrophage scenario, and drive\n`run.run_macrophage_signaling` (steps=15, seed=17, default scenario\nknobs) to measure: (a) the chemokine field's per-cell near (macrophages)\nvs. far (uninfected epithelial patch, `separation_sites` away) split, and\nits raw-lattice radial profile (6 concentric bins) around the macrophage-\ncluster centroid; (b) IL-10 positivity and growth at both the macrophage\nand uninfected-cell source populations. Evidence: `tests/\ntest_influenza_signaling.py`'s 4 integration tests\n(`test_chemokine_and_il10_fields_are_positive_after_macrophage_signaling_run`,\n`test_chemokine_field_is_highest_near_macrophages_and_decays_with_distance`,\n`test_il10_positive_from_macrophage_and_uninfected_sources`,\n`test_macrophage_signaling_run_is_deterministic`) plus the full\nlocalization numbers recorded in task-6.1-report.md. A minimal in-package\nfigure (`pbg_cpm_studies/influenza/viz.py::signaling_fields_figure`, Task\n6.2) renders the chemokine radial profile (panel a) and the IL-10\ntrajectories at both source populations (panel b).\n"
         },
         {
           "name": "dispersal_sloughing",
@@ -2318,16 +2318,8 @@
           "description": "Wire `price_ode.GlobalODE` (Task 8.1, the hybrid 10-species integrator,\ndiscrepancy #9) into `run.run_global_coupling`'s per-MCS loop: spatial->\nODE aggregate push (Task 8.2), ODE->spatial dynamic sig_1 feedback (Task\n8.3, discrepancy #11), ODE-driven recruitment (Task 8.4, discrepancy\n#12), and NK/CD8 LOCAL+NEARBY cytotoxic killing (Task 8.5). Measure sig_1's\ndynamic range vs the retired static stub, recruitment inflow/outflow\nrates and population trajectories (default vs boosted eta), and whether\nthe nearby-killing term fires via natural recruitment buildup vs a\ndocumented test-seam override\n(`tests/test_influenza_price_ode.py`, `tests/test_influenza_recruitment.py`,\n`tests/test_influenza_killing.py`, task-8.1 through task-8.5-report.md).\nA minimal in-package figure (`pbg_cpm_studies/influenza/viz.py::\nglobal_coupling_figure`, Task 8.6) renders the systemic ODE species\n(T/X/A/P) and the spatial aggregates (I/M/K/E) plus dynamic sig_1 over\nMCS.\n"
         },
         {
-          "name": "cytotoxic-killing",
-          "description": "Wire NK (`types.K`)/CD8+ (`types.E`) chemotaxis (`immune.\nset_nk_cd8_chemotaxis`, Task 7.1) up the chemokine field (Increment 6)\nand contact-killing (`killing.contact_kill_rate`, Task 7.2, the literal\n`ContactKillingSteppable` LOCAL form) into the Task-7.1 three-cluster\nscenario (`immune.build_cytotoxic_scenario_spec`) and driver (`run.\nrun_cytotoxic_response`), and measure: (a) NK/CD8 `mean_distance_to_\ninfection` across 5 seeds (5, 17, 23, 42, 100), chemotaxis on (lambda x\n`NK_CD8_CHEMOTAXIS_ENGINE_SCALE=100`) vs a lambda=0 control (`tests/\ntest_influenza_nk_cd8.py::test_nk_and_cd8_localize_to_infection_across_seeds`,\ntask-7.1-report.md); (b) `n_infected` in a small close-contact scenario,\nkilling enabled vs disabled, same seed (`tests/test_influenza_killing.py::\ntest_infected_count_lower_with_nk_cd8_killing_than_without`,\ntask-7.2-report.md); (c) `n_infected` at the scenario's own DEFAULT full\nscale with killing enabled, an ad hoc (not fast-pytest-suite) measurement\nrecorded honestly in task-7.2-report.md's \"Honest assessment\" section. A\nminimal in-package figure (`pbg_cpm_studies/influenza/viz.py::\ncytotoxic_killing_figure`, Task 7.3) renders the NK+CD8 distance\ntrajectory (on vs control overlay) plus the infected-count trajectory\n(killing enabled vs disabled overlay).\n"
-        },
-        {
           "name": "epithelial-fate",
           "description": "Wire infected death (Task 4.2, `transitions.infected_death_step`) and the\ncellularized Allee effect (Task 4.3, `pbg_cpm_studies/influenza/allee.py`)\ninto a new driver, `run.run_epithelial_fate` (Task 4.3), alongside the\nunmodified Increment-2/3 infection + IFN-resistance path, and measure the\nresulting n_H/n_I/n_D series plus the diagnostic n_allee_death/\nn_allee_recovery counters (Task 4.3's integration tests\n`tests/test_influenza_allee.py::test_lesion_forms_dead_region_grows_over_time`,\n`::test_dead_cell_surrounded_by_uninfected_recovers`,\n`::test_dead_cell_surrounded_by_dying_does_not_recover`, and the fuller\n200/500-step series in task-4.3-report.md). A minimal in-package figure\n(`pbg_cpm_studies/influenza/viz.py::epithelial_fate_figure`, Task 4.4)\nrenders the cell-type composition over time plus cumulative Allee event\ncounts.\n"
-        },
-        {
-          "name": "macrophage-response",
-          "description": "Wire the macrophage cell type (`types.M`, Task 5.0) and virus-field\nchemotaxis (`immune.set_macrophage_chemotaxis`, Task 5.1) into a\nnon-confluent 2D-approximation scenario\n(`immune.build_macrophage_scenario_spec`, fix round 1: both clusters\ninterior-placed) and driver (`run.run_macrophage_response`, fix round 1:\nfixed non-tuned knobs), and measure the resulting\n`mean_distance_to_infection` series with chemotaxis on (lambda=5000,\n`params.yaml` default) vs off (lambda=0 control), across 5 seeds (5, 17,\n23, 42, 100) (Task 5.1's integration test\n`tests/test_influenza_macrophage.py::test_macrophages_localize_to_infection_across_seeds`,\nwhich asserts ON is negative in every seed, ON < OFF in every seed, and\nthe mean on/off gap exceeds OFF's own seed-to-seed spread; plus the\nminimal 2-cell engine-sanity tests, and the fuller localization-number\ntable recorded in task-5.1-report.md's fix-round-1 section). A minimal\nin-package figure (`pbg_cpm_studies/influenza/viz.py::macrophage_response_figure`,\nTask 5.2) renders the mean-distance-to-infection trajectory (on vs off\noverlay) plus the macrophage centre-of-mass path for a single representative\nrun.\n"
         },
         {
           "name": "recruitment-adaptive",
@@ -2428,7 +2420,7 @@
         "processes": 9,
         "steps": 0,
         "composites": 9,
-        "studies": 29,
+        "studies": 27,
         "investigations": 3
       }
     },
