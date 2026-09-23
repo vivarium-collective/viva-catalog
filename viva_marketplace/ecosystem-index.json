@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T10:33:19+00:00",
+  "generated_at": "2026-09-23T10:27:28+00:00",
   "n_repos": 50,
   "n_cloned": 50,
   "repos": [
@@ -1659,14 +1659,24 @@
           "description": "Load a single BioModel into one simulator's time-coupled process, wired to a species store \u2014 a ready-to-plug module for a larger bigraph."
         }
       ],
-      "studies": [],
-      "investigations": [],
+      "studies": [
+        {
+          "name": "full-corpus-reproduction",
+          "description": "Fetch and parse every BioModel, run each through every available simulator via the batch-compare-biomodels composite (fanned out over the corpus with the Ray runner), and record the full per-model, per-engine, per-variable timecourse as a single tidy dataset for cross-engine comparison.\n"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "corpus-reproduction",
+          "description": "BioModels corpus reproduction \u2014 every model across every simulator"
+        }
+      ],
       "counts": {
         "processes": 0,
         "steps": 14,
         "composites": 4,
-        "studies": 0,
-        "investigations": 0
+        "studies": 1,
+        "investigations": 1
       }
     },
     {
@@ -2288,6 +2298,10 @@
           "description": "Influenza-sego2022 -- Task 3.2 (influenza-immune-process-composite epic): the process-bigraph Composite wiring EpitheliumProcess + ImmuneProcess (off-lattice M/K/E agents) + SystemicODEProcess (the Price-2015 global ODE) into one runnable document -- the declarative 'swappable' alternative to run.run_full_model's custom per-MCS driver loop, which remains the source-faithful reference the capstone reproduction studies (repro-fig3b/5/7) use."
         },
         {
+          "name": "gg1993",
+          "description": "Glazier & Graner (1993) CPM example (single CPMProcess). The `study` parameter selects which of the 11 paper examples to encode; its exact energies, temperature, area constraint and initial condition come from pbg_cpm_studies.gg1993.params.STUDIES[study]."
+        },
+        {
           "name": "recruitment_adaptive",
           "description": "Adaptive receptor recruitment (fold-change detection): single CPMProcess + one AdaptiveReceptorSubcell per responder. Responders activate (naive(2) -> activated(3)) once response = max(0, theta - m) crosses threshold, where m is a slow per-cell setpoint adapting toward occupancy theta -- so a rising cue recruits regardless of background level, while a static background does not. blocked=True zeroes the activated lambda (receptor_gating); epsilon=0 disables adaptation (knockout, pure Hill occupancy)."
         }
@@ -2419,7 +2433,7 @@
       "counts": {
         "processes": 9,
         "steps": 0,
-        "composites": 9,
+        "composites": 10,
         "studies": 27,
         "investigations": 3
       }
