@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T10:27:28+00:00",
+  "generated_at": "2026-09-24T10:44:25+00:00",
   "n_repos": 50,
   "n_cloned": 50,
   "repos": [
@@ -898,36 +898,12 @@
       ],
       "studies": [
         {
-          "name": "metabolism-biomass-yield-s1-diagnostic",
-          "description": "Re-measure biomass yield on a recorded commit, and discriminate one defect from two"
-        },
-        {
           "name": "colonies-06-daughter-machine",
           "description": "Do the core emergent single-cell phenotypes \u2014 size-at-division,\ninter-division time, added length, the adder size-homeostasis relation, and\ngrowth rate \u2014 stay measurable when simple viva-munk agents run in the\ncanonical daughter-machine device geometry?\n"
         },
         {
-          "name": "sm-04-through-division",
-          "description": "Through division \u2014 do the emulators hold across the cell-cycle discontinuity?"
-        },
-        {
           "name": "basal",
           "description": "v2ecoli reproduces vEcoli on basal"
-        },
-        {
-          "name": "sm-02-utility-and-limits",
-          "description": "Utility & limits \u2014 what a cheap emulator buys, and where emulation ends"
-        },
-        {
-          "name": "mbp-05-palsson-benchmark",
-          "description": "Configured with operating conditions matched to the 2025 Palsson lab\nhigh-density E. coli study, does the v2ecoli \u2194 pbg-bioreactordesign\ncoupled model **render a structured comparison report** (sim-vs-\npublished overlays + categorized divergences + open questions) on\nthe published WT batch-phase prefix trajectories, suitable to feed\nmbp-06's gap-analysis synthesis?\n\nInvestigation-level note: the original question framing (\"match within\ntolerance\") was reframed 2026-05-26 to \"render a structured comparison.\"\nThe success definition is whether the comparison was EXECUTED AND\nREPORTED COHERENTLY, not whether biology matched. All biological\ndivergences feed mbp-06 unchanged.\n"
-        },
-        {
-          "name": "param-uq-02-observables",
-          "description": "Multi-observable robustness \u2014 basal_elongation_rate dominates MASS; growth-rate ranking is window-dependent"
-        },
-        {
-          "name": "genotype-00-build-integrity",
-          "description": "Does a ParCa-level knockout reconstruct into a self-consistent sim_data?"
         },
         {
           "name": "showcase-6-equivalence-large",
@@ -950,10 +926,6 @@
           "description": "Implement the PB \u2192 Catalyst.jl export, refactor Vivarium state to column-centric pre-allocated tensors,\ninvert the Vivarium API to declarative process specs (local state + ODE vector field + jump\npropensities), and deploy the compiled runner on GPU and multi-core CPU. Benchmark \u226510\u00b3 parallel\ntrajectories vs. the v2ecoli baseline and the Phase 2 PDMP runner, and report the ABC wall-clock\nimprovement handed to Phase 3 / Phase 5.\n"
         },
         {
-          "name": "overflow-acetate-vs-growth",
-          "description": "Does v2ecoli reproduce the aerobic acetate-overflow curve (acetate-carbon yield vs growth rate) \u2014 Vemuri 2006 / Basan 2015?"
-        },
-        {
           "name": "mcs-08-rna-protein-composition",
           "description": "Read RNA and protein mass from native mass listeners at two growth rates (minimal glucose, amino-acid-rich), compute RNA/protein vs growth rate, and compare the slope direction to the Bremer-Dennis law."
         },
@@ -966,40 +938,16 @@
           "description": "Take the diagnosed energetic defect (metabolism-biomass-yield-s1-diagnostic), apply the smallest principled maintenance-ATP/respiration correction to ecoli_baseline's metabolism, and measure biomass_yield, RQ, O2:glucose, and growth_rate before/after."
         },
         {
-          "name": "param-uq-01-elongation",
-          "description": "Ribosome basal elongation rate dominates growth-rate variance among effective elongation knobs (Sobol \u2248 0.97)"
-        },
-        {
-          "name": "param-uq-00-screen",
-          "description": "Parameter screen \u2014 which config-reachable knobs actually drive the observables?"
-        },
-        {
           "name": "mcs-10-multiseed-robustness",
           "description": "Run a seed ensemble (>=6 seeds) at both Arc-1 conditions (minimal/basal and rich/with_aa), multi-generation, and re-report origins-per-cell, ppGpp, growth rate, ribosome content and interdivision-time CV as mean +/- CI. Replace the single-seed point estimates in mcs-01, mcs-03 and the capstone with these bands; state which effects survive and which do not."
-        },
-        {
-          "name": "sm-01-nn-surrogate",
-          "description": "NN surrogate \u2014 does it beat trivial baselines?"
         },
         {
           "name": "metabolism_redux_basal",
           "description": "v2ecoli reproduces vEcoli with MetabolismRedux (basal)"
         },
         {
-          "name": "genotype-06-trpr-regulon",
-          "description": "How does v2ecoli realize a transcription-factor knockout?"
-        },
-        {
-          "name": "mbp-01-time-varying-environment",
-          "description": "Can v2ecoli's `media_update` / `exchange_data` Layer-1 Steps consume an\nexternally-driven, time-varying nutrient pool \u2014 instead of the static\nmedia configuration baked into ParCa \u2014 such that metabolic exchange\nfluxes and growth rate respond correctly to declining glucose, declining\nDO, and other dynamic external concentrations?\n"
-        },
-        {
           "name": "with_aa",
           "description": "v2ecoli reproduces vEcoli on with_aa"
-        },
-        {
-          "name": "genotype-01-control-panel",
-          "description": "What do ParCa-level knockout mechanics look like across control gene classes?"
         },
         {
           "name": "parca",
@@ -1016,10 +964,6 @@
         {
           "name": "showcase-3-variant-decide",
           "description": "Which perturbation best demonstrates v2ecoli's response \u2014 reviewers to choose"
-        },
-        {
-          "name": "mbp-07-millard-kinetic-metabolism",
-          "description": "Can a metabolic engine other than v2ecoli's own be attached behind the same cell-side interface contract, and what does it actually take?\n\nThis study is the investigation's extensibility demonstration. Three\nengines have been attached at three deliberately different depths -- a\nMillard 2017 kinetic ODE swapped in for tFBA Metabolism inside the\nwhole-cell model and coupled to the BiRD reactor; iML1515 genome-scale\nFBA graded against the same Beulig prefix but uncoupled and partly fit\nto it; and the OxidizeME ME-model named as a candidate but not wired.\nThe ladder is the finding: the depths differ, and flattening them would\noverclaim. Full detail, including the coupling's known asymmetry and the\nverification behind each claim, is in the investigation's what_is_this\nand in the comment above this field.\n\nOf the three, the investigation gates only on the iML1515 grading. The\nMillard arm's grading against Beulig is deferred as of 2026-08-20 --\ndeferred, not concluded -- and the original question this study was\nbuilt to answer (does the kinetic ODE recover growth, close mass\nconservation, and track the bioreactor?) is preserved in the behavior\ntests and their recorded results.\nclaims.\n"
         },
         {
           "name": "mcs-03-single-cell-heterogeneity",
@@ -1058,10 +1002,6 @@
           "description": "Land the smallest principled change (a stochastic D-period in chromosome_replication) behind a default-off knob; run a seed ensemble with the noise OFF (baseline) and ON, and re-measure the interdivision-time CV (target 0.10-0.30) with the mean generation time held out."
         },
         {
-          "name": "mbp-02-population-aggregation",
-          "description": "Can v2ecoli aggregate single-cell-plus-Division output into population-\nlevel biomass observables (total gDW, cell count) that are physically\nmeaningful at the reactor scale (OD \u226b 1) \u2014 using a **representative-\nsampling scaling factor (`cells_per_agent`)** so the simulated lineage\nlegitimately stands in for an N-cell population under the 0D\nwell-mixed assumption \u2014 and consume population-level signals (e.g.\nreactor liquid volume) to maintain correct concentrations?\n"
-        },
-        {
           "name": "mcs-04-capstone-downshift",
           "description": "Drive one ecoli_baseline (or ecoli_time_varying_env) run through a rich->minimal media downshift and read ppgpp_conc, exchange fluxes/acetate, origins_per_cell, and the division_time distribution together across the shift."
         },
@@ -1086,24 +1026,12 @@
           "description": "v2ecoli reproduces vEcoli with MetabolismRedux (succinate)"
         },
         {
-          "name": "mbp-04-multigeneration-runs",
-          "description": "Does the mbp-03 coupled composite (v2ecoli \u2194 pbg-bioreactordesign) stay\nmass-conserving, computationally tractable, and physically coherent\nover multiple v2ecoli generations (3+ doublings) under sustained\nreactor dynamics \u2014 capturing the regime transition from glucose-replete\nexponential growth into glucose-limited or DO-limited slowdown as the\npopulation grows and consumes the batch?\n"
-        },
-        {
           "name": "showcase-4-variant-comparison",
           "description": "Five-variant perturbation sweep \u2014 which perturbation most clearly moves v2ecoli off baseline"
         },
         {
           "name": "mcs-05-etc-stoichiometry-fix",
           "description": "Instrument the FBA solution to measure ATP production per reaction and the effective P/O ratio at baseline; identify the dominant cheap-ATP route; apply the smallest principled stoichiometry correction; re-measure Yxs, RQ, O2:glucose and growth (held-out)."
-        },
-        {
-          "name": "param-uq-05-strain-design",
-          "description": "Run a forward-UQ on a GFP new-gene v2ecoli strain, sweeping the two public\nstrain-design knobs (expression, translation efficiency), to (a) rank their\nSobol contributions to new-gene product level and growth rate, and (b)\ndemonstrate the milestone's required decomposition across aggregation strategies\n1\u20133. This is the parameter-uq investigation's strain-design extension \u2014 the\n\"systematic sweep across the full parameter space\" the overview anticipates \u2014\nand the concrete demonstration deliverable for the M8 / 08.4.2 UQ milestone,\nbuilt natively in v2ecoli (pbg-uq) rather than the standalone uqEcoli pipeline.\n"
-        },
-        {
-          "name": "population_phenotype_basal",
-          "description": "Basal-condition physiology \u2014 v2ecoli baseline vs experimental literature"
         },
         {
           "name": "colonies-08-wcm-daughter-machine",
@@ -1114,40 +1042,12 @@
           "description": "v2ecoli reproduces vEcoli on acetate"
         },
         {
-          "name": "metabolism-biomass-yield-s1b-anaerobic-contrast",
-          "description": "Does the model's own aerobic-to-anaerobic yield drop match biology?"
-        },
-        {
-          "name": "mbp-03-bird-reactor-coupling",
-          "description": "Can v2ecoli (with the mbp-01 time-varying-env hook and mbp-02 population\naggregator) be coupled to `pbg-bioreactordesign`'s BiRDReactorProcess \u2014\nvia a thin adapter that resolves the biomass-ownership conflict between\nthe two \u2014 such that BiRD supplies dissolved O2, kLa, gas-phase physics,\nand v2ecoli supplies population biomass and exchange-flux demand,\nproducing a physically consistent coupled trajectory in a 0D\nwell-mixed bench-scale reactor?\n"
-        },
-        {
-          "name": "ko-and-media",
-          "description": "Knockout and media perturbations on the baseline whole cell"
-        },
-        {
           "name": "colonies-09-wcm-mother-machine",
           "description": "Whole-cell baseline (v2ecoli) in a mother machine \u2014 device run"
         },
         {
-          "name": "variant-sweep-phenotype-demo",
-          "description": "Variant-sweep phenotype demo (generic template)"
-        },
-        {
-          "name": "param-uq-03-growth-stratified",
-          "description": "Growth-stratified sensitivity \u2014 how does parameter influence vary across the cell cycle?"
-        },
-        {
-          "name": "mbp-06-gap-analysis",
-          "description": "After mbp-01..05 have produced their per-study findings, what are the\nremaining gaps (in v2ecoli's biology coverage, the coupling layer, the\npbg-bioreactordesign physics, and the Beulig benchmark scope) that\nprevent the investigation from answering its overarching question, and\nhow should those gaps be prioritized as the next investigation\niteration (mbp-* round 2, or a sibling investigation)?\n"
-        },
-        {
           "name": "showcase-2-baseline-figures",
           "description": "Wild-type baseline single-cell\u2192division ensemble reproduces E. coli properties"
-        },
-        {
-          "name": "sm-03-improving-the-surrogate",
-          "description": "Improving the surrogate \u2014 does rollout-loss training close the gap?"
         },
         {
           "name": "colonies-02-parallel-multigen-perf",
@@ -1158,24 +1058,12 @@
           "description": "Run the native baseline and a RelA-knockdown variant (--perturbation on the relA transcription unit) at matched conditions; measure ppGpp, ribosome content, origins-per-cell and growth; compare the cross-condition coordination (the coupling slope / response magnitude) between ppGpp-competent and ppGpp-suppressed cells. This is the falsification control for H1."
         },
         {
-          "name": "sm-00-data-collection",
-          "description": "Surrogate data collection \u2014 broad observable transition-dataset from baseline rollouts"
-        },
-        {
-          "name": "ketchup-exchange-comparison",
-          "description": "v2ecoli baseline central-carbon exchange phenotype vs KETCHUP kinetic models"
-        },
-        {
           "name": "colonies-04-device-phenotype-harness",
           "description": "Does the shared harness \u2014 cell-tier factory, geometry builders, and\ntier-agnostic phenotype extractor \u2014 recover a correct, uniform single-cell\nphenotype panel (growth rate, size-at-division, added length, inter-division\ntime, adder size-homeostasis) across the three device geometries, validated\nfirst with cheap simple viva-munk agents before spending WCM compute?\n"
         },
         {
           "name": "pdmp-05-causal-discovery",
           "description": "Implement the marginal-likelihood estimator (Russian Roulette / doubly-intractable) on the Phase 3\naccumulator and Phase 4 compiled runtime, build the active causal-inference loop (propose intervention,\npredict outcomes under candidate mechanisms, score by expected information gain), and curate a benchmark\nset of E. coli genes with established functions. Measure posterior recovery rate, credible-interval\nwidth vs. sample size, and compute cost per annotation, and produce a resource estimate for genome-wide\nscaling.\n"
-        },
-        {
-          "name": "param-uq-04-deep-params",
-          "description": "Deep physiological parameters \u2014 sensitivity to sim_data attributes via ParCa-level injection."
         },
         {
           "name": "statistical",
@@ -1188,64 +1076,28 @@
           "description": "v2ecoli \u2192 PDMP Whole-Cell Model Reformulation"
         },
         {
-          "name": "variant-sweep-phenotype",
-          "description": "Variant-sweep phenotype \u2014 config-declared perturbation sweeps as phenotype comparisons"
-        },
-        {
           "name": "whole-cell-model-comparison",
           "description": "Whole-Cell Model Comparison"
-        },
-        {
-          "name": "metabolism-biomass-yield",
-          "description": "Metabolism \u2014 biomass yield"
-        },
-        {
-          "name": "parameter-uq",
-          "description": "Parameter UQ \u2014 global sensitivity of v2ecoli"
-        },
-        {
-          "name": "genotype-perturbation-response",
-          "description": "Genotype perturbation response: how v2ecoli responds to KO, KD, and OE of native genes"
         },
         {
           "name": "colonies",
           "description": "Colony & Microfluidic Phenotype Quantification"
         },
         {
-          "name": "surrogate-modeling",
-          "description": "Surrogate Modeling \u2014 can a neural net emulate the v2ecoli baseline?"
-        },
-        {
-          "name": "multiscale-bioprocess",
-          "description": "v2ecoli \u2014 Bioprocess Migration & Reactor Coupling"
-        },
-        {
           "name": "multiscale-complexity-showcase",
           "description": "Multiscale Complexity in a Whole-Cell E. coli"
         },
         {
-          "name": "ketchup-baseline-comparison",
-          "description": "Does v2ecoli's baseline central-carbon exchange phenotype match KETCHUP kinetic models?"
-        },
-        {
           "name": "v2ecoli-baseline-showcase",
           "description": "v2ecoli Baseline Showcase: from ecoli-sources to a calibrated whole cell"
-        },
-        {
-          "name": "perturbation-demo",
-          "description": "Perturbation demo \u2014 gene knockouts and media shifts on the baseline whole cell"
-        },
-        {
-          "name": "metabolism-overflow",
-          "description": "Does v2ecoli reproduce aerobic acetate overflow \u2014 the acetate-carbon yield vs growth rate curve?"
         }
       ],
       "counts": {
         "processes": 21,
         "steps": 82,
         "composites": 17,
-        "studies": 71,
-        "investigations": 14
+        "studies": 43,
+        "investigations": 5
       }
     },
     {
@@ -1602,7 +1454,7 @@
         },
         {
           "name": "BiomodelsSimbioStep",
-          "description": "Adapter: runtime ``model_source`` \u2192 ``pbg_simbio.SimbioUTCStep``."
+          "description": "Adapter: runtime ``model_source`` \u2192 ``viva_simbio.SimbioUTCStep``."
         },
         {
           "name": "BiomodelsCopasiSteadyStateStep",
@@ -2155,14 +2007,36 @@
           "description": "Tiny CompuCell3D cell-sorting demo: a small two-type blob driven by differential adhesion. Emits cell counts, average volume/surface, and MCS each update."
         }
       ],
-      "studies": [],
-      "investigations": [],
+      "studies": [
+        {
+          "name": "chemotaxis",
+          "description": "Run the secretion + diffusion + chemotaxis composite on an 80x80 lattice for 2000\nMonte-Carlo steps through `CompuCell3DProcess`, exposing the concentration field in\nthe animated scene and reading population back through the output ports.\n"
+        },
+        {
+          "name": "cell-sorting",
+          "description": "Initialise a mixed two-type blob on an 80x80 lattice, advance the real engine for\n3000 Monte-Carlo steps through `CompuCell3DProcess`, and read cell counts and\nmorphometry back through the wrapper's output ports.\n"
+        },
+        {
+          "name": "spheroid-invasion",
+          "description": "Seed 25 cells on a 150x150 lattice, advance 4000 Monte-Carlo steps through\n`CompuCell3DProcess`, and track population and mean surface through the output ports.\n"
+        },
+        {
+          "name": "growth-division",
+          "description": "Seed 25 cells on a 150x150 lattice, advance 3000 Monte-Carlo steps through\n`CompuCell3DProcess` with growth + mitosis enabled, and track population and mean\nvolume through the output ports.\n"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "cpm-demonstrations",
+          "description": "CompuCell3D through process-bigraph \u2014 a capability demonstration"
+        }
+      ],
       "counts": {
         "processes": 1,
         "steps": 0,
         "composites": 2,
-        "studies": 0,
-        "investigations": 0
+        "studies": 4,
+        "investigations": 1
       }
     },
     {
@@ -2299,7 +2173,7 @@
         },
         {
           "name": "gg1993",
-          "description": "Glazier & Graner (1993) CPM example (single CPMProcess). The `study` parameter selects which of the 11 paper examples to encode; its exact energies, temperature, area constraint and initial condition come from pbg_cpm_studies.gg1993.params.STUDIES[study]."
+          "description": "Glazier & Graner (1993) CPM example (single CPMProcess). The `study` parameter selects which of the 11 paper examples to encode; its exact energies, temperature, area constraint and initial condition come from viva_cpm_studies.gg1993.params.STUDIES[study]."
         },
         {
           "name": "recruitment_adaptive",
@@ -2329,19 +2203,19 @@
         },
         {
           "name": "global-coupling",
-          "description": "Wire `price_ode.GlobalODE` (Task 8.1, the hybrid 10-species integrator,\ndiscrepancy #9) into `run.run_global_coupling`'s per-MCS loop: spatial->\nODE aggregate push (Task 8.2), ODE->spatial dynamic sig_1 feedback (Task\n8.3, discrepancy #11), ODE-driven recruitment (Task 8.4, discrepancy\n#12), and NK/CD8 LOCAL+NEARBY cytotoxic killing (Task 8.5). Measure sig_1's\ndynamic range vs the retired static stub, recruitment inflow/outflow\nrates and population trajectories (default vs boosted eta), and whether\nthe nearby-killing term fires via natural recruitment buildup vs a\ndocumented test-seam override\n(`tests/test_influenza_price_ode.py`, `tests/test_influenza_recruitment.py`,\n`tests/test_influenza_killing.py`, task-8.1 through task-8.5-report.md).\nA minimal in-package figure (`pbg_cpm_studies/influenza/viz.py::\nglobal_coupling_figure`, Task 8.6) renders the systemic ODE species\n(T/X/A/P) and the spatial aggregates (I/M/K/E) plus dynamic sig_1 over\nMCS.\n"
+          "description": "Wire `price_ode.GlobalODE` (Task 8.1, the hybrid 10-species integrator,\ndiscrepancy #9) into `run.run_global_coupling`'s per-MCS loop: spatial->\nODE aggregate push (Task 8.2), ODE->spatial dynamic sig_1 feedback (Task\n8.3, discrepancy #11), ODE-driven recruitment (Task 8.4, discrepancy\n#12), and NK/CD8 LOCAL+NEARBY cytotoxic killing (Task 8.5). Measure sig_1's\ndynamic range vs the retired static stub, recruitment inflow/outflow\nrates and population trajectories (default vs boosted eta), and whether\nthe nearby-killing term fires via natural recruitment buildup vs a\ndocumented test-seam override\n(`tests/test_influenza_price_ode.py`, `tests/test_influenza_recruitment.py`,\n`tests/test_influenza_killing.py`, task-8.1 through task-8.5-report.md).\nA minimal in-package figure (`viva_cpm_studies/influenza/viz.py::\nglobal_coupling_figure`, Task 8.6) renders the systemic ODE species\n(T/X/A/P) and the spatial aggregates (I/M/K/E) plus dynamic sig_1 over\nMCS.\n"
         },
         {
           "name": "epithelial-fate",
-          "description": "Wire infected death (Task 4.2, `transitions.infected_death_step`) and the\ncellularized Allee effect (Task 4.3, `pbg_cpm_studies/influenza/allee.py`)\ninto a new driver, `run.run_epithelial_fate` (Task 4.3), alongside the\nunmodified Increment-2/3 infection + IFN-resistance path, and measure the\nresulting n_H/n_I/n_D series plus the diagnostic n_allee_death/\nn_allee_recovery counters (Task 4.3's integration tests\n`tests/test_influenza_allee.py::test_lesion_forms_dead_region_grows_over_time`,\n`::test_dead_cell_surrounded_by_uninfected_recovers`,\n`::test_dead_cell_surrounded_by_dying_does_not_recover`, and the fuller\n200/500-step series in task-4.3-report.md). A minimal in-package figure\n(`pbg_cpm_studies/influenza/viz.py::epithelial_fate_figure`, Task 4.4)\nrenders the cell-type composition over time plus cumulative Allee event\ncounts.\n"
+          "description": "Wire infected death (Task 4.2, `transitions.infected_death_step`) and the\ncellularized Allee effect (Task 4.3, `viva_cpm_studies/influenza/allee.py`)\ninto a new driver, `run.run_epithelial_fate` (Task 4.3), alongside the\nunmodified Increment-2/3 infection + IFN-resistance path, and measure the\nresulting n_H/n_I/n_D series plus the diagnostic n_allee_death/\nn_allee_recovery counters (Task 4.3's integration tests\n`tests/test_influenza_allee.py::test_lesion_forms_dead_region_grows_over_time`,\n`::test_dead_cell_surrounded_by_uninfected_recovers`,\n`::test_dead_cell_surrounded_by_dying_does_not_recover`, and the fuller\n200/500-step series in task-4.3-report.md). A minimal in-package figure\n(`viva_cpm_studies/influenza/viz.py::epithelial_fate_figure`, Task 4.4)\nrenders the cell-type composition over time plus cumulative Allee event\ncounts.\n"
         },
         {
           "name": "recruitment-adaptive",
-          "description": "Author the acceptance contract for the adaptive-receptor rung of the\nfaithful chemotaxis mechanism ladder (pbg_cpm_studies.model_building.\nmechanisms): three primary behavior tests plus a receptor-gating control,\nwith pass/fail bands set from real measured recruitment_index values\n(3-12 seeds) already gathered while calibrating the ladder. The loop\ndriver built in the next task runs mechanisms.simulate_condition against\nthese bands; this study does not itself constitute a completed run.\n"
+          "description": "Author the acceptance contract for the adaptive-receptor rung of the\nfaithful chemotaxis mechanism ladder (viva_cpm_studies.model_building.\nmechanisms): three primary behavior tests plus a receptor-gating control,\nwith pass/fail bands set from real measured recruitment_index values\n(3-12 seeds) already gathered while calibrating the ladder. The loop\ndriver built in the next task runs mechanisms.simulate_condition against\nthese bands; this study does not itself constitute a completed run.\n"
         },
         {
           "name": "epithelial-sheet-baseline",
-          "description": "Build the epithelial-sheet `load_world` spec (Task 1.1), instantiate and\nrelax the CPM world (Task 1.2), and measure step throughput on the full\n1mm^2 patch (Task 1.3). Wrap the geometry in a process-bigraph composite\n(`pbg_cpm_studies.composites.influenza.epithelium`) so the\ndashboard can run a modest (0.1mm, 100-cell) live demo of the same\nsubstrate (Task 1.4, this study).\n"
+          "description": "Build the epithelial-sheet `load_world` spec (Task 1.1), instantiate and\nrelax the CPM world (Task 1.2), and measure step throughput on the full\n1mm^2 patch (Task 1.3). Wrap the geometry in a process-bigraph composite\n(`viva_cpm_studies.composites.influenza.epithelium`) so the\ndashboard can run a modest (0.1mm, 100-cell) live demo of the same\nsubstrate (Task 1.4, this study).\n"
         },
         {
           "name": "position_reversal",
@@ -2373,7 +2247,7 @@
         },
         {
           "name": "ifn-resistance",
-          "description": "Wire the type-I IFN field (Task 3.2, `pbg_cpm_studies/influenza/fields.py`\n`add_ifn_field`) and the pure per-cell resistance function (Task 3.3,\n`pbg_cpm_studies/influenza/resistance.py::cell_resistance`) into a new\ndriver, `run.run_virus_infection_with_ifn` (Task 3.3), alongside the\nunmodified Increment-2 `run_virus_infection`, and compare their per-update\nseries (n_I, n_H, total_virus, plus `mean_resist` recorded only by the\nwith-IFN driver) at identical seed/parameters (Task 3.3's integration test\n`tests/test_influenza_virus_infection.py::test_ifn_resistance_slows_spread_vs_no_ifn`\nand the fuller with/without series in Task 3.3's report). A minimal\nin-package figure (`pbg_cpm_studies/influenza/viz.py::ifn_resistance_figure`,\nTask 3.4) renders both series side by side plus the mean_resist trajectory.\n"
+          "description": "Wire the type-I IFN field (Task 3.2, `viva_cpm_studies/influenza/fields.py`\n`add_ifn_field`) and the pure per-cell resistance function (Task 3.3,\n`viva_cpm_studies/influenza/resistance.py::cell_resistance`) into a new\ndriver, `run.run_virus_infection_with_ifn` (Task 3.3), alongside the\nunmodified Increment-2 `run_virus_infection`, and compare their per-update\nseries (n_I, n_H, total_virus, plus `mean_resist` recorded only by the\nwith-IFN driver) at identical seed/parameters (Task 3.3's integration test\n`tests/test_influenza_virus_infection.py::test_ifn_resistance_slows_spread_vs_no_ifn`\nand the fuller with/without series in Task 3.3's report). A minimal\nin-package figure (`viva_cpm_studies/influenza/viz.py::ifn_resistance_figure`,\nTask 3.4) renders both series side by side plus the mean_resist trajectory.\n"
         },
         {
           "name": "vacancy_cavity",
@@ -2405,7 +2279,7 @@
         },
         {
           "name": "virus-field-infection",
-          "description": "Wire the virus field (Task 2.1, `pbg_cpm_studies/influenza/fields.py`) and\nthe stochastic infection transition (Task 2.2,\n`pbg_cpm_studies/influenza/transitions.py`) together over the Increment-1\nsheet, drive them for 60 updates from a small seeded lesion\n(`pbg_cpm_studies/influenza/run.py::run_virus_infection`, Task 2.3), and\nreport the measured spread/locality/null-control behavior from the\nintegration test (`tests/test_influenza_virus_infection.py`). Wrap the\nsame mechanism as a process-bigraph composite\n(`pbg_cpm_studies.composites.influenza.viral_infection`, CPMProcess +\nInfectionProcess wired through `fates`) for the dashboard live demo (Task\n2.4, this study) \u2014 measurements come from `run_virus_infection`, not the\nlive-demo composite (see caveat and Task 2.3's report on why the two\npaths use independent RNG streams and are not bit-identical).\n"
+          "description": "Wire the virus field (Task 2.1, `viva_cpm_studies/influenza/fields.py`) and\nthe stochastic infection transition (Task 2.2,\n`viva_cpm_studies/influenza/transitions.py`) together over the Increment-1\nsheet, drive them for 60 updates from a small seeded lesion\n(`viva_cpm_studies/influenza/run.py::run_virus_infection`, Task 2.3), and\nreport the measured spread/locality/null-control behavior from the\nintegration test (`tests/test_influenza_virus_infection.py`). Wrap the\nsame mechanism as a process-bigraph composite\n(`viva_cpm_studies.composites.influenza.viral_infection`, CPMProcess +\nInfectionProcess wired through `fates`) for the dashboard live demo (Task\n2.4, this study) \u2014 measurements come from `run_virus_infection`, not the\nlive-demo composite (see caveat and Task 2.3's report on why the two\npaths use independent RNG streams and are not bit-identical).\n"
         },
         {
           "name": "parameter-provenance",
