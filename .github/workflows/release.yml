@@ -2,6 +2,7 @@ name: release
 on:
   push:
     tags: ["v*"]
+  workflow_dispatch: {}   # manual fallback (tag-push events have been unreliable on this repo)
 permissions:
   id-token: write   # for PyPI trusted publishing
 jobs:
