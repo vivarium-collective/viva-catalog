@@ -1,11 +1,11 @@
-# Contributing to viva-marketplace
+# Contributing to viva-catalog
 
-viva-marketplace is the **ecosystem ledger** for the vivarium / process-bigraph
+viva-catalog is the **ecosystem ledger** for the vivarium / process-bigraph
 workbench. Both files are now **machine-generated** — you don't hand-edit them:
 
-- `viva_marketplace/modules.json` — the registry of repos, **discovered from
+- `viva_catalog/modules.json` — the registry of repos, **discovered from
   GitHub topics** (see below).
-- `viva_marketplace/ecosystem-index.json` — the aggregated artifact index,
+- `viva_catalog/ecosystem-index.json` — the aggregated artifact index,
   built by cloning + scanning each discovered repo.
 
 ## Publish your repository to the marketplace
