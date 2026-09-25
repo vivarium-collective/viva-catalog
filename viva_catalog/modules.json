@@ -156,7 +156,7 @@
     "name": "viva-cpm",
     "source": "https://github.com/vivarium-collective/viva-cpm.git",
     "ref": "main",
-    "package": "cpm",
+    "package": "viva_cpm",
     "homepage": "https://github.com/vivarium-collective/viva-cpm",
     "description": "Vivarium-native Cellular Potts Model framework \u2014 with a fast Rust core",
     "tags": []
