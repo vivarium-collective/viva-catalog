@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build ``viva_marketplace/ecosystem-index.json`` from the repo registry.
+"""Build ``viva_catalog/ecosystem-index.json`` from the repo registry.
 
 For every repo in ``modules.json`` we **shallow-clone the repo and scan its
 source** — no published dashboard required. What we extract:
@@ -38,7 +38,7 @@ except ImportError:  # pragma: no cover
     yaml = None
 
 ROOT = Path(__file__).resolve().parent.parent
-PKG = ROOT / "viva_marketplace"
+PKG = ROOT / "viva_catalog"
 
 _PROC_BASE = re.compile(r"(Process|Step)$")
 

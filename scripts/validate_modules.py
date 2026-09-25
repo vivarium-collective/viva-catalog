@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate ``viva_marketplace/modules.json`` — the PR gate for the registry.
+"""Validate ``viva_catalog/modules.json`` — the PR gate for the registry.
 
 Checks that keep the ledger sane without being heavy-handed:
   - the file is a JSON list of objects
@@ -17,7 +17,7 @@ import re
 import sys
 from pathlib import Path
 
-MODULES = Path(__file__).resolve().parent.parent / "viva_marketplace" / "modules.json"
+MODULES = Path(__file__).resolve().parent.parent / "viva_catalog" / "modules.json"
 _GH = re.compile(r"^(https://github\.com/|git@github\.com:)[\w.-]+/[\w.-]+", re.I)
 
 

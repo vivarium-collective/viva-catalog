@@ -10,7 +10,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "viva_marketplace/modules.json"
+      - "viva_catalog/modules.json"
       - "scripts/build_ecosystem_index.py"
 
 permissions:
@@ -43,7 +43,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add viva_marketplace/modules.json viva_marketplace/ecosystem-index.json
+          git add viva_catalog/modules.json viva_catalog/ecosystem-index.json
           if ! git diff --cached --quiet; then
             git commit -m "chore: refresh registry (topic discovery) + ecosystem-index [skip ci]"
             git push
@@ -54,8 +54,8 @@ jobs:
       - name: Assemble the public ledger (modules + index)
         run: |
           mkdir -p public
-          cp viva_marketplace/modules.json public/modules.json
-          cp viva_marketplace/ecosystem-index.json public/ecosystem-index.json
+          cp viva_catalog/modules.json public/modules.json
+          cp viva_catalog/ecosystem-index.json public/ecosystem-index.json
 
       - name: Publish ledger to gh-pages
         uses: peaceiris/actions-gh-pages@v4
