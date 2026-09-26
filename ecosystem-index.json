@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T17:51:26+00:00",
+  "generated_at": "2026-09-26T10:30:02+00:00",
   "n_repos": 50,
   "n_cloned": 50,
   "repos": [
@@ -794,6 +794,10 @@
           "description": "Step 4 \u2014 tf_condition_specs.  Re-fit per TF state + growth condition."
         },
         {
+          "name": "SimInputWriteStep",
+          "description": "Persist the ParCa chain's ``sim_data_root`` as a cache bundle."
+        },
+        {
           "name": "InitializeStep",
           "description": "Step 1 \u2014 initialize (scatter)."
         },
@@ -1094,7 +1098,7 @@
       ],
       "counts": {
         "processes": 21,
-        "steps": 82,
+        "steps": 83,
         "composites": 17,
         "studies": 43,
         "investigations": 5
@@ -2101,22 +2105,6 @@
       "cloned": true,
       "processes": [
         {
-          "name": "EpitheliumProcess",
-          "description": "CPMProcess + all-field per-cell readout, raw fields, point deposit,"
-        },
-        {
-          "name": "InfectionProcess",
-          "description": ""
-        },
-        {
-          "name": "ImmuneProcess",
-          "description": "Off-lattice immune agents that chemotax up a field gradient."
-        },
-        {
-          "name": "SystemicODEProcess",
-          "description": ""
-        },
-        {
           "name": "CPMProcess",
           "description": "process-bigraph wrapper around the Rust CPM engine, with a per-cell"
         },
@@ -2135,6 +2123,22 @@
         {
           "name": "AdaptiveReceptorSubcell",
           "description": "Receptor occupancy with slow adaptation (fold-change detection)."
+        },
+        {
+          "name": "EpitheliumProcess",
+          "description": "CPMProcess + all-field per-cell readout, raw fields, point deposit,"
+        },
+        {
+          "name": "InfectionProcess",
+          "description": ""
+        },
+        {
+          "name": "ImmuneProcess",
+          "description": "Off-lattice immune agents that chemotax up a field gradient."
+        },
+        {
+          "name": "SystemicODEProcess",
+          "description": ""
         }
       ],
       "steps": [],
