@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T10:30:02+00:00",
+  "generated_at": "2026-09-27T11:00:36+00:00",
   "n_repos": 50,
   "n_cloned": 50,
   "repos": [
@@ -3815,16 +3815,36 @@
           "description": "A Process that fires Milner-style reaction rules on each tick."
         }
       ],
-      "steps": [],
-      "composites": [],
-      "studies": [],
-      "investigations": [],
+      "steps": [
+        {
+          "name": "SubstrateCensus",
+          "description": "Reads the ``cell`` bigraph and emits scalar substrate counts."
+        }
+      ],
+      "composites": [
+        {
+          "name": "mapk_brs",
+          "description": "MAPK signalling cycle as a Milner-style Bigraphical Reactive System. MEK phosphorylates ERK in the cytoplasm; phospho-ERK translocates through the nuclear pore into the nucleus; nuclear phosphatases close the cycle. Seven redex \u2192 reactum rewrite rules fire under Gillespie SSA over a nested cell bigraph (Cell \u2283 Cytoplasm \u2283 {Nucleus, ERLumen})."
+        }
+      ],
+      "studies": [
+        {
+          "name": "mapk-brs-basics",
+          "description": "Reproduce the prior MAPK BRS live demo inside the workbench: run the MAPK\nsignalling cycle as a Milner-style Bigraphical Reactive System under\nGillespie SSA and surface its basic systems \u2014 the initial nested-cell\nbigraph, the seven redex\u2192reactum rewrite rules, the per-compartment\nsubstrate population time series, and the structural snapshots/animation of\nphospho-ERK translocating into the nucleus.\n"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "mapk-signalling",
+          "description": "MAPK signalling as a Bigraphical Reactive System"
+        }
+      ],
       "counts": {
         "processes": 1,
-        "steps": 0,
-        "composites": 0,
-        "studies": 0,
-        "investigations": 0
+        "steps": 1,
+        "composites": 1,
+        "studies": 1,
+        "investigations": 1
       }
     },
     {
