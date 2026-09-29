@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T12:19:42+00:00",
+  "generated_at": "2026-09-29T11:47:16+00:00",
   "n_repos": 50,
   "n_cloned": 50,
   "repos": [
@@ -1555,6 +1555,10 @@
         {
           "name": "BiRDTransportProcess",
           "description": "Transport-only reactor: emits ONLY the gas-liquid transport contribution."
+        },
+        {
+          "name": "BiRDColumn1DProcess",
+          "description": "1D depth-resolved (axial) bubble-column reactor."
         }
       ],
       "steps": [],
@@ -1574,6 +1578,10 @@
         {
           "name": "coupled_reactor_cell",
           "description": "Coupled bioreactor: BiRDTransportProcess (gas-liquid transport only, biomass-as-input) composed with MonodCellProcess (the trivial cell-side engine that owns biomass + O2/CO2 exchange) at shared dissolved-species stores. Exercises the reactor\u2192cell feedback a single-process reactor cannot.\n"
+        },
+        {
+          "name": "column_1d",
+          "description": "1D depth-resolved bubble-column bioreactor (BiRDColumn1DProcess): resolves the dissolved-O2, dissolved-CO2, and biomass profiles along the liquid height (n_nodes axial control volumes) evolving in time. Axial gradient driven by hydrostatic pressure, plug-flow gas-O2 depletion, and Fickian axial mixing; correlations shared with the 0D reactor. Emits depth x time profiles for spatial heatmaps plus volume-averaged scalars.\n"
         }
       ],
       "studies": [
@@ -1601,9 +1609,9 @@
         }
       ],
       "counts": {
-        "processes": 3,
+        "processes": 4,
         "steps": 0,
-        "composites": 4,
+        "composites": 5,
         "studies": 4,
         "investigations": 1
       }
