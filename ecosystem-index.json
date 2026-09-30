@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T11:47:16+00:00",
+  "generated_at": "2026-09-30T11:34:01+00:00",
   "n_repos": 50,
   "n_cloned": 50,
   "repos": [
@@ -2122,7 +2122,7 @@
         },
         {
           "name": "SBMLSubcell",
-          "description": "Per-cell SBML ODE via pbg-tellurium. The environmental ligand is pushed"
+          "description": "Per-cell SBML ODE via viva-tellurium. The environmental ligand is pushed"
         },
         {
           "name": "ReceptorSubcell",
