@@ -18,15 +18,6 @@
     "tags": []
   },
   {
-    "name": "v2ecoli",
-    "source": "https://github.com/vivarium-collective/v2ecoli.git",
-    "ref": "main",
-    "package": "v2ecoli",
-    "homepage": "https://github.com/vivarium-collective/v2ecoli",
-    "description": "Whole-cell E. coli model in Vivarium 2",
-    "tags": []
-  },
-  {
     "name": "viva-amici",
     "source": "https://github.com/vivarium-collective/viva-amici.git",
     "ref": "main",
