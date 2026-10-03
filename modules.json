@@ -405,15 +405,6 @@
     "tags": []
   },
   {
-    "name": "viva-uq",
-    "source": "https://github.com/vivarium-collective/viva-uq.git",
-    "ref": "main",
-    "package": "viva_uq",
-    "homepage": "https://github.com/vivarium-collective/viva-uq",
-    "description": "Portable forward uncertainty quantification (PCE + Sobol) for process-bigraph composites",
-    "tags": []
-  },
-  {
     "name": "viva-vcell-fvsolver",
     "source": "https://github.com/vivarium-collective/viva-vcell-fvsolver.git",
     "ref": "main",
