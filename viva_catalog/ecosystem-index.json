@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-02T11:33:26+00:00",
-  "n_repos": 49,
-  "n_cloned": 49,
+  "generated_at": "2026-10-03T10:47:54+00:00",
+  "n_repos": 48,
+  "n_cloned": 48,
   "repos": [
     {
       "name": "pbg-eps-biofilm",
@@ -3517,32 +3517,6 @@
         "composites": 5,
         "studies": 5,
         "investigations": 1
-      }
-    },
-    {
-      "name": "viva-uq",
-      "repo": "viva-uq",
-      "source": "https://github.com/vivarium-collective/viva-uq",
-      "homepage": "https://github.com/vivarium-collective/viva-uq",
-      "description": "Portable forward uncertainty quantification (PCE + Sobol) for process-bigraph composites",
-      "tags": [],
-      "cloned": true,
-      "processes": [
-        {
-          "name": "ToySim",
-          "description": "signal = k1**2 + 0.1*k2  (overwrite; no delta)."
-        }
-      ],
-      "steps": [],
-      "composites": [],
-      "studies": [],
-      "investigations": [],
-      "counts": {
-        "processes": 1,
-        "steps": 0,
-        "composites": 0,
-        "studies": 0,
-        "investigations": 0
       }
     },
     {
