@@ -243,11 +243,11 @@
     "tags": []
   },
   {
-    "name": "Viva-munk",
-    "source": "https://github.com/vivarium-collective/Viva-munk.git",
+    "name": "viva-munk",
+    "source": "https://github.com/vivarium-collective/viva-munk.git",
     "ref": "main",
-    "package": "Viva_munk",
-    "homepage": "https://github.com/vivarium-collective/Viva-munk",
+    "package": "viva_munk",
+    "homepage": "https://github.com/vivarium-collective/viva-munk",
     "description": "vivarium wrapper for pymunk",
     "tags": []
   },
