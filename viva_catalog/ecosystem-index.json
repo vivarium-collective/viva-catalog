@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T11:30:41+00:00",
+  "generated_at": "2026-10-05T12:59:10+00:00",
   "n_repos": 48,
   "n_cloned": 48,
   "repos": [
@@ -1448,7 +1448,7 @@
         },
         {
           "name": "InfectionProcess",
-          "description": ""
+          "description": "Influenza H -> I infection transition (Sego 2022 cellularization)."
         },
         {
           "name": "ImmuneProcess",
@@ -1456,7 +1456,7 @@
         },
         {
           "name": "SystemicODEProcess",
-          "description": ""
+          "description": "Global Price-2015 influenza immune ODE. Integrates the 10 systemic species {NB, N, T, X, A, B, P, W, G, O} with scipy LSODA over dt_seconds (default one 60 s MCS); the spatial species {H,I,M,K,E,L,C,V,DH} and derived vars {D, Sigma1, Sigma2, DI, R} are frozen as inputs. Emits the integrated state, the six Hill recruitment driver rates, and the T-activation signal sig_1 = a_11*T + a_12*D."
         }
       ],
       "steps": [],
@@ -1500,10 +1500,6 @@
         {
           "name": "gg1993",
           "description": "Glazier & Graner (1993) CPM example (single CPMProcess). The `study` parameter selects which of the 11 paper examples to encode; its exact energies, temperature, area constraint and initial condition come from viva_cpm_studies.gg1993.params.STUDIES[study]."
-        },
-        {
-          "name": "tstmd_coupled",
-          "description": "Real TST-MD coupled CPM + bead-spring ECM run (via viva-tstmd / Docker)."
         }
       ],
       "studies": [
@@ -1538,10 +1534,6 @@
         {
           "name": "vacancy_cavity",
           "description": "Simulate the sorting energies with A_l=20/A_d=40 and allowed vacancy nucleation to observe cavity formation at 200 MCS.\n"
-        },
-        {
-          "name": "tstmd-network-connectivity",
-          "description": "Sweep the requested crosslink count over {0, 500, 2000, 5000, 10000, 20000} through the real engine and measure, from the built network, the giant-component fraction (beads nodes; fiber bonds + crosslinks edges)."
         },
         {
           "name": "dispersal_separate",
@@ -1588,10 +1580,6 @@
           "description": "Author the acceptance contract for the adaptive-receptor rung of the\nfaithful chemotaxis mechanism ladder (viva_cpm_studies.model_building.\nmechanisms): three primary behavior tests plus a receptor-gating control,\nwith pass/fail bands set from real measured recruitment_index values\n(3-12 seeds) already gathered while calibrating the ladder. The loop\ndriver built in the next task runs mechanisms.simulate_condition against\nthese bands; this study does not itself constitute a completed run.\n"
         },
         {
-          "name": "tstmd-contraction-reorientation",
-          "description": "Run one seeded coupled simulation (single contractile cell, 1200 fiber strands, ~3750 crosslinks, 300 MCS) through the real engine and measure the cell-area and reorientation (q/q0) trajectories plus start/end snapshots."
-        },
-        {
           "name": "ifn-resistance",
           "description": "Wire the type-I IFN field (Task 3.2, `viva_cpm_studies/influenza/fields.py`\n`add_ifn_field`) and the pure per-cell resistance function (Task 3.3,\n`viva_cpm_studies/influenza/resistance.py::cell_resistance`) into a new\ndriver, `run.run_virus_infection_with_ifn` (Task 3.3), alongside the\nunmodified Increment-2 `run_virus_infection`, and compare their per-update\nseries (n_I, n_H, total_virus, plus `mean_resist` recorded only by the\nwith-IFN driver) at identical seed/parameters (Task 3.3's integration test\n`tests/test_influenza_virus_infection.py::test_ifn_resistance_slows_spread_vs_no_ifn`\nand the fuller with/without series in Task 3.3's report). A minimal\nin-package figure (`viva_cpm_studies/influenza/viz.py::ifn_resistance_figure`,\nTask 3.4) renders both series side by side plus the mean_resist trajectory.\n"
         },
@@ -1636,18 +1624,14 @@
         {
           "name": "chemotactic-recruitment",
           "description": "Chemotactic recruitment"
-        },
-        {
-          "name": "merks-ecm-reciprocity-2d",
-          "description": "Cell-ECM mechanical reciprocity (Merks 3D CPM-ECM, reproduced in 2D with the real engine)"
         }
       ],
       "counts": {
         "processes": 9,
         "steps": 0,
-        "composites": 11,
-        "studies": 29,
-        "investigations": 4
+        "composites": 10,
+        "studies": 27,
+        "investigations": 3
       }
     },
     {
@@ -2614,10 +2598,10 @@
       }
     },
     {
-      "name": "Viva-munk",
-      "repo": "Viva-munk",
-      "source": "https://github.com/vivarium-collective/Viva-munk",
-      "homepage": "https://github.com/vivarium-collective/Viva-munk",
+      "name": "viva-munk",
+      "repo": "viva-munk",
+      "source": "https://github.com/vivarium-collective/viva-munk",
+      "homepage": "https://github.com/vivarium-collective/viva-munk",
       "description": "vivarium wrapper for pymunk",
       "tags": [],
       "cloned": true,
