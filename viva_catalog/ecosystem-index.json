@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T12:16:34+00:00",
+  "generated_at": "2026-10-10T11:33:20+00:00",
   "n_repos": 48,
   "n_cloned": 48,
   "repos": [
@@ -618,6 +618,10 @@
       "cloned": true,
       "processes": [
         {
+          "name": "Tick",
+          "description": "Accumulate continuous simulation time into a float ``t`` store."
+        },
+        {
           "name": "Intervention",
           "description": "Apply a specific perturbation to one target store (see module docstring)."
         },
@@ -636,7 +640,7 @@
       "studies": [],
       "investigations": [],
       "counts": {
-        "processes": 2,
+        "processes": 3,
         "steps": 1,
         "composites": 0,
         "studies": 0,
