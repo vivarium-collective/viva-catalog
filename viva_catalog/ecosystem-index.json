@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T10:50:15+00:00",
+  "generated_at": "2026-10-15T10:32:34+00:00",
   "n_repos": 48,
   "n_cloned": 48,
   "repos": [
@@ -1669,6 +1669,10 @@
       "cloned": true,
       "processes": [
         {
+          "name": "AdvectionDiffusionProcess",
+          "description": "Transient advection-diffusion (+ optional Soret drift) over a"
+        },
+        {
           "name": "PeristalticWallProcess",
           "description": "Prescribed traveling-wave wall motion + harmonic-extension interior"
         },
@@ -1723,6 +1727,10 @@
         {
           "name": "mesh_convergence",
           "description": "Poisson L2 error vs mesh resolution -- FEM convergence (error \u221d h^(degree+1))."
+        },
+        {
+          "name": "reactive_transport",
+          "description": "Advection-diffusion-reaction via AdvectionDiffusionProcess \u2295 LogisticReactionProcess composition: a reacting solute advected up a Darcy upflow while it diffuses and grows (the vent/pore reactive-transport case). Real dolfinx FEM."
         },
         {
           "name": "turing_patterns",
@@ -1810,9 +1818,9 @@
         }
       ],
       "counts": {
-        "processes": 9,
+        "processes": 10,
         "steps": 3,
-        "composites": 13,
+        "composites": 14,
         "studies": 7,
         "investigations": 1
       }
