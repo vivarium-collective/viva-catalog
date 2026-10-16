@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T10:32:34+00:00",
+  "generated_at": "2026-10-16T10:20:04+00:00",
   "n_repos": 48,
   "n_cloned": 48,
   "repos": [
@@ -1719,6 +1719,10 @@
           "description": "Run the full residual-based Doerfler-marking AMR loop on the L-shaped"
         },
         {
+          "name": "MultisolutePoreStep",
+          "description": "Run a multisolute Soret + adsorption + degradation transport simulation"
+        },
+        {
           "name": "PorousFlowStep",
           "description": "Steady Stokes (creeping) flow through a periodic circular-pillar"
         }
@@ -1759,6 +1763,10 @@
         {
           "name": "adaptive_refinement",
           "description": "Residual-based adaptive mesh refinement (AMR) on the L-shaped domain's re-entrant-corner Laplace singularity -- Doerfler marking concentrates elements at the corner, recovering near-optimal O(dofs^-1/2) energy-norm convergence vs the O(dofs^-1/3) rate uniform refinement is capped at by the r^(2/3) corner singularity."
+        },
+        {
+          "name": "multisolute_pore",
+          "description": "High-fidelity 3-D reference for multisolute thermophoretic localization: a representative converging-diverging pore (dolfinx FEM, gmsh tetrahedral mesh) in which several solutes are transported SIMULTANEOUSLY, each with its own diffusivity, Soret coefficient, adsorption and degradation, under a shared flow + hot-inlet/cold-outlet temperature field. Reports per-species trap enrichment (peak/feed) and the mixture's worst-pair spatial co-localization -- whether the chemically-necessary mixture concentrates together or fractionates. Runs under viva-fenics's pixi env (dolfinx)."
         },
         {
           "name": "navier_stokes",
@@ -1819,8 +1827,8 @@
       ],
       "counts": {
         "processes": 10,
-        "steps": 3,
-        "composites": 14,
+        "steps": 4,
+        "composites": 15,
         "studies": 7,
         "investigations": 1
       }
