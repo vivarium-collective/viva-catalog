@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T10:20:04+00:00",
+  "generated_at": "2026-10-17T09:53:36+00:00",
   "n_repos": 48,
   "n_cloned": 48,
   "repos": [
@@ -1705,6 +1705,14 @@
           "description": "Incompressible flow past a cylinder in a channel (DFG 2D-2 benchmark)"
         },
         {
+          "name": "FenicsReactiveTransportProcess",
+          "description": "Real dolfinx FEM advection-diffusion vent-ocean cross-section on the"
+        },
+        {
+          "name": "FenicsThermophoreticTrapProcess",
+          "description": "Real dolfinx FEM thermophoretic trap on the ``spatial_transport`` face,"
+        },
+        {
           "name": "DiffusionProcess",
           "description": "Transient diffusion (heat equation) over a unit-square mesh, solved"
         }
@@ -1826,7 +1834,7 @@
         }
       ],
       "counts": {
-        "processes": 10,
+        "processes": 12,
         "steps": 4,
         "composites": 15,
         "studies": 7,
@@ -3640,7 +3648,7 @@
         },
         {
           "name": "StochasticLineTension",
-          "description": ""
+          "description": "Ornstein-Uhlenbeck line tension: each edge's stochastic share ``x`` follows"
         },
         {
           "name": "DifferentialAdhesion",
@@ -3648,15 +3656,15 @@
         },
         {
           "name": "CellJamming",
-          "description": ""
+          "description": "At ``trigger_time``, starts the ``cell_jamming`` ramp of every cell's"
         },
         {
           "name": "DirectionalLineTension",
           "description": "Planar-polarised junction tension: line tension graded by the angle"
         },
         {
-          "name": "TumorCoupling",
-          "description": "Drive tyssue cell events from COPASI reaction fluxes (see module docstring)."
+          "name": "SBMLCellCycle",
+          "description": "Per-cell SBML ODE model whose cell-cycle phase decides growth and division."
         },
         {
           "name": "Gillespie",
@@ -3666,11 +3674,11 @@
       "steps": [
         {
           "name": "ParameterGradient",
-          "description": "Creates a 1D gradient of chemical or mechanical signal"
+          "description": "Creates a 1D gradient of chemical or mechanical signal."
         },
         {
           "name": "AnisotropicTension",
-          "description": ""
+          "description": "Two-level line tension by edge orientation, shipped as ``update_parameter``"
         }
       ],
       "composites": [
@@ -3695,10 +3703,6 @@
           "description": "Baseline tyssue vertex model on a cylindrical (vessel) sheet, integrated with the generalized Euler solver. No behaviors \u2014 pure mechanical relaxation."
         },
         {
-          "name": "tumor",
-          "description": "Breast-cancer population ODE (BIOMD0000000903 in COPASI) coupled to a flat 2D tyssue sheet \u2014 per-step birth/death fluxes drive discrete division / apoptosis / differentiation on the mesh (tumor / healthy / stem cell types)."
-        },
-        {
           "name": "stochastic",
           "description": "Flat (square) sheet with Ornstein-Uhlenbeck stochastic line-tension fluctuations on every edge, producing jittery cell-shape dynamics / migration."
         },
@@ -3712,7 +3716,7 @@
         },
         {
           "name": "epithelium_2d",
-          "description": "Baseline flat (square) 2D sheet epithelium \u2014 pure mechanical relaxation, no tumor coupling. Control for the tumor-composite comparison study."
+          "description": "Baseline flat (square) 2D sheet epithelium \u2014 pure mechanical relaxation."
         },
         {
           "name": "HRA intestinal crypt (2D)",
@@ -3725,14 +3729,6 @@
       ],
       "studies": [
         {
-          "name": "tumor-composite",
-          "description": "Build the COPASI-coupled tumor composite and demonstrate, through five visualizations, that BIOMD0000000903 drives discrete cell-fate dynamics on a tyssue 2D epithelial sheet."
-        },
-        {
-          "name": "tumor-vs-baseline",
-          "description": "Compare the COPASI-coupled tumor composite against a mechanics-only baseline epithelial sheet of identical geometry, isolating the effect of the tumor coupling."
-        },
-        {
           "name": "lumen-liftoff",
           "description": "Build the 3D monolayer lift-off composite (a flat sheet extruded into a polyhedral monolayer with an apical-edge \"purse-string\" line tension) and demonstrate, through 3D animation, a side profile, and morphology time-series, that the apical surface deforms out of plane against cell-volume elasticity."
         }
@@ -3741,18 +3737,14 @@
         {
           "name": "monolayer-liftoff",
           "description": "3D monolayer lift-off \u2014 apical tension drives epithelial folding"
-        },
-        {
-          "name": "tumor-tyssue",
-          "description": "Tumor population dynamics on a tyssue 2D epithelium"
         }
       ],
       "counts": {
         "processes": 9,
         "steps": 2,
-        "composites": 12,
-        "studies": 3,
-        "investigations": 2
+        "composites": 11,
+        "studies": 1,
+        "investigations": 1
       }
     }
   ]
