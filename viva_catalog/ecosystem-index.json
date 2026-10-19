@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-19T11:31:33+00:00",
-  "n_repos": 48,
-  "n_cloned": 48,
+  "generated_at": "2026-10-19T13:11:50+00:00",
+  "n_repos": 54,
+  "n_cloned": 54,
   "repos": [
     {
       "name": "pbg-eps-biofilm",
@@ -645,6 +645,151 @@
         "composites": 0,
         "studies": 0,
         "investigations": 0
+      }
+    },
+    {
+      "name": "viva-bbe-systems",
+      "repo": "viva-bbe-systems",
+      "source": "https://github.com/vivarium-collective/viva-bbe-systems",
+      "homepage": "https://github.com/vivarium-collective/viva-bbe-systems",
+      "description": "Minimal brain-body-environment models reproduced as runnable process-bigraph composites",
+      "tags": [],
+      "cloned": true,
+      "processes": [
+        {
+          "name": "CategoricalBodyProcess",
+          "description": ""
+        },
+        {
+          "name": "CTRNNProcess",
+          "description": "CTRNN as a process-bigraph Process."
+        },
+        {
+          "name": "ForagerBodyProcess",
+          "description": ""
+        },
+        {
+          "name": "FallingObjectEnvironment",
+          "description": ""
+        },
+        {
+          "name": "RelationalBodyProcess",
+          "description": ""
+        },
+        {
+          "name": "WalkerBodyProcess",
+          "description": ""
+        }
+      ],
+      "steps": [],
+      "composites": [
+        {
+          "name": "categorical_perception",
+          "description": "Beer-2003 active categorical perception: a brain-body-environment agent (FallingObjectEnvironment -> CategoricalBodyProcess -> CTRNNProcess) configured from the committed evolved seed. It catches circles and avoids diamonds. offset/shape select the trial."
+        },
+        {
+          "name": "walker",
+          "description": "Beer & Gallagher 1992 legged CPG: CTRNNProcess -> WalkerBodyProcess (one leg, flat ground), from the committed walker seed. Walks forward with a rhythmic gait."
+        },
+        {
+          "name": "forager",
+          "description": "Agmon & Beer 2014 action-switching forager: ChemotaxisEnv+Metabolism -> ForagerBodyProcess -> CTRNNProcess, from the committed M2 seed. Shuttles between two resources to keep both nutrients alive."
+        },
+        {
+          "name": "relational",
+          "description": "Williams Beer Gasser 2008 relational categorization: TwoObjectStream -> RelationalBodyProcess -> CTRNNProcess, from the committed seed. Catches the 2nd object iff larger than the 1st (requires memory of the 1st across the ISI)."
+        },
+        {
+          "name": "ctrnn_parameter_space",
+          "description": "A bare CTRNN (Beer 1995) exploring its own dynamics -- the substrate for the parameter-space bifurcation/equilibria studies."
+        }
+      ],
+      "studies": [
+        {
+          "name": "as-forage-and-survival",
+          "description": "Forage Both & Outlive a Non-Mover"
+        },
+        {
+          "name": "as-switching-dynamics",
+          "description": "The Dynamical Signature of Switching"
+        },
+        {
+          "name": "as-morphology-comparison",
+          "description": "Three Morphologies' Sensing"
+        },
+        {
+          "name": "walk-forward",
+          "description": "The Walker Walks Forward"
+        },
+        {
+          "name": "cpg-limit-cycle",
+          "description": "The CPG's Limit Cycle"
+        },
+        {
+          "name": "gait-and-velocity",
+          "description": "Gait Quantified \u2014 Stride, Duty, Velocity"
+        },
+        {
+          "name": "cat-catch-and-avoid",
+          "description": "Replay the committed seed over the five training offsets \u00d7 two shapes and\nmeasure the final horizontal distance to the object for each.\n"
+        },
+        {
+          "name": "cat-decision-dynamics",
+          "description": "Record the neuron outputs over a circle trial and a diamond trial at offset +3\nand compare them, including the two motor neurons' phase trajectory.\n"
+        },
+        {
+          "name": "cat-categorization-map",
+          "description": "Sweep object offset from \u22128 to +8 for both shapes, measure final distance, and\nrender the categorization map.\n"
+        },
+        {
+          "name": "param-space-codim1-bifurcations",
+          "description": "Sweep the self-weight of a single center-crossing neuron, count equilibria and\nclassify their stability at each value, and render the bifurcation diagram.\n"
+        },
+        {
+          "name": "param-space-equilibria-and-nullclines",
+          "description": "Compute the nullclines and equilibria of the 2-neuron net [[4.5,1],[-1,4.5]]\nwith center-crossing biases, classify the equilibrium by Jacobian eigenvalues,\nand confirm sustained oscillation of the integrated trajectory.\n"
+        },
+        {
+          "name": "param-space-codim2-structure",
+          "description": "Compute the equilibrium count over a 2-D grid of (self-weight, bias) for a\nsingle neuron and render the parameter-plane map, identifying the bistable\nwedge.\n"
+        },
+        {
+          "name": "memory-dynamics",
+          "description": "Object 1 Held in Memory"
+        },
+        {
+          "name": "relative-size-discrimination",
+          "description": "Catch the Larger, Avoid the Smaller"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "action-switching",
+          "description": "Action Switching in Embodied Agents (Agmon & Beer 2014)"
+        },
+        {
+          "name": "legged-locomotion",
+          "description": "Legged Locomotion \u2014 a CTRNN Central Pattern Generator (Beer & Gallagher 1992)"
+        },
+        {
+          "name": "active-categorical-perception",
+          "description": "Active Categorical Perception (Beer 2003)"
+        },
+        {
+          "name": "ctrnn-parameter-space",
+          "description": "CTRNN Parameter-Space Structure"
+        },
+        {
+          "name": "relational-categorization",
+          "description": "Relational Categorization \u2014 Memory in Embodied Dynamics (Williams, Beer & Gasser 2008)"
+        }
+      ],
+      "counts": {
+        "processes": 6,
+        "steps": 0,
+        "composites": 5,
+        "studies": 14,
+        "investigations": 5
       }
     },
     {
@@ -1660,6 +1805,95 @@
       }
     },
     {
+      "name": "viva-equilibrator",
+      "repo": "viva-equilibrator",
+      "source": "https://github.com/vivarium-collective/viva-equilibrator",
+      "homepage": "https://github.com/vivarium-collective/viva-equilibrator",
+      "description": "Process-bigraph wrapper for eQuilibrator (component-contribution transformed Gibbs energies)",
+      "tags": [],
+      "cloned": true,
+      "processes": [],
+      "steps": [
+        {
+          "name": "EquilibratorThermoStep",
+          "description": "Real eQuilibrator feasibility gate over a configured reaction set."
+        }
+      ],
+      "composites": [
+        {
+          "name": "equilibrator_feasibility_gate",
+          "description": "Real eQuilibrator \u0394G' feasibility gate over H2-driven reductive CO2 fixation (formate/acetate/pyruvate) at a fixed vent condition."
+        }
+      ],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 1,
+        "composites": 1,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "viva-expressions",
+      "repo": "viva-expressions",
+      "source": "https://github.com/vivarium-collective/viva-expressions",
+      "homepage": "https://github.com/vivarium-collective/viva-expressions",
+      "description": "Assemble process-bigraph models of dynamical systems from expected outputs and behavior",
+      "tags": [],
+      "cloned": true,
+      "processes": [
+        {
+          "name": "OdeProcess",
+          "description": "Integrate ``d(state)/dt = rhs(state, inputs, params)`` over each interval."
+        }
+      ],
+      "steps": [
+        {
+          "name": "MathExpressionStep",
+          "description": ""
+        }
+      ],
+      "composites": [
+        {
+          "name": "logistic_growth",
+          "description": "Logistic growth dN/dt = r*N*(1-N/K) integrated by OdeProcess; closed-form solution N(t)=K/(1+((K-N0)/N0)*exp(-r t)) is the validation oracle."
+        },
+        {
+          "name": "lotka_volterra",
+          "description": "Lotka-Volterra predator-prey dx/dt = a*x - b*x*y, dy/dt = d*x*y - g*y integrated by OdeProcess; oracle is the first integral V(x,y) = d*x - g*ln(x) + b*y - a*ln(y), conserved exactly along trajectories."
+        },
+        {
+          "name": "michaelis_menten",
+          "description": "Michaelis-Menten substrate depletion dS/dt = -Vmax*S/(Km+S), dP/dt = +Vmax*S/(Km+S) integrated by OdeProcess; oracles are the closed form S(t) = Km*W((S0/Km)*exp((S0 - Vmax*t)/Km)) (Lambert W) and the conserved total S+P = S0."
+        },
+        {
+          "name": "quadratic_blowup",
+          "description": "Finite-time singularity dx/dt = x**2 integrated by OdeProcess; exact solution x(t) = x0/(1 - x0*t) diverges at t* = 1/x0. Negative control for the max_abs guard: the run must FAIL with a max_abs RuntimeError shortly after t*, never stall or return a finite state past t*."
+        }
+      ],
+      "studies": [
+        {
+          "name": "expression-kinetics-analytic",
+          "description": ""
+        }
+      ],
+      "investigations": [
+        {
+          "name": "simulator-benchmarking",
+          "description": "simulator-benchmarking"
+        }
+      ],
+      "counts": {
+        "processes": 1,
+        "steps": 1,
+        "composites": 4,
+        "studies": 1,
+        "investigations": 1
+      }
+    },
+    {
       "name": "viva-fenics",
       "repo": "viva-fenics",
       "source": "https://github.com/vivarium-collective/viva-fenics",
@@ -1838,6 +2072,560 @@
         "steps": 4,
         "composites": 15,
         "studies": 7,
+        "investigations": 1
+      }
+    },
+    {
+      "name": "viva-genesis",
+      "repo": "viva-genesis",
+      "source": "https://github.com/vivarium-collective/viva-genesis",
+      "homepage": "https://github.com/vivarium-collective/viva-genesis",
+      "description": "Origins-of-life hydrothermal-vent simulation campaign in Vivarium: geochemistry \u2192 protometabolism \u2192 protocells \u2192 heredity \u2192 autonomy.",
+      "tags": [],
+      "cloned": true,
+      "processes": [
+        {
+          "name": "AgentGrowthProcess",
+          "description": "Advance every individual toward division by adding ``growth_rate * interval``"
+        },
+        {
+          "name": "LineageStatsProcess",
+          "description": "Read-only lineage statistics over the agents map: the population size, the"
+        },
+        {
+          "name": "MultisolutePoreSurrogateProcess",
+          "description": "Reduced multisolute pore-network surrogate (uv ``.venv``, no dolfinx)."
+        },
+        {
+          "name": "FenicsMultisolutePoreProcess",
+          "description": "High-fidelity 3-D FEM reference for multisolute localization: drives"
+        },
+        {
+          "name": "ConservationLedgerProcess",
+          "description": "Integrate published source rates and audit them against the accumulated pools."
+        },
+        {
+          "name": "ChargeLedgerProcess",
+          "description": "Charge + electron-count ledger for the electrochemical interface (Phase 2)."
+        },
+        {
+          "name": "RewriteLedgerProcess",
+          "description": "Conservation audit for the Phase-5 structural rewrites (``_add`` /"
+        },
+        {
+          "name": "NetworkLedgerProcess",
+          "description": "Element + free-energy ledger over an open chemical network (Phase 3)."
+        },
+        {
+          "name": "FreeEnergyLedgerProcess",
+          "description": "Free-energy ledger of an individual's power budget (Phase 6)."
+        },
+        {
+          "name": "InformationLedgerProcess",
+          "description": "Information ledger \u2014 heritable bits per unit energy (Phase 7)."
+        },
+        {
+          "name": "EcologyElementLedgerProcess",
+          "description": "Element ledger ACROSS agents and fields (Phase 8)."
+        },
+        {
+          "name": "AmphiphileSynthesisProcess",
+          "description": "Endogenous amphiphile production from the dissolved carbon pool."
+        },
+        {
+          "name": "ThioesterAminothiolMembraneProcess",
+          "description": "A second boundary class on the ``boundary`` face: a thioester/aminothiol"
+        },
+        {
+          "name": "LineageStateProcess",
+          "description": "Read the lineage's heredity class and the cell's live pools into the"
+        },
+        {
+          "name": "ActiveImportProcess",
+          "description": "Fire the :class:`~viva_genesis.ecology.reactive_system.ActiveUptakeRule`"
+        },
+        {
+          "name": "MaintenanceDemandProcess",
+          "description": "Price the lineage's upkeep under one of three maintenance laws (W per"
+        },
+        {
+          "name": "LineageSupplyProcess",
+          "description": "Feed the heredity class's shared pools and energy store from the"
+        },
+        {
+          "name": "PopulationBudgetProcess",
+          "description": "Carry the lineage's net budget into a population of real individuals."
+        },
+        {
+          "name": "EnvironmentalRelaxationProcess",
+          "description": "Relaxes the geological support the lineage lives on \u2014 the external gradient,"
+        },
+        {
+          "name": "OffGradientPersistenceProcess",
+          "description": "A lineage's co-limited free-energy + resource budget under relaxing geological"
+        },
+        {
+          "name": "AmphiphileChainExtensionProcess",
+          "description": "Explicit fatty-acid chain elongation -> chain-length distribution + CAC clearance."
+        },
+        {
+          "name": "ProtocellAssemblyProcess",
+          "description": "Coarse-grained physico-chemical model of mixed single-chain amphiphile"
+        },
+        {
+          "name": "MicrokineticCarbonFixationProcess",
+          "description": "Adsorbate microkinetics of CO2 reduction on the Fe/Ni-sulfide surface"
+        },
+        {
+          "name": "PhGradientNernstPlanckProcess",
+          "description": "Real 1-D FiPy electroneutral Nernst-Planck proton electrodiffusion across"
+        },
+        {
+          "name": "ButlerVolmerCarbonFixationProcess",
+          "description": "Carbon fixation as a galvanic cell across the Fe/Ni-sulfide wall: Nernst"
+        },
+        {
+          "name": "ProtonBudgetProcess",
+          "description": "Conserved proton reservoir coupling the pH-gradient source to carbon"
+        },
+        {
+          "name": "MineralConductivityProcess",
+          "description": "Derives the usable fraction of the geochemical gradient from the wall's circuit:"
+        },
+        {
+          "name": "EmpiricalCarbonFixationProcess",
+          "description": "og-01's lab-calibrated gated kinetics, adapted to the carbon_fixation"
+        },
+        {
+          "name": "VentReactorReproductionProcess",
+          "description": "Reduced vent\u2013ocean mixing reactor."
+        },
+        {
+          "name": "FipyReactiveTransportProcess",
+          "description": "Real 2-D FiPy advection\u2013diffusion\u2013reaction vent\u2013ocean cross-section."
+        },
+        {
+          "name": "FipyUniformUpflowTransportProcess",
+          "description": "The same real FiPy FVM solve with the Darcy-Boussinesq convection term"
+        },
+        {
+          "name": "SurrogateThermophoreticTrapProcess",
+          "description": "Reduced surrogate for the thermophoretic trap (plan 4.6): the closed-form"
+        },
+        {
+          "name": "PoreEnrichedFeedProcess",
+          "description": "Scale a base precursor feed by the pore enrichment -> pore-local feed."
+        },
+        {
+          "name": "ThermophoreticTrapProcess",
+          "description": "Real 1-D FiPy finite-volume accumulation column for the Baaske thermal"
+        },
+        {
+          "name": "GradientOnlyWorkProcess",
+          "description": "Direct gradient-to-work coupling with no carrier store (study-35 matched null)."
+        },
+        {
+          "name": "_EnergyCouplingBase",
+          "description": "The shared per-individual power-budget engine; subclasses fix the store."
+        },
+        {
+          "name": "ThioesterCarrierCycleProcess",
+          "description": "Named thioester/acyl-phosphate carrier cycle with a closed free-energy ledger."
+        },
+        {
+          "name": "BioenergeticSelectionProcess",
+          "description": "Deterministic replicator-dynamics evolutionary control loop over membrane"
+        },
+        {
+          "name": "EnvironmentalDeclineProcess",
+          "description": "Ramps the external geochemical gradient down over the run \u2014 the environment"
+        },
+        {
+          "name": "GeochemicalDriveProcess",
+          "description": "The sustained environmental free-energy supply \u2014 the vent's geochemical /"
+        },
+        {
+          "name": "ProtoEnergyCurrencyProcess",
+          "description": "A pre-ATP energy currency as explicit free-energy bookkeeping."
+        },
+        {
+          "name": "LineageReplicatorProcess",
+          "description": "Agent-based heredity lineage: individuals carry a chemical phenotype inherited"
+        },
+        {
+          "name": "_HeredityProcessBase",
+          "description": "One heredity class on the face: shared pools in (molar) + energy store (J) +"
+        },
+        {
+          "name": "BudgetFeedProcess",
+          "description": "Chemostat feed of the shared precursor pools and a fixed-power energy supply."
+        },
+        {
+          "name": "HeredityReplicatorProcess",
+          "description": "Real libRoadRunner quasispecies replicator for the Eigen error threshold."
+        },
+        {
+          "name": "CrossFeedingMetacommunityProcess",
+          "description": "Deterministic cross-feeding metacommunity over N connected compartments."
+        },
+        {
+          "name": "StochasticProtocellEcologyProcess",
+          "description": "Lightweight Gillespie-SSA cross-feeding protocell community (Option B)."
+        },
+        {
+          "name": "ProtocellNetworkProcess",
+          "description": "The Phase-3 reaction universe inside ONE protocell, masked to a lineage"
+        },
+        {
+          "name": "ProtocellNullNetworkProcess",
+          "description": "The ``null_network`` class of the proto_ecology face: the Phase-3 matched"
+        },
+        {
+          "name": "ReactionAtlasBuildProcess",
+          "description": "Build the atlas from the measured-tier seed; emit coverage + leakage metrics."
+        },
+        {
+          "name": "MineralSurfaceDynamicsProcess",
+          "description": "Evolve pore space + catalytic accessibility of a reactive mineral interface."
+        },
+        {
+          "name": "SerpentinizationReproductionProcess",
+          "description": "Reduced serpentinization source: ``(T, flow) -> H2 / alkalinity / heat``."
+        },
+        {
+          "name": "PhosphorusSpeciationProcess",
+          "description": "Real libRoadRunner P-speciation network (phosphate <-> polyphosphate <->"
+        },
+        {
+          "name": "ReducedNitrogenProductionProcess",
+          "description": "FeS-mediated reduction of NO3-/NO2- (and minor N2 fixation) to NH4+, with"
+        },
+        {
+          "name": "PhreeqcSerpentinizationProcess",
+          "description": "Real PHREEQC serpentinization source: ``(T, flow, DIC) -> H2 / alkalinity / heat``."
+        },
+        {
+          "name": "HeredityPopulationProcess",
+          "description": "Wright-Fisher selection on an inherited network-composition trait."
+        },
+        {
+          "name": "GrowthDivisionProcess",
+          "description": "Amphiphile-driven membrane growth + division at a measured critical geometry."
+        },
+        {
+          "name": "OsmoticGrowthDivisionProcess",
+          "description": "Couples an internal autocatalytic osmolyte source to compartment osmotic"
+        },
+        {
+          "name": "RTCANetworkProcess",
+          "description": "The curated mechanistic rTCA network on the real libRoadRunner engine \u2014"
+        },
+        {
+          "name": "RTCANullProcess",
+          "description": "Degree-preserving matched null of the rTCA network (same compounds,"
+        },
+        {
+          "name": "RoadRunnerNetworkProcess",
+          "description": "Real libRoadRunner rTCA-fragment CSTR. Reads the upstream feed"
+        },
+        {
+          "name": "ReactionUniverseProcess",
+          "description": "Rule-generated open C/H/O reaction universe integrated by the real"
+        },
+        {
+          "name": "NullNetworkProcess",
+          "description": "Matched null control: the universe's compounds, reaction count, arity,"
+        },
+        {
+          "name": "CarbonFixationProcess",
+          "description": "Lab-calibrated mineral-catalyzed CO2 reduction, gated by thermodynamic"
+        }
+      ],
+      "steps": [
+        {
+          "name": "BoundaryFormationStep",
+          "description": "``_add`` an individual to the agents map when the endogenous amphiphile"
+        },
+        {
+          "name": "DivisionStep",
+          "description": "``_divide`` any individual whose division_state has reached 1.0. The split"
+        },
+        {
+          "name": "LysisStep",
+          "description": "``_remove`` individuals whose boundary integrity has collapsed (osmotic"
+        },
+        {
+          "name": "ExtinctionStep",
+          "description": "``_remove`` individuals that have starved below a viable matter floor (no"
+        },
+        {
+          "name": "AblationStep",
+          "description": "Schedule the withdrawal of the three geological drivers."
+        },
+        {
+          "name": "GeologicalDriverStep",
+          "description": "Turn the support fractions into the physical drivers the phases read."
+        },
+        {
+          "name": "EnrichmentAdapterStep",
+          "description": "Adapt a single-tracer ``localization`` class (og-03's column and its"
+        },
+        {
+          "name": "AutonomyBudgetStep",
+          "description": "Read what the phases deliver and publish the co-limited budget and the"
+        },
+        {
+          "name": "StructuralEventLogStep",
+          "description": "Record every structural transition of the integrated world as an event:"
+        },
+        {
+          "name": "HeredityAttachmentStep",
+          "description": "Attach heredity only when the matched budgets and the class's copy fidelity allow it."
+        },
+        {
+          "name": "SpatialCouplingStep",
+          "description": "Couple the agents onto the pore field and fire the exchange rules."
+        },
+        {
+          "name": "EcologyReducerStep",
+          "description": "Recompute og-07's gate readouts from the agents map, with capabilities"
+        }
+      ],
+      "composites": [
+        {
+          "name": "protometabolic_network",
+          "description": "A reusable protometabolic reaction-network module. A genuine libRoadRunner/Tellurium SBML ODE integration (needs tellurium) of an rTCA-fragment CSTR (pyruvate carboxylation + lumped autocatalytic rTCA turn + reductive branch) fed the og-01 reduced-carbon products under continuous feed+washout, with a networkx connectivity check on the species-reaction graph (needs networkx). Emergent: sustained carbon throughput, an autocatalytic motif (gain>1), and a connected reaction network."
+        },
+        {
+          "name": "bioenergetic_internalization",
+          "description": "A reusable bioenergetic-internalization module (Module H). An evolutionary control loop (replicator dynamics, Sojo-2014 leaky-membrane fitness) under a declining external gradient: as the geochemical pmf collapses, an efficient-pump population internalizes gradient generation and persists, while a weak-pump control collapses (the Sojo constraint). catalyst_efficiency sets the arm. Coarse-grained, deterministic reproduction (not wrapped ALife)."
+        },
+        {
+          "name": "integrated_autonomy_world",
+          "description": "og-08's off-gradient test inside ONE persistent world assembled from the merged phases: the lineage lives on what real processes deliver \u2014 the external pmf tapped through its membrane leak and an internal store charged by the drive its live substrate pool sustains (an energy_coupling class, the STORAGE MODEL), organic carbon reaching it through a localization class (the TRANSPORT LAW) and the Phase-8 exchange rules at a boundary class's leakiness (the PERMEABILITY ASSUMPTION), the Phase-3 universe inside it catalysed by the mineral surface or by the machinery its heredity class holds (the INHERITANCE CLASS), upkeep priced by a MAINTENANCE LAW, and a population of individuals that divide and go extinct by structural rewrites. An AblationStep withdraws the gradient, the mineral access and the feed; pump (coupling_activity), importer (the ActiveUptakeRule) and heredity (attachment) are the three innovations; environment=generic is the og-adv reject control. Seven ledgers run beside the world and a structural-event log records every event. The vent endmembers are one Phase-1 posterior draw (vg-data integrated_autonomy)."
+        },
+        {
+          "name": "metabolite_exchange_community",
+          "description": "og-07's metacommunity rebuilt on real chemistry (Phase 8): N protocells in the agents map, each running the Phase-3 rule-generated reaction universe (libRoadRunner, eQuilibrator dG') masked to its lineage's catalyst repertoire (fixer: CO2 reduction + carboxylations; reducer: hydrogenations; condenser: aldol / formose; generalist: all), pointed at fixed cells of a pore whose background the Phase-4 localization class shapes species by species. A SpatialCouplingStep fires the exchange rules of a bigraphical reactive system every tick (uptake / secretion through size- and charge-dependent permeabilities, pore diffusion, feed / washout) and counts the firings; an EcologyReducerStep recomputes og-07's gate readouts from the agents (present vs produced functions); an EcologyElementLedgerProcess audits C / N / P over agents + field. coupling=private is the isolated counterfactual; model_proto_ecology=null_network the rewired control."
+        },
+        {
+          "name": "heredity_lineage_comparison",
+          "description": "A reusable agent-based heredity-lineage comparison (Module K). Individuals carry a chemical phenotype inherited at fission into a real lineage tree, with a module-specific mechanism: template Eigen ratchet (Q=fidelity^length), compositional GARD split (length-independent, no template), a template-focused hybrid, or a severed non-heritable control. Emits population mean function, functional fraction, size, lineage depth and realized heritability. Reproduces the Eigen error catastrophe at the agent level AND shows compositional heredity escaping the length catastrophe \u2014 heredity need not presume a long high-fidelity template."
+        },
+        {
+          "name": "mixed_amphiphile_protocell",
+          "description": "A reusable mixed-amphiphile protocell module (Module G). Coarse-grained vesicle self-assembly + permeability calibrated to Jordan 2019: mixed single-chain amphiphiles broaden the pH / salt / divalent stability window and form vesicles that retain chemistry while staying permeable to the gradient (individuality without isolation). mix_fraction\u22480 / high salt / acidic pH give the controls. Coarse-grained reproduction (not wrapped MD)."
+        },
+        {
+          "name": "serpentinizing_vent_reactor",
+          "description": "A reusable alkaline-vent reactor module. Module A = genuine PHREEQC serpentinization (phreeqpython + vendored llnl.dat): olivine dissolution + serpentine/brucite/magnetite equilibrium gives dissolved H2 (reducing power), alkalinity, heat, pe, and a charge-balanced fluid. Module B = genuine FiPy finite-volume advection-diffusion-reaction column transporting those sources across the vent-ocean interface and setting outlet T/pH/porosity. PHREEQC conserves mass+charge and FiPy's FVM conserves flux, satisfying the og-00 contract invariants; the coupled model is driven by a real IPhreeqc speciation (needs phreeqpython) and a real FiPy FVM solve (needs fipy)."
+        },
+        {
+          "name": "serpentinizing_vent_reactor_reduced",
+          "description": "Reduced tuned-relaxation vent reactor (fallback / A-B comparison): Gaussian serpentinization source feeding a first-order relaxation box. Runs anywhere (no phreeqpython/fipy). NOT real geochemistry."
+        },
+        {
+          "name": "electrochemical_carbon_fixation",
+          "description": "og-01's H2/pH-driven carbon fixation rebuilt as the Phase-2 electrochemical interface: the carbon-fixation mechanism is a model CLASS on the carbon_fixation face (model_carbon_fixation: empirical | butler_volmer | microkinetic). The empirical class is og-01's lab-calibrated gated kinetics driven by the real FiPy Nernst-Planck proton gradient + proton budget, with gradient_efficiency DERIVED from the wall's circuit (MineralConductivityProcess: conductivity, thickness, porosity vs the electrodes' charge-transfer resistance) instead of a knob. The butler_volmer class solves the vent wall as a galvanic cell each tick (Nernst half-cell potentials from the fluid redox state, Butler-Volmer kinetics scaled by catalyst activity / Ni fraction / T, Koutecky-Levich transport limits, the ohmic mineral + ionic path, the faradaic split over formate / acetate / pyruvate calibrated to the Altair-2025 current window and the Preiner-2020 yield hierarchy). The microkinetic class (CatMAP/Cantera) builds here and runs under pixi. Every class publishes the thermodynamic / electrical / catalytic / transport loss fractions and a limitation code, and a ChargeLedgerProcess audits its electron balance (Kirchhoff residual, faradaic efficiency <= 1, current-voltage residual -> ledger/charge_ledger_ok). Free parameters are the vg-data package 'electrochemical_interface'."
+        },
+        {
+          "name": "heredity_module_comparison",
+          "description": "A reusable heredity-module comparison (Module J). A genuine libRoadRunner/Tellurium SBML ODE integration (needs tellurium) of a quasispecies replicator (Eigen error threshold): a heredity module (RNA-like / peptide / low-fidelity / non-heritable) replicates a polymer with whole-sequence fidelity Q = fidelity^length; above the threshold the functional information is retained and inheritance pays, below it errors win. Compares modules head-to-head on lineage fitness."
+        },
+        {
+          "name": "og_34_chemical_heredity_and_selection",
+          "description": "Gate D second half: selection on an inherited NETWORK COMPOSITION trait in a protocell population (\u26913 Option B; template copying = follow-on og-34a). Fitness is grounded in the real study-32/33 coupling (composition -> membrane retention [study-32 MD endpoints 0.333/0.661] -> standing pool -> division rate). inheritance=False is the matched no-inheritance null (daughters reset to the common composition). Reports parent-offspring fitness correlation + population composition shift; the vasas-2010 evolvability caveat is TESTED (does the population shift above the null?), not assumed. Metabolism = sustained A1 network, NOT autocatalytic (A2 refuted)."
+        },
+        {
+          "name": "og_12_energy_carrier_cycle",
+          "description": "Study 12: the energy currency as explicit chemistry. GeochemicalDriveProcess supplies an exergonic drive \u0394G that activates a named thioester carrier only when it clears the high-energy bond; the carrier does useful work against an endergonic load and leaks by hydrolysis. A closed free-energy ledger (budget_residual ~ 0) credits useful coupled work only with no hidden energy inflow \u2014 replacing the abstract charged-pool currency."
+        },
+        {
+          "name": "phosphorus_availability",
+          "description": "A reusable phosphorus-availability module. A genuine libRoadRunner/Tellurium SBML ODE integration (needs tellurium) of a P-speciation network (phosphate <-> polyphosphate <-> reactive-P with a precipitation/adsorption mineral sink) driven by a dissolved-phosphate supply, the og-03 thermal-gradient pore enrichment, and pore temperature. Emergent: the standing reactive-P pool, reactive-P production vs precipitation loss (net availability), and the precipitated fraction \u2014 does reactive P become available before phosphate precipitates?"
+        },
+        {
+          "name": "protocell_energetics",
+          "description": "A protocell's energy budget with the energy-coupling mechanism as a model CLASS on the energy_coupling face (model_energy_coupling: passive_gradient | h_na_gradient_leaky_membrane | thioester_acyl_phosphate | polyphosphate | fe_redox). The individual (radius, membrane permeability) sits between the external ion gradient (tapped only through its leak) and the chemical drive (H2/CO2 redox, or Fe(II) disproportionation for fe_redox; vg-data energy_currencies); coupling_activity moves it from passive to active. Publishes the per-individual power budget (external / internal / maintenance / leak / net power, the store, autonomy = internal / (internal + external)) audited by a FreeEnergyLedgerProcess. Coarse-grained deterministic kinetics (reproducible), not a wrapped engine."
+        },
+        {
+          "name": "og_32_first_self_maintaining_protocell",
+          "description": "Full Gate C (Option B, MD-INFORMED not PMF-resolved): couples the sustained A1 carbon-fixing network (Gate-B pore) to an endogenous membrane whose permeability is INFORMED BY short Martini CG-MD of the amphiphile composition (bilayer thickness: DLPC/di-C12 2.325 nm vs DPPC/di-C16 2.870 nm). A solubility-diffusion relation (proposed_input) maps thickness->permeability->retention (thicker long-chain membrane retains more); retention lowers effective washout (k_wash*(1-retention)) at feeds held EQUAL to the ablation. membrane=False is the matched no-endogenous-membrane control (permeability open, retention 0). Metabolism = sustained A1 network, NOT autocatalytic (A2 refuted). Full PMF-resolved permeability is Option A (study og-32a, budgeted follow-on)."
+        },
+        {
+          "name": "og_rtca_autocatalysis",
+          "description": "Curated MECHANISTIC reductive-TCA cycle (9 elementary steps incl. the citrate lyase branch; branched C6 intermediates citrate/isocitrate/cis-aconitate with eQuilibrator dG'; acetate as the acetyl-CoA surrogate; fumarate lumped) on the real libRoadRunner engine under vent CO2/H2 feed + washout. Its autocatalysis is topological (no coefficient-2 reaction), so the coefficient-gated autocatalytic_gain reads 0 by construction; feasibility + topology-specificity are graded by the coefficient-independent functional discriminator. matched_null swaps the degree-preserving null; carboxylation_drive_kj is a labelled stronger-reductant counterfactual (0 = real vent H2) that separates topology from thermodynamics."
+        },
+        {
+          "name": "physical_reproduction",
+          "description": "og-growth-alt: a founder individual grows to a division threshold and divides by a _divide structural rewrite (matter + volume halved); the daughters grow and divide in turn, building a >=3-generation lineage in the agents map. A RewriteLedgerProcess audits that every division conserves matter (partition residual 0) and LineageStatsProcess reports the deepest generation + the total volume, which stays constant across divisions (the daughters' volumes sum to the mother's)."
+        },
+        {
+          "name": "og_36_stochastic_protocell_ecology",
+          "description": "Gate E ecology: does a cross-feeding protocell community out-produce the best single lineage at EQUAL feed, is the margin causally due to cross-feeding (knockout), and do low-count stochastic dynamics materially change it versus the deterministic mean-field? One StochasticProtocellEcologyProcess drives all arms: community (all seeded, cross-feeding on), monoculture (best single lineage, full feed, no partner), knockout (all seeded, cross-feeding off). deterministic=False is the exact Gillespie SSA (extinction breaks the ring); deterministic=True the matched mean-field. Option B (dependency-free SSA); GillesPy2/COBRApy = og-36a. Metabolism = sustained A1 community, NOT autocatalytic (A2 refuted)."
+        },
+        {
+          "name": "og_33_chemically_coupled_growth_and_division",
+          "description": "Gate D first half: couples study 32's self-maintaining protocell to amphiphile-driven membrane growth and division at a MEASURED critical-geometry (reduced-volume) threshold (hanczyc/budin; \u26912 Option B, NOT CG membrane mechanics - that is og-33a). Membrane area grows from the metabolism's productive flux; at the measured critical reduced volume the compartment divides (geometry, not an imposed rule). coupled=False is the growth-decoupled null (fixed amphiphile supply); imposed_division=True is the imposed-rule null. Daughters viable only if they resume study-32 self-maintenance. Metabolism = sustained A1 network, NOT autocatalytic (A2 refuted)."
+        },
+        {
+          "name": "og_35_chemical_energy_coupling",
+          "description": "Gate E energy coupling: does a specified thioester carrier cycle do endergonic work when the geochemical gradient DIPS, beating a matched gradient-only control, with a FULL closing energy ledger and no hidden inflow? carrier=True charges/discharges a stored carrier (buffered); carrier=False is the gradient-only null (direct drive->work, no store). Both see the same declining drive + load. Carrier chemistry = one specified thioester (Option B; acyl-phosphate / microkinetic = og-35a). Metabolism = sustained A1 network, NOT autocatalytic (A2 refuted)."
+        },
+        {
+          "name": "endogenous_boundary",
+          "description": "og-04-alt: a protocell boundary formed from the campaign's OWN chemistry. Acetate + formate condense to an amphiphile (AmphiphileSynthesisProcess); when it clears the critical aggregation concentration and the boundary face class (model_boundary: single_chain | mixed | thioester_aminothiol) reports a viable vesicle, a BoundaryFormationStep does an _add structural rewrite and a new individual appears in the agents map, matter seeded from the localized pool. Synthesis-ablated (k_synth=0) is the control: no amphiphile, no individual. A RewriteLedgerProcess audits that the _add conserves matter (rewrite_ok)."
+        },
+        {
+          "name": "og_28_prebiotic_reaction_atlas",
+          "description": "Study 28: build the versioned Prebiotic Reaction Atlas. Runs the real extract->validate pipeline over the measured-tier carbon-fixation seed and reports coverage + the zero-leakage guarantee: accepted_balance_violations == 0 while an unbalanced candidate is held back in proposed. Produces the shared data asset consumed by studies 29/30/31."
+        },
+        {
+          "name": "og_17_amphiphile_chain_extension",
+          "description": "Study 17: endogenous amphiphiles by explicit chemistry. AmphiphileChainExtensionProcess elongates fatty acids 2 carbons at a time from the vent-carbon feed (acetate), with degradation and a length-dependent critical aggregation concentration \u2014 replacing the lumped acetate+formate condensation. Reports the chain-length distribution + whether the composition clears the CAC (aggregation_competent >= 1), the input og-31's Martini membrane run would assemble. No exogenous amphiphile feed; losses tracked."
+        },
+        {
+          "name": "og_27_coupled_geochemical_reaction_interface",
+          "description": "Study 27: og-00's real serpentinizing vent made into an EVOLVING interface. geochemical_world (genuine PHREEQC speciation -> genuine FiPy transport) is augmented with MineralSurfaceDynamicsProcess: the reacted fluid's real carbonate saturation index drives precipitation/dissolution (a porosity delta that composes with FiPy's) and passivates the catalytic surface over time. Reports time- and space-resolved supply of H2/carbon/gradients/catalysis and the crossover time at which mineral evolution throttles it, with closed mass/charge/energy ledgers."
+        },
+        {
+          "name": "thermophoretic_concentration",
+          "description": "A reusable thermophoretic-concentration module for the Baaske thermal trap. Module F = genuine FiPy finite-volume accumulation column (needs fipy): thermophoresis (Soret) + buoyant convection concentrate a dilute feed, enrichment exponential in pore length (>10^8 favorable, ~1 in controls). flow_velocity=0 / porosity=1 give the no-trap controls."
+        },
+        {
+          "name": "open_chemical_network",
+          "description": "og-02's continuous-feed reactor rebuilt as the Phase-3 open chemical network: the reaction network is a model CLASS on the proto_metabolism face (model_proto_metabolism: curated_rtca | reaction_universe | null_network), all three integrated by the genuine libRoadRunner engine under the same Phase-1-posterior feed (CO2, H2, pyruvate), graded by one class-agnostic post-hoc detector (flux-carrying simple cycles with stoichiometric gain > 1) and audited by a NetworkLedgerProcess (exact element residual, integrated carbon balance, dissipation >= 0). The universe class is generated from Wolos-2020-style rules over linear C/H/O skeletons with eQuilibrator dG' (vg-data package reaction_universe); the null class is its degree-preserving, carbon-matched rewiring."
+        },
+        {
+          "name": "og_31_membrane_benefit",
+          "description": "Partial Gate C: does an endogenous membrane pay for itself? Puts the sustained (A1, NOT autocatalytic) carbon-fixing network in the Gate-B concentrating pore and adds a REDUCED membrane coupling - retention reduces effective washout (k_wash*(1-retention)), finite access reduces effective feed crossing (feed*access) - with Jordan-2019-calibrated vent retention/access (0.905/0.997, grounded not tuned). membrane=False is the matched ablation (retention 0, access 1). Benefit = net carbon flux / persistence(membrane) > (ablation). NOT the MD-resolved PMF coupling (that is study 32 / viva-md-membrane = full Gate C)."
+        },
+        {
+          "name": "osmotic_growth_division",
+          "description": "A reusable osmotic growth-and-division module (metabolism \u2192 growth & division). An internal autocatalytic osmolyte source coupled to compartment osmotic physics: product accumulation \u2192 osmotic pressure (van 't Hoff) \u2192 solvent influx \u2192 volume growth \u2192 division at a size threshold. Membrane permeability sets the fate: too permeable starves (product leaks, no osmotic build-up), too impermeable lyses (pressure bursts the membrane), matched gives sustained growth \u2192 division. Units-typed, mass-conserving coarse-grained reproduction (not wrapped membrane MD)."
+        },
+        {
+          "name": "og_30_spatially_integrated_protometabolism",
+          "description": "Study 30: the reaction network operating IN A PORE. The real FiPy thermophoretic trap concentrates the precursor feed (enrichment_factor); the enriched pore-local feed drives open_chemical_network's real reaction universe. concentrating=False runs the matched nonconcentrating control (feed at base, everything else equal) so the decision test \u2014 productive flux in the pore exceeds the control \u2014 is a direct comparison. Reports co-localization, spatial reaction flux, residence, persistence."
+        },
+        {
+          "name": "hydrothermal_carbon_fixation",
+          "description": "A reusable H2/pH-driven carbon-fixation module. Module C = genuine FiPy finite-volume Nernst-Planck pH-gradient electrochemistry (pmf, current density; needs fipy). Module D = genuine eQuilibrator \u0394G' feasibility gate (needs equilibrator_api) + lab-calibrated (Preiner/Hudson) mineral-catalyzed CO2 reduction to formate/acetate/pyruvate. gradient_efficiency=1.0 is the favorable arm; ~0.1 is the Tutolo-2026 in-situ collapse. catalyst_active/h2=0 give the controls."
+        },
+        {
+          "name": "og_37_progressive_independence",
+          "description": "Gate E progressive independence: withdraw each environmental support ONE AT A TIME and ask which the lineage can internalize (persist via an innovation) vs which are hard dependencies. Reuses the validated og-08 off-gradient budget (OffGradientPersistenceProcess + EnvironmentalRelaxationProcess) verbatim \u2014 no invented terms \u2014 but relaxes a single channel at a time (others held full) instead of og-08's joint all-at-once relaxation, so a matched per-support ablation (rescuing innovation off -> fail) attributes each support to its internalizing innovation (gradient->pump, mineral/feed->importer, all gated by heredity). Channels: gradient (pH/pmf drive), mineral_access (mineral catalysis), feed (H2+CO2+organics LUMPED \u2014 per-feedstock split + temperature-Arrhenius = og-37a). Coarse budget abstraction = an affordability/attribution profile, NOT a demonstrated escape; heredity = irreducible substrate. Terminal (consumes 34/35/36, extends nothing)."
+        },
+        {
+          "name": "proto_energetics",
+          "description": "A transferable energy currency before modern pumping (pre-og-05). An exergonic geochemical drive charges a carrier pool (thioester / acyl-phosphate class) that is discharged for endergonic work under load and bled by hydrolysis, all tracked in a conserved free-energy ledger (input = work + stored + dissipated). Tests whether the system captures environmental free energy into a transferable store, and what fraction becomes stored usable work. drive_free_energy / coupling_efficiency set the arm; coupling->0 or drive below the carrier bond collapses the currency (ablations). Coarse-grained, deterministic reproduction (not a wrapped engine)."
+        },
+        {
+          "name": "og_29_endogenous_autocatalysis",
+          "description": "Study 29: is vent-fed chemistry self-amplifying? Reuses open_chemical_network's real reaction-universe engine + autocatalysis detector, but feeds the network from the ENDOGENOUS 27->29 supply (H2 + inorganic carbon from the evolving geochemical interface) rather than a prescribed feed. matched_null swaps the degree-preserving null on the same supply for the Gate A comparison (chemical input fluxes held equal). Reports amplification (autocatalytic_gain), net carbon fixation, intermediate turnover and the critical dilution (k_wash) at which the loop washes out."
+        },
+        {
+          "name": "cross_feeding_metacommunity",
+          "description": "A reusable cross-feeding metacommunity module (Module L). N connected compartments, each a coarse-grained capability vector over a protometabolic function set, evolving under cross-feeding (byproduct of one feeds the next capability in a neighbour), horizontal transfer, and parasite/cooperator roles. Connected heterogeneous populations develop capability redundancy (robustness) and a collective repertoire single compartments do not; the emergent set's overlap with the anaerobic H2/CO2/FeS LUCA reconstruction is reported as a far-end boundary, not a target. Coarse-grained, deterministic reproduction (not wrapped ALife)."
+        },
+        {
+          "name": "geochemical_world",
+          "description": "og-00's real serpentinizing vent (genuine PHREEQC peridotite speciation feeding a genuine FiPy finite-volume advection-diffusion solve) rebuilt as the Phase-1 geochemical world: both mechanisms are selected through typed faces (model_serpentinization: phreeqc | reduced; model_spatial_transport: fipy convecting | fipy_uniform_upflow | fenics), so the model CLASS is a categorical sweep axis beside the physical parameters, and a ConservationLedgerProcess audits integrated sources against accumulated pools, charge balance, flux divergence and heat directionality (ledger/ledger_ok). The free parameters are the vg-data package 'vent_environment' (value-or-distribution, units, context, source, provenance class), which the environmental-calibration ensemble samples."
+        },
+        {
+          "name": "reduced_nitrogen_reactor",
+          "description": "A reusable FeS-mediated reduced-nitrogen module. The real ReducedNitrogenProductionProcess reduces NO3-/NO2- to NH4+ on an Fe/Ni/S catalyst (H2-dependent, temperature-windowed), adds a minor abiotic N2-fixation source, and draws ammonium into amino-acid precursors by reductive amination at a rate set by the carbon-fixation demand. Tracks the C:N supply ratio (carbon demand / reduced-N production) to test whether reduced nitrogen keeps pace with reduced carbon. fes_activity=0 / h2=0 are the no-mineral / no-reductant controls."
+        },
+        {
+          "name": "off_gradient_persistence",
+          "description": "A reusable off-gradient-persistence module (Module M). A lineage's co-limited (Liebig-minimum) free-energy + resource budget under relaxing geological support (external gradient, mineral access, feed all declining over the run), with three toggleable innovations: internal energy conversion (has_pump), active resource import (has_importer) and information maintenance (has_heredity). Because the budget is co-limited the innovation set is irreducible \u2014 as support -> 0 only the full set keeps net budget above the survival floor, so a knockout sweep identifies {pump, importer, heredity} as the minimum robust set for autonomy. Coarse-grained, deterministic reproduction (not a wrapped ALife engine)."
+        },
+        {
+          "name": "competing_heredity",
+          "description": "og-06's heredity lineage rebuilt as the Phase-7 competing-heredity composite: the inheritance mechanism is a model CLASS on the heredity face (model_heredity: compositional | network | peptide | rna_like | hybrid | mineral_state), every class an exact Gillespie lineage of protocell-scale individuals (tens of heritable molecules each) drawing integer precursors and energy quanta from the SAME chemostat-fed pools and energy store. HeredityAttachmentStep attaches heredity only when the precursor budget, the energy budget and the class's expected copy fidelity (Eigen Q >= 1/sigma) allow it \u2014 before that, daughters re-form their heritable material de novo (the non-heritable control). InformationLedgerProcess prices the realised parent-offspring mutual information per joule and per precursor and audits the energy store exactly."
+        },
+        {
+          "name": "og_31_protometabolism_to_amphiphiles",
+          "description": "Study 31: do amphiphiles assemble into a membrane? Drives real Martini 3 CG MD (viva-openmm) on a generated POPE bilayer; minimize+NVT relaxes the clashy initial placement into a bound bilayer so the potential energy settles negative \u2014 the membrane-cohesion / assembly signal. Reports PE/KE (cohesion), static area-per-lipid and lipid count. Charged-intermediate permeability (PMF) is the documented follow-up."
+        },
+        {
+          "name": "spatial_transport_trap",
+          "description": "og-03 thermophoretic trap behind the swappable spatial_transport face. The live, default solver is a genuine 1-D FiPy finite-volume accumulation column (model_spatial_transport='fipy', runs anywhere, backs every canonical run). The face also swaps in the MERGED dolfinx FEM solver with a Soret-drift weak-form term (model_spatial_transport='fenics') \u2014 a real high-fidelity cross-check, run on demand under viva-fenics's pixi env (dolfinx is conda-only, so in the uv venv 'fenics' raises a clear 'run under pixi' error). The FiPy\u2194FEniCS head-to-head on this trap was run that way and shows the two agree up to Pe_acc\u22484 and diverge to ~5.6 decades by Pe_acc\u224818, so the >1e6-fold column is a reduced-model extrapolation the resolved FEM does not confirm. assert_face is enforced at build. Same pore physics, FiPy grades and FEniCS cross-checks (plan 4.5)."
+        },
+        {
+          "name": "spatial_transport_vent",
+          "description": "og-00 vent reactor transport behind the swappable spatial_transport face. The live, default solver is a genuine 2-D FiPy finite-volume advection-diffusion FVM (model_spatial_transport='fipy', backs every canonical run); the face swaps in the MERGED dolfinx FEM advection-diffusion solver (model_spatial_transport='fenics') \u2014 a real high-fidelity cross-check run on demand under viva-fenics's pixi env (dolfinx conda-only, so 'fenics' raises 'run under pixi' in the uv venv). The FiPy\u2194FEniCS head-to-head on this vent agrees to within 0.30% outlet T (identical pH, flux conserved ~1e-15), so the habitability result is solver-robust. Prescribed serpentinization drivers (H2/alkalinity/heat) isolate the transport solver; assert_face enforced at build. Same world, FiPy grades and FEniCS cross-checks (plan 4.5)."
+        }
+      ],
+      "studies": [
+        {
+          "name": "og-heredity",
+          "description": "Chemical Heredity and Selection"
+        },
+        {
+          "name": "og-network-persistence",
+          "description": "Network Persistence: Does the Carbon-Fixing Network Sustain Itself?"
+        },
+        {
+          "name": "og-ecology",
+          "description": "Protocell Ecology: Community Function Before the Complete Cell"
+        },
+        {
+          "name": "og-spatial-concentration",
+          "description": "Spatial Concentration: Does a Pore Make an Individual?"
+        },
+        {
+          "name": "mem-m4-growth-division-propensity",
+          "description": "Growth, shape change & division propensity (membrane-MD M4)"
+        },
+        {
+          "name": "og-autocatalysis-a2",
+          "description": "Endogenous Autocatalysis (A2): Formose and Reductive-TCA Routes"
+        },
+        {
+          "name": "og-energetics",
+          "description": "Proto-Energetics: Capture, Internalization, and Carrier Coupling"
+        },
+        {
+          "name": "og-self-compartmentation",
+          "description": "Self-Compartmentation: From Boundary to Self-Maintaining Protocell"
+        },
+        {
+          "name": "og-independence",
+          "description": "Escape and Progressive Independence from the Vent"
+        },
+        {
+          "name": "og-carbon-fixation",
+          "description": "Carbon Fixation: Does H2 Reduce CO2 at the Vent?"
+        },
+        {
+          "name": "og-vent-environment",
+          "description": "The Vent Environment: A Bounded but Viable Geochemical Reactor"
+        },
+        {
+          "name": "og-reproduction",
+          "description": "Reproduction: Coupled Growth and Division into a Lineage"
+        },
+        {
+          "name": "og-vent-specificity",
+          "description": "Vent Specificity: Are the Gates Vent-Specific or Generic?"
+        },
+        {
+          "name": "og-nutrient-bottlenecks",
+          "description": "Nutrient Bottlenecks: Nitrogen and Phosphorus Keep Pace with Carbon"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "origins-of-life-vent",
+          "description": "Origins-of-life vent campaign"
+        }
+      ],
+      "counts": {
+        "processes": 64,
+        "steps": 12,
+        "composites": 41,
+        "studies": 14,
         "investigations": 1
       }
     },
@@ -2191,6 +2979,83 @@
         "composites": 2,
         "studies": 0,
         "investigations": 0
+      }
+    },
+    {
+      "name": "viva-lumenoid",
+      "repo": "viva-lumenoid",
+      "source": "https://github.com/vivarium-collective/viva-lumenoid",
+      "homepage": "https://github.com/vivarium-collective/viva-lumenoid",
+      "description": "collagen IV basement-membrane network (AICS Lumenoids v1)",
+      "tags": [],
+      "cloned": true,
+      "processes": [
+        {
+          "name": "CollagenNetworkProcess",
+          "description": "Persistent coarse-grained collagen IV network driven by two control ports."
+        },
+        {
+          "name": "StagedStretchController",
+          "description": "Sequence the spec's stage-1 protocol (Fig 2D: \"breakage off, then on\")."
+        }
+      ],
+      "steps": [],
+      "composites": [
+        {
+          "name": "stage1_composite",
+          "description": "Stage 1 \u2014 collagen IV network staged protocol (assemble \u2192 relax \u2192 stretch \u2192 hold elastic \u2192 hold viscous). StagedStretchController drives the LAMMPS-backed CollagenNetworkProcess."
+        },
+        {
+          "name": "stage2_sweep",
+          "description": "Stage 2 \u2014 the collagen IV network on a growing (biaxially stretching) substrate; the \u03c3(\u03b5\u0307) sweep runs this composite at a range of strain rates with the crosslink chemistry on."
+        },
+        {
+          "name": "connectivity_sweep",
+          "description": "Rigidity (bm-v3) \u2014 the collagen IV network whose crosslink connectivity (z) is swept to test rigidity percolation."
+        },
+        {
+          "name": "bending_sweep",
+          "description": "FP1 (bm-v4) \u2014 the collagen IV network WITH junction bending (fix restrain pinned to each crosslink's as-formed angle). The athermal modulus is swept vs bending_k."
+        },
+        {
+          "name": "porosity_bundling",
+          "description": "Stage 5 (bm-v5) \u2014 the assembled collagen IV network, read for its geometric readouts: pore-size distribution (porosity) and protomers-per-strand (bundling), against the measured BM comparators."
+        }
+      ],
+      "studies": [
+        {
+          "name": "bm-v3-junction-bending-rigidity",
+          "description": "Can more crosslink connectivity rigidify the v1 network, or is bending required?"
+        },
+        {
+          "name": "bm-v4-junction-bending",
+          "description": "Does junction bending yield the measurable modulus the vertex model needs?"
+        },
+        {
+          "name": "bm-v1-stage1-modulus-remodelling",
+          "description": "Can the clean-room collagen IV network separate an elastic modulus from a viscous remodelling time, as the paper's staged protocol does?\n"
+        },
+        {
+          "name": "bm-v2-stress-vs-strainrate",
+          "description": "What is \u03c3(\u03b5\u0307), and where does the network cross from viscous to elastic?"
+        },
+        {
+          "name": "bm-v5-porosity-bundling",
+          "description": "Does the v1 network reproduce the measured pore-size and bundling of a real BM?"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "basement-membrane-v1",
+          "description": "Basement membrane v1 \u2014 collagen IV network modulus & remodelling for the AICS vertex model"
+        }
+      ],
+      "counts": {
+        "processes": 2,
+        "steps": 0,
+        "composites": 5,
+        "studies": 5,
+        "investigations": 1
       }
     },
     {
@@ -2957,6 +3822,200 @@
         "composites": 1,
         "studies": 0,
         "investigations": 0
+      }
+    },
+    {
+      "name": "viva-pde-particle",
+      "repo": "viva-pde-particle",
+      "source": "https://github.com/vivarium-collective/viva-pde-particle",
+      "homepage": "https://github.com/vivarium-collective/viva-pde-particle",
+      "description": "PDE/particle hybrid co-simulation (FEniCSx/finite volume + Smoldyn) with process-bigraph, benchmarked against vcell-fvsolver's embedded hybrid solver",
+      "tags": [],
+      "cloned": true,
+      "processes": [
+        {
+          "name": "EnsembleRunner",
+          "description": "Run a trial function over a block of seeds, once, at the first update."
+        },
+        {
+          "name": "SplittingCoordinator",
+          "description": ""
+        },
+        {
+          "name": "FenicsxReactionDiffusion",
+          "description": "PDE half of a hybrid model on FEniCSx (Q1, structured mesh); same ports as FVReactionDiffusion."
+        },
+        {
+          "name": "SmoldynHybrid",
+          "description": "Particle half of a hybrid model."
+        },
+        {
+          "name": "Stepper",
+          "description": ""
+        },
+        {
+          "name": "FenicsxMeshReactionDiffusion",
+          "description": "Reaction-diffusion on an unstructured P1 mesh."
+        },
+        {
+          "name": "SpatialRecorder",
+          "description": ""
+        },
+        {
+          "name": "FVReactionDiffusion",
+          "description": "PDE half of a hybrid model (see :func:`viva_pde_particle.model.partition`)."
+        }
+      ],
+      "steps": [
+        {
+          "name": "GridCountsToConcentration",
+          "description": "Per-node particle counts \u2192 \u00b5M on the same grid (``count / (V_element \u00b7 602.214)``)."
+        },
+        {
+          "name": "ExtendGridField",
+          "description": "Grid fields \u2192 lookup fields for the particle engine, extended past a staircase PDE domain (7e.5)."
+        },
+        {
+          "name": "_MeshConcentration",
+          "description": ""
+        },
+        {
+          "name": "MeshToGridField",
+          "description": "P1 DOF fields \u2192 grid fields for the particle engine's rate lookups: u_grid = P\u00b7u."
+        },
+        {
+          "name": "SpatialExport",
+          "description": ""
+        }
+      ],
+      "composites": [
+        {
+          "name": "particle_diffusion",
+          "description": "Free Brownian diffusion of Smoldyn particles binned on the shared grid (no fields)."
+        },
+        {
+          "name": "field_modulated_decay",
+          "description": "A_particle -> 0 at rate k\u00b7[B](x): Smoldyn reads the PDE field B at each molecule."
+        },
+        {
+          "name": "calcium_sparks",
+          "description": "Schaff et al. 2016 calcium sparks: 24 stochastic channels (particles) + diffusing Ca2+ (PDE)."
+        },
+        {
+          "name": "two_way_exchange",
+          "description": "A_particle <-> B_field exchange: particle decay feeds the field; the field creates particles."
+        },
+        {
+          "name": "bimolecular_hybrid",
+          "description": "A_particle + B_field -> C_field: particles consume a field (two-way, nonlinear coupling)."
+        },
+        {
+          "name": "ball_netgen_hybrid",
+          "description": "A ball as a VCell-style GeometryDescription, meshed by Netgen: FEniCSx P1 PDE + Smoldyn confined by the mesh boundary, with Steps for both transfers (Phase 7)."
+        },
+        {
+          "name": "ball_vcell_geometry_hybrid",
+          "description": "A ball realized by VCell itself (libvcell): FV on VCell's staircase + Smoldyn in VCell's smooth membrane, with the accessible-volume correction (Phase 7e.5; needs the dev env)."
+        },
+        {
+          "name": "exchange_splitting",
+          "description": "Two-way exchange run by the SplittingCoordinator: any PDE engine (FV or FEniCSx Q1) and splitting scheme (jacobi, gs_particles_first, gs_pde_first, strang) (Phase 7d)."
+        }
+      ],
+      "studies": [
+        {
+          "name": "coupling-interval-convergence",
+          "description": "A4 model with k = 2/(\u00b5M\u00b7s), 20,000 A, \u0394t = 0.005, t = 1.6 s, 64 seeds per\nconfiguration, step multiplier k \u2208 {1, 2, 4, 8, 16, 32}.\nThe error is the max over time of |mean surviving fraction \u2212 continuum limit|\n(A continuous, \u0394t/10). The order is fitted for k \u2265 4, above the sampling floor\n(~5\u00b710\u207b\u2074).\n"
+        },
+        {
+          "name": "field-modulated-decay",
+          "description": "Part 1: B rises linearly from 0 to 1 \u00b5M across x; 4,000 immobile A per run; k = 1/(\u00b5M\u00b7s);\n8 seeds; t = 1 s. Compare per-column survival to exp(-k\u00b7B_col\u00b7t) with binomial z-scores.\nPart 2: B is a Gaussian (1 \u00b5M peak, D_B = 0.5); 20,000 A with D_A = 1; 8 seeds. Compare\nthe ensemble-mean A (\u00b5M) at t = 1 s to continuum_model() solved by FVReactionDiffusion\nalone (relative L2 over the grid, and total A).\n"
+        },
+        {
+          "name": "cosim-boundary-transfer",
+          "description": "Same ball, background grid, mesh and model as B2b/B2c; 32 seeds per variant.\nVariants (particle_transfer / membrane):\n- grid / sphere (B2b/B2c);\n- positions / sphere;\n- grid / mesh;\n- positions / mesh.\nCases and measures:\n- Conversion (uniform A, so E[B] is uniform): interior level against\n  E[B] = A\u2080(1 \u2212 e^(\u2212kt))/(V_mesh\u00b7N_A), and the outer-shell bias (r > R \u2212 2\u0394 vs r < R/2).\n- Exchange with field-dependent creation in the cell: final mass balance and steady ratio.\n- Wall time per simulated second.\n"
+        },
+        {
+          "name": "vcell-geometry-cosim",
+          "description": "The B2b ball as a vcell-fenics GeometryDescription, realized by VCell itself\n(VCellFVRealization, via libvcell):\n- **PDE:** FV on VCell's staircase `cell` (266.734 \u00b5m\u00b3).\n- **Smoldyn:** VCell's smooth membrane (9,516 triangles enclosing 261.818 \u00b5m\u00b3) and VCell's\n  compartment points.\n- **Adapters:** counts at exterior nodes are folded into the domain (compartment-aware\n  binning), and fields are extended into the exterior band for 0th-order creation.\n\n32 seeds per variant.\n- Conversion (k = 0.5, 20,000 A uniform in the smooth cell): interior B against\n  E[B] = A\u2080(1 \u2212 e^(\u2212kt))/(V_PDE\u00b7N_A), the outer-shell bias (r > 3.5 vs r < 2) and A + B balance.\n- Exchange (k1 = 1, k2 = 0.5, B\u2080 = 0.2 \u00b5M): A + B balance and the steady ratio.\n\nAll PDE masses and averages use the PDE's own element volumes.\n"
+        },
+        {
+          "name": "handoff-units-and-binning",
+          "description": "Four checks, all on the shared CartesianGrid:\n(1) FV diffusion of cos(\u03c0x/L)cos(\u03c0y/L) (21\u00d721, L = 10 \u00b5m, D = 1, dt = 0.01, t = 1 s)\n    against exp(-2\u03c0\u00b2Dt/L\u00b2);\n(2) 20,000 particles diffusing from the centre cell (D = 1, 4 seeds): the variance of the\n    binned positions, minus dx\u00b2/6 (the initial cell spread plus Sheppard's binning\n    correction), against 2Dt;\n(3) the histogram sum equals the molecule count at every record;\n(4) 100,000 uniform particles after 2 s of diffusion (11\u00d711, 4 seeds): the counts per\n    node class (corner, edge, interior) match their element-volume shares.\n"
+        },
+        {
+          "name": "coupled-sparks-fast-diffusion",
+          "description": "Parameters as in Test 1, except k_on = 0.1 s\u207b\u00b9 (opening at k_on\u00b7U/U\u2080), D = 1000 \u00b5m\u00b2/s\nand \u0394t = 0.2 ms; 500 trials per solver.\nThe reference is 20,000 exact realizations of the well-mixed process with\nV = 10.1\u00d72.1\u00d70.5 \u00b5m\u00b3.\nAt t = 1, 2, 3 s the comparison uses:\n- mean |z| of U and n against the reference;\n- the L2 distance between histograms, as in the paper;\n- two-sample KS tests, against the reference and between the solvers.\n"
+        },
+        {
+          "name": "dumbbell-three-ways",
+          "description": "A vcell-fenics GeometryDescription: two balls (R = 1.5 \u00b5m, centres 2.8 \u00b5m apart) joined by a\nneck (radius 0.6 \u00b5m), in an 8 \u00d7 6 \u00d7 6 \u00b5m box, \u0394 = 0.25 \u00b5m (33 \u00d7 25 \u00d7 25 grid). The four paths:\n- **native:** the description converted to VCML; vcell-fvsolver with embedded Smoldyn; 8 seeds.\n- **vcell_none, vcell_corrected:** the co-simulation on VCell's own realization, with\n  correction `none` or `adapters+volumes`; 16 seeds each.\n- **mesh:** the co-simulation on a Netgen tet mesh (h = 0.3); 16 seeds.\n\nCases and measures:\n- conversion (k = 0.5, 20,000 A uniform; 2 s): A + B balance; near-membrane bias (mean B within\n  0.5 \u00b5m of the membrane against deeper B; E[B] is uniform); lobe asymmetry;\n- exchange (k1 = 1, k2 = 0.5, B\u2080 = 0.2 \u00b5M; 5 s): A + B balance and the steady ratio.\n"
+        },
+        {
+          "name": "fenicsx-same-problem",
+          "description": "Part 1: cosine-mode diffusion on N\u00d7N grids (N = 11 ... 81) for three engines (FV, Q1\nlumped mass, Q1 consistent mass), each compared to the analytic decay; h-orders fitted.\nPart 2: A4's A_p + B_f \u2192 C_f on the 11\u00d711\u00d73 slab, 16 seeds per engine with the same\nseeds (common random numbers, so paired comparison); survival and produced C compared.\n"
+        },
+        {
+          "name": "separable-calcium-sparks",
+          "description": "Model (Eq. 1 of the paper): \u2202U/\u2202t = D\u2207\u00b2U + J\u00b7\u03a3\u1d62 \u03be\u1d62 \u03b4(r \u2212 r\u1d62) \u2212 V_p(U \u2212 U\u2080), no-flux\nboundaries. D = 1 \u00b5m\u00b2/s, J = 10 \u00b5M\u00b7\u00b5m\u00b3/s, U\u2080 = 0.1 \u00b5M, V_p = 1 s\u207b\u00b9, k_on = 1 s\u207b\u00b9,\nk_off = 5 s\u207b\u00b9, 24 channels starting closed, T = 5 s.\nGeometry: [0, 10.1]\u00d7[0, 2.1]\u00d7[0, 0.5] \u00b5m\u00b3, \u0394x = \u0394y = 0.1.\nRuns: 128 trials per solver at \u0394t \u2208 {0.02, 0.01, 0.005} s. \u03b5(N) is taken from nested\nsubsets at \u0394t = 0.005, and \u03b5 is the RMS over space and time of (trial mean \u2212 E[U]),\nrelative to max(E[U] \u2212 U\u2080).\n"
+        },
+        {
+          "name": "splitting-schemes",
+          "description": "A5's A_p + B_f \u2192 C_f (k = 2/(\u00b5M\u00b7s), 20,000 A, 11\u00d711\u00d73 slab); \u0394t = 0.005;\n\u03c4 = k\u00b7\u0394t with k \u2208 {2, 4, 8, 16, 32}; 64 seeds per point.\nError: max over time of |mean survival \u2212 continuum|. Orders fitted for k \u2265 4.\n"
+        },
+        {
+          "name": "near-membrane-fields",
+          "description": "Same ball, grid, mesh and solvers as B2b. Conversion A_p \u2192 B_f (k = 0.5 /s, 20,000 A\nuniform in the ball), t = 2 s, 32 seeds per solver.\n- E[B] = A\u2080(1 \u2212 e^(\u2212kt))/(V\u00b7N_A), with V each solver's own domain volume.\n- The interior is r < R/2. The outer shell is r > R \u2212 2\u0394 = 3.5 \u00b5m.\n- Native values are volume-weighted on the smoothed cells; co-sim values are weighted by\n  the lumped mass of the P1 DOFs.\n"
+        },
+        {
+          "name": "two-way-exchange",
+          "description": "11\u00d711\u00d73 slab (10\u00d710\u00d71 \u00b5m); k1 = 1 s\u207b\u00b9, k2 = 0.5 s\u207b\u00b9; B\u2080 = 0.2 \u00b5M (12,044 molecules);\nD_A = D_B = 1; dt = 0.01; t = 5 s; 16 seeds per solver. Measured:\n- mass balance and steady-state ratio;\n- co-sim vs native totals and profiles;\n- a creation-only experiment (B a static catalyst, 2 s, 8 seeds), comparing created\n  A with the exact expectation k2\u00b7[B]\u00b7V\u00b7602.214\u00b7t.\n"
+        },
+        {
+          "name": "bimolecular-hybrid",
+          "description": "11\u00d711\u00d73 slab; 20,000 A (D = 1, Poisson initial placement in both solvers);\nB\u2080 = 0.5 \u00b5M (\u224830,000 molecules, D = 1); C\u2080 = 0 (D = 1); k = 1/(\u00b5M\u00b7s); dt = 0.01;\nt = 3 s; 16 seeds per solver. Compared:\n- surviving fraction, produced C and final x-profiles (co-sim vs native);\n- survival vs the continuum FV solution.\n"
+        },
+        {
+          "name": "sbml-spatial-hybrid",
+          "description": "The A3 two-way exchange (11\u00d711\u00d73 slab, 10\u00d710\u00d71 \u00b5m; A_p \u2192 B at 1 s\u207b\u00b9, B \u2192 A_p at\n0.5 s\u207b\u00b9\u00b7[B]; B\u2080 = 0.2 \u00b5M; dt = 0.01; 2 s; 8 seeds). `to_sbml` writes it to SBML Spatial\n(A particle, B continuous); it is then run four ways:\n- native from the original model (`to_biomodel` VCML) and native from the SBML (VCell's SBML\n  import \u2192 libvcell \u2192 vcell-fvsolver);\n- co-sim from the Python `HybridModel` and co-sim from `from_sbml`.\n"
+        },
+        {
+          "name": "single-channel-fokker-planck",
+          "description": "Dimensionless model: \u2202\u03c4\u03c1 = d\u00b7\u2202\u00b2\u2093\u03c1 + a\u00b7\u03b4(x)\u00b7\u03be \u2212 \u03c1. The channel opens at \u03b1\u03b2(\u03c1(0) + 1) and closes\nat \u03b1; it starts closed, with \u03c1 = 0.\n\n- **Test 3:** \u03b1 = \u03b2 = 1, a = 24, d = 10\u2074, 3D cube of side 1 (\u0394x = 0.1, channel at the centre),\n  \u0394\u03c4 = 0.002.\n  - Compared: p(\u03c1\u0304) at \u03c4 = 30.\n  - Reference: Eq 4, solved in time and checked against its exact steady state.\n  - Ensembles: 10,000 co-sim trials, and the same on native VCell.\n- **Test 4:** \u03b1 = 10, \u03b2 = 1, a = 20/3, d = 1, two cells with \u0394x = 2, \u0394\u03c4 = 10\u207b\u2074.\n  - Compared: p(\u03c1\u1d62) at \u03c4 = 1.\n  - Reference: the S2-Text master equation (Eq T2.1) at \u0394\u03c1 = 2.5, 1.2 and 0.6 \u00d7 10\u207b\u00b3, extrapolated\n    to \u0394\u03c1 \u2192 0.\n  - Ensembles: 12,500 trials.\n- **Test 5:** \u03b1 = 20, \u03b2 = 0.5, a = 20, d = 50, three cells.\n  - Reference: four \u0394\u03c1, extrapolated as in the paper.\n  - Ensembles: 12,500 trials at \u0394\u03c4 = 10\u207b\u2074.\n\nDensities are 20-bin histograms on [0, \u03c1_max(i)] (40 bins on [0, 24] for Test 3), compared with the\nreference averaged over the same bins. Reported: the relative L2 (RMS over bins / reference\nmaximum), the absolute L2, and the reduced \u03c7\u00b2 against multinomial sampling noise.\n"
+        },
+        {
+          "name": "performance-scaling",
+          "description": "A4 model (A_p + B_f \u2192 C_f) on N\u00d7N\u00d73 slabs, dt = 0.01, t = 1 s (100 steps), one process,\nmedian of 3 runs. Sweeps:\n- N \u2208 {11, 21, 41, 81} with 20,000 particles;\n- particles \u2208 {2\u00b710\u00b3, 2\u00b710\u2074, 2\u00b710\u2075} on 21\u00d721\u00d73.\nCo-sim time is split into PDE update, particle update and framework (the remainder).\nNative time is split into input generation, solve and read.\n"
+        },
+        {
+          "name": "unstructured-geometry",
+          "description": "Ball R = 4 \u00b5m; mesh h = 0.8 \u00b5m; background grid 33\u00b3 with \u0394 = 0.25 \u00b5m; dt = 0.01; 8 seeds.\n- Conversion A_p \u2192 B_f (k = 0.5 /s, 20,000 A): A against exp decay, A + B conservation,\n  and B against the continuum FEM solution.\n- Exchange A_p \u21cc B_f with field-dependent creation inside the spherical compartment\n  (k1 = 1, k2 = 0.5, B\u2080 = 0.2 \u00b5M): mass balance and the steady ratio k2/k1.\n"
+        },
+        {
+          "name": "sphere-cosim-vs-native",
+          "description": "Box [0, 9]\u00b3 with \u0394 = 0.25 \u00b5m (37\u00b3). Ball centre (4.5, 4.5, 4.5), R = 4 \u00b5m, 0.5 \u00b5m clear of\nthe box walls, so the box-wall creation defect (vcell-fvsolver#24) cannot act.\nCo-sim mesh h = 0.8 \u00b5m. 8 seeds per solver.\n- Conversion A_p \u2192 B_f (k = 0.5 /s, 20,000 A).\n- Exchange A_p \u21cc B_f with field-dependent creation in the cell (k1 = 1, k2 = 0.5, B\u2080 = 0.2 \u00b5M).\n"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "vcell-hybrid-paper-benchmarks",
+          "description": "Reproducing the VCell hybrid methods paper (Schaff et al. 2016) with the native solver and the co-simulation"
+        },
+        {
+          "name": "cosim-vs-embedded-hybrid",
+          "description": "Process-bigraph co-simulation vs the embedded vcell-fvsolver hybrid solver"
+        },
+        {
+          "name": "hybrid-generalizability",
+          "description": "What decomposing the hybrid solver into processes adds, and what it costs"
+        }
+      ],
+      "counts": {
+        "processes": 8,
+        "steps": 5,
+        "composites": 8,
+        "studies": 18,
+        "investigations": 3
       }
     },
     {
