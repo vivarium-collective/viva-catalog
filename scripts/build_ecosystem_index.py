@@ -7,7 +7,9 @@ source** — no published dashboard required. What we extract:
 - **composites** — ``@composite_generator(name=…, description=…)`` decorators
   (AST) plus any ``*.composite.yaml`` files.
 - **processes / steps** — top-level classes whose base ends in ``Process`` /
-  ``Step`` (AST), with the description taken from a ``description`` class
+  ``Step`` — plus the Step-derived reactive edges ``Emitter`` / ``Visualization``
+  / ``Viewer`` / ``Analysis`` (each tagged with its ``kind``) — found via AST,
+  with the description taken from a ``description`` class
   attribute or the class docstring.
 - **studies** — ``**/studies/*/study.yaml`` (name + objective/title).
 - **investigations** — ``**/investigations/*/investigation.yaml`` (name + title).
@@ -40,7 +42,15 @@ except ImportError:  # pragma: no cover
 ROOT = Path(__file__).resolve().parent.parent
 PKG = ROOT / "viva_catalog"
 
-_PROC_BASE = re.compile(r"(Process|Step)$")
+# Edge base classes we index. Process/Step are the two process-bigraph edge kinds;
+# Emitter/Visualization/Viewer/Analysis are Step-derived reactive edges that a
+# browse-worthy library (e.g. viva-emitters) exposes but that a bare (Process|Step)
+# base-name check would miss.
+_EDGE_BASES = ("Process", "Step", "Emitter", "Visualization", "Viewer", "Analysis")
+_PROC_BASE = re.compile(r"(%s)$" % "|".join(_EDGE_BASES))
+# suffix -> artifact kind (longest/most-specific suffix checked first)
+_EDGE_KIND = (("Process", "process"), ("Step", "step"), ("Emitter", "emitter"),
+              ("Visualization", "visualization"), ("Viewer", "viewer"), ("Analysis", "analysis"))
 
 # A repo "publishes to the marketplace" by adding this GitHub topic. Membership
 # is discovered from the org (no hand-maintained list) — see discover_modules.
@@ -154,16 +164,15 @@ def _scan_python(root: Path) -> tuple[list, list, list]:
             if isinstance(node, ast.ClassDef):
                 for b in node.bases:
                     bname = b.attr if isinstance(b, ast.Attribute) else (b.id if isinstance(b, ast.Name) else "")
-                    if not _PROC_BASE.search(bname or "") or node.name in ("Process", "Step"):
+                    if not _PROC_BASE.search(bname or "") or node.name in _EDGE_BASES:
                         continue
-                    if bname.endswith("Step"):
-                        if node.name not in seen_s:
-                            seen_s.add(node.name)
-                            steps.append({"name": node.name, "description": _class_description(node)})
-                    else:
-                        if node.name not in seen_p:
-                            seen_p.add(node.name)
-                            processes.append({"name": node.name, "description": _class_description(node)})
+                    kind = next(v for k, v in _EDGE_KIND if bname.endswith(k))
+                    # Process is its own bucket; every other edge kind is Step-derived.
+                    bucket, seen = (processes, seen_p) if kind == "process" else (steps, seen_s)
+                    if node.name not in seen:
+                        seen.add(node.name)
+                        bucket.append({"name": node.name, "kind": kind,
+                                       "description": _class_description(node)})
                     break
             elif isinstance(node, ast.Call):
                 fn = node.func
