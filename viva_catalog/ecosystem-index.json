@@ -1,29 +1,8 @@
 {
-  "generated_at": "2026-10-19T13:22:14+00:00",
-  "n_repos": 54,
-  "n_cloned": 54,
+  "generated_at": "2026-10-19T14:28:39+00:00",
+  "n_repos": 53,
+  "n_cloned": 53,
   "repos": [
-    {
-      "name": "pbg-eps-biofilm",
-      "repo": "pbg-eps-biofilm",
-      "source": "https://github.com/vivarium-collective/pbg-eps-biofilm",
-      "homepage": "https://github.com/vivarium-collective/pbg-eps-biofilm",
-      "description": "",
-      "tags": [],
-      "cloned": true,
-      "processes": [],
-      "steps": [],
-      "composites": [],
-      "studies": [],
-      "investigations": [],
-      "counts": {
-        "processes": 0,
-        "steps": 0,
-        "composites": 0,
-        "studies": 0,
-        "investigations": 0
-      }
-    },
     {
       "name": "spatio-flux",
       "repo": "spatio-flux",

@@ -1,14 +1,5 @@
 [
   {
-    "name": "pbg-eps-biofilm",
-    "source": "https://github.com/vivarium-collective/pbg-eps-biofilm.git",
-    "ref": "main",
-    "package": "pbg_eps_biofilm",
-    "homepage": "https://github.com/vivarium-collective/pbg-eps-biofilm",
-    "description": "",
-    "tags": []
-  },
-  {
     "name": "spatio-flux",
     "source": "https://github.com/vivarium-collective/spatio-flux.git",
     "ref": "main",
