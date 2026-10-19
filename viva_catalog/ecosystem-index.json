@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T13:11:50+00:00",
+  "generated_at": "2026-10-19T13:22:14+00:00",
   "n_repos": 54,
   "n_cloned": 54,
   "repos": [
@@ -35,157 +35,215 @@
       "processes": [
         {
           "name": "Transcription",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "Translation",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "RNADegradation",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "Metabolism",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "MolecularPacking",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "Growth",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "Division",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "Diffusion",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "ABM",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "GeneExpression",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "NeuralDynamics",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "MetabolismGraph",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "GeneExpressionGraph",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "Grow",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "Express",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "Transport",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "TissueDiffusion",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "CellExchange",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "BigraphLink",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "Preprocess",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "Analyses",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "Visualizations",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "Tests",
-          "description": ""
-        },
-        {
-          "name": "Emitter",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "LoadResults",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "ProcessSchematic",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "BrownianMovement",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "PymunkParticleMovement",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "MonodKinetics",
+          "kind": "process",
           "description": "Monod/MM kinetics with reaction-level params + yield + biomass-proportional uptake."
         },
         {
           "name": "DynamicFBA",
+          "kind": "process",
           "description": "A dynamic FBA process that integrates FBA optimization with substrate uptake kinetics."
         },
         {
           "name": "SpatialDFBA",
+          "kind": "process",
           "description": "Spatial DFBA with one DFBA instance per grid cell."
         },
         {
           "name": "ShardedDFBA",
+          "kind": "process",
           "description": "Run dFBA on a configurable list of cells using one shared cobra Model."
         },
         {
           "name": "DiffusionAdvection",
+          "kind": "process",
           "description": "Explicit finite-difference diffusion\u2013advection in 2D (ny, nx grid)."
         },
         {
           "name": "_ShardFacade",
+          "kind": "process",
           "description": "Local Process whose ``invoke()`` enqueues onto a ShardManager"
         }
       ],
       "steps": [
         {
           "name": "ManageBoundaries",
+          "kind": "step",
           "description": "Boundary policies on ABSOLUTE positions."
         },
         {
           "name": "ParticleExchange",
+          "kind": "step",
           "description": "Particle \u2194 field exchange step."
         },
         {
           "name": "ParticleDivision",
+          "kind": "step",
           "description": "Stand-alone division process:"
         },
         {
           "name": "ParticleTotalMass",
+          "kind": "step",
           "description": "Sum per-particle scalar submasses into a single `mass` for ONE particle."
+        },
+        {
+          "name": "FieldHeatmap",
+          "kind": "visualization",
+          "description": "Plotly heatmap of a 2D ``field`` snapshot."
+        },
+        {
+          "name": "TestSuiteTimeSeries",
+          "kind": "visualization",
+          "description": "Matplotlib multi-line timeseries embedded as a base64 PNG in HTML."
+        },
+        {
+          "name": "FieldSnapshotsGrid",
+          "kind": "visualization",
+          "description": "Render ``n_snapshots`` evenly-spaced snapshots of each field as a grid."
+        },
+        {
+          "name": "FieldAnimationGif",
+          "kind": "visualization",
+          "description": "One-row-per-field animated GIF; one column = one timestep."
+        },
+        {
+          "name": "ParticleTraces",
+          "kind": "visualization",
+          "description": "Static figure of particle trajectories."
         }
       ],
       "composites": [
@@ -395,8 +453,8 @@
         }
       ],
       "counts": {
-        "processes": 34,
-        "steps": 4,
+        "processes": 33,
+        "steps": 9,
         "composites": 21,
         "studies": 27,
         "investigations": 2
@@ -413,16 +471,19 @@
       "processes": [
         {
           "name": "AmiciProcess",
+          "kind": "process",
           "description": "Time-stepped ODE simulation via AMICI."
         }
       ],
       "steps": [
         {
           "name": "AmiciUTCStep",
+          "kind": "step",
           "description": "One-shot uniform time course via AMICI."
         },
         {
           "name": "AmiciSteadyStateStep",
+          "kind": "step",
           "description": "One-shot steady-state solve via AMICI."
         }
       ],
@@ -461,10 +522,12 @@
       "processes": [
         {
           "name": "ArtistooProcess",
+          "kind": "process",
           "description": "Time-stepped bridge to a real Artistoo CPM (Act model by default)."
         },
         {
           "name": "CPMSortingProcess",
+          "kind": "process",
           "description": "Two-type differential-adhesion CPM \u2014 the Glazier & Graner (1993) model."
         }
       ],
@@ -526,30 +589,37 @@
       "processes": [
         {
           "name": "SpatialContainment",
+          "kind": "process",
           "description": "The 1-D containment step: interior production + membrane growth/decay +"
         },
         {
           "name": "Chemotaxis",
+          "kind": "process",
           "description": "One run-and-tumble + viability step for the whole population, ported"
         },
         {
           "name": "GrowthDivision",
+          "kind": "process",
           "description": "One grow-and-divide step over the whole population, ported verbatim from"
         },
         {
           "name": "Supply",
+          "kind": "process",
           "description": "Boundary inflow of nutrient -- the environmental coupling. rate=0 starves the cell."
         },
         {
           "name": "Metabolism",
+          "kind": "process",
           "description": "Toy metabolism: nutrient -> precursor, then 2 precursor -> 1 lipid."
         },
         {
           "name": "Membrane",
+          "kind": "process",
           "description": "The self-produced boundary's material: grows by incorporating free lipids,"
         },
         {
           "name": "Boundary",
+          "kind": "process",
           "description": "Derives the volume from the membrane -- the emergent boundary. Recomputes the"
         }
       ],
@@ -619,20 +689,24 @@
       "processes": [
         {
           "name": "Tick",
+          "kind": "process",
           "description": "Accumulate continuous simulation time into a float ``t`` store."
         },
         {
           "name": "Intervention",
+          "kind": "process",
           "description": "Apply a specific perturbation to one target store (see module docstring)."
         },
         {
           "name": "Clock",
+          "kind": "process",
           "description": "Emit an integer ``tick`` step counter each update."
         }
       ],
       "steps": [
         {
           "name": "MathExpressionStep",
+          "kind": "step",
           "description": "Evaluate a set of user-configured mathematical expressions as a single Step."
         }
       ],
@@ -658,26 +732,32 @@
       "processes": [
         {
           "name": "CategoricalBodyProcess",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "CTRNNProcess",
+          "kind": "process",
           "description": "CTRNN as a process-bigraph Process."
         },
         {
           "name": "ForagerBodyProcess",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "FallingObjectEnvironment",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "RelationalBodyProcess",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "WalkerBodyProcess",
+          "kind": "process",
           "description": ""
         }
       ],
@@ -803,14 +883,17 @@
       "processes": [
         {
           "name": "BoundaryControllerProcess",
+          "kind": "process",
           "description": "Perturbs a biofilm's boundary solute concentration on a schedule."
         },
         {
           "name": "ChemostatProcess",
+          "kind": "process",
           "description": "Well-mixed chemostat \u2014 Rust reimplementation of iDynoMiCS-2 ChemostatSolver."
         },
         {
           "name": "BiofilmProcess",
+          "kind": "process",
           "description": "2D single-species biofilm \u2014 Rust reimplementation of iDynoMiCS-2 core."
         }
       ],
@@ -889,67 +972,93 @@
       "steps": [
         {
           "name": "ResultsAnalysisStep",
+          "kind": "step",
           "description": ""
         },
         {
           "name": "LoadBiomodelStep",
+          "kind": "step",
           "description": "Resolve a BioModels identifier to a local SBML file and a list of jobs."
         },
         {
           "name": "SimulatorComparisonStep",
+          "kind": "step",
           "description": "Compare two simulator trajectories species-by-species."
         },
         {
           "name": "MultiSimulatorComparisonStep",
+          "kind": "step",
           "description": "All-pairs comparison across N named engines (simulators + references)."
         },
         {
           "name": "BatchCompareStep",
+          "kind": "step",
           "description": "All-pairs nRMSE across simulators per (biomodel_id, sedml_doc)."
         },
         {
           "name": "LoadReferenceResultsStep",
+          "kind": "step",
           "description": ""
         },
         {
           "name": "ReferenceDataStep",
+          "kind": "step",
           "description": "Emit an external reference trajectory (CSV) as a ``numeric_result``."
         },
         {
           "name": "SimulatorRunnerStep",
+          "kind": "step",
           "description": "Run every SED-ML job of every biomodel under one configured simulator."
         },
         {
           "name": "BiomodelsCopasiStep",
+          "kind": "step",
           "description": "Adapter: runtime ``model_source`` \u2192 ``pbg_copasi.CopasiUTCStep``."
         },
         {
           "name": "BiomodelsTelluriumStep",
+          "kind": "step",
           "description": "Adapter: runtime ``model_source`` \u2192 ``pbg_tellurium.TelluriumUTCStep``."
         },
         {
           "name": "BiomodelsSimbioStep",
+          "kind": "step",
           "description": "Adapter: runtime ``model_source`` \u2192 ``viva_simbio.SimbioUTCStep``."
         },
         {
           "name": "BiomodelsPyscesStep",
+          "kind": "step",
           "description": "Adapter: runtime ``model_source`` \u2192 PySCeS, emitting the full report set."
         },
         {
           "name": "BiomodelsAmiciStep",
+          "kind": "step",
           "description": "Adapter: runtime ``model_source`` \u2192 AMICI, emitting the full report set."
         },
         {
           "name": "BiomodelsCopasiSteadyStateStep",
+          "kind": "step",
           "description": "Adapter: SBML path \u2192 upstream `CopasiSteadyStateStep`."
         },
         {
           "name": "BiomodelsTelluriumSteadyStateStep",
+          "kind": "step",
           "description": "Adapter: SBML path \u2192 upstream `TelluriumSteadyStateStep`."
         },
         {
           "name": "BiomodelsSimbioSteadyStateStep",
+          "kind": "step",
           "description": "Adapter: SBML path \u2192 upstream `SimbioSteadyStateStep`."
+        },
+        {
+          "name": "CompareOverlay",
+          "kind": "visualization",
+          "description": "Summary-card grid + per-biomodel expandable species small-multiples."
+        },
+        {
+          "name": "BatchCompareOverlay",
+          "kind": "visualization",
+          "description": "Overview table + N-simulator multi-sedml-job card-grid overlay."
         }
       ],
       "composites": [
@@ -988,7 +1097,7 @@
       ],
       "counts": {
         "processes": 0,
-        "steps": 16,
+        "steps": 18,
         "composites": 4,
         "studies": 2,
         "investigations": 1
@@ -1005,22 +1114,32 @@
       "processes": [
         {
           "name": "BiRDReactorProcess",
+          "kind": "process",
           "description": "0D bioreactor: gas-liquid transport + internal Monod biomass ODE."
         },
         {
           "name": "MonodCellProcess",
+          "kind": "process",
           "description": "Monod-growth cell engine \u2014 the biomass/consumption term factored out."
         },
         {
           "name": "BiRDTransportProcess",
+          "kind": "process",
           "description": "Transport-only reactor: emits ONLY the gas-liquid transport contribution."
         },
         {
           "name": "BiRDColumn1DProcess",
+          "kind": "process",
           "description": "1D depth-resolved (axial) bubble-column reactor."
         }
       ],
-      "steps": [],
+      "steps": [
+        {
+          "name": "BioreactorPlots",
+          "kind": "visualization",
+          "description": "Time-series HTML plot of BiRD bioreactor scalar outputs."
+        }
+      ],
       "composites": [
         {
           "name": "reactor",
@@ -1069,7 +1188,7 @@
       ],
       "counts": {
         "processes": 4,
-        "steps": 0,
+        "steps": 1,
         "composites": 5,
         "studies": 4,
         "investigations": 1
@@ -1086,58 +1205,72 @@
       "processes": [
         {
           "name": "ToggleSwitch",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "GlucoseUptake",
+          "kind": "process",
           "description": "Monod uptake of glucose; grows biomass at yield Y."
         },
         {
           "name": "LactoseUptake",
+          "kind": "process",
           "description": "Monod uptake of lactose, GATED by `lac_repression` (default 1.0 = active);"
         },
         {
           "name": "CataboliteRepression",
+          "kind": "process",
           "description": "Sets `lac_repression` from glucose via a Hill switch: ~0 while glucose is"
         },
         {
           "name": "CellGrowth",
+          "kind": "process",
           "description": "Monod uptake \u2192 yield-coupled growth, GATED by viability (a dying cell can't grow)."
         },
         {
           "name": "MembraneStress",
+          "kind": "process",
           "description": "A stressor that decays viability at rate k_stress (0 = neutralised)."
         },
         {
           "name": "TemperatureRamp",
+          "kind": "process",
           "description": "Drives the temperature store on a linear ramp t_start \u2192 t_end over `duration`."
         },
         {
           "name": "MonodUptake",
+          "kind": "process",
           "description": "Biomass-coupled Monod uptake: consumes nutrient at q(N)\u00b7biomass and"
         },
         {
           "name": "YieldGrowth",
+          "kind": "process",
           "description": "Converts the uptake flux into biomass at a fixed yield (mass-conserving)."
         },
         {
           "name": "ThermalDeath",
+          "kind": "process",
           "description": "Viability collapses at a rate proportional to excess temperature above a"
         },
         {
           "name": "StemnessFate",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "CellMetabolism",
+          "kind": "process",
           "description": "Model A: cell grows and secretes a metabolite \u2192 a scalar flux (mol/time)."
         },
         {
           "name": "DiffusionField",
+          "kind": "process",
           "description": "Model B: 1-D reaction-diffusion field with a per-grid source input."
         },
         {
           "name": "FluxTranslator",
+          "kind": "process",
           "description": "The TRANSLATOR: cell flux (mol/time) \u2192 field source (mM/time) at the cell's"
         }
       ],
@@ -1263,10 +1396,22 @@
       "processes": [
         {
           "name": "CASPULEProcess",
+          "kind": "process",
           "description": "Bridge Process wrapping CASPULE / bond-aware LAMMPS."
         }
       ],
-      "steps": [],
+      "steps": [
+        {
+          "name": "BondNetworkPlots",
+          "kind": "visualization",
+          "description": "Time-series HTML plot of CASPULE's scalar bond-network outputs."
+        },
+        {
+          "name": "BondNetwork3D",
+          "kind": "visualization",
+          "description": "three.js-based 3D viewer for atoms + bonds."
+        }
+      ],
       "composites": [
         {
           "name": "bond-network-demo",
@@ -1281,7 +1426,7 @@
       "investigations": [],
       "counts": {
         "processes": 1,
-        "steps": 0,
+        "steps": 2,
         "composites": 2,
         "studies": 0,
         "investigations": 0
@@ -1298,10 +1443,12 @@
       "processes": [
         {
           "name": "ChasteSimulationProcess",
+          "kind": "process",
           "description": "Advance a real Chaste ``OffLatticeSimulation`` one interval per update."
         },
         {
           "name": "ChasteCellSortingProcess",
+          "kind": "process",
           "description": "Cell sorting by differential adhesion (Osborne et al. 2017, Figs 2-4)."
         }
       ],
@@ -1395,18 +1542,27 @@
       "processes": [
         {
           "name": "DynamicFBAProcess",
+          "kind": "process",
           "description": "Well-mixed dynamic flux balance analysis Process."
         },
         {
           "name": "SpatialDynamicFBAProcess",
+          "kind": "process",
           "description": "2D spatial dynamic FBA Process."
         },
         {
           "name": "CometsProcess",
+          "kind": "process",
           "description": "Bridge Process wrapping ``cometspy`` around the COMETS Java engine."
         }
       ],
-      "steps": [],
+      "steps": [
+        {
+          "name": "DynamicFBAPlots",
+          "kind": "visualization",
+          "description": "Time-series HTML plot of COMETS / dFBA scalar outputs."
+        }
+      ],
       "composites": [
         {
           "name": "dfba-textbook-with-viz",
@@ -1421,7 +1577,7 @@
       "investigations": [],
       "counts": {
         "processes": 3,
-        "steps": 0,
+        "steps": 1,
         "composites": 2,
         "studies": 0,
         "investigations": 0
@@ -1439,6 +1595,7 @@
       "steps": [
         {
           "name": "ObservableDetector",
+          "kind": "step",
           "description": "Step that turns CASPULE spatial state into NFSim species counts."
         }
       ],
@@ -1464,10 +1621,17 @@
       "processes": [
         {
           "name": "CompuCell3DProcess",
+          "kind": "process",
           "description": "Bridge Process wrapping CompuCell3D lattice-based cell simulation."
         }
       ],
-      "steps": [],
+      "steps": [
+        {
+          "name": "CellSortingPlots",
+          "kind": "visualization",
+          "description": "Time-series HTML plot of CompuCell3D's cell-sorting scalar outputs."
+        }
+      ],
       "composites": [
         {
           "name": "cell-sorting-with-viz",
@@ -1504,7 +1668,7 @@
       ],
       "counts": {
         "processes": 1,
-        "steps": 0,
+        "steps": 1,
         "composites": 2,
         "studies": 4,
         "investigations": 1
@@ -1521,21 +1685,30 @@
       "processes": [
         {
           "name": "CopasiUTCProcess",
+          "kind": "process",
           "description": ""
         }
       ],
       "steps": [
         {
           "name": "CopasiUTCStep",
+          "kind": "step",
           "description": ""
         },
         {
           "name": "CopasiSteadyStateStep",
+          "kind": "step",
           "description": ""
         },
         {
           "name": "ParameterEstimationStep",
+          "kind": "step",
           "description": "One-shot parameter estimation via COPASI's Parameter Estimation task."
+        },
+        {
+          "name": "SpeciesConcentrationsPlot",
+          "kind": "visualization",
+          "description": "Time-series HTML plot of CopasiUTCProcess's species concentrations."
         }
       ],
       "composites": [
@@ -1556,7 +1729,7 @@
       "investigations": [],
       "counts": {
         "processes": 1,
-        "steps": 3,
+        "steps": 4,
         "composites": 3,
         "studies": 0,
         "investigations": 0
@@ -1573,38 +1746,47 @@
       "processes": [
         {
           "name": "CPMProcess",
+          "kind": "process",
           "description": "process-bigraph wrapper around the Rust CPM engine, with a per-cell"
         },
         {
           "name": "BooleanSubcell",
+          "kind": "process",
           "description": "A minimal synchronous Boolean fate switch with Notch-style lateral"
         },
         {
           "name": "SBMLSubcell",
+          "kind": "process",
           "description": "Per-cell SBML ODE via viva-tellurium. The environmental ligand is pushed"
         },
         {
           "name": "ReceptorSubcell",
+          "kind": "process",
           "description": "Minimal per-cell ligand-receptor occupancy model. Reads the local"
         },
         {
           "name": "AdaptiveReceptorSubcell",
+          "kind": "process",
           "description": "Receptor occupancy with slow adaptation (fold-change detection)."
         },
         {
           "name": "EpitheliumProcess",
+          "kind": "process",
           "description": "CPMProcess + all-field per-cell readout, raw fields, point deposit,"
         },
         {
           "name": "InfectionProcess",
+          "kind": "process",
           "description": "Influenza H -> I infection transition (Sego 2022 cellularization)."
         },
         {
           "name": "ImmuneProcess",
+          "kind": "process",
           "description": "Off-lattice immune agents that chemotax up a field gradient."
         },
         {
           "name": "SystemicODEProcess",
+          "kind": "process",
           "description": "Global Price-2015 influenza immune ODE. Integrates the 10 systemic species {NB, N, T, X, A, B, P, W, G, O} with scipy LSODA over dt_seconds (default one 60 s MCS); the spatial species {H,I,M,K,E,L,C,V,DH} and derived vars {D, Sigma1, Sigma2, DI, R} are frozen as inputs. Emits the integrated state, the six Hill recruitment driver rates, and the T-activation signal sig_1 = a_11*T + a_12*D."
         }
       ],
@@ -1792,13 +1974,34 @@
       "tags": [],
       "cloned": true,
       "processes": [],
-      "steps": [],
+      "steps": [
+        {
+          "name": "SQLiteEmitter",
+          "kind": "emitter",
+          "description": "Append simulation state to a SQLite database each timestep."
+        },
+        {
+          "name": "ParquetEmitter",
+          "kind": "emitter",
+          "description": "Generic Parquet emitter, hive-partitioned per ``partitioning_keys``."
+        },
+        {
+          "name": "BufferedEmitter",
+          "kind": "emitter",
+          "description": "An extension to the :py:class:`~vivarium.core.emitter.Emitter` interface"
+        },
+        {
+          "name": "XArrayEmitter",
+          "kind": "emitter",
+          "description": "Generic XArrayEmitter. See module docstring for the lifecycle mapping."
+        }
+      ],
       "composites": [],
       "studies": [],
       "investigations": [],
       "counts": {
         "processes": 0,
-        "steps": 0,
+        "steps": 4,
         "composites": 0,
         "studies": 0,
         "investigations": 0
@@ -1816,6 +2019,7 @@
       "steps": [
         {
           "name": "EquilibratorThermoStep",
+          "kind": "step",
           "description": "Real eQuilibrator feasibility gate over a configured reaction set."
         }
       ],
@@ -1846,12 +2050,14 @@
       "processes": [
         {
           "name": "OdeProcess",
+          "kind": "process",
           "description": "Integrate ``d(state)/dt = rhs(state, inputs, params)`` over each interval."
         }
       ],
       "steps": [
         {
           "name": "MathExpressionStep",
+          "kind": "step",
           "description": ""
         }
       ],
@@ -1904,68 +2110,84 @@
       "processes": [
         {
           "name": "AdvectionDiffusionProcess",
+          "kind": "process",
           "description": "Transient advection-diffusion (+ optional Soret drift) over a"
         },
         {
           "name": "PeristalticWallProcess",
+          "kind": "process",
           "description": "Prescribed traveling-wave wall motion + harmonic-extension interior"
         },
         {
           "name": "PeristalticFlowProcess",
+          "kind": "process",
           "description": "Real dolfinx ALE incompressible Navier-Stokes (IPCS operator"
         },
         {
           "name": "MovingBoundaryProcess",
+          "kind": "process",
           "description": "Transient diffusion on a deforming (prescribed-ALE) domain: a unit"
         },
         {
           "name": "LogisticReactionProcess",
+          "kind": "process",
           "description": "Logistic reaction term for Fisher-KPP: ``r*u*(1 - u/K)``."
         },
         {
           "name": "GrayScottReactionProcess",
+          "kind": "process",
           "description": "Gray-Scott reaction term coupling TWO diffusing species U, V:"
         },
         {
           "name": "LinearDegradationProcess",
+          "kind": "process",
           "description": "First-order degradation term for the Source-Diffusion-Degradation"
         },
         {
           "name": "NavierStokesProcess",
+          "kind": "process",
           "description": "Incompressible lid-driven cavity flow via real dolfinx IPCS splitting."
         },
         {
           "name": "CylinderFlowProcess",
+          "kind": "process",
           "description": "Incompressible flow past a cylinder in a channel (DFG 2D-2 benchmark)"
         },
         {
           "name": "FenicsReactiveTransportProcess",
+          "kind": "process",
           "description": "Real dolfinx FEM advection-diffusion vent-ocean cross-section on the"
         },
         {
           "name": "FenicsThermophoreticTrapProcess",
+          "kind": "process",
           "description": "Real dolfinx FEM thermophoretic trap on the ``spatial_transport`` face,"
         },
         {
           "name": "DiffusionProcess",
+          "kind": "process",
           "description": "Transient diffusion (heat equation) over a unit-square mesh, solved"
         }
       ],
       "steps": [
         {
           "name": "PoissonSolverStep",
+          "kind": "step",
           "description": "Solve the steady Poisson equation on a unit-square mesh and report"
         },
         {
           "name": "AdaptiveRefinementStep",
+          "kind": "step",
           "description": "Run the full residual-based Doerfler-marking AMR loop on the L-shaped"
         },
         {
           "name": "MultisolutePoreStep",
+          "kind": "step",
           "description": "Run a multisolute Soret + adsorption + degradation transport simulation"
         },
         {
           "name": "PorousFlowStep",
+          "kind": "step",
           "description": "Steady Stokes (creeping) flow through a periodic circular-pillar"
         }
       ],
@@ -2086,309 +2308,710 @@
       "processes": [
         {
           "name": "AgentGrowthProcess",
+          "kind": "process",
           "description": "Advance every individual toward division by adding ``growth_rate * interval``"
         },
         {
           "name": "LineageStatsProcess",
+          "kind": "process",
           "description": "Read-only lineage statistics over the agents map: the population size, the"
         },
         {
           "name": "MultisolutePoreSurrogateProcess",
+          "kind": "process",
           "description": "Reduced multisolute pore-network surrogate (uv ``.venv``, no dolfinx)."
         },
         {
           "name": "FenicsMultisolutePoreProcess",
+          "kind": "process",
           "description": "High-fidelity 3-D FEM reference for multisolute localization: drives"
         },
         {
           "name": "ConservationLedgerProcess",
+          "kind": "process",
           "description": "Integrate published source rates and audit them against the accumulated pools."
         },
         {
           "name": "ChargeLedgerProcess",
+          "kind": "process",
           "description": "Charge + electron-count ledger for the electrochemical interface (Phase 2)."
         },
         {
           "name": "RewriteLedgerProcess",
+          "kind": "process",
           "description": "Conservation audit for the Phase-5 structural rewrites (``_add`` /"
         },
         {
           "name": "NetworkLedgerProcess",
+          "kind": "process",
           "description": "Element + free-energy ledger over an open chemical network (Phase 3)."
         },
         {
           "name": "FreeEnergyLedgerProcess",
+          "kind": "process",
           "description": "Free-energy ledger of an individual's power budget (Phase 6)."
         },
         {
           "name": "InformationLedgerProcess",
+          "kind": "process",
           "description": "Information ledger \u2014 heritable bits per unit energy (Phase 7)."
         },
         {
           "name": "EcologyElementLedgerProcess",
+          "kind": "process",
           "description": "Element ledger ACROSS agents and fields (Phase 8)."
         },
         {
           "name": "AmphiphileSynthesisProcess",
+          "kind": "process",
           "description": "Endogenous amphiphile production from the dissolved carbon pool."
         },
         {
           "name": "ThioesterAminothiolMembraneProcess",
+          "kind": "process",
           "description": "A second boundary class on the ``boundary`` face: a thioester/aminothiol"
         },
         {
           "name": "LineageStateProcess",
+          "kind": "process",
           "description": "Read the lineage's heredity class and the cell's live pools into the"
         },
         {
           "name": "ActiveImportProcess",
+          "kind": "process",
           "description": "Fire the :class:`~viva_genesis.ecology.reactive_system.ActiveUptakeRule`"
         },
         {
           "name": "MaintenanceDemandProcess",
+          "kind": "process",
           "description": "Price the lineage's upkeep under one of three maintenance laws (W per"
         },
         {
           "name": "LineageSupplyProcess",
+          "kind": "process",
           "description": "Feed the heredity class's shared pools and energy store from the"
         },
         {
           "name": "PopulationBudgetProcess",
+          "kind": "process",
           "description": "Carry the lineage's net budget into a population of real individuals."
         },
         {
           "name": "EnvironmentalRelaxationProcess",
+          "kind": "process",
           "description": "Relaxes the geological support the lineage lives on \u2014 the external gradient,"
         },
         {
           "name": "OffGradientPersistenceProcess",
+          "kind": "process",
           "description": "A lineage's co-limited free-energy + resource budget under relaxing geological"
         },
         {
           "name": "AmphiphileChainExtensionProcess",
+          "kind": "process",
           "description": "Explicit fatty-acid chain elongation -> chain-length distribution + CAC clearance."
         },
         {
           "name": "ProtocellAssemblyProcess",
+          "kind": "process",
           "description": "Coarse-grained physico-chemical model of mixed single-chain amphiphile"
         },
         {
           "name": "MicrokineticCarbonFixationProcess",
+          "kind": "process",
           "description": "Adsorbate microkinetics of CO2 reduction on the Fe/Ni-sulfide surface"
         },
         {
           "name": "PhGradientNernstPlanckProcess",
+          "kind": "process",
           "description": "Real 1-D FiPy electroneutral Nernst-Planck proton electrodiffusion across"
         },
         {
           "name": "ButlerVolmerCarbonFixationProcess",
+          "kind": "process",
           "description": "Carbon fixation as a galvanic cell across the Fe/Ni-sulfide wall: Nernst"
         },
         {
           "name": "ProtonBudgetProcess",
+          "kind": "process",
           "description": "Conserved proton reservoir coupling the pH-gradient source to carbon"
         },
         {
           "name": "MineralConductivityProcess",
+          "kind": "process",
           "description": "Derives the usable fraction of the geochemical gradient from the wall's circuit:"
         },
         {
           "name": "EmpiricalCarbonFixationProcess",
+          "kind": "process",
           "description": "og-01's lab-calibrated gated kinetics, adapted to the carbon_fixation"
         },
         {
           "name": "VentReactorReproductionProcess",
+          "kind": "process",
           "description": "Reduced vent\u2013ocean mixing reactor."
         },
         {
           "name": "FipyReactiveTransportProcess",
+          "kind": "process",
           "description": "Real 2-D FiPy advection\u2013diffusion\u2013reaction vent\u2013ocean cross-section."
         },
         {
           "name": "FipyUniformUpflowTransportProcess",
+          "kind": "process",
           "description": "The same real FiPy FVM solve with the Darcy-Boussinesq convection term"
         },
         {
           "name": "SurrogateThermophoreticTrapProcess",
+          "kind": "process",
           "description": "Reduced surrogate for the thermophoretic trap (plan 4.6): the closed-form"
         },
         {
           "name": "PoreEnrichedFeedProcess",
+          "kind": "process",
           "description": "Scale a base precursor feed by the pore enrichment -> pore-local feed."
         },
         {
           "name": "ThermophoreticTrapProcess",
+          "kind": "process",
           "description": "Real 1-D FiPy finite-volume accumulation column for the Baaske thermal"
         },
         {
           "name": "GradientOnlyWorkProcess",
+          "kind": "process",
           "description": "Direct gradient-to-work coupling with no carrier store (study-35 matched null)."
         },
         {
           "name": "_EnergyCouplingBase",
+          "kind": "process",
           "description": "The shared per-individual power-budget engine; subclasses fix the store."
         },
         {
           "name": "ThioesterCarrierCycleProcess",
+          "kind": "process",
           "description": "Named thioester/acyl-phosphate carrier cycle with a closed free-energy ledger."
         },
         {
           "name": "BioenergeticSelectionProcess",
+          "kind": "process",
           "description": "Deterministic replicator-dynamics evolutionary control loop over membrane"
         },
         {
           "name": "EnvironmentalDeclineProcess",
+          "kind": "process",
           "description": "Ramps the external geochemical gradient down over the run \u2014 the environment"
         },
         {
           "name": "GeochemicalDriveProcess",
+          "kind": "process",
           "description": "The sustained environmental free-energy supply \u2014 the vent's geochemical /"
         },
         {
           "name": "ProtoEnergyCurrencyProcess",
+          "kind": "process",
           "description": "A pre-ATP energy currency as explicit free-energy bookkeeping."
         },
         {
           "name": "LineageReplicatorProcess",
+          "kind": "process",
           "description": "Agent-based heredity lineage: individuals carry a chemical phenotype inherited"
         },
         {
           "name": "_HeredityProcessBase",
+          "kind": "process",
           "description": "One heredity class on the face: shared pools in (molar) + energy store (J) +"
         },
         {
           "name": "BudgetFeedProcess",
+          "kind": "process",
           "description": "Chemostat feed of the shared precursor pools and a fixed-power energy supply."
         },
         {
           "name": "HeredityReplicatorProcess",
+          "kind": "process",
           "description": "Real libRoadRunner quasispecies replicator for the Eigen error threshold."
         },
         {
           "name": "CrossFeedingMetacommunityProcess",
+          "kind": "process",
           "description": "Deterministic cross-feeding metacommunity over N connected compartments."
         },
         {
           "name": "StochasticProtocellEcologyProcess",
+          "kind": "process",
           "description": "Lightweight Gillespie-SSA cross-feeding protocell community (Option B)."
         },
         {
           "name": "ProtocellNetworkProcess",
+          "kind": "process",
           "description": "The Phase-3 reaction universe inside ONE protocell, masked to a lineage"
         },
         {
           "name": "ProtocellNullNetworkProcess",
+          "kind": "process",
           "description": "The ``null_network`` class of the proto_ecology face: the Phase-3 matched"
         },
         {
           "name": "ReactionAtlasBuildProcess",
+          "kind": "process",
           "description": "Build the atlas from the measured-tier seed; emit coverage + leakage metrics."
         },
         {
           "name": "MineralSurfaceDynamicsProcess",
+          "kind": "process",
           "description": "Evolve pore space + catalytic accessibility of a reactive mineral interface."
         },
         {
           "name": "SerpentinizationReproductionProcess",
+          "kind": "process",
           "description": "Reduced serpentinization source: ``(T, flow) -> H2 / alkalinity / heat``."
         },
         {
           "name": "PhosphorusSpeciationProcess",
+          "kind": "process",
           "description": "Real libRoadRunner P-speciation network (phosphate <-> polyphosphate <->"
         },
         {
           "name": "ReducedNitrogenProductionProcess",
+          "kind": "process",
           "description": "FeS-mediated reduction of NO3-/NO2- (and minor N2 fixation) to NH4+, with"
         },
         {
           "name": "PhreeqcSerpentinizationProcess",
+          "kind": "process",
           "description": "Real PHREEQC serpentinization source: ``(T, flow, DIC) -> H2 / alkalinity / heat``."
         },
         {
           "name": "HeredityPopulationProcess",
+          "kind": "process",
           "description": "Wright-Fisher selection on an inherited network-composition trait."
         },
         {
           "name": "GrowthDivisionProcess",
+          "kind": "process",
           "description": "Amphiphile-driven membrane growth + division at a measured critical geometry."
         },
         {
           "name": "OsmoticGrowthDivisionProcess",
+          "kind": "process",
           "description": "Couples an internal autocatalytic osmolyte source to compartment osmotic"
         },
         {
           "name": "RTCANetworkProcess",
+          "kind": "process",
           "description": "The curated mechanistic rTCA network on the real libRoadRunner engine \u2014"
         },
         {
           "name": "RTCANullProcess",
+          "kind": "process",
           "description": "Degree-preserving matched null of the rTCA network (same compounds,"
         },
         {
           "name": "RoadRunnerNetworkProcess",
+          "kind": "process",
           "description": "Real libRoadRunner rTCA-fragment CSTR. Reads the upstream feed"
         },
         {
           "name": "ReactionUniverseProcess",
+          "kind": "process",
           "description": "Rule-generated open C/H/O reaction universe integrated by the real"
         },
         {
           "name": "NullNetworkProcess",
+          "kind": "process",
           "description": "Matched null control: the universe's compounds, reaction count, arity,"
         },
         {
           "name": "CarbonFixationProcess",
+          "kind": "process",
           "description": "Lab-calibrated mineral-catalyzed CO2 reduction, gated by thermodynamic"
         }
       ],
       "steps": [
         {
           "name": "BoundaryFormationStep",
+          "kind": "step",
           "description": "``_add`` an individual to the agents map when the endogenous amphiphile"
         },
         {
           "name": "DivisionStep",
+          "kind": "step",
           "description": "``_divide`` any individual whose division_state has reached 1.0. The split"
         },
         {
           "name": "LysisStep",
+          "kind": "step",
           "description": "``_remove`` individuals whose boundary integrity has collapsed (osmotic"
         },
         {
           "name": "ExtinctionStep",
+          "kind": "step",
           "description": "``_remove`` individuals that have starved below a viable matter floor (no"
         },
         {
           "name": "AblationStep",
+          "kind": "step",
           "description": "Schedule the withdrawal of the three geological drivers."
         },
         {
           "name": "GeologicalDriverStep",
+          "kind": "step",
           "description": "Turn the support fractions into the physical drivers the phases read."
         },
         {
           "name": "EnrichmentAdapterStep",
+          "kind": "step",
           "description": "Adapt a single-tracer ``localization`` class (og-03's column and its"
         },
         {
           "name": "AutonomyBudgetStep",
+          "kind": "step",
           "description": "Read what the phases deliver and publish the co-limited budget and the"
         },
         {
           "name": "StructuralEventLogStep",
+          "kind": "step",
           "description": "Record every structural transition of the integrated world as an event:"
         },
         {
           "name": "HeredityAttachmentStep",
+          "kind": "step",
           "description": "Attach heredity only when the matched budgets and the class's copy fidelity allow it."
         },
         {
           "name": "SpatialCouplingStep",
+          "kind": "step",
           "description": "Couple the agents onto the pore field and fire the exchange rules."
         },
         {
           "name": "EcologyReducerStep",
+          "kind": "step",
           "description": "Recompute og-07's gate readouts from the agents map, with capabilities"
+        },
+        {
+          "name": "OgCoupledInterfaceViz",
+          "kind": "visualization",
+          "description": "og-27 \u2014 the evolving geochemical interface: supply + self-throttling."
+        },
+        {
+          "name": "OgEndogenousAutocatalysisViz",
+          "kind": "visualization",
+          "description": "og-29 \u2014 endogenous autocatalysis + the Gate-A matched-null control."
+        },
+        {
+          "name": "OgSpatialProtometabolismViz",
+          "kind": "visualization",
+          "description": "og-30 \u2014 thermophoretic enrichment + productive flux pore vs control."
+        },
+        {
+          "name": "OgReactionAtlasCoverageViz",
+          "kind": "visualization",
+          "description": "og-28 \u2014 prebiotic reaction atlas coverage by confidence tier."
+        },
+        {
+          "name": "OgMembraneCohesionViz",
+          "kind": "visualization",
+          "description": "og-31 \u2014 Martini bilayer cohesion: potential energy settling negative."
+        },
+        {
+          "name": "OgRtcaAutocatalysisViz",
+          "kind": "visualization",
+          "description": "og-rtca \u2014 branched reductive-TCA: refuted at vent, topology-capable beyond it."
+        },
+        {
+          "name": "OgAutocatalysisDiscriminatorViz",
+          "kind": "visualization",
+          "description": "og-29 \u2014 endogenous autocatalysis refuted (formose-type), the honest negative."
+        },
+        {
+          "name": "OgRtcaMechanismViz",
+          "kind": "visualization",
+          "description": "og-rtca \u2014 the mechanism behind the honest negative: the reductive carboxylations are"
+        },
+        {
+          "name": "ProtometabolismGainPhaseMap",
+          "kind": "visualization",
+          "description": "og-02 Decision view: the protometabolic ignition landscape over"
+        },
+        {
+          "name": "PoreIgnitionCoupling",
+          "kind": "visualization",
+          "description": "og-03 Decision/Mechanism view: couples the real thermophoretic trap to the"
+        },
+        {
+          "name": "ProtocellPhaseMap",
+          "kind": "visualization",
+          "description": "og-04 Decision view: the retention-access plane (3 regimes) + the salt-tolerance"
+        },
+        {
+          "name": "BioenergeticProvenanceViz",
+          "kind": "visualization",
+          "description": "og-05 Decision view: the energy-provenance trajectory (external \u2192 internal) +"
+        },
+        {
+          "name": "CarbonFixationPhaseMap",
+          "kind": "visualization",
+          "description": "og-01 Decision view: the carbon-fixation landscape over (vent pH \u00d7 H\u2082),"
+        },
+        {
+          "name": "HeredityLineageTree",
+          "kind": "visualization",
+          "description": "og-06 Decision view: the agent-based heredity lineage. Runs the real lineage"
+        },
+        {
+          "name": "MetacommunityPhaseMap",
+          "kind": "visualization",
+          "description": "og-07 Decision view: the cross-feeding metacommunity robustness-emergence"
+        },
+        {
+          "name": "OffGradientPhaseMap",
+          "kind": "visualization",
+          "description": "og-08 Decision view: the off-gradient survival frontier over (environmental"
+        },
+        {
+          "name": "VentSpecificityMap",
+          "kind": "visualization",
+          "description": "og-adv Decision view: vent-specificity of the carbon-fixation gate over"
+        },
+        {
+          "name": "NitrogenAssimilationPhaseMap",
+          "kind": "visualization",
+          "description": "og-res Decision view: the C:N supply-ratio landscape over (nitrate supply x FeS"
+        },
+        {
+          "name": "PhosphorusAvailabilityMap",
+          "kind": "visualization",
+          "description": "og-res-phosphorus Decision view: the reactive-P availability landscape over"
+        },
+        {
+          "name": "ProtoEnergeticsMap",
+          "kind": "visualization",
+          "description": "og-proto-energetics Decision view: the free-energy-capture phase map over"
+        },
+        {
+          "name": "ProtoEnergeticsProvenanceViz",
+          "kind": "visualization",
+          "description": "og-proto-energetics Mechanism view: the energy-provenance panel \u2014 the fraction"
+        },
+        {
+          "name": "GrowthDivisionMap",
+          "kind": "visualization",
+          "description": "og-growth-division Decision view: the bounded viable growth\u2192division band over"
+        },
+        {
+          "name": "VentHabitabilityMap",
+          "kind": "visualization",
+          "description": "og-00 Decision view: the Lost City habitability window over (olivine reaction"
+        },
+        {
+          "name": "VentSerpentinizationEngine",
+          "kind": "visualization",
+          "description": "og-00 Mechanism view: the serpentinization engine \u2014 the PHREEQC endmember pH_eq"
+        },
+        {
+          "name": "PoreLocalizationMap",
+          "kind": "visualization",
+          "description": "og-03 Decision view: the native pore-localization phase map over (pore porosity"
+        },
+        {
+          "name": "PoreEnrichmentSolverSensitivity",
+          "kind": "visualization",
+          "description": "og-03 Decision view: the honest single-tracer enrichment readout (FiPy reduced"
+        },
+        {
+          "name": "ProtocellBoundaryWorld",
+          "kind": "visualization",
+          "description": "og-04 World view: the physical compartment + the gradient crossing it \u2014 a vesicle"
+        },
+        {
+          "name": "BioenergeticSurvivalMap",
+          "kind": "visualization",
+          "description": "og-05 Decision view: the survival phase map over (pump catalyst efficiency \u00d7"
+        },
+        {
+          "name": "EcologyMetacommunityThreeView",
+          "kind": "visualization",
+          "description": "og-07 complete three-view (World network + Mechanism robustness-vs-connectivity"
+        },
+        {
+          "name": "EscapeOffGradientThreeView",
+          "kind": "visualization",
+          "description": "og-08 complete three-view (World persistence trajectories + Mechanism knockout"
+        },
+        {
+          "name": "VentSpecificityThreeView",
+          "kind": "visualization",
+          "description": "og-adv complete three-view (World vent-vs-generic trajectories + Mechanism"
+        },
+        {
+          "name": "PoreColocalizationMap",
+          "kind": "visualization",
+          "description": "og-03 Phase-4 Decision view: the multisolute co-localization phase map over"
+        },
+        {
+          "name": "_ArtifactViz",
+          "kind": "visualization",
+          "description": ""
+        },
+        {
+          "name": "ElectrochemistryMechanismMap",
+          "kind": "visualization",
+          "description": "Phase-2 Decision view: the limitation label (thermodynamic / electrical /"
+        },
+        {
+          "name": "ElectrochemistryPolarization",
+          "kind": "visualization",
+          "description": "Phase-2 Mechanism view: the Butler-Volmer galvanic cell's polarization curve"
+        },
+        {
+          "name": "VentEnvironmentPosterior",
+          "kind": "visualization",
+          "description": "Phase-1 Decision view: the Lost-City-conditioned posterior of the vent world"
+        },
+        {
+          "name": "EndogenousBoundaryViz",
+          "kind": "visualization",
+          "description": "og-04-alt: the agents count over time in the favorable (endogenous"
+        },
+        {
+          "name": "PhysicalReproductionViz",
+          "kind": "visualization",
+          "description": "og-growth-alt: the lineage \u2014 population and deepest generation over time \u2014"
+        },
+        {
+          "name": "_Phase6Viz",
+          "kind": "visualization",
+          "description": ""
+        },
+        {
+          "name": "VentReactorTimeseries",
+          "kind": "visualization",
+          "description": "Campaign-0 real vent-reactor trajectory: temperature, pH, reducing power"
+        },
+        {
+          "name": "CarbonFixationViz",
+          "kind": "visualization",
+          "description": "Campaign-I real geology->reduced-carbon trajectory: product yields"
+        },
+        {
+          "name": "ProtometabolismViz",
+          "kind": "visualization",
+          "description": "Campaign-II real protometabolic-network trajectory: rTCA-fragment species"
+        },
+        {
+          "name": "VentCrossSection",
+          "kind": "visualization",
+          "description": "Campaign-0 REAL 2-D vent cross-section \u2014 every pixel a FiPy cell."
+        },
+        {
+          "name": "ProtonGradientProfile",
+          "kind": "visualization",
+          "description": "Campaign-I REAL proton gradient across the Fe/Ni-S barrier \u2014 every value a"
+        },
+        {
+          "name": "ProtometabolicNetwork",
+          "kind": "visualization",
+          "description": "Campaign-II REAL rTCA-fragment network igniting \u2014 every value a libRoadRunner"
+        },
+        {
+          "name": "ThermophoreticTrapViz",
+          "kind": "visualization",
+          "description": "Campaign-III REAL thermal trap \u2014 the accumulation column and the geometric"
+        },
+        {
+          "name": "ThermophoreticTrap3D",
+          "kind": "visualization",
+          "description": "og-03 World view in 3-D: the real thermophoretic trap's accumulation column"
+        },
+        {
+          "name": "VentChimney3D",
+          "kind": "visualization",
+          "description": "og-00 World view in 3-D: the alkaline vent chimney as a tapered column coloured"
+        },
+        {
+          "name": "ProtocellVesicle3D",
+          "kind": "visualization",
+          "description": "og-04 World view in 3-D: the protocell as a vesicle \u2014 a semi-transparent"
+        },
+        {
+          "name": "ProtocellWindowViz",
+          "kind": "visualization",
+          "description": "Campaign-IV protocell stability window \u2014 the Jordan-2019 broadening and the"
+        },
+        {
+          "name": "BioenergeticInternalizationViz",
+          "kind": "visualization",
+          "description": "Campaign-V REAL bioenergetic internalization under selection. Runs the"
+        },
+        {
+          "name": "HeredityErrorThresholdViz",
+          "kind": "visualization",
+          "description": "Campaign-VI REAL quasispecies heredity \u2014 the Eigen error threshold and the"
+        },
+        {
+          "name": "NitrogenAssimilationViz",
+          "kind": "visualization",
+          "description": "Campaign-I (Module I) WORLD view \u2014 reduced-nitrogen assimilation at the vent."
+        },
+        {
+          "name": "NitrogenCarbonBalanceViz",
+          "kind": "visualization",
+          "description": "Campaign-I (Module I) MECHANISM view \u2014 the C:N supply-ratio panel. Runs the real"
+        },
+        {
+          "name": "PhosphorusSpeciationViz",
+          "kind": "visualization",
+          "description": "og-res-phosphorus World view: the P-species trajectories of the real"
+        },
+        {
+          "name": "PhosphorusMechanismViz",
+          "kind": "visualization",
+          "description": "og-res-phosphorus Mechanism view: the reactive-P production flux vs the"
+        },
+        {
+          "name": "ProtoEnergeticsWorldViz",
+          "kind": "visualization",
+          "description": "Proto-energetics World view \u2014 charging and spending a pre-ATP energy currency."
+        },
+        {
+          "name": "OsmoticGrowthWorld",
+          "kind": "visualization",
+          "description": "og-growth-division World view \u2014 the favorable (matched) compartment's physical"
+        },
+        {
+          "name": "OsmoticCouplingMechanism",
+          "kind": "visualization",
+          "description": "og-growth-division Mechanism view \u2014 the osmotic coupling panel. **Left:** for the"
+        },
+        {
+          "name": "OgSelfMaintainingProtocellViz",
+          "kind": "visualization",
+          "description": "og-32 Gate C: composition\u2192permeability\u2192retention (MD-informed), the membrane's"
+        },
+        {
+          "name": "OgChemicalHeredityViz",
+          "kind": "visualization",
+          "description": "og-34 Gate D: inherited-composition fitness correlation + selected population shift vs a"
+        },
+        {
+          "name": "OgEnergyCouplingViz",
+          "kind": "visualization",
+          "description": "og-35 Gate E: thioester carrier vs matched gradient-only control \u2014 wins the gradient dip"
+        },
+        {
+          "name": "OgGrowthDivisionViz",
+          "kind": "visualization",
+          "description": "og-33 Gate D: division rate scales with metabolic (net-carbon) flux when coupled, flat when"
+        },
+        {
+          "name": "OgStochasticEcologyViz",
+          "kind": "visualization",
+          "description": "og-36 Gate E: a cross-feeding community out-produces the best single lineage (~1.9\u00d7, causal"
+        },
+        {
+          "name": "OgFattyAcidVesicleStabilityViz",
+          "kind": "visualization",
+          "description": "og-32b Gate C: REAL single-chain fatty-acid vesicles (viva-openmm Martini 3) hold a closed"
         }
       ],
       "composites": [
@@ -2623,7 +3246,7 @@
       ],
       "counts": {
         "processes": 64,
-        "steps": 12,
+        "steps": 77,
         "composites": 41,
         "studies": 14,
         "investigations": 1
@@ -2640,116 +3263,144 @@
       "processes": [
         {
           "name": "PTHSecretion",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "Ca2Absorption",
+          "kind": "process",
           "description": ""
         }
       ],
       "steps": [
         {
           "name": "BtoCrosswalkStep",
+          "kind": "step",
           "description": "Build the BTO->Uberon anatomy crosswalk (Brenda Tissue Ontology terms mapped to Uberon via the organ index) used when harvesting each model's annotation-derived anatomy. Emits term/mapping counts."
         },
         {
           "name": "FtuModelCoverageStep",
+          "kind": "step",
           "description": "Match the committed full-corpus BioModels catalog's model names against a curated list of HRA functional tissue units (FTUs) by synonym substring, marking which FTUs have at least one matching model."
         },
         {
           "name": "HRAReferenceOrgansStep",
+          "kind": "step",
           "description": "Fetch HRA reference organs (Uberon-keyed, per-sex GLB 3D assets) from the CCF API's `/v1/reference-organs` endpoint."
         },
         {
           "name": "HRACellTypesStep",
+          "kind": "step",
           "description": "Fetch HRA cell-type term occurrences (Cell Ontology, CURIE-keyed) from the CCF API's `/v1/cell-type-term-occurences` endpoint, sorted by occurrence count descending."
         },
         {
           "name": "HRAAnatomicalStructuresStep",
+          "kind": "step",
           "description": "Fetch HRA anatomical-structure term occurrences (CURIE-keyed) from the CCF API's `/v1/ontology-term-occurences` endpoint, sorted by occurrence count descending."
         },
         {
           "name": "HRACrosswalkStep",
+          "kind": "step",
           "description": "Fetch the ASCT+B-3D models crosswalk (1,400+ anatomical structures) from the HRA CDN's `asct-b-3d-models-crosswalk.csv` digital object."
         },
         {
           "name": "HRAFtuStep",
+          "kind": "step",
           "description": "Fetch a 3D functional-tissue-unit (FTU) digital object from the HRA CDN's `3d-ftu/<slug>` endpoint, resolving its GLB asset URL."
         },
         {
           "name": "GeneEnrichStep",
+          "kind": "step",
           "description": "Enrich each model with its organism (from NCBITaxon), HGNC/Ensembl genes (from UniProt), and gene-derived Uberon anatomy (via the ASCT+B gene->Uberon index), re-mapped to HRA organs/FTUs/cell types. Emits how many models carry gene ids and gene-derived anatomy."
         },
         {
           "name": "FTUPathTableStep",
+          "kind": "step",
           "description": "Load the FTU heart->FTU->heart path table (FTU_Table_S1) from disk and emit the parsed paths + FTU ontology ids in-graph."
         },
         {
           "name": "VasculatureNetworkStep",
+          "kind": "step",
           "description": "Build a directed whole-body blood-transport graph from the FTU heart->FTU->heart paths (handed over in-graph by an upstream FTUPathTableStep), validating that every FTU closes a circuit through the heart."
         },
         {
           "name": "CtpopIsletParameterizationStep",
+          "kind": "step",
           "description": "Bind documented HRA-aligned islet beta-cell fractions to the Topp2000 beta-cell-mass model's (BIOMD0000000341) initial beta-cell mass, and run healthy vs beta-depleted composition scenarios to show the glucose-regulation consequence."
         },
         {
           "name": "ModelHarvestStep",
+          "kind": "step",
           "description": "Load (cache-or-harvest) the unified BioModels+PhysioNet -> HRA model DB and emit its path, total count, per-source counts, and coverage summary. Reproducible: run this study to refresh the DB."
         },
         {
           "name": "AnnotationCatalogStep",
+          "kind": "step",
           "description": "Produce the annotation (SBML MIRIAM + BTO crosswalk) organ catalog in-graph: load the committed catalog cache if present, else build it live by fetching each model's SBML."
         },
         {
           "name": "AnnotationMatchStep",
+          "kind": "step",
           "description": "Summarize the annotation-based (SBML MIRIAM + BTO crosswalk) organ-matching catalog: model/organ counts and the qualifier/ontology distribution behind each organ tag."
         },
         {
           "name": "RecallGainStep",
+          "kind": "step",
           "description": "Compare the annotation-based organ-matching catalog against the name-synonym catalog to quantify the recall gain (organs/models added) from parsing SBML MIRIAM/BTO annotations."
         },
         {
           "name": "CorpusCatalogStep",
+          "kind": "step",
           "description": "Produce the full-corpus biomodel-DO catalog in-graph: load the committed catalog cache if present, else build it live from the BioModels registry + HRA reference organs."
         },
         {
           "name": "BiomodelDOCatalogStep",
+          "kind": "step",
           "description": "Search BioModels for a text query, annotate each hit with HRA Uberon organ terms via transparent synonym-matching over the model name, and build the inverse organ->models index."
         },
         {
           "name": "BiomodelHraMapStep",
+          "kind": "step",
           "description": "Load (cache-or-build) the BioModels->HRA map DB and emit its path, model count, and coverage summary. The DB itself (a JSON array of per-model molecular ids, publication links, organism, and HRA organ/FTU/cell-type mapping) is downloadable from the workspace Resources; this Step surfaces the count + coverage without emitting the whole 2.7 MB file."
         },
         {
           "name": "OrganModelSelectStep",
+          "kind": "step",
           "description": "Select every model tagged to an organ from the BioModels/Physiome->HRA map and route it to a simulator (SBML->COPASI, CellML->OpenCOR); PhysioNet dataset entries are excluded."
         },
         {
           "name": "OrganSimulationStep",
+          "kind": "step",
           "description": "Run all of an organ's atlas-mapped models (SBML->COPASI, CellML->OpenCOR), collect timeseries, and write an interactive dashboard. Live run: native simulators + network fetches. Failing models are shown, not dropped."
         },
         {
           "name": "BioModelsSearchStep",
+          "kind": "step",
           "description": "Query the BioModels REST search endpoint for a text term and return up to `max_results` matching BioModels accession IDs."
         },
         {
           "name": "CoverageStep",
+          "kind": "step",
           "description": "Cross the ASCT+B-3D crosswalk's anatomical structures with the biomodel-DO organ->models index to mark model coverage, at organ granularity."
         },
         {
           "name": "ComputationalModelAtlas",
+          "kind": "step",
           "description": "Regenerate the HRA Computational Model Atlas pack from the BioModels->HRA map DB: place each model at the organ subregion(s) its cell types / FTUs resolve to (via HRApop per-AS cell populations + the ASCT+B-3D crosswalk), falling back to the whole organ. Writes atlas.json/config.json to the study's viz/atlas/; emits the manifest summary + placement stats."
         },
         {
           "name": "HRApopEnrichStep",
+          "kind": "step",
           "description": "Attach HRApop measured cell-type populations to each model whose organ(s) HRApop covers. Emits how many models were linked."
         },
         {
           "name": "SpatialLinkStep",
+          "kind": "step",
           "description": "Join biomodel-DO organ annotations to ASCT+B-3D crosswalk anatomical-structure nodes on shared Uberon CURIE, so each linked GLB scene node can be colored/labeled by its model."
         },
         {
           "name": "AsctbTablesStep",
+          "kind": "step",
           "description": "Harvest the HRA ASCT+B tables (Anatomical Structures, Cell Types + Biomarkers) for all ~40 organs and build a gene->Uberon index. Writes the harvested {organ: rows} DB to out_path; emits organ/gene counts plus a summary (not the whole DB)."
         }
       ],
@@ -2903,10 +3554,12 @@
       "steps": [
         {
           "name": "KetchupEstimator",
+          "kind": "step",
           "description": "Estimate kinetic parameters for a K-FIT metabolic model with KETCHUP."
         },
         {
           "name": "KetchupDynamicEstimator",
+          "kind": "step",
           "description": "Fit enzyme kinetics to **time-course** (NADH-vs-time) data with KETCHUP."
         }
       ],
@@ -2945,22 +3598,32 @@
       "processes": [
         {
           "name": "ScheduledSetpoint",
+          "kind": "process",
           "description": "Emit a piecewise-linear setpoint as a function of time."
         },
         {
           "name": "LAMMPSProcess",
+          "kind": "process",
           "description": "Bidirectional Process wrapping the LAMMPS MD engine."
         },
         {
           "name": "PIDController",
+          "kind": "process",
           "description": "Closed-loop PID controller for a scalar setpoint."
         },
         {
           "name": "OscillatingForce",
+          "kind": "process",
           "description": "Time-varying external force vector \u2014 useful for driving demos."
         }
       ],
-      "steps": [],
+      "steps": [
+        {
+          "name": "LAMMPSThermoPlots",
+          "kind": "visualization",
+          "description": "Time-series HTML plot of LAMMPSProcess thermodynamic outputs."
+        }
+      ],
       "composites": [
         {
           "name": "lj-nve-demo",
@@ -2975,7 +3638,7 @@
       "investigations": [],
       "counts": {
         "processes": 4,
-        "steps": 0,
+        "steps": 1,
         "composites": 2,
         "studies": 0,
         "investigations": 0
@@ -2992,14 +3655,27 @@
       "processes": [
         {
           "name": "CollagenNetworkProcess",
+          "kind": "process",
           "description": "Persistent coarse-grained collagen IV network driven by two control ports."
         },
         {
           "name": "StagedStretchController",
+          "kind": "process",
           "description": "Sequence the spec's stage-1 protocol (Fig 2D: \"breakage off, then on\")."
         }
       ],
-      "steps": [],
+      "steps": [
+        {
+          "name": "Stage1Diagnostic",
+          "kind": "visualization",
+          "description": "Stage-1 diagnostic dashboard: stress vs time (by phase), stress-strain +"
+        },
+        {
+          "name": "Stage2Diagnostic",
+          "kind": "visualization",
+          "description": "Stage-2 diagnostic dashboard: \u03c3(\u03b5\u0307), effective viscosity \u03b7 = \u03c3/\u03b5\u0307, and"
+        }
+      ],
       "composites": [
         {
           "name": "stage1_composite",
@@ -3052,7 +3728,7 @@
       ],
       "counts": {
         "processes": 2,
-        "steps": 0,
+        "steps": 2,
         "composites": 5,
         "studies": 5,
         "investigations": 1
@@ -3070,23 +3746,33 @@
       "steps": [
         {
           "name": "MartinizeStep",
+          "kind": "step",
           "description": "Coarse-grain an atomistic protein structure using the Martini force field."
         },
         {
           "name": "MembraneBuilderStep",
+          "kind": "step",
           "description": "Build a lipid bilayer membrane patch from composition and grid parameters."
         },
         {
           "name": "MicelleBuilderStep",
+          "kind": "step",
           "description": "Build a spherical micelle from a single-tail lipid/detergent."
         },
         {
           "name": "ProteinMembraneStep",
+          "kind": "step",
           "description": "Build a transmembrane helix embedded in a lipid bilayer."
         },
         {
           "name": "VesicleBuilderStep",
+          "kind": "step",
           "description": "Build a spherical vesicle (liposome) with inner and outer leaflets."
+        },
+        {
+          "name": "MartiniBeadSummaryPlots",
+          "kind": "visualization",
+          "description": "Time-series HTML plot of Martini CG mapping summary scalars."
         }
       ],
       "composites": [
@@ -3103,7 +3789,7 @@
       "investigations": [],
       "counts": {
         "processes": 0,
-        "steps": 5,
+        "steps": 6,
         "composites": 2,
         "studies": 0,
         "investigations": 0
@@ -3120,14 +3806,22 @@
       "processes": [
         {
           "name": "MedyanProcess",
+          "kind": "process",
           "description": "Bridge Process wrapping a MEDYAN-style cytoskeletal simulator."
         },
         {
           "name": "MedyanCxxProcess",
+          "kind": "process",
           "description": "PBG Process driven by the MEDYAN C++ binary, one interval at a time."
         }
       ],
-      "steps": [],
+      "steps": [
+        {
+          "name": "NetworkMetricsPlots",
+          "kind": "visualization",
+          "description": "Time-series HTML plot of MedyanProcess's scalar network metrics."
+        }
+      ],
       "composites": [
         {
           "name": "network-demo",
@@ -3142,7 +3836,7 @@
       "investigations": [],
       "counts": {
         "processes": 2,
-        "steps": 0,
+        "steps": 1,
         "composites": 2,
         "studies": 0,
         "investigations": 0
@@ -3159,10 +3853,22 @@
       "processes": [
         {
           "name": "Mem3DGProcess",
+          "kind": "process",
           "description": "Bridge Process wrapping Mem3DG membrane mechanics simulation."
         }
       ],
-      "steps": [],
+      "steps": [
+        {
+          "name": "MembranePlots",
+          "kind": "visualization",
+          "description": "Time-series HTML plot of Mem3DG's scalar membrane outputs."
+        },
+        {
+          "name": "Membrane3D",
+          "kind": "visualization",
+          "description": "three.js-based 3D viewer for the membrane mesh, animated over time."
+        }
+      ],
       "composites": [
         {
           "name": "membrane-deflation",
@@ -3189,7 +3895,7 @@
       "investigations": [],
       "counts": {
         "processes": 1,
-        "steps": 0,
+        "steps": 2,
         "composites": 5,
         "studies": 0,
         "investigations": 0
@@ -3206,10 +3912,82 @@
       "processes": [
         {
           "name": "BrownianRatchetCoupler",
+          "kind": "process",
           "description": "Bidirectional analysis-layer coupler for the membrane-actin demo."
         }
       ],
-      "steps": [],
+      "steps": [
+        {
+          "name": "CouplingTrace",
+          "kind": "visualization",
+          "description": ""
+        },
+        {
+          "name": "BarrierKinematics",
+          "kind": "visualization",
+          "description": ""
+        },
+        {
+          "name": "GapContactDecision",
+          "kind": "visualization",
+          "description": "Tip\u2013wall gap distribution + contact-force accumulation for `fixed-boundary`."
+        },
+        {
+          "name": "EnergyBudget",
+          "kind": "visualization",
+          "description": ""
+        },
+        {
+          "name": "MembraneVolumeStrain",
+          "kind": "visualization",
+          "description": ""
+        },
+        {
+          "name": "NewtonResidual",
+          "kind": "visualization",
+          "description": "Newton's-3rd-law residual at the actin\u2194membrane coupling interface \u2014 the"
+        },
+        {
+          "name": "FVPhasePortrait",
+          "kind": "visualization",
+          "description": "Force\u2013velocity phase portrait (barrier_velocity vs mean_contact_force) overlaying"
+        },
+        {
+          "name": "PopulationTrace",
+          "kind": "visualization",
+          "description": ""
+        },
+        {
+          "name": "RatchetEventRate",
+          "kind": "visualization",
+          "description": ""
+        },
+        {
+          "name": "ForceVelocityBenchmark",
+          "kind": "visualization",
+          "description": "Steady-state F-V points per condition with expected-pattern box, threshold, and"
+        },
+        {
+          "name": "ForceVelocityScatter",
+          "kind": "visualization",
+          "description": ""
+        },
+        {
+          "name": "SchematicVesicle3D",
+          "kind": "visualization",
+          "description": "Schematic 3D vesicle + actin cloud, animated through the run."
+        },
+        {
+          "name": "Particles3D",
+          "kind": "visualization",
+          "description": "Three.js renderer for the real per-frame simulation state."
+        },
+        {
+          "name": "BackpressureTrace",
+          "kind": "visualization",
+          "description": ""
+        }
+      ],
       "composites": [
         {
           "name": "rung1_fixed_boundary",
@@ -3270,7 +4048,7 @@
       ],
       "counts": {
         "processes": 1,
-        "steps": 0,
+        "steps": 14,
         "composites": 6,
         "studies": 6,
         "investigations": 1
@@ -3287,132 +4065,164 @@
       "processes": [
         {
           "name": "TranslationReproductionProcess",
+          "kind": "process",
           "description": "Stochastic translation \u2014 reproduction of Karr 2012 Translation."
         },
         {
           "name": "TranscriptionalRegulationReproductionProcess",
+          "kind": "process",
           "description": "Transcriptional regulation \u2014 reproduction of Karr 2012 TranscriptionalRegulation."
         },
         {
           "name": "RNAProcessingReproductionProcess",
+          "kind": "process",
           "description": "RNA processing \u2014 reproduction of Karr 2012 RNAProcessing."
         },
         {
           "name": "RNAModificationReproductionProcess",
+          "kind": "process",
           "description": "RNA modification \u2014 reproduction of Karr 2012 RNAModification."
         },
         {
           "name": "TRNAAminoacylationReproductionProcess",
+          "kind": "process",
           "description": "tRNA aminoacylation \u2014 reproduction of Karr 2012 tRNAAminoacylation."
         },
         {
           "name": "TranscriptionReproductionProcess",
+          "kind": "process",
           "description": "Stochastic transcription \u2014 reproduction of Karr 2012 Transcription."
         },
         {
           "name": "ParameterCalculatorReproductionProcess",
+          "kind": "process",
           "description": "Parameter calculator (ParCa) \u2014 reproduction of Karr 2012 FitConstants."
         },
         {
           "name": "FtsZPolymerizationReproductionProcess",
+          "kind": "process",
           "description": "FtsZ polymerization \u2014 reproduction of Karr 2012 FtsZPolymerization (Surovtsev 2008 kinetic scheme)."
         },
         {
           "name": "CytokinesisReproductionProcess",
+          "kind": "process",
           "description": "Cytokinesis \u2014 reproduction of Karr 2012 Cytokinesis (Li 2007 bind/bend/dissociate model)."
         },
         {
           "name": "HostInteractionReproductionProcess",
+          "kind": "process",
           "description": "Host interaction \u2014 reproduction of Karr 2012 HostInteraction (qualitative, reporting)."
         },
         {
           "name": "ReplicationReproductionProcess",
+          "kind": "process",
           "description": "dNTP-buffered three-phase replication \u2014 reproduction of the emergent cell-cycle regulation Karr 2012 uncovered (Fig 4)."
         },
         {
           "name": "_PoissonDecay",
+          "kind": "process",
           "description": "Shared Poisson species-decay Process. Subclasses set the port name and"
         },
         {
           "name": "MassGrowthReproductionProcess",
+          "kind": "process",
           "description": "Cell mass & growth accounting \u2014 reproduction of Karr 2012 CellMass/CellGeometry."
         },
         {
           "name": "ProteinProcessingIReproductionProcess",
+          "kind": "process",
           "description": "Protein Processing I \u2014 reproduction of Karr 2012 ProteinProcessingI."
         },
         {
           "name": "ProteinTranslocationReproductionProcess",
+          "kind": "process",
           "description": "Protein Translocation \u2014 reproduction of Karr 2012 ProteinTranslocation."
         },
         {
           "name": "ProteinProcessingIIReproductionProcess",
+          "kind": "process",
           "description": "Protein Processing II \u2014 reproduction of Karr 2012 ProteinProcessingII."
         },
         {
           "name": "ProteinFoldingReproductionProcess",
+          "kind": "process",
           "description": "Protein Folding \u2014 reproduction of Karr 2012 ProteinFolding."
         },
         {
           "name": "ProteinModificationReproductionProcess",
+          "kind": "process",
           "description": "Protein Modification \u2014 reproduction of Karr 2012 ProteinModification."
         },
         {
           "name": "ProteinActivationReproductionProcess",
+          "kind": "process",
           "description": "Protein Activation \u2014 reproduction of Karr 2012 ProteinActivation."
         },
         {
           "name": "MacromolecularComplexationReproductionProcess",
+          "kind": "process",
           "description": "Macromolecular Complexation \u2014 reproduction of Karr 2012 MacromolecularComplexation."
         },
         {
           "name": "RibosomeAssemblyReproductionProcess",
+          "kind": "process",
           "description": "Ribosome Assembly \u2014 reproduction of Karr 2012 RibosomeAssembly."
         },
         {
           "name": "TerminalOrganelleAssemblyReproductionProcess",
+          "kind": "process",
           "description": "Terminal Organelle Assembly \u2014 reproduction of Karr 2012 TerminalOrganelleAssembly."
         },
         {
           "name": "ReplicationInitiationReproductionProcess",
+          "kind": "process",
           "description": "Replication-initiation oriC assembly \u2014 reproduction of Karr 2012 ReplicationInitiation."
         },
         {
           "name": "DNASupercoilingReproductionProcess",
+          "kind": "process",
           "description": "DNA supercoiling homeostasis \u2014 reproduction of Karr 2012 DNASupercoiling."
         },
         {
           "name": "ChromosomeCondensationReproductionProcess",
+          "kind": "process",
           "description": "Chromosome condensation \u2014 reproduction of Karr 2012 ChromosomeCondensation."
         },
         {
           "name": "ChromosomeSegregationReproductionProcess",
+          "kind": "process",
           "description": "Chromosome segregation \u2014 reproduction of Karr 2012 ChromosomeSegregation."
         },
         {
           "name": "DNADamageReproductionProcess",
+          "kind": "process",
           "description": "DNA damage \u2014 reproduction of Karr 2012 DNADamage."
         },
         {
           "name": "DNARepairReproductionProcess",
+          "kind": "process",
           "description": "DNA repair \u2014 reproduction of Karr 2012 DNARepair."
         },
         {
           "name": "MetabolismFbaReproductionProcess",
+          "kind": "process",
           "description": "Flux-balance-analysis metabolism \u2014 reproduction of the Karr 2012 Metabolism submodel."
         },
         {
           "name": "ChromosomeDynamicsReproductionProcess",
+          "kind": "process",
           "description": "Chromosome DNA-protein interactions \u2014 coordinate-resolved reproduction of the dynamics behind Karr 2012 Fig 3."
         },
         {
           "name": "AllocatorProcess",
+          "kind": "process",
           "description": "Central resource allocator \u2014 reproduction of Karr 2012 hybrid partitioning."
         }
       ],
       "steps": [
         {
           "name": "MgenStructuralStep",
+          "kind": "step",
           "description": "Pack the mgen structural cell (ingredient roster + capsule + chromosome) via pbg_parsimony, wrapping Task 4's build_mgen_pack as a process-bigraph Step. counts_source selects the copy-number provider: 'maritan' (baseline, expression-derived WC-MG-flavoured counts) or 'sim' (this repo's own simulation protein_counts)."
         }
       ],
@@ -3501,57 +4311,80 @@
       "processes": [
         {
           "name": "FieldDecay",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "GrowDivide",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "AdderGrowDivide",
+          "kind": "process",
           "description": "Growth/division using the adder model (Taheri-Araghi et al. 2015)."
         },
         {
           "name": "PymunkProcess",
+          "kind": "process",
           "description": "2D rigid-body physics for colonies \u2014 a pymunk space that integrates"
         },
         {
           "name": "SecreteEPS",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "Chemotaxis",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "InclusionBody",
+          "kind": "process",
           "description": "Per-cell IB accumulator (formation + exponential growth)."
         },
         {
           "name": "IBColony",
+          "kind": "process",
           "description": "Top-level growth + division + inclusion-body process."
         },
         {
           "name": "CellFieldExchange",
+          "kind": "process",
           "description": "Per-cell sampling and deposition into a 2D concentration field map."
         },
         {
           "name": "DiffusionAdvection",
+          "kind": "process",
           "description": "Explicit finite-difference diffusion\u2013advection in 2D using a 1-cell ghost layer."
         },
         {
           "name": "QuorumSensing",
+          "kind": "process",
           "description": ""
         }
       ],
       "steps": [
         {
           "name": "Pressure",
+          "kind": "step",
           "description": ""
         },
         {
           "name": "RemoveCrossing",
+          "kind": "step",
           "description": ""
+        },
+        {
+          "name": "CellMassTraces",
+          "kind": "visualization",
+          "description": "Per-cell mass-over-time line plot. Configurable cell field (default 'mass')."
+        },
+        {
+          "name": "MultibodyVizStep",
+          "kind": "visualization",
+          "description": "End-of-run animated-GIF renderer matching the test-suite GIF style."
         }
       ],
       "composites": [
@@ -3638,7 +4471,7 @@
       ],
       "counts": {
         "processes": 11,
-        "steps": 2,
+        "steps": 4,
         "composites": 9,
         "studies": 9,
         "investigations": 1
@@ -3655,14 +4488,22 @@
       "processes": [
         {
           "name": "NFSimProcess",
+          "kind": "process",
           "description": "A generic process that wraps BioNetGen/NFSim network-free simulations."
         },
         {
           "name": "MonomerProduction",
+          "kind": "process",
           "description": "Produces flagellar protein monomers at constant rates."
         }
       ],
-      "steps": [],
+      "steps": [
+        {
+          "name": "FlagellaAssemblyPlots",
+          "kind": "visualization",
+          "description": "Time-series HTML plot of NFSim flagella-assembly observables."
+        }
+      ],
       "composites": [
         {
           "name": "flagella-assembly-with-viz",
@@ -3677,7 +4518,7 @@
       "investigations": [],
       "counts": {
         "processes": 2,
-        "steps": 0,
+        "steps": 1,
         "composites": 2,
         "studies": 0,
         "investigations": 0
@@ -3694,17 +4535,25 @@
       "processes": [
         {
           "name": "OpenCORProcess",
+          "kind": "process",
           "description": "Bridge Process wrapping a CellML model integrated by libOpenCOR."
         }
       ],
       "steps": [
         {
           "name": "OpenCORUTCStep",
+          "kind": "step",
           "description": "Run a full uniform time course in one shot and emit the trajectory."
         },
         {
           "name": "OpenCORSteadyStateStep",
+          "kind": "step",
           "description": "Integrate a CellML model over a long horizon and emit the final state."
+        },
+        {
+          "name": "StateTimeSeriesPlots",
+          "kind": "visualization",
+          "description": "Time-series HTML plot of an OpenCORProcess's state variables."
         }
       ],
       "composites": [
@@ -3721,7 +4570,7 @@
       "investigations": [],
       "counts": {
         "processes": 1,
-        "steps": 2,
+        "steps": 3,
         "composites": 2,
         "studies": 0,
         "investigations": 0
@@ -3738,12 +4587,14 @@
       "processes": [
         {
           "name": "OpenMMMartiniProcess",
+          "kind": "process",
           "description": "Run Martini coarse-grained MD in OpenMM, one chunk of steps per update."
         }
       ],
       "steps": [
         {
           "name": "SolvatedRelaxStep",
+          "kind": "step",
           "description": "Relax a protein structure in explicit water/ions via ``relax_in_water``."
         }
       ],
@@ -3770,6 +4621,7 @@
       "steps": [
         {
           "name": "OxidizeMEStep",
+          "kind": "step",
           "description": "Real bridge to the OxidizeME ME-model."
         }
       ],
@@ -3801,10 +4653,12 @@
       "steps": [
         {
           "name": "ParsimonyPackStep",
+          "kind": "step",
           "description": "Pack a 3D cell from molecular counts + a structural spec."
         },
         {
           "name": "StructureRelaxStep",
+          "kind": "step",
           "description": "Opt-in upstream Step: rewrite each ingredient's fetched structure to"
         }
       ],
@@ -3835,56 +4689,69 @@
       "processes": [
         {
           "name": "EnsembleRunner",
+          "kind": "process",
           "description": "Run a trial function over a block of seeds, once, at the first update."
         },
         {
           "name": "SplittingCoordinator",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "FenicsxReactionDiffusion",
+          "kind": "process",
           "description": "PDE half of a hybrid model on FEniCSx (Q1, structured mesh); same ports as FVReactionDiffusion."
         },
         {
           "name": "SmoldynHybrid",
+          "kind": "process",
           "description": "Particle half of a hybrid model."
         },
         {
           "name": "Stepper",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "FenicsxMeshReactionDiffusion",
+          "kind": "process",
           "description": "Reaction-diffusion on an unstructured P1 mesh."
         },
         {
           "name": "SpatialRecorder",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "FVReactionDiffusion",
+          "kind": "process",
           "description": "PDE half of a hybrid model (see :func:`viva_pde_particle.model.partition`)."
         }
       ],
       "steps": [
         {
           "name": "GridCountsToConcentration",
+          "kind": "step",
           "description": "Per-node particle counts \u2192 \u00b5M on the same grid (``count / (V_element \u00b7 602.214)``)."
         },
         {
           "name": "ExtendGridField",
+          "kind": "step",
           "description": "Grid fields \u2192 lookup fields for the particle engine, extended past a staircase PDE domain (7e.5)."
         },
         {
           "name": "_MeshConcentration",
+          "kind": "step",
           "description": ""
         },
         {
           "name": "MeshToGridField",
+          "kind": "step",
           "description": "P1 DOF fields \u2192 grid fields for the particle engine's rate lookups: u_grid = P\u00b7u."
         },
         {
           "name": "SpatialExport",
+          "kind": "step",
           "description": ""
         }
       ],
@@ -4029,6 +4896,7 @@
       "processes": [
         {
           "name": "PennyLaneAdversarialProcess",
+          "kind": "process",
           "description": "PennyLane QML classifier with PGD adversarial attack and robust training."
         }
       ],
@@ -4072,22 +4940,27 @@
       "processes": [
         {
           "name": "PennyLaneDataReuploadingProcess",
+          "kind": "process",
           "description": ""
         },
         {
           "name": "GenotypeToPhenotypeProcess",
+          "kind": "process",
           "description": "Multi-qubit, cross-modality entangled quantum classifier."
         },
         {
           "name": "SurrogateReactionProcess",
+          "kind": "process",
           "description": "Approximate a reaction-diffusion master-equation step with a quantum circuit."
         },
         {
           "name": "MinimalGenomeProcess",
+          "kind": "process",
           "description": "Predict subsystem failure from a gene knockout mask."
         },
         {
           "name": "SpatiotemporalSortingProcess",
+          "kind": "process",
           "description": "Classify 4D (time \u00d7 3D space) cellular trajectories into healthy"
         }
       ],
@@ -4182,16 +5055,19 @@
       "processes": [
         {
           "name": "PyscesUTCProcess",
+          "kind": "process",
           "description": "Time-driven PySCeS Process for the single-process composite."
         }
       ],
       "steps": [
         {
           "name": "PyscesUTCStep",
+          "kind": "step",
           "description": "One-shot uniform time course via PySCeS."
         },
         {
           "name": "PyscesSteadyStateStep",
+          "kind": "step",
           "description": "One-shot steady-state solve via PySCeS."
         }
       ],
@@ -4217,13 +5093,25 @@
       "processes": [
         {
           "name": "BigraphicalReactiveSystem",
+          "kind": "process",
           "description": "A Process that fires Milner-style reaction rules on each tick."
         }
       ],
       "steps": [
         {
           "name": "SubstrateCensus",
+          "kind": "step",
           "description": "Reads the ``cell`` bigraph and emits scalar substrate counts."
+        },
+        {
+          "name": "MapkAnimation",
+          "kind": "visualization",
+          "description": "Regenerate the MAPK cell-cartoon animation and embed it as a GIF."
+        },
+        {
+          "name": "MapkSpeciesTimeseries",
+          "kind": "visualization",
+          "description": "Interactive line chart of MAPK substrate populations over time."
         }
       ],
       "composites": [
@@ -4246,7 +5134,7 @@
       ],
       "counts": {
         "processes": 1,
-        "steps": 1,
+        "steps": 3,
         "composites": 1,
         "studies": 1,
         "investigations": 1
@@ -4263,10 +5151,17 @@
       "processes": [
         {
           "name": "ReaDDyProcess",
+          "kind": "process",
           "description": "Bridge Process wrapping ReaDDy particle-based reaction-diffusion."
         }
       ],
-      "steps": [],
+      "steps": [
+        {
+          "name": "ReaDDyPlots",
+          "kind": "visualization",
+          "description": "Time-series HTML plot of ReaDDy's scalar outputs."
+        }
+      ],
       "composites": [
         {
           "name": "readdy-demo-with-viz",
@@ -4281,7 +5176,7 @@
       "investigations": [],
       "counts": {
         "processes": 1,
-        "steps": 0,
+        "steps": 1,
         "composites": 2,
         "studies": 0,
         "investigations": 0
@@ -4298,24 +5193,29 @@
       "processes": [
         {
           "name": "SimbioProcess",
+          "kind": "process",
           "description": "Time-stepped bridge to a simbio Chemical Reaction Network."
         },
         {
           "name": "SimbioUTCProcess",
+          "kind": "process",
           "description": "Time-coupled bridge Process over a ``model_source`` model."
         }
       ],
       "steps": [
         {
           "name": "BaseSimbioStep",
+          "kind": "step",
           "description": "Abstract base for simbio model-source Steps."
         },
         {
           "name": "SimbioUTCStep",
+          "kind": "step",
           "description": "One-shot uniform-time-course Step returning a dense trajectory."
         },
         {
           "name": "SimbioSteadyStateStep",
+          "kind": "step",
           "description": "Approximate steady-state Step."
         }
       ],
@@ -4355,6 +5255,7 @@
       "steps": [
         {
           "name": "SimulariumAnalysis",
+          "kind": "step",
           "description": "Convert a run's emitted molecule positions to a ``.simularium`` file."
         }
       ],
@@ -4380,10 +5281,17 @@
       "processes": [
         {
           "name": "SmoldynProcess",
+          "kind": "process",
           "description": "Bridge Process wrapping a Smoldyn spatial stochastic simulation."
         }
       ],
-      "steps": [],
+      "steps": [
+        {
+          "name": "SmoldynPlots",
+          "kind": "visualization",
+          "description": "Time-series HTML plot of Smoldyn's per-species molecule counts."
+        }
+      ],
       "composites": [
         {
           "name": "three-species-crowding",
@@ -4428,7 +5336,7 @@
       ],
       "counts": {
         "processes": 1,
-        "steps": 0,
+        "steps": 1,
         "composites": 5,
         "studies": 3,
         "investigations": 1
@@ -4445,21 +5353,30 @@
       "processes": [
         {
           "name": "TelluriumProcess",
+          "kind": "process",
           "description": "Bridge Process wrapping a Tellurium / libroadrunner SBML simulation."
         }
       ],
       "steps": [
         {
           "name": "BaseTelluriumStep",
+          "kind": "step",
           "description": "Abstract base for Tellurium-backed Steps."
         },
         {
           "name": "TelluriumUTCStep",
+          "kind": "step",
           "description": "One-shot UTC simulation Step returning a dense trajectory."
         },
         {
           "name": "TelluriumSteadyStateStep",
+          "kind": "step",
           "description": "Steady-state solve via Tellurium / roadrunner."
+        },
+        {
+          "name": "SpeciesTimeSeriesPlots",
+          "kind": "visualization",
+          "description": "Time-series HTML plot of TelluriumProcess's species concentrations."
         }
       ],
       "composites": [
@@ -4480,7 +5397,7 @@
       "investigations": [],
       "counts": {
         "processes": 1,
-        "steps": 3,
+        "steps": 4,
         "composites": 3,
         "studies": 0,
         "investigations": 0
@@ -4497,6 +5414,7 @@
       "processes": [
         {
           "name": "NeuralProcess",
+          "kind": "process",
           "description": "Approximates a target subsystem's per-step dynamics."
         }
       ],
@@ -4523,29 +5441,50 @@
       "processes": [
         {
           "name": "DendriticCellProcess",
+          "kind": "process",
           "description": "Dendritic cell behavior: takes up tumor debris from the field and, once enough is internalized, activates and presents MHCI \u2014 the antigen-presentation arm of the lymph-node extension. Ported from tumor_tcell/processes/dendritic_cell.py."
         },
         {
           "name": "TumorTcellPhysics",
+          "kind": "process",
           "description": "Cell collisions via a real viva-munk pymunk space (walls, jitter, substeps) plus persistent-random-walk migration, neighbor detection, and membrane / cytotoxic-packet exchange between contacting cells. Replaces tumor-tcell's Neighbors process."
         },
         {
           "name": "TumorCellProcess",
+          "kind": "process",
           "description": "Tumor cell behavior: proliferation, IFNg-driven PDL1n -> PDL1p phenotype conversion, and death by apoptosis or accumulated cytotoxic packets (releasing tumor debris). Ported from tumor_tcell/processes/tumor.py."
         },
         {
           "name": "DiffusionField",
+          "kind": "process",
           "description": "Soluble-field manager (tumor-tcell Fields + LocalField consolidated): deposits each cell's secreted amounts into its field bin, diffuses and decays the 2D IFNg / tumor-debris concentration grids (ng/mL), and samples each cell's local concentration back onto it."
         },
         {
           "name": "TCellProcess",
+          "kind": "process",
           "description": "T cell behavior: on contact with a tumor it secretes IFNg and delivers cytotoxic packets; unengaged it migrates; sustained engagement drives PD1n -> PD1p exhaustion (reduced secretion). Ported from tumor_tcell/processes/t_cell.py."
         }
       ],
       "steps": [
         {
           "name": "Observables",
+          "kind": "step",
           "description": "Scalar aggregates for the emitter + study Results/Readouts: per-tick cell counts by type/state, PDL1p / PD1p fractions, and peak IFNg, written to an observables store for a SQLiteEmitter to persist."
+        },
+        {
+          "name": "PopulationTimeseries",
+          "kind": "visualization",
+          "description": "Total and per-phenotype cell counts over time (tumor PDL1n/PDL1p, T cell PD1n/PD1p, dendritic) as an interactive Plotly line chart."
+        },
+        {
+          "name": "PhenotypeFractions",
+          "kind": "visualization",
+          "description": "PDL1+ tumor fraction and PD1+ T-cell fraction over time (Plotly) \u2014 the paper's headline readout, tracking the rate of IFNg-driven phenotype conversion rather than raw kill count."
+        },
+        {
+          "name": "SpatialLayout",
+          "kind": "visualization",
+          "description": "Animated GIF of cells (true circles in \u00b5m) over the IFNg field, colored by type/state \u2014 the interactive analogue of the paper's videos."
         }
       ],
       "composites": [
@@ -4600,7 +5539,7 @@
       ],
       "counts": {
         "processes": 5,
-        "steps": 1,
+        "steps": 4,
         "composites": 5,
         "studies": 5,
         "investigations": 1
@@ -4617,10 +5556,17 @@
       "processes": [
         {
           "name": "VCellFVProcess",
+          "kind": "process",
           "description": "Bridge Process wrapping the VCell finite-volume 3D RD solver."
         }
       ],
-      "steps": [],
+      "steps": [
+        {
+          "name": "RDFieldPlots",
+          "kind": "visualization",
+          "description": "Time-series HTML plot of VCell-FV reaction-diffusion mean/total concentrations."
+        }
+      ],
       "composites": [
         {
           "name": "rd-decay-with-viz",
@@ -4635,7 +5581,7 @@
       "investigations": [],
       "counts": {
         "processes": 1,
-        "steps": 0,
+        "steps": 1,
         "composites": 2,
         "studies": 0,
         "investigations": 0
@@ -4652,14 +5598,22 @@
       "processes": [
         {
           "name": "YallaReproductionProcess",
+          "kind": "process",
           "description": "Time-driven pair-wise ABM process (NumPy reproduction of ya||a)."
         },
         {
           "name": "YallaProcess",
+          "kind": "process",
           "description": "Time-driven bridge to the real ya||a GPU solver."
         }
       ],
-      "steps": [],
+      "steps": [
+        {
+          "name": "YallaSummaryPlots",
+          "kind": "visualization",
+          "description": "Time-series HTML plot of yalla's scalar ABM summary outputs."
+        }
+      ],
       "composites": [
         {
           "name": "yalla-springs-demo",
@@ -4678,7 +5632,7 @@
       "investigations": [],
       "counts": {
         "processes": 2,
-        "steps": 0,
+        "steps": 1,
         "composites": 3,
         "studies": 0,
         "investigations": 0
@@ -4695,49 +5649,80 @@
       "processes": [
         {
           "name": "EulerSolver",
+          "kind": "process",
           "description": "Generalized Euler solver for Tyssue-based epithelial simulations"
         },
         {
           "name": "CellDivisions",
+          "kind": "process",
           "description": "Randomly triggers cell divisions as a Poisson process at a fixed ``rate``."
         },
         {
           "name": "CellDeaths",
+          "kind": "process",
           "description": "Randomly triggers cell deaths (apoptotic extrusion) as a Poisson process."
         },
         {
           "name": "StochasticLineTension",
+          "kind": "process",
           "description": "Ornstein-Uhlenbeck line tension: each edge's stochastic share ``x`` follows"
         },
         {
           "name": "DifferentialAdhesion",
+          "kind": "process",
           "description": "Differential-adhesion cell sorting: drives the ``differential_adhesion``"
         },
         {
           "name": "CellJamming",
+          "kind": "process",
           "description": "At ``trigger_time``, starts the ``cell_jamming`` ramp of every cell's"
         },
         {
           "name": "DirectionalLineTension",
+          "kind": "process",
           "description": "Planar-polarised junction tension: line tension graded by the angle"
         },
         {
           "name": "SBMLCellCycle",
+          "kind": "process",
           "description": "Per-cell SBML ODE model whose cell-cycle phase decides growth and division."
         },
         {
           "name": "Gillespie",
+          "kind": "process",
           "description": ""
         }
       ],
       "steps": [
         {
           "name": "ParameterGradient",
+          "kind": "step",
           "description": "Creates a 1D gradient of chemical or mechanical signal."
         },
         {
           "name": "AnisotropicTension",
+          "kind": "step",
           "description": "Two-level line tension by edge orientation, shipped as ``update_parameter``"
+        },
+        {
+          "name": "TissueSheetGif",
+          "kind": "visualization",
+          "description": "2D animation of a tyssue sheet evolving over the simulation."
+        },
+        {
+          "name": "TissueCryptGif3D",
+          "kind": "visualization",
+          "description": "3D animation of the intestinal-crypt vessel, cells colored by type."
+        },
+        {
+          "name": "TissueSheetSnapshots",
+          "kind": "visualization",
+          "description": "Multi-panel snapshots of the sheet over time, faces colored by cell_type."
+        },
+        {
+          "name": "DataFrameParquetEmitter",
+          "kind": "emitter",
+          "description": "Table-oriented Parquet emitter: one hive-partitioned dataset per DataFrame port."
         }
       ],
       "composites": [
@@ -4800,7 +5785,7 @@
       ],
       "counts": {
         "processes": 9,
-        "steps": 2,
+        "steps": 6,
         "composites": 11,
         "studies": 1,
         "investigations": 1
