@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-19T14:28:39+00:00",
-  "n_repos": 53,
-  "n_cloned": 53,
+  "generated_at": "2026-10-19T15:07:17+00:00",
+  "n_repos": 52,
+  "n_cloned": 52,
   "repos": [
     {
       "name": "spatio-flux",
@@ -143,6 +143,11 @@
           "description": ""
         },
         {
+          "name": "ParticleTotalMass",
+          "kind": "process",
+          "description": "Sum per-particle scalar submasses into a single `mass` for ONE particle."
+        },
+        {
           "name": "PymunkParticleMovement",
           "kind": "process",
           "description": ""
@@ -193,11 +198,6 @@
           "name": "ParticleDivision",
           "kind": "step",
           "description": "Stand-alone division process:"
-        },
-        {
-          "name": "ParticleTotalMass",
-          "kind": "step",
-          "description": "Sum per-particle scalar submasses into a single `mass` for ONE particle."
         },
         {
           "name": "FieldHeatmap",
@@ -432,8 +432,8 @@
         }
       ],
       "counts": {
-        "processes": 33,
-        "steps": 9,
+        "processes": 34,
+        "steps": 8,
         "composites": 21,
         "studies": 27,
         "investigations": 2
@@ -3162,7 +3162,7 @@
       "studies": [
         {
           "name": "og-heredity",
-          "description": "Chemical Heredity and Selection"
+          "description": "Chemical Inheritance: Can a Chemical Difference Be Transmitted?"
         },
         {
           "name": "og-network-persistence",
@@ -3174,7 +3174,7 @@
         },
         {
           "name": "og-spatial-concentration",
-          "description": "Spatial Concentration: Does a Pore Make an Individual?"
+          "description": "Spatial Concentration: Does a Pore Enrich a Dilute Feed?"
         },
         {
           "name": "mem-m4-growth-division-propensity",
@@ -3193,6 +3193,14 @@
           "description": "Self-Compartmentation: From Boundary to Self-Maintaining Protocell"
         },
         {
+          "name": "og-vent-interface",
+          "description": "The Evolving Mineral Interface: A Bounded DIC Window"
+        },
+        {
+          "name": "og-evolvability",
+          "description": "Evolvability and Selection: Is an Inherited Difference Selectable?"
+        },
+        {
           "name": "og-independence",
           "description": "Escape and Progressive Independence from the Vent"
         },
@@ -3202,7 +3210,7 @@
         },
         {
           "name": "og-vent-environment",
-          "description": "The Vent Environment: A Bounded but Viable Geochemical Reactor"
+          "description": "The Vent Environment: Calibrated, Viable Geochemical States"
         },
         {
           "name": "og-reproduction",
@@ -3215,6 +3223,10 @@
         {
           "name": "og-nutrient-bottlenecks",
           "description": "Nutrient Bottlenecks: Nitrogen and Phosphorus Keep Pace with Carbon"
+        },
+        {
+          "name": "og-network-rescue",
+          "description": "Network Rescue: Does Pore Concentration Ignite the Reaction Network?"
         }
       ],
       "investigations": [
@@ -3227,7 +3239,7 @@
         "processes": 64,
         "steps": 77,
         "composites": 41,
-        "studies": 14,
+        "studies": 17,
         "investigations": 1
       }
     },
@@ -4034,10 +4046,10 @@
       }
     },
     {
-      "name": "viva-Mgen",
-      "repo": "viva-Mgen",
-      "source": "https://github.com/vivarium-collective/viva-Mgen",
-      "homepage": "https://github.com/vivarium-collective/viva-Mgen",
+      "name": "viva-mgen",
+      "repo": "viva-mgen",
+      "source": "https://github.com/vivarium-collective/viva-mgen",
+      "homepage": "https://github.com/vivarium-collective/viva-mgen",
       "description": "Viva-native (process-bigraph) reproduction of the Karr et al. 2012 Mycoplasma genitalium whole-cell model",
       "tags": [],
       "cloned": true,
@@ -5000,27 +5012,6 @@
         "composites": 7,
         "studies": 3,
         "investigations": 1
-      }
-    },
-    {
-      "name": "viva-ptools",
-      "repo": "viva-ptools",
-      "source": "https://github.com/vivarium-collective/viva-ptools",
-      "homepage": "https://github.com/vivarium-collective/viva-ptools",
-      "description": "Pathway Tools (EcoCyc) Omics-Viewer launcher \u2014 a vivarium-workbench analysis-viewer plugin",
-      "tags": [],
-      "cloned": true,
-      "processes": [],
-      "steps": [],
-      "composites": [],
-      "studies": [],
-      "investigations": [],
-      "counts": {
-        "processes": 0,
-        "steps": 0,
-        "composites": 0,
-        "studies": 0,
-        "investigations": 0
       }
     },
     {

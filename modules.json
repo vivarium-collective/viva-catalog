@@ -270,11 +270,11 @@
     "tags": []
   },
   {
-    "name": "viva-Mgen",
-    "source": "https://github.com/vivarium-collective/viva-Mgen.git",
+    "name": "viva-mgen",
+    "source": "https://github.com/vivarium-collective/viva-mgen.git",
     "ref": "main",
-    "package": "viva_Mgen",
-    "homepage": "https://github.com/vivarium-collective/viva-Mgen",
+    "package": "viva_mgen",
+    "homepage": "https://github.com/vivarium-collective/viva-mgen",
     "description": "Viva-native (process-bigraph) reproduction of the Karr et al. 2012 Mycoplasma genitalium whole-cell model",
     "tags": []
   },
@@ -357,15 +357,6 @@
     "package": "viva_pennylane_data_reuploading",
     "homepage": "https://github.com/vivarium-collective/viva-pennylane-data-reuploading",
     "description": "",
-    "tags": []
-  },
-  {
-    "name": "viva-ptools",
-    "source": "https://github.com/vivarium-collective/viva-ptools.git",
-    "ref": "main",
-    "package": "viva_ptools",
-    "homepage": "https://github.com/vivarium-collective/viva-ptools",
-    "description": "Pathway Tools (EcoCyc) Omics-Viewer launcher \u2014 a vivarium-workbench analysis-viewer plugin",
     "tags": []
   },
   {
