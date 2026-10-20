@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T15:07:17+00:00",
+  "generated_at": "2026-10-20T10:37:30+00:00",
   "n_repos": 52,
   "n_cloned": 52,
   "repos": [
@@ -2604,6 +2604,11 @@
           "name": "CarbonFixationProcess",
           "kind": "process",
           "description": "Lab-calibrated mineral-catalyzed CO2 reduction, gated by thermodynamic"
+        },
+        {
+          "name": "PrecursorPoolProcess",
+          "kind": "process",
+          "description": "og-precursor-pool: the real C1-C3 reaction-universe CSTR, read out as a"
         }
       ],
       "steps": [
@@ -3015,6 +3020,10 @@
           "description": "A reusable agent-based heredity-lineage comparison (Module K). Individuals carry a chemical phenotype inherited at fission into a real lineage tree, with a module-specific mechanism: template Eigen ratchet (Q=fidelity^length), compositional GARD split (length-independent, no template), a template-focused hybrid, or a severed non-heritable control. Emits population mean function, functional fraction, size, lineage depth and realized heritability. Reproduces the Eigen error catastrophe at the agent level AND shows compositional heredity escaping the length catastrophe \u2014 heredity need not presume a long high-fidelity template."
         },
         {
+          "name": "og_self_maintaining_individual",
+          "description": "NEW C (one coupled pass): A's real precursor-pool reactor feeds its acetate to the real AmphiphileChainExtensionProcess (fatty-acid elongation -> aggregation_competent = long-chain / CAC) at a runner-supplied membrane-gated effective washout. The reciprocal fixed point, the 3 ablations and the with/without-built-in-gain comparison are in sims/run.py. Retention is earned on the actual aggregation_competent, never og_32's assumed ~0.9."
+        },
+        {
           "name": "mixed_amphiphile_protocell",
           "description": "A reusable mixed-amphiphile protocell module (Module G). Coarse-grained vesicle self-assembly + permeability calibrated to Jordan 2019: mixed single-chain amphiphiles broaden the pH / salt / divalent stability window and form vesicles that retain chemistry while staying permeable to the gradient (individuality without isolation). mix_fraction\u22480 / high salt / acidic pH give the controls. Coarse-grained reproduction (not wrapped MD)."
         },
@@ -3119,6 +3128,14 @@
           "description": "Gate E progressive independence: withdraw each environmental support ONE AT A TIME and ask which the lineage can internalize (persist via an innovation) vs which are hard dependencies. Reuses the validated og-08 off-gradient budget (OffGradientPersistenceProcess + EnvironmentalRelaxationProcess) verbatim \u2014 no invented terms \u2014 but relaxes a single channel at a time (others held full) instead of og-08's joint all-at-once relaxation, so a matched per-support ablation (rescuing innovation off -> fail) attributes each support to its internalizing innovation (gradient->pump, mineral/feed->importer, all gated by heredity). Channels: gradient (pH/pmf drive), mineral_access (mineral catalysis), feed (H2+CO2+organics LUMPED \u2014 per-feedstock split + temperature-Arrhenius = og-37a). Coarse budget abstraction = an affordability/attribution profile, NOT a demonstrated escape; heredity = irreducible substrate. Terminal (consumes 34/35/36, extends nothing)."
         },
         {
+          "name": "og_operating_window",
+          "description": "NEW B: A's real precursor-pool reactor (membrane-reduced washout from the real ProtocellAssembly retention) coupled to the real FiPy thermophoretic trap (enrichment at the cell's thermal gradient + Soret coefficient). The sweep asks whether product-pool enrichment x membrane retention lifts the nM functional pool to a consumable ~uM concentration. soret_coeff is the pivotal swept parameter (small-molecule, NOT the large-biomolecule default)."
+        },
+        {
+          "name": "og_evolvable_lineages",
+          "description": "NEW D (one static-environment condition): selection on an inherited network-composition trait in a population of og_33-dividing protocells, fitness grounded in the real composition->retention->division coupling. GIVEN a granted individual (C refuted endogenous closure). The runner drives this across the full condition, the no-inheritance null (inheritance=False), the shared-feed null (flat retention landscape), and a changed environment (swapped optimum), and reports whether evolvability is real above the nulls and whether it is open-ended or bounded fixed-trait selection."
+        },
+        {
           "name": "proto_energetics",
           "description": "A transferable energy currency before modern pumping (pre-og-05). An exergonic geochemical drive charges a carrier pool (thioester / acyl-phosphate class) that is discharged for endergonic work under load and bled by hydrolysis, all tracked in a conserved free-energy ledger (input = work + stored + dissipated). Tests whether the system captures environmental free energy into a transferable store, and what fraction becomes stored usable work. drive_free_energy / coupling_efficiency set the arm; coupling->0 or drive below the carrier bond collapses the currency (ablations). Coarse-grained, deterministic reproduction (not a wrapped engine)."
         },
@@ -3141,6 +3158,22 @@
         {
           "name": "off_gradient_persistence",
           "description": "A reusable off-gradient-persistence module (Module M). A lineage's co-limited (Liebig-minimum) free-energy + resource budget under relaxing geological support (external gradient, mineral access, feed all declining over the run), with three toggleable innovations: internal energy conversion (has_pump), active resource import (has_importer) and information maintenance (has_heredity). Because the budget is co-limited the innovation set is irreducible \u2014 as support -> 0 only the full set keeps net budget above the survival floor, so a knockout sweep identifies {pump, importer, heredity} as the minimum robust set for autonomy. Coarse-grained, deterministic reproduction (not a wrapped ALife engine)."
+        },
+        {
+          "name": "precursor_pool",
+          "description": "NEW A canonical: the real C1-C3 rule-generated reaction-universe CSTR (libRoadRunner, atom-resolved, eQuilibrator dG') under the upstream-calibrated vent feed (DIC window 2-20 mM CO2, dissolved H2), read out as functional precursor yield vectors with de-novo carbon-source attribution (NOT isotope 13C) and a degree-of-reduction electron budget. Delivers the precursor state the downstream network + amphiphile studies consume."
+        },
+        {
+          "name": "precursor_pool_no_h2",
+          "description": "NEW A control: reductant removed (feed_H2 = 0). The functional pool must collapse."
+        },
+        {
+          "name": "precursor_pool_no_catalyst",
+          "description": "NEW A control: mineral + base catalyst sites = 0. The functional pool must collapse."
+        },
+        {
+          "name": "precursor_pool_no_gradient",
+          "description": "NEW A control: no sustained vent resupply (k_feed = 0) - the disequilibrium the pH/redox gradient maintains is off. The pool must collapse."
         },
         {
           "name": "competing_heredity",
@@ -3170,31 +3203,35 @@
         },
         {
           "name": "og-ecology",
-          "description": "Protocell Ecology: Community Function Before the Complete Cell"
+          "description": "Protocell Ecology: Does Community Function Precede the Cell?"
         },
         {
           "name": "og-spatial-concentration",
           "description": "Spatial Concentration: Does a Pore Enrich a Dilute Feed?"
         },
         {
+          "name": "og-operating-window",
+          "description": "Operating Window: Can Pore and Membrane Concentration Rescue the Pool?"
+        },
+        {
           "name": "mem-m4-growth-division-propensity",
-          "description": "Growth, shape change & division propensity (membrane-MD M4)"
+          "description": "Membrane Division: Can a Vesicle Grow and Divide?"
         },
         {
           "name": "og-autocatalysis-a2",
-          "description": "Endogenous Autocatalysis (A2): Formose and Reductive-TCA Routes"
+          "description": "Endogenous Autocatalysis: Does a Self-Amplifying Cycle Form?"
         },
         {
           "name": "og-energetics",
-          "description": "Proto-Energetics: Capture, Internalization, and Carrier Coupling"
+          "description": "Proto-Energetics: Can a System Capture and Couple Free Energy?"
         },
         {
           "name": "og-self-compartmentation",
-          "description": "Self-Compartmentation: From Boundary to Self-Maintaining Protocell"
+          "description": "Self-Compartmentation: Does Metabolism Build Its Own Boundary?"
         },
         {
           "name": "og-vent-interface",
-          "description": "The Evolving Mineral Interface: A Bounded DIC Window"
+          "description": "The Mineral Interface: Does It Sustain Flux Within a DIC Window?"
         },
         {
           "name": "og-evolvability",
@@ -3202,7 +3239,7 @@
         },
         {
           "name": "og-independence",
-          "description": "Escape and Progressive Independence from the Vent"
+          "description": "Independence from the Vent: Can a Lineage Escape Its Cradle?"
         },
         {
           "name": "og-carbon-fixation",
@@ -3210,23 +3247,35 @@
         },
         {
           "name": "og-vent-environment",
-          "description": "The Vent Environment: Calibrated, Viable Geochemical States"
+          "description": "The Vent Environment: Does It Supply a Viable Feed?"
         },
         {
           "name": "og-reproduction",
-          "description": "Reproduction: Coupled Growth and Division into a Lineage"
+          "description": "Reproduction: Can Growth and Division Build a Lineage?"
         },
         {
           "name": "og-vent-specificity",
           "description": "Vent Specificity: Are the Gates Vent-Specific or Generic?"
         },
         {
+          "name": "og-precursor-pool",
+          "description": "Precursor Pool: Can Vent Chemistry Build a Functional Pool?"
+        },
+        {
           "name": "og-nutrient-bottlenecks",
-          "description": "Nutrient Bottlenecks: Nitrogen and Phosphorus Keep Pace with Carbon"
+          "description": "Nutrient Bottlenecks: Are Nitrogen and Phosphorus Available with Carbon?"
+        },
+        {
+          "name": "og-self-maintaining-individual",
+          "description": "Self-Maintaining Individuality: Does the Chemistry\u2013Boundary Loop Close?"
         },
         {
           "name": "og-network-rescue",
           "description": "Network Rescue: Does Pore Concentration Ignite the Reaction Network?"
+        },
+        {
+          "name": "og-evolvable-lineages",
+          "description": "Evolvable Lineages: Can a Granted Individual Evolve?"
         }
       ],
       "investigations": [
@@ -3236,10 +3285,10 @@
         }
       ],
       "counts": {
-        "processes": 64,
+        "processes": 65,
         "steps": 77,
-        "composites": 41,
-        "studies": 17,
+        "composites": 48,
+        "studies": 21,
         "investigations": 1
       }
     },
@@ -3606,6 +3655,11 @@
           "name": "OscillatingForce",
           "kind": "process",
           "description": "Time-varying external force vector \u2014 useful for driving demos."
+        },
+        {
+          "name": "LammpsModelProcess",
+          "kind": "process",
+          "description": "One general LAMMPS Process driven by a :class:`LammpsModel` plugin."
         }
       ],
       "steps": [
@@ -3621,6 +3675,10 @@
           "description": "Tiny LAMMPS Lennard-Jones NVE demo: 27 atoms on a simple-cubic lattice, integrated with `fix nve`. Emits temperature, potential_energy, kinetic_energy, total_energy, pressure, and volume each step."
         },
         {
+          "name": "lj-box-model",
+          "description": "Model-plugin seam demo: the general `LammpsModelProcess` driving the registered `lj-box` LennardJonesBox plugin. Same tiny LJ NVE box as lj-nve-demo, but built through the model seam instead of a hand-written input script. Emits temperature and the three energies each step."
+        },
+        {
           "name": "lj-nve-demo-with-viz",
           "description": "LAMMPS LJ NVE demo with a wired Visualization Step. Each update produces a Plotly HTML figure of the running thermodynamic trajectories, written to the 'viz_html' store."
         }
@@ -3628,9 +3686,9 @@
       "studies": [],
       "investigations": [],
       "counts": {
-        "processes": 4,
+        "processes": 5,
         "steps": 1,
-        "composites": 2,
+        "composites": 3,
         "studies": 0,
         "investigations": 0
       }
@@ -3644,6 +3702,26 @@
       "tags": [],
       "cloned": true,
       "processes": [
+        {
+          "name": "BasalAdhesion",
+          "kind": "process",
+          "description": "Reversible basal linkers: cortex tension -> (occupancy-gated) BM traction."
+        },
+        {
+          "name": "TissuePrismProcess",
+          "kind": "process",
+          "description": "Fixed-volume prism cell + viscoelastic BM -> cell height / confinement."
+        },
+        {
+          "name": "TurnoverShapeProcess",
+          "kind": "process",
+          "description": "Inferred collagen lifetime (x perlecan) -> BM relaxation -> prism shape."
+        },
+        {
+          "name": "LammpsTyssueCoupling",
+          "kind": "process",
+          "description": "Bidirectional collagen-BM (LAMMPS) <-> epithelium (Tyssue) coupling."
+        },
         {
           "name": "CollagenNetworkProcess",
           "kind": "process",
@@ -3670,23 +3748,55 @@
       "composites": [
         {
           "name": "stage1_composite",
-          "description": "Stage 1 \u2014 collagen IV network staged protocol (assemble \u2192 relax \u2192 stretch \u2192 hold elastic \u2192 hold viscous). StagedStretchController drives the LAMMPS-backed CollagenNetworkProcess."
+          "description": "Stage 1 \u2014 staged protocol (assemble \u2192 relax \u2192 stretch FROZEN \u2192 hold elastic \u2192 hold viscous). Separates a reproducible elastic modulus from a crosslink-turnover remodelling time."
         },
         {
           "name": "stage2_sweep",
-          "description": "Stage 2 \u2014 the collagen IV network on a growing (biaxially stretching) substrate; the \u03c3(\u03b5\u0307) sweep runs this composite at a range of strain rates with the crosslink chemistry on."
+          "description": "Stage 2 / R2 \u2014 growth rheology: the collagen IV network on a growing (biaxially stretching) substrate with the crosslink chemistry ON during the stretch; the \u03c3(\u03b5\u0307) sweep runs this at a range of strain rates."
         },
         {
           "name": "connectivity_sweep",
-          "description": "Rigidity (bm-v3) \u2014 the collagen IV network whose crosslink connectivity (z) is swept to test rigidity percolation."
+          "description": "Rigidity (bm-v3, adversarial) \u2014 the CENTRAL-FORCE counterfactual: bending_k forced to 0, crosslink connectivity (z) swept to test rigidity percolation. A control that should NOT reproduce the released angle-stabilized model."
         },
         {
           "name": "bending_sweep",
-          "description": "FP1 (bm-v4) \u2014 the collagen IV network WITH junction bending (fix restrain pinned to each crosslink's as-formed angle). The athermal modulus is swept vs bending_k."
+          "description": "FP1 (bm-v4) \u2014 the collagen IV network WITH junction bending (released NC1 value, as-formed angle restraints created during assembly). The athermal modulus is swept vs bending_k."
         },
         {
           "name": "porosity_bundling",
-          "description": "Stage 5 (bm-v5) \u2014 the assembled collagen IV network, read for its geometric readouts: pore-size distribution (porosity) and protomers-per-strand (bundling), against the measured BM comparators."
+          "description": "Stage 5 (bm-v5) \u2014 the assembled collagen IV network read for its geometric readouts (pore-size distribution, protomers-per-strand) against the measured BM comparators; emits the assembly observables, not the stress trace."
+        },
+        {
+          "name": "actomyosin_cortex",
+          "description": "E1 (extension) \u2014 a coarse 2D actomyosin cortex on the viva-lammps model seam (LammpsModelProcess + the actomyosin-cortex plugin). Contractility (LJ \u03b5, a myosin-activity proxy) tunes the cortical tension that will map onto a Tyssue cortical-energy parameter."
+        },
+        {
+          "name": "closed_lumenoid",
+          "description": "E3 (extension) \u2014 a closed 3D lumenoid on the vivarium-tyssue engine (EulerSolver over the merged LumenoidGeometry + lumenoid mesh). Tracks a Laplace lumen pressure on top of the enclosed lumen volume and exposes the basal surface as the basement-membrane coupling shell (the surface the collagen BM attaches to)."
+        },
+        {
+          "name": "tyssue_2d_sheet",
+          "description": "R4 \u2014 coupled 2D epithelium on the vivarium-tyssue engine: a polygonal sheet relaxed with the merged CrossSectionGeometry (explicit per-cell height DOF for the prism/height relation). The homogeneous reference for the confinement response (vs R1)."
+        },
+        {
+          "name": "tyssue_3d_monolayer",
+          "description": "R5 \u2014 explicit 3D cell confinement: a Tyssue 3D monolayer (MonolayerGeometry) with apical/basal/lateral surfaces and cell-volume targets, so cell height + basal area emerge explicitly (no prism approximation)."
+        },
+        {
+          "name": "actin_adhesion_bm",
+          "description": "E2 (extension) \u2014 actin-adhesion-collagen force transfer: an actomyosin cortex (LAMMPS seam) pulls through reversible basal linkers (BasalAdhesion) on a collagen IV BM patch (CollagenNetworkProcess). Measures traction, linker occupancy and the BM deformation on a single-cell patch."
+        },
+        {
+          "name": "coupled_lumenoid",
+          "description": "E4 / P3 capstone \u2014 bidirectional LAMMPS collagen-BM <-> Tyssue epithelium coupling: the lumenoid's basal BM-shell surface stretches an explicit LAMMPS collagen IV BM patch, whose stress feeds back as a basal tension on the epithelium. The force round-trip the multiscale campaign is built toward (explicit-BM realization)."
+        },
+        {
+          "name": "tissue_prism_baseline",
+          "description": "R1 \u2014 reduced-order homogeneous tissue mechanics: a fixed-volume prism cell whose basal area is set by proliferation against a viscoelastic BM (stiffness + relaxation). Cell height = volume/area; the paper's Fig 1 confinement regimes emerge from BM stiffness vs the relaxation/doubling ratio. The effective-BM reference for R4/R5."
+        },
+        {
+          "name": "turnover_shape_pipeline",
+          "description": "R6 \u2014 turnover->relaxation->shape inference pipeline: an inferred collagen IV lifetime (modulated by perlecan) sets the BM relaxation time, which the reduced-order prism model turns into a predicted cell shape. Inferred (relaxation) and predicted (shape) are kept distinct; conditions are control / perlecan gain-loss / growth rate."
         }
       ],
       "studies": [
@@ -3695,12 +3805,36 @@
           "description": "Can more crosslink connectivity rigidify the v1 network, or is bending required?"
         },
         {
+          "name": "bm-r2-collagen-network-rheology",
+          "description": "Run the LAMMPS NC1/7S network under paper-matched staged loading and chemistry switches across several turnover rates; independently track molecule residence time and stress relaxation; reproduce Fig 2D stress traces and the 2E slope with error bars.\n"
+        },
+        {
           "name": "bm-v4-junction-bending",
           "description": "Does junction bending yield the measurable modulus the vertex model needs?"
         },
         {
+          "name": "bm-r3-network-expansion-supply",
+          "description": "From identical initial states, compare no remodeling, remodeling without insertion, and remodeling with insertion under matched forcing; measure area expansion, collagen density and largest-connected-network size; match the direction and ordering of Fig 2B-C.\n"
+        },
+        {
           "name": "bm-v1-stage1-modulus-remodelling",
           "description": "Can the clean-room collagen IV network separate an elastic modulus from a viscous remodelling time, as the paper's staged protocol does?\n"
+        },
+        {
+          "name": "bm-e2-actin-adhesion-collagen",
+          "description": "Couple active cortical contractility (E1) to reversible basal linkers and a collagen IV BM patch; measure traction, linker occupation, network deformation and relative relaxation; begin with a single-cell patch before multicellular coupling.\n"
+        },
+        {
+          "name": "bm-e3-closed-3d-lumenoid",
+          "description": "Introduce a 3D closed-shell Tyssue geometry with lumen pressure/volume and a BM shell; first use the validated reduced-order BM law, then test resolved LAMMPS patches or a curved- network realization; predict lumen growth, cell shape and curvature effects.\n"
+        },
+        {
+          "name": "bm-r5-explicit-3d-confinement",
+          "description": "Build a Tyssue 3D monolayer with apical/lateral/basal energies and cell-volume targets; run no-BM, elastic-BM and relaxing-BM controls; measure height, basal/apical area, their distributions and growth trajectories against the paper's morphology ordering.\n"
+        },
+        {
+          "name": "bm-r6-perlecan-growth-perturbations",
+          "description": "Use inferred collagen lifetime distributions for control, perlecan gain/loss and growth-rate conditions; propagate parameter uncertainty through relaxation and shape; compare relative cell morphology and uncertainty to Fig 7 while keeping inferred vs predicted outcomes distinct.\n"
         },
         {
           "name": "bm-v2-stress-vs-strainrate",
@@ -3709,19 +3843,35 @@
         {
           "name": "bm-v5-porosity-bundling",
           "description": "Does the v1 network reproduce the measured pore-size and bundling of a real BM?"
+        },
+        {
+          "name": "bm-e1-actomyosin-cortex",
+          "description": "Build a coarse filament/crosslink/motor LAMMPS model on a 2D cell-sized patch; measure tension, strain response and relaxation; map these onto Tyssue cortical-energy parameters. NEW extension - the paper does not explicitly simulate actin.\n"
+        },
+        {
+          "name": "bm-r1-published-tissue-baseline",
+          "description": "Reimplement the paper's fixed-volume prism/surface-tension tissue model and viscoelastic BM; sweep relative stiffness and the relaxation/doubling-time ratio; compare qualitatively and quantitatively to Barrientos et al. Figure 1G-J.\n"
+        },
+        {
+          "name": "bm-r4-coupled-2d-epithelium",
+          "description": "Build a Tyssue 2D sheet with a BM response calibrated from R2 (traction/area law, height via an explicit volume/prism relation); include a reference homogeneous case, cell division and varying cortical tensions; compare the confinement response to R1 and quantify topology sensitivity.\n"
+        },
+        {
+          "name": "bm-e4-feedback-predictions",
+          "description": "Test growth-driven turnover, spatial BM heterogeneity, contractility-dependent confinement, partial adhesion and network failure, each against one-way, uncoupled and uniform-material controls, and report where the bidirectionally coupled predictions depart from the paper.\n"
         }
       ],
       "investigations": [
         {
           "name": "basement-membrane-v1",
-          "description": "Basement membrane v1 \u2014 collagen IV network modulus & remodelling for the AICS vertex model"
+          "description": "From collagen IV turnover to multiscale epithelial morphogenesis (BM v1 \u2192 lumenoid)"
         }
       ],
       "counts": {
-        "processes": 2,
+        "processes": 6,
         "steps": 2,
-        "composites": 5,
-        "studies": 5,
+        "composites": 13,
+        "studies": 15,
         "investigations": 1
       }
     },
