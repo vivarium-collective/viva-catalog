@@ -27,15 +27,6 @@
     "tags": []
   },
   {
-    "name": "viva-autopoiesis",
-    "source": "https://github.com/vivarium-collective/viva-autopoiesis.git",
-    "ref": "main",
-    "package": "viva_autopoiesis",
-    "homepage": "https://github.com/vivarium-collective/viva-autopoiesis",
-    "description": "A whole-cell model built as a precarious, self-bounding network via composition \u2014 autopoiesis through the biological schema framework.",
-    "tags": []
-  },
-  {
     "name": "viva-basic-processes",
     "source": "https://github.com/vivarium-collective/viva-basic-processes.git",
     "ref": "main",
