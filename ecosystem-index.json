@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-24T09:59:31+00:00",
-  "n_repos": 52,
-  "n_cloned": 52,
+  "generated_at": "2026-10-24T16:21:27+00:00",
+  "n_repos": 51,
+  "n_cloned": 51,
   "repos": [
     {
       "name": "spatio-flux",
@@ -554,106 +554,6 @@
         "steps": 0,
         "composites": 5,
         "studies": 2,
-        "investigations": 1
-      }
-    },
-    {
-      "name": "viva-autopoiesis",
-      "repo": "viva-autopoiesis",
-      "source": "https://github.com/vivarium-collective/viva-autopoiesis",
-      "homepage": "https://github.com/vivarium-collective/viva-autopoiesis",
-      "description": "A whole-cell model built as a precarious, self-bounding network via composition \u2014 autopoiesis through the biological schema framework.",
-      "tags": [],
-      "cloned": true,
-      "processes": [
-        {
-          "name": "SpatialContainment",
-          "kind": "process",
-          "description": "The 1-D containment step: interior production + membrane growth/decay +"
-        },
-        {
-          "name": "Chemotaxis",
-          "kind": "process",
-          "description": "One run-and-tumble + viability step for the whole population, ported"
-        },
-        {
-          "name": "GrowthDivision",
-          "kind": "process",
-          "description": "One grow-and-divide step over the whole population, ported verbatim from"
-        },
-        {
-          "name": "Supply",
-          "kind": "process",
-          "description": "Boundary inflow of nutrient -- the environmental coupling. rate=0 starves the cell."
-        },
-        {
-          "name": "Metabolism",
-          "kind": "process",
-          "description": "Toy metabolism: nutrient -> precursor, then 2 precursor -> 1 lipid."
-        },
-        {
-          "name": "Membrane",
-          "kind": "process",
-          "description": "The self-produced boundary's material: grows by incorporating free lipids,"
-        },
-        {
-          "name": "Boundary",
-          "kind": "process",
-          "description": "Derives the volume from the membrane -- the emergent boundary. Recomputes the"
-        }
-      ],
-      "steps": [],
-      "composites": [
-        {
-          "name": "growth-division",
-          "description": "Study 4 \u2014 growth & division: one individual becomes a heterogeneous population. The precarious individual grows as its (abstracted) autopoietic loop runs and, past a size threshold, DIVIDES into two daughters. The membrane is partitioned with noise so daughters differ; a heritable trait is inherited with mutation so lineages DIVERSIFY over generations. Division is precarious \u2014 a daughter that inherits too little membrane to maintain itself dissolves. Starve it (``supply=0``) and the lineage collapses: the no-self-maintenance control."
-        },
-        {
-          "name": "membrane-metabolism-loop",
-          "description": "The minimal membrane/metabolism co-construction loop \u2014 a precarious, self-bounding identity that emerges from the molecular domain. Metabolism makes lipids; the membrane grows by incorporating them and decays without them; the volume is DERIVED from the membrane (the boundary emerges, never declared) and couples back into the concentration the bimolecular lipid step runs on. Supply (rate=0 starves) is the only boundary inflow."
-        },
-        {
-          "name": "adaptive-chemotaxis",
-          "description": "Study 3 \u2014 adaptive chemotaxis: where life becomes mind. A population of run-and-tumble agents in a nutrient gradient senses the local food and tumbles less when nutrient is rising (bacterial chemotaxis); nutrient sustains the viability that keeps each agent alive. A chemotactic agent climbs the gradient, finds food, and survives; a blind agent (``chemotactic=false``) random-walks, starves, and dissolves. The gradient is MEANINGFUL from the perspective of the precarious identity \u2014 sense-making, agency in service of self-maintenance."
-        },
-        {
-          "name": "spatial-containment",
-          "description": "Study 2 \u2014 the autopoiesis of containment on a 1-D lattice. Interior content DIFFUSES and would ddisperse into the medium; the self-produced membrane GATES the cross-boundary flux (permeability falls as the membrane grows), so the individual is held together against diffusion. The membrane is built by the metabolism it contains, and decays when starved \u2014 containment is precarious, the spatial edition. ``membrane_on=false`` is the discriminating no-membrane negative control; ``fed=false`` starves it."
-        }
-      ],
-      "studies": [
-        {
-          "name": "study-1-membrane-metabolism-loop",
-          "description": "Assemble the smallest precarious, self-bounding identity by composing a toy metabolism,\na membrane that grows from its own lipids (and decays without them), and a boundary whose\nvolume is DERIVED from the membrane \u2014 then verify, with the autopoiesis meter, that the\nnetwork is operationally closed (modulo nutrient) and that the identity is precarious:\nfed it persists, starved it dissipates.\n"
-        },
-        {
-          "name": "study-5-adversarial-probes",
-          "description": "Turn the demonstration into a test: challenge the autopoiesis framework with\nsystems that should NOT qualify, and check that the metric REJECTS them. Two\nprobes \u2014 an externally-maintained mimic (persistence supplied from outside, not\nself-produced) and a network missing a self-production step (no membrane\nproducer). The study passes only if the metric rejects both, showing the\ncriteria discriminate genuine self-production from superficial similarity.\n"
-        },
-        {
-          "name": "study-2-spatial-containment",
-          "description": "Study 1 had no space \u2014 \"inside\" was a scalar volume. In a medium the self-produced\ninterior would diffuse away and the individual would dissolve. Put the cell on a 1-D\nlattice where interior content DIFFUSES and the self-produced membrane GATES the\nboundary flux, and show that the membrane \u2014 built by the metabolism it contains \u2014\nis what holds the individual together against dispersion. The autopoiesis of\ncontainment, with precariousness extended to space.\n"
-        },
-        {
-          "name": "study-3-adaptive-chemotaxis",
-          "description": "Place the precarious individual in an environment with a nutrient gradient and give\nit a sensorimotor loop: sense the local nutrient, run-and-tumble (tumble less when\nnutrient is rising), move. The nutrient feeds the metabolism that maintains the\nmembrane that keeps it alive. Show that a chemotactic agent climbs the gradient,\nfinds food, and survives \u2014 while a blind agent random-walks, starves, and dissolves.\nThis is where life becomes mind: the gradient is MEANINGFUL from the perspective of\nthe precarious identity (up-gradient = viable, down-gradient = dissolution). Value is\ngrounded in the cell's own viability, not assigned from outside \u2014 sense-making, and\nagency in service of self-maintenance.\n"
-        },
-        {
-          "name": "study-4-growth-division",
-          "description": "The precarious individual grows as its autopoietic loop runs and, past a size\nthreshold, DIVIDES into two daughters. The membrane is partitioned with noise so\ndaughters differ in size; a heritable trait is inherited with mutation so lineages\nDIVERSIFY over generations \u2014 one individual becomes a population of non-identical\nindividuals. Division is itself precarious: a daughter that inherits too little\nmembrane to maintain itself dissolves \u2014 reproduction has a viability cost. This\nheterogeneous population is the substrate on which study 5's selection can act.\n"
-        }
-      ],
-      "investigations": [
-        {
-          "name": "autopoiesis-through-composition",
-          "description": "Autopoiesis through composition"
-        }
-      ],
-      "counts": {
-        "processes": 7,
-        "steps": 0,
-        "composites": 4,
-        "studies": 5,
         "investigations": 1
       }
     },
