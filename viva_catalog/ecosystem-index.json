@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T10:22:30+00:00",
+  "generated_at": "2026-10-26T11:50:08+00:00",
   "n_repos": 51,
   "n_cloned": 51,
   "repos": [
@@ -325,6 +325,10 @@
           "description": "Different resolution for the spatio-flux reference demo"
         },
         {
+          "name": "spatial_overflow_crossfeeding",
+          "description": "Does spatial dynamic-FBA secrete an overflow metabolite (acetate) into the field as it grows on glucose, building the substrate pool that spatial cross-feeding would draw on?"
+        },
+        {
           "name": "monod_kinetics",
           "description": "Field-only baseline: Monod uptake/growth on a well-mixed substrate pool (no spatial lattice, no particles). Use to sanity-check kinetics + mass balance."
         },
@@ -335,6 +339,14 @@
         {
           "name": "br_particles_dfba",
           "description": "Particle-embedded metabolism: Brownian agents carry internal dFBA; uptake/secretion couples to fields and biomass accumulates into particle mass/size."
+        },
+        {
+          "name": "division_seeding_regimes",
+          "description": "How does the particle population size depend on the division mass threshold in the coupled field+agent COMETS composite?"
+        },
+        {
+          "name": "spatial_vs_wellmixed_community",
+          "description": "Does spatial structure change how completely a microbial community consumes its shared substrate, compared with the well-mixed case?"
         },
         {
           "name": "fig-06",
@@ -361,8 +373,16 @@
           "description": "Spatial microenvironment (sitewise dFBA): a lattice where each site runs its own dFBA instance. Useful for validating lattice indexing + per-site state isolation."
         },
         {
+          "name": "spatial_growth_front",
+          "description": "When biomass is seeded at one edge of a diffusing nutrient field, does it propagate across the lattice as an emergent spatial growth front?"
+        },
+        {
           "name": "yeast_dfba",
           "description": "Single-cell metabolism (yeast): dynamic FBA using iMM904 with extracellular glucose and biomass. Cross-model check of the dFBA pipeline."
+        },
+        {
+          "name": "advection_plume_phase",
+          "description": "How far downstream does the biomass plume reach as a function of the advection strength of the COMETS field?"
         },
         {
           "name": "diffusion_process",
@@ -397,6 +417,10 @@
           "description": "What does Fig 2 \u2014 Milner bigraph (a) + process bigraph (b) depict, and does its bigraph-loom image generate?"
         },
         {
+          "name": "glucose_limitation_yield",
+          "description": "Does the biomass yield of dynamic-FBA growth scale with the initial glucose supply \u2014 the quantitative signature of carbon limitation?"
+        },
+        {
           "name": "spatial_dfba_process",
           "description": "Spatial microenvironment (vectorized dFBA): one spatial dFBA process updates all lattice sites as a single structured state. Demonstrates batched execution + field coupling."
         },
@@ -411,6 +435,10 @@
         {
           "name": "newtonian_particles",
           "description": "Physics-only baseline (Pymunk): rigid-body particles with collisions/crowding in continuous space. Use to validate contact dynamics + boundary enforcement."
+        },
+        {
+          "name": "nutrient_starvation_control",
+          "description": "With no carbon source, does the dynamic-FBA model correctly fail to grow \u2014 the falsification control that the growth signal is real, not an artifact?"
         },
         {
           "name": "fig-08",
@@ -435,7 +463,7 @@
         "processes": 34,
         "steps": 8,
         "composites": 21,
-        "studies": 27,
+        "studies": 34,
         "investigations": 2
       }
     },
@@ -3404,6 +3432,11 @@
           "description": "Cross the ASCT+B-3D crosswalk's anatomical structures with the biomodel-DO organ->models index to mark model coverage, at organ granularity."
         },
         {
+          "name": "ModelConnectivityNetwork",
+          "kind": "step",
+          "description": "Build the model connectivity network over the curated corpus: nodes are models, edges are shared molecular species (CHEBI/UniProt/KEGG/GO/Reactome) and shared HRA anatomy (organ/FTU/cell-type), ubiquitous stop-word variables dropped and each node kept to its strongest edges. Writes network.json + the force-graph explorer to viz/network/; emits variable-coverage + connectivity stats."
+        },
+        {
           "name": "ComputationalModelAtlas",
           "kind": "step",
           "description": "Regenerate the HRA Computational Model Atlas pack from the BioModels->HRA map DB: place each model at the organ subregion(s) its cell types / FTUs resolve to (via HRApop per-AS cell populations + the ASCT+B-3D crosswalk), falling back to the whole organ. Writes atlas.json/config.json to the study's viz/atlas/; emits the manifest summary + placement stats."
@@ -3459,6 +3492,10 @@
         }
       ],
       "studies": [
+        {
+          "name": "model-connectivity",
+          "description": "Model Connectivity Network \u2014 How the Curated Models Couple"
+        },
         {
           "name": "hra-anatomical-structures",
           "description": "HRA Anatomical-Structure Term Occurrences"
@@ -3542,24 +3579,28 @@
       ],
       "investigations": [
         {
+          "name": "model-connectivity",
+          "description": "Act 4 \u00b7 Connectivity \u2014 How the Curated Models Couple"
+        },
+        {
           "name": "hra-3d",
-          "description": "HRA-3D \u2014 Model Coverage on the Human Reference Atlas 3D Anatomy"
+          "description": "Act 3 \u00b7 Coverage \u2014 Models on the HRA 3D Anatomy"
         },
         {
           "name": "hra-integration",
-          "description": "HRA API Integration \u2014 Datasets, Ontology, and BioModel Digital Objects"
+          "description": "Act 2 \u00b7 Atlas \u2014 Mapping Models to HRA Anatomy"
         },
         {
           "name": "glucose-regulation",
-          "description": "Glucose Regulation \u2014 COPASI vs Tellurium"
+          "description": "Act 1 \u00b7 Model Trust \u2014 COPASI vs Tellurium"
         }
       ],
       "counts": {
         "processes": 2,
-        "steps": 26,
+        "steps": 27,
         "composites": 8,
-        "studies": 20,
-        "investigations": 3
+        "studies": 21,
+        "investigations": 4
       }
     },
     {
