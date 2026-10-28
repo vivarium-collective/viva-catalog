@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T11:15:10+00:00",
+  "generated_at": "2026-10-28T11:49:16+00:00",
   "n_repos": 51,
   "n_cloned": 51,
   "repos": [
@@ -1317,14 +1317,28 @@
           "description": "CASPULE bond-network demo with wired Visualization Steps. Each update produces a Plotly HTML figure of the running scalar trajectories (BondNetworkPlots) and a three.js orbitable 3D viewer of atom positions + bonds (BondNetwork3D), each written to its own store."
         }
       ],
-      "studies": [],
-      "investigations": [],
+      "studies": [
+        {
+          "name": "bond-network-with-viz",
+          "description": "Bond network with viz"
+        },
+        {
+          "name": "bond-network-demo",
+          "description": "Bond network demo"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "caspule-bond-network-dynamics",
+          "description": "Caspule bond network dynamics"
+        }
+      ],
       "counts": {
         "processes": 1,
         "steps": 2,
         "composites": 2,
-        "studies": 0,
-        "investigations": 0
+        "studies": 2,
+        "investigations": 1
       }
     },
     {
@@ -1468,14 +1482,28 @@
           "description": "Dynamic FBA demo with a wired Visualization Step. Each update produces a Plotly HTML figure of the running scalar + per-species trajectories, written to the 'viz_html' store."
         }
       ],
-      "studies": [],
-      "investigations": [],
+      "studies": [
+        {
+          "name": "dfba-textbook-with-viz",
+          "description": "Dfba textbook with viz"
+        },
+        {
+          "name": "dfba-textbook-demo",
+          "description": "Dfba textbook demo"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "dynamic-fba-showcase",
+          "description": "Dynamic fba showcase"
+        }
+      ],
       "counts": {
         "processes": 3,
         "steps": 1,
         "composites": 2,
-        "studies": 0,
-        "investigations": 0
+        "studies": 2,
+        "investigations": 1
       }
     },
     {
@@ -1665,6 +1693,11 @@
           "description": "Minimal per-cell ligand-receptor occupancy model. Reads the local"
         },
         {
+          "name": "ProtrusionEnclosureProcess",
+          "kind": "process",
+          "description": "Host/symbiont differential-adhesion wrapping on the Rust CPM engine."
+        },
+        {
           "name": "ImmuneProcess",
           "kind": "process",
           "description": "Off-lattice immune agents that chemotax up a field gradient."
@@ -1698,6 +1731,10 @@
         {
           "name": "gg1993",
           "description": "Glazier & Graner (1993) CPM example (single CPMProcess). The `study` parameter selects which of the 11 paper examples to encode; its exact energies, temperature, area constraint and initial condition come from viva_cpm_studies.gg1993.params.STUDIES[study]."
+        },
+        {
+          "name": "protrusion_enclosure",
+          "description": "Eukaryogenesis S3 (protrusions to enclosure), campaign composite B. A host and a symbiont on the Rust CPM engine; sweeping host-symbiont adhesion j_hs across j_sM - j_hM moves the system through the wrapping transition. Emits enc/enclosure_fraction (1 = fully enclosed) and enc/enclosed."
         },
         {
           "name": "epithelium",
@@ -1810,6 +1847,10 @@
           "description": "Anneal the equilibrated all-light pattern at T=0 and measure bulk/total <n> and moments mu2-4 vs MCS to determine convergence speed.\n"
         },
         {
+          "name": "s3-protrusion-enclosure",
+          "description": "Run the protrusion_enclosure CPM composite (campaign composite B) at strong vs weak host-symbiont adhesion, measure the enclosure fraction (host coverage of the symbiont boundary), and sweep the adhesion x symbiont-surface-tension plane to produce the enclosure phase diagram."
+        },
+        {
           "name": "recruitment-adaptive",
           "description": "Author the acceptance contract for the adaptive-receptor rung of the\nfaithful chemotaxis mechanism ladder (viva_cpm_studies.model_building.\nmechanisms): three primary behavior tests plus a receptor-gating control,\nwith pass/fail bands set from real measured recruitment_index values\n(3-12 seeds) already gathered while calibrating the ladder. The loop\ndriver built in the next task runs mechanisms.simulate_condition against\nthese bands; this study does not itself constitute a completed run.\n"
         },
@@ -1840,6 +1881,10 @@
       ],
       "investigations": [
         {
+          "name": "endosymbiosis",
+          "description": "The Endosymbiotic Transition \u2014 enclosure mechanics (S3)"
+        },
+        {
           "name": "influenza-sego2022",
           "description": "Influenza infection & immune response (Sego 2022 reproduction)"
         },
@@ -1853,11 +1898,11 @@
         }
       ],
       "counts": {
-        "processes": 9,
+        "processes": 10,
         "steps": 0,
-        "composites": 10,
-        "studies": 27,
-        "investigations": 3
+        "composites": 11,
+        "studies": 28,
+        "investigations": 4
       }
     },
     {
@@ -2225,6 +2270,16 @@
           "name": "FenicsMultisolutePoreProcess",
           "kind": "process",
           "description": "High-fidelity 3-D FEM reference for multisolute localization: drives"
+        },
+        {
+          "name": "ProtrusionEnclosureCPMProcess",
+          "kind": "process",
+          "description": "Host/symbiont differential-adhesion wrapping on the Rust CPM engine (S3, composite B)."
+        },
+        {
+          "name": "MembraneEnclosureProcess",
+          "kind": "process",
+          "description": "Coarse-grained protrusion-to-enclosure mechanics (area + bending-energy budget)."
         },
         {
           "name": "ConservationLedgerProcess",
@@ -2989,6 +3044,31 @@
           "description": "Phase-1 Decision view: the Lost-City-conditioned posterior of the vent world"
         },
         {
+          "name": "S1MetabolicPartnershipViz",
+          "kind": "visualization",
+          "description": "S1: the connected cross-feeding community develops functional redundancy (>0.5) that the"
+        },
+        {
+          "name": "S2EcologyProximityViz",
+          "kind": "visualization",
+          "description": "S2: at low diffusion a proximate (mixed) community sustains cross-lineage flux a distant"
+        },
+        {
+          "name": "S3EnclosureViz",
+          "kind": "visualization",
+          "description": "S3: classical engulfment and inside-out wrapping reach stable enclosure; a no-enclosure"
+        },
+        {
+          "name": "S4EnergeticCouplingViz",
+          "kind": "visualization",
+          "description": "S4: with an efficient pump the population internalizes gradient generation and survives;"
+        },
+        {
+          "name": "S5HeritabilityViz",
+          "kind": "visualization",
+          "description": "S5: high-fidelity template inheritance crosses the Eigen error threshold and persists; a"
+        },
+        {
           "name": "_Phase6Viz",
           "kind": "visualization",
           "description": ""
@@ -3056,6 +3136,10 @@
           "description": "Study 27: og-00's real serpentinizing vent made into an EVOLVING interface. geochemical_world (genuine PHREEQC speciation -> genuine FiPy transport) is augmented with MineralSurfaceDynamicsProcess: the reacted fluid's real carbonate saturation index drives precipitation/dissolution (a porosity delta that composes with FiPy's) and passivates the catalytic surface over time. Reports time- and space-resolved supply of H2/carbon/gradients/catalysis and the crossover time at which mineral evolution throttles it, with closed mass/charge/energy ledgers."
         },
         {
+          "name": "protrusion_enclosure",
+          "description": "Protrusion-to-enclosure membrane mechanics (eukaryogenesis S3). A host protrusion of finite membrane area extends at an observed rate and attempts to wrap a bacterial partner; enclosure succeeds, per partner radius, only when the available area covers the partner AND adhesion clears the Helfrich bending cost. Over a partner-radius ensemble it emits an enclosure PROBABILITY, so morphology alone does not imply engulfment. topology selects classical engulfment, inside-out wrapping, or a no-enclosure control. Deterministic, coarse-grained first fidelity."
+        },
+        {
           "name": "og_35_chemical_energy_coupling",
           "description": "Gate E energy coupling: does a specified thioester carrier cycle do endergonic work when the geochemical gradient DIPS, beating a matched gradient-only control, with a FULL closing energy ledger and no hidden inflow? carrier=True charges/discharges a stored carrier (buffered); carrier=False is the gradient-only null (direct drive->work, no store). Both see the same declining drive + load. Carrier chemistry = one specified thioester (Option B; acyl-phosphate / microkinetic = og-35a). Metabolism = sustained A1 network, NOT autocatalytic (A2 refuted)."
         },
@@ -3090,6 +3174,10 @@
         {
           "name": "thermophoretic_concentration",
           "description": "A reusable thermophoretic-concentration module for the Baaske thermal trap. Module F = genuine FiPy finite-volume accumulation column (needs fipy): thermophoresis (Soret) + buoyant convection concentrate a dilute feed, enrichment exponential in pore length (>10^8 favorable, ~1 in controls). flow_velocity=0 / porosity=1 give the no-trap controls."
+        },
+        {
+          "name": "protrusion_enclosure_cpm",
+          "description": "Eukaryogenesis S3 (protrusions to enclosure), SPATIAL campaign composite B. A host and a symbiont on the real Rust CPM engine with actual boundaries; sweeping host-symbiont adhesion j_hs across j_sM - j_hM moves the system through the wrapping transition (stable enclosure -> transient -> partial cup -> free symbiont). Emits enc/enclosure_fraction (1 = fully enclosed) and enc/enclosed. Enclosure is emergent, not an imposed threshold."
         },
         {
           "name": "protocell_energetics",
@@ -3218,12 +3306,24 @@
           "description": "Self-Maintaining Individuality: Does the Chemistry\u2013Boundary Loop Close?"
         },
         {
+          "name": "s3-protrusions-to-enclosure",
+          "description": "S3 \u2014 Protrusions to enclosure: can protrusion mechanics reach stable wrapping?"
+        },
+        {
+          "name": "s1-metabolic-partnership",
+          "description": "S1 \u2014 Metabolic partnership: can an archaeal-bacterial pair gain fitness from exchange?"
+        },
+        {
           "name": "mem-m4-growth-division-propensity",
           "description": "Membrane Division: Can a Vesicle Grow and Divide?"
         },
         {
           "name": "og-vent-interface",
           "description": "The Mineral Interface: Does It Sustain Flux Within a DIC Window?"
+        },
+        {
+          "name": "s4-compartmental-energetic-coupling",
+          "description": "S4 \u2014 Compartmental energetic coupling: does internalization pay for itself?"
         },
         {
           "name": "og-vent-environment",
@@ -3244,6 +3344,14 @@
         {
           "name": "og-network-persistence",
           "description": "Network Persistence: Does the Carbon-Fixing Network Sustain Itself?"
+        },
+        {
+          "name": "s5-symbiont-to-organelle",
+          "description": "S5 \u2014 From symbiont to organelle: when does integration become heritable?"
+        },
+        {
+          "name": "s2-ecology-to-proximity",
+          "description": "S2 \u2014 Ecology to proximity: when does cross-feeding select for persistent contact?"
         },
         {
           "name": "og-autocatalysis-a2",
@@ -3278,14 +3386,18 @@
         {
           "name": "origins-of-life-vent",
           "description": "The Hydrothermal Vent Hypothesis"
+        },
+        {
+          "name": "eukaryogenesis",
+          "description": "The Endosymbiotic Transition"
         }
       ],
       "counts": {
-        "processes": 65,
-        "steps": 92,
-        "composites": 48,
-        "studies": 21,
-        "investigations": 1
+        "processes": 67,
+        "steps": 97,
+        "composites": 50,
+        "studies": 26,
+        "investigations": 2
       }
     },
     {
@@ -3692,14 +3804,28 @@
           "description": "LAMMPS LJ NVE demo with a wired Visualization Step. Each update produces a Plotly HTML figure of the running thermodynamic trajectories, written to the 'viz_html' store."
         }
       ],
-      "studies": [],
-      "investigations": [],
+      "studies": [
+        {
+          "name": "lj-nve-demo-with-viz",
+          "description": "Lj nve demo with viz"
+        },
+        {
+          "name": "lj-nve-demo",
+          "description": "Lj nve demo"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "lammps-lennard-jones-molecular-dynamics",
+          "description": "Lammps lennard jones molecular dynamics"
+        }
+      ],
       "counts": {
         "processes": 5,
         "steps": 1,
         "composites": 3,
-        "studies": 0,
-        "investigations": 0
+        "studies": 2,
+        "investigations": 1
       }
     },
     {
@@ -3982,14 +4108,28 @@
           "description": "MEDYAN-style network demo with a wired Visualization Step. Each update produces a Plotly HTML figure of the running scalar network metrics, written to the 'viz_html' store."
         }
       ],
-      "studies": [],
-      "investigations": [],
+      "studies": [
+        {
+          "name": "network-demo-with-viz",
+          "description": "Network demo with viz"
+        },
+        {
+          "name": "network-demo",
+          "description": "Network demo"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "medyan-cytoskeletal-network-mechanics",
+          "description": "Medyan cytoskeletal network mechanics"
+        }
+      ],
       "counts": {
         "processes": 2,
         "steps": 1,
         "composites": 2,
-        "studies": 0,
-        "investigations": 0
+        "studies": 2,
+        "investigations": 1
       }
     },
     {
@@ -4041,14 +4181,32 @@
           "description": "Tubular constriction: a cylindrical tube narrows uniformly as osmotic pressure drives volume reduction to 60% of its initial value. Pinned boundary conditions hold the ends. Models membrane tubule dynamics in endoplasmic reticulum networks."
         }
       ],
-      "studies": [],
-      "investigations": [],
+      "studies": [
+        {
+          "name": "membrane-deflation",
+          "description": "Membrane deflation"
+        },
+        {
+          "name": "membrane-patch",
+          "description": "Membrane patch"
+        },
+        {
+          "name": "membrane-demo",
+          "description": "Membrane demo"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "membrane-mechanics-with-mem3dg",
+          "description": "Membrane mechanics with mem3dg"
+        }
+      ],
       "counts": {
         "processes": 1,
         "steps": 2,
         "composites": 5,
-        "studies": 0,
-        "investigations": 0
+        "studies": 3,
+        "investigations": 1
       }
     },
     {
@@ -4838,9 +4996,9 @@
       "cloned": true,
       "processes": [
         {
-          "name": "EnsembleRunner",
+          "name": "Ensemble",
           "kind": "process",
-          "description": "Run a trial function over a block of seeds, once, at the first update."
+          "description": "Run a subclass's trial function over a block of seeds, once, at the first update."
         },
         {
           "name": "FenicsxMeshReactionDiffusion",
@@ -5301,14 +5459,28 @@
           "description": "ReaDDy reaction-diffusion demo with a wired Visualization Step. Each update produces a Plotly HTML figure of the running scalar trajectories (total_particles, energy), written to the 'viz_html' store."
         }
       ],
-      "studies": [],
-      "investigations": [],
+      "studies": [
+        {
+          "name": "readdy-demo",
+          "description": "Readdy demo"
+        },
+        {
+          "name": "readdy-demo-with-viz",
+          "description": "Readdy demo with viz"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "readdy-particle-reaction-diffusion-demo",
+          "description": "Readdy particle reaction diffusion demo"
+        }
+      ],
       "counts": {
         "processes": 1,
         "steps": 1,
         "composites": 2,
-        "studies": 0,
-        "investigations": 0
+        "studies": 2,
+        "investigations": 1
       }
     },
     {
@@ -5522,14 +5694,28 @@
           "description": "Tiny Tellurium / Antimony decay demo: S1 -> S2 first-order kinetics. Emits species concentrations, reaction rates, and time each step."
         }
       ],
-      "studies": [],
-      "investigations": [],
+      "studies": [
+        {
+          "name": "decay-with-viz",
+          "description": "Decay with viz"
+        },
+        {
+          "name": "steady-state",
+          "description": "Steady state"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "tellurium-sbml-simulation",
+          "description": "Tellurium sbml simulation"
+        }
+      ],
       "counts": {
         "processes": 1,
         "steps": 4,
         "composites": 3,
-        "studies": 0,
-        "investigations": 0
+        "studies": 2,
+        "investigations": 1
       }
     },
     {
@@ -5706,14 +5892,28 @@
           "description": "Tiny VCell FV reaction-diffusion demo: a uniform pool of species A decays to species B (A -> B; k*A) on a small 3D Cartesian mesh. No diffusion. Emits per-snapshot mean/total concentration plus time-axis bookkeeping."
         }
       ],
-      "studies": [],
-      "investigations": [],
+      "studies": [
+        {
+          "name": "rd-decay-with-viz",
+          "description": "Rd decay with viz"
+        },
+        {
+          "name": "rd-decay-demo",
+          "description": "Rd decay demo"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "vcell-finite-volume-reaction-diffusion",
+          "description": "Vcell finite volume reaction diffusion"
+        }
+      ],
       "counts": {
         "processes": 1,
         "steps": 1,
         "composites": 2,
-        "studies": 0,
-        "investigations": 0
+        "studies": 2,
+        "investigations": 1
       }
     },
     {
