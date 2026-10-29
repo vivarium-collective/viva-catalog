@@ -185,7 +185,7 @@
     "ref": "main",
     "package": "viva_genesis",
     "homepage": "https://github.com/vivarium-collective/viva-genesis",
-    "description": "Origins-of-life hydrothermal-vent simulation campaign in Vivarium: geochemistry \u2192 protometabolism \u2192 protocells \u2192 heredity \u2192 autonomy.",
+    "description": "Origins-of-life simulation campaigns in Vivarium",
     "tags": []
   },
   {
@@ -240,15 +240,6 @@
     "package": "viva_medyan",
     "homepage": "https://github.com/vivarium-collective/viva-medyan",
     "description": "Process-bigraph wrapper for the MEDYAN cytoskeleton simulator: pure-Python re-implementation + a subprocess-driven bridge to the real MEDYAN C++ binary (with checkpoint-restart and HDF5 vesicle support).",
-    "tags": []
-  },
-  {
-    "name": "viva-mem3dg",
-    "source": "https://github.com/vivarium-collective/viva-mem3dg.git",
-    "ref": "main",
-    "package": "viva_mem3dg",
-    "homepage": "https://github.com/vivarium-collective/viva-mem3dg",
-    "description": "Process-bigraph wrapper for Mem3DG membrane mechanics simulator",
     "tags": []
   },
   {

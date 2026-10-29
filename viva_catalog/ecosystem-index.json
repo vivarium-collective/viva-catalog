@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-28T11:49:16+00:00",
-  "n_repos": 51,
-  "n_cloned": 51,
+  "generated_at": "2026-10-29T11:57:03+00:00",
+  "n_repos": 50,
+  "n_cloned": 50,
   "repos": [
     {
       "name": "spatio-flux",
@@ -1520,17 +1520,45 @@
           "name": "ObservableDetector",
           "kind": "step",
           "description": "Step that turns CASPULE spatial state into NFSim species counts."
+        },
+        {
+          "name": "NFSimCaspuleMechanism",
+          "kind": "visualization",
+          "description": "Self-contained mechanism time-series for CASPULE + NFSim composites."
         }
       ],
-      "composites": [],
-      "studies": [],
-      "investigations": [],
+      "composites": [
+        {
+          "name": "caspule-nfsim-dimer",
+          "description": "CASPULE bond-aware MD coupled to NFSim rule-based kinetics for a dimerization experiment. Type-1 monomers diffuse on a simple-cubic lattice and form bonds via LAMMPS fix bond/create. The ObservableDetector scans the bond graph each tick, extracts dimers (connected pairs), removes them from the spatial pool, and injects them as molecules into NFSim's non-spatial pool. NFSim then integrates reversible Dimer\u2192Active activation and slow Active decay. This composite demonstrates two-way coupling between spatial MD and rule-based kinetics through the observable detector bridge."
+        },
+        {
+          "name": "caspule-nfsim-polymer",
+          "description": "CASPULE bond-aware MD coupled to NFSim rule-based kinetics for a polymer fractionation experiment. Type-1 monomers polymerize into branched clusters on a 6x6x6 lattice; each atom can carry up to 4 bonds. The ObservableDetector applies three size-based rules: dimers (size 2) and trimers (size 3) are extracted from the spatial pool and injected into NFSim as distinct molecule types; polymers (size 4+) are observed but kept in the spatial pool so the bond network remains visible. NFSim then integrates distinct decay kinetics for each molecule class (dimers activate quickly, trimers slowly, polymers degrade slowly). This composite demonstrates multi-rule detection and multi-species coupling across spatial and non-spatial simulation regimes."
+        }
+      ],
+      "studies": [
+        {
+          "name": "caspule-nfsim-dimer",
+          "description": "CASPULE-NFSim Dimerization"
+        },
+        {
+          "name": "caspule-nfsim-polymer",
+          "description": "CASPULE-NFSim Polymer Fractionation"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "caspule-nfsim-multi-scale-coupling",
+          "description": "CASPULE-NFSim Multiscale Coupling"
+        }
+      ],
       "counts": {
         "processes": 0,
-        "steps": 1,
-        "composites": 0,
-        "studies": 0,
-        "investigations": 0
+        "steps": 2,
+        "composites": 2,
+        "studies": 2,
+        "investigations": 1
       }
     },
     {
@@ -2247,7 +2275,7 @@
       "repo": "viva-genesis",
       "source": "https://github.com/vivarium-collective/viva-genesis",
       "homepage": "https://github.com/vivarium-collective/viva-genesis",
-      "description": "Origins-of-life hydrothermal-vent simulation campaign in Vivarium: geochemistry \u2192 protometabolism \u2192 protocells \u2192 heredity \u2192 autonomy.",
+      "description": "Origins-of-life simulation campaigns in Vivarium",
       "tags": [],
       "cloned": true,
       "processes": [
@@ -2260,6 +2288,11 @@
           "name": "LineageStatsProcess",
           "kind": "process",
           "description": "Read-only lineage statistics over the agents map: the population size, the"
+        },
+        {
+          "name": "MembraneWrappingProcess",
+          "kind": "process",
+          "description": "Active-protrusion membrane-wrapping transition (eukaryogenesis S3, continuum"
         },
         {
           "name": "MultisolutePoreSurrogateProcess",
@@ -3252,6 +3285,10 @@
           "description": "Gate D second half: selection on an inherited NETWORK COMPOSITION trait in a protocell population (\u26913 Option B; template copying = follow-on og-34a). Fitness is grounded in the real study-32/33 coupling (composition -> membrane retention [study-32 MD endpoints 0.333/0.661] -> standing pool -> division rate). inheritance=False is the matched no-inheritance null (daughters reset to the common composition). Reports parent-offspring fitness correlation + population composition shift; the vasas-2010 evolvability caveat is TESTED (does the population shift above the null?), not assumed. Metabolism = sustained A1 network, NOT autocatalytic (A2 refuted)."
         },
         {
+          "name": "protrusion_enclosure_membrane",
+          "description": "Active-protrusion membrane-wrapping mechanics (eukaryogenesis S3, continuum energetics). Tests whether an actin-driven host protrusion supplies enough work to carry a lipid membrane over the Helfrich bending barrier to a stable fully wrapped state around a bacterial partner, given adhesion, membrane tension, and a finite protrusion-area reservoir. Emits enclosure PROBABILITY over a partner-radius ensemble and the share of enclosures that require the active force \u2014 the mechanism the question is about, not passive differential adhesion. Validated against the classic wrapping threshold (reduced adhesion = 2). The next fidelity rung is a triangulated-mesh run (pbg-mem3dg)."
+        },
+        {
           "name": "heredity_lineage_comparison",
           "description": "A reusable agent-based heredity-lineage comparison (Module K). Individuals carry a chemical phenotype inherited at fission into a real lineage tree, with a module-specific mechanism: template Eigen ratchet (Q=fidelity^length), compositional GARD split (length-independent, no template), a template-focused hybrid, or a severed non-heritable control. Emits population mean function, functional fraction, size, lineage depth and realized heritability. Reproduces the Eigen error catastrophe at the agent level AND shows compositional heredity escaping the length catastrophe \u2014 heredity need not presume a long high-fidelity template."
         },
@@ -3393,9 +3430,9 @@
         }
       ],
       "counts": {
-        "processes": 67,
+        "processes": 68,
         "steps": 97,
-        "composites": 50,
+        "composites": 51,
         "studies": 26,
         "investigations": 2
       }
@@ -4129,83 +4166,6 @@
         "steps": 1,
         "composites": 2,
         "studies": 2,
-        "investigations": 1
-      }
-    },
-    {
-      "name": "viva-mem3dg",
-      "repo": "viva-mem3dg",
-      "source": "https://github.com/vivarium-collective/viva-mem3dg",
-      "homepage": "https://github.com/vivarium-collective/viva-mem3dg",
-      "description": "Process-bigraph wrapper for Mem3DG membrane mechanics simulator",
-      "tags": [],
-      "cloned": true,
-      "processes": [
-        {
-          "name": "Mem3DGProcess",
-          "kind": "process",
-          "description": "Bridge Process wrapping Mem3DG membrane mechanics simulation."
-        }
-      ],
-      "steps": [
-        {
-          "name": "MembranePlots",
-          "kind": "visualization",
-          "description": "Time-series HTML plot of Mem3DG's scalar membrane outputs."
-        },
-        {
-          "name": "Membrane3D",
-          "kind": "visualization",
-          "description": "three.js-based 3D viewer for the membrane mesh, animated over time."
-        }
-      ],
-      "composites": [
-        {
-          "name": "membrane-demo-with-viz",
-          "description": "Mem3DG membrane demo with wired Visualization Steps. Each update produces a Plotly HTML figure of the scalar energy/area/volume trajectories (MembranePlots) and a three.js orbitable 3D mesh viewer (Membrane3D), each written to its own store."
-        },
-        {
-          "name": "membrane-patch",
-          "description": "Membrane patch bulging: a flat hexagonal membrane with fixed boundary edges is inflated by constant osmotic pressure, forming a dome. Models local membrane deformation such as bleb formation or pressure-driven bulging in confined geometries."
-        },
-        {
-          "name": "membrane-deflation",
-          "description": "Osmotic deflation: a spherical vesicle (icosphere) deflates to 50% of its initial volume under harmonic osmotic pressure. Bending rigidity maintains the smooth spherical shape as the membrane contracts. Models osmotic shock in biological vesicles."
-        },
-        {
-          "name": "membrane-demo",
-          "description": "Mem3DG membrane mechanics demo: an icosphere relaxes under bending rigidity, surface tension, and osmotic pressure. Bundles two Visualization Steps: MembranePlots (Plotly time-series of energies/area/volume) and Membrane3D (three.js orbitable mesh viewer)."
-        },
-        {
-          "name": "membrane-tube",
-          "description": "Tubular constriction: a cylindrical tube narrows uniformly as osmotic pressure drives volume reduction to 60% of its initial value. Pinned boundary conditions hold the ends. Models membrane tubule dynamics in endoplasmic reticulum networks."
-        }
-      ],
-      "studies": [
-        {
-          "name": "membrane-deflation",
-          "description": "Membrane deflation"
-        },
-        {
-          "name": "membrane-patch",
-          "description": "Membrane patch"
-        },
-        {
-          "name": "membrane-demo",
-          "description": "Membrane demo"
-        }
-      ],
-      "investigations": [
-        {
-          "name": "membrane-mechanics-with-mem3dg",
-          "description": "Membrane mechanics with mem3dg"
-        }
-      ],
-      "counts": {
-        "processes": 1,
-        "steps": 2,
-        "composites": 5,
-        "studies": 3,
         "investigations": 1
       }
     },
