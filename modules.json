@@ -243,6 +243,15 @@
     "tags": []
   },
   {
+    "name": "viva-mem3dg",
+    "source": "https://github.com/vivarium-collective/viva-mem3dg.git",
+    "ref": "main",
+    "package": "viva_mem3dg",
+    "homepage": "https://github.com/vivarium-collective/viva-mem3dg",
+    "description": "Process-bigraph wrapper for Mem3DG membrane mechanics simulator",
+    "tags": []
+  },
+  {
     "name": "viva-membrane-actin-composite",
     "source": "https://github.com/vivarium-collective/viva-membrane-actin-composite.git",
     "ref": "main",
