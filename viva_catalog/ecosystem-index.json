@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-29T11:57:03+00:00",
-  "n_repos": 50,
-  "n_cloned": 50,
+  "generated_at": "2026-10-30T11:51:15+00:00",
+  "n_repos": 51,
+  "n_cloned": 51,
   "repos": [
     {
       "name": "spatio-flux",
@@ -4166,6 +4166,83 @@
         "steps": 1,
         "composites": 2,
         "studies": 2,
+        "investigations": 1
+      }
+    },
+    {
+      "name": "viva-mem3dg",
+      "repo": "viva-mem3dg",
+      "source": "https://github.com/vivarium-collective/viva-mem3dg",
+      "homepage": "https://github.com/vivarium-collective/viva-mem3dg",
+      "description": "Process-bigraph wrapper for Mem3DG membrane mechanics simulator",
+      "tags": [],
+      "cloned": true,
+      "processes": [
+        {
+          "name": "Mem3DGProcess",
+          "kind": "process",
+          "description": "Bridge Process wrapping Mem3DG membrane mechanics simulation."
+        }
+      ],
+      "steps": [
+        {
+          "name": "MembranePlots",
+          "kind": "visualization",
+          "description": "Time-series HTML plot of Mem3DG's scalar membrane outputs."
+        },
+        {
+          "name": "Membrane3D",
+          "kind": "visualization",
+          "description": "three.js-based 3D viewer for the membrane mesh, animated over time."
+        }
+      ],
+      "composites": [
+        {
+          "name": "membrane-demo-with-viz",
+          "description": "Mem3DG membrane demo with wired Visualization Steps. Each update produces a Plotly HTML figure of the scalar energy/area/volume trajectories (MembranePlots) and a three.js orbitable 3D mesh viewer (Membrane3D), each written to its own store."
+        },
+        {
+          "name": "membrane-patch",
+          "description": "Membrane patch bulging: a flat hexagonal membrane with fixed boundary edges is inflated by constant osmotic pressure, forming a dome. Models local membrane deformation such as bleb formation or pressure-driven bulging in confined geometries."
+        },
+        {
+          "name": "membrane-deflation",
+          "description": "Osmotic deflation: a spherical vesicle (icosphere) deflates to 50% of its initial volume under harmonic osmotic pressure. Bending rigidity maintains the smooth spherical shape as the membrane contracts. Models osmotic shock in biological vesicles."
+        },
+        {
+          "name": "membrane-demo",
+          "description": "Mem3DG membrane mechanics demo: an icosphere relaxes under bending rigidity, surface tension, and osmotic pressure. Bundles two Visualization Steps: MembranePlots (Plotly time-series of energies/area/volume) and Membrane3D (three.js orbitable mesh viewer)."
+        },
+        {
+          "name": "membrane-tube",
+          "description": "Tubular constriction: a cylindrical tube narrows uniformly as osmotic pressure drives volume reduction to 60% of its initial value. Pinned boundary conditions hold the ends. Models membrane tubule dynamics in endoplasmic reticulum networks."
+        }
+      ],
+      "studies": [
+        {
+          "name": "membrane-deflation",
+          "description": "Membrane deflation"
+        },
+        {
+          "name": "membrane-patch",
+          "description": "Membrane patch"
+        },
+        {
+          "name": "membrane-demo",
+          "description": "Membrane demo"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "membrane-mechanics-with-mem3dg",
+          "description": "Membrane mechanics with mem3dg"
+        }
+      ],
+      "counts": {
+        "processes": 1,
+        "steps": 2,
+        "composites": 5,
+        "studies": 3,
         "investigations": 1
       }
     },
