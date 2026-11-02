@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T12:17:09+00:00",
+  "generated_at": "2026-11-02T14:08:24+00:00",
   "n_repos": 51,
   "n_cloned": 51,
   "repos": [
@@ -2717,6 +2717,26 @@
           "description": "og-rtca \u2014 the mechanism behind the honest negative: the reductive carboxylations are"
         },
         {
+          "name": "S1RedundancyTrajectoryViz",
+          "kind": "visualization",
+          "description": "S1: the connected community *develops* functional redundancy over time; the isolated"
+        },
+        {
+          "name": "S4InternalizationDoseViz",
+          "kind": "visualization",
+          "description": "S4: survival under a collapsing external gradient is a sharp dose-response in pump"
+        },
+        {
+          "name": "S5ErrorThresholdViz",
+          "kind": "visualization",
+          "description": "S5: heritable integration crosses the Eigen error threshold \u2014 heritability climbs with"
+        },
+        {
+          "name": "TransitionLedgerViz",
+          "kind": "visualization",
+          "description": "The barrier ledger: one row per transition gate with favorable vs control + verdict."
+        },
+        {
           "name": "S1MetabolicPartnershipViz",
           "kind": "visualization",
           "description": "S1: the connected cross-feeding community develops functional redundancy (>0.5) that the"
@@ -2747,6 +2767,66 @@
           "description": ""
         },
         {
+          "name": "M1SelectionViz",
+          "kind": "visualization",
+          "description": "M1: metabolic exchange selects FOR a heritable contact propensity (>0); the no-exchange"
+        },
+        {
+          "name": "M2EnclosureViz",
+          "kind": "visualization",
+          "description": "M2: stable enclosure is the majority outcome in the geometry-first regime; it fails under"
+        },
+        {
+          "name": "M3CouplingViz",
+          "kind": "visualization",
+          "description": "M3: selection-for-contact and stable enclosure co-succeed (joint feasibility high) only when"
+        },
+        {
+          "name": "M5TransmissionViz",
+          "kind": "visualization",
+          "description": "M5: an established symbiosis is retained across generations only when fidelity + benefit"
+        },
+        {
+          "name": "M6SpatialViz",
+          "kind": "visualization",
+          "description": "M6: realised metabolite exchange is strongly proximity-dependent (screened diffusion) \u2014"
+        },
+        {
+          "name": "M7BidirectionalViz",
+          "kind": "visualization",
+          "description": "M7: obligate bidirectional syntrophy requires metabolic reciprocity \u2014 the Liebig minimum"
+        },
+        {
+          "name": "SelectionInvasionViz",
+          "kind": "visualization",
+          "description": ""
+        },
+        {
+          "name": "EnclosurePhaseViz",
+          "kind": "visualization",
+          "description": ""
+        },
+        {
+          "name": "CouplingOverlapViz",
+          "kind": "visualization",
+          "description": ""
+        },
+        {
+          "name": "TransmissionFanViz",
+          "kind": "visualization",
+          "description": ""
+        },
+        {
+          "name": "SpatialDistanceViz",
+          "kind": "visualization",
+          "description": ""
+        },
+        {
+          "name": "ReciprocityLiebigViz",
+          "kind": "visualization",
+          "description": ""
+        },
+        {
           "name": "EndogenousBoundaryViz",
           "kind": "visualization",
           "description": "og-04-alt: the agents count over time in the favorable (endogenous"
@@ -2755,6 +2835,16 @@
           "name": "PhysicalReproductionViz",
           "kind": "visualization",
           "description": "og-growth-alt: the lineage \u2014 population and deepest generation over time \u2014"
+        },
+        {
+          "name": "SpatialExchangeFieldViz",
+          "kind": "visualization",
+          "description": "M6: render the diffusing metabolite field in space + time. The producer sits at cell 0;"
+        },
+        {
+          "name": "CommunityPlacementViz",
+          "kind": "visualization",
+          "description": "S2: show the pore layout that makes proximity matter. In the mixed arm fixers and reducers"
         },
         {
           "name": "ProtometabolismGainPhaseMap",
@@ -3373,6 +3463,10 @@
           "description": "S4 \u2014 Compartmental energetic coupling: does internalization pay for itself?"
         },
         {
+          "name": "mw-s1-wall-rupture-deformability-tradeoff",
+          "description": "Across wall-present, wall-attenuated, wall-free-with-cortex, and wall-free-without-cortex arms, where does the cell gain the deformability to enclose a partner without osmotic rupture?"
+        },
+        {
           "name": "og-network-persistence",
           "description": "Network Persistence: Does the Carbon-Fixing Network Sustain Itself?"
         },
@@ -3461,6 +3555,10 @@
           "description": "S5 \u2014 From symbiont to organelle: when does integration become heritable?"
         },
         {
+          "name": "mw-s3-emergent-capability-vs-additive-benefit",
+          "description": "Does the partnership create a capability neither free-living partner sustains alone, or only an additive benefit?"
+        },
+        {
           "name": "og-reproduction",
           "description": "Reproduction: Can Growth and Division Build a Lineage?"
         },
@@ -3489,6 +3587,10 @@
           "description": "Independence from the Vent: Can a Lineage Escape Its Cradle?"
         },
         {
+          "name": "mw-s5-division-sync-and-conflict-suppression",
+          "description": "Do division synchronization, copy-number segregation, and conflict suppression make host and partner a single heritable individual?"
+        },
+        {
           "name": "og-self-maintaining-individual",
           "description": "Self-Maintaining Individuality: Does the Chemistry\u2013Boundary Loop Close?"
         },
@@ -3509,9 +3611,9 @@
       ],
       "counts": {
         "processes": 74,
-        "steps": 97,
+        "steps": 115,
         "composites": 57,
-        "studies": 32,
+        "studies": 35,
         "investigations": 2
       }
     },
