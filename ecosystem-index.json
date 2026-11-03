@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T14:08:24+00:00",
+  "generated_at": "2026-11-03T13:13:47+00:00",
   "n_repos": 51,
   "n_cloned": 51,
   "repos": [
@@ -2285,6 +2285,11 @@
           "description": "Two reciprocal screened fields (A host->symbiont, B symbiont->host), Liebig-coupled."
         },
         {
+          "name": "CellCollectiveProcess",
+          "kind": "process",
+          "description": "Mean-field unicell/group population under adhesion + ecology + transport."
+        },
+        {
           "name": "MembraneWrappingProcess",
           "kind": "process",
           "description": "Active-protrusion membrane-wrapping transition (eukaryogenesis S3, continuum"
@@ -2837,6 +2842,21 @@
           "description": "og-growth-alt: the lineage \u2014 population and deepest generation over time \u2014"
         },
         {
+          "name": "FormationPersistenceViz",
+          "kind": "visualization",
+          "description": "S01: clonal incomplete separation with reversible adhesion builds a persistent group"
+        },
+        {
+          "name": "EcologicalSelectionViz",
+          "kind": "visualization",
+          "description": "S02: adhesion alone leaves group fitness \u2248 unicell fitness (no advantage); adding"
+        },
+        {
+          "name": "TransportSizeOptimumViz",
+          "kind": "visualization",
+          "description": "S03: with oxygen-limited growth the group fitness advantage is non-monotonic in size \u2014"
+        },
+        {
           "name": "SpatialExchangeFieldViz",
           "kind": "visualization",
           "description": "M6: render the diffusing metabolite field in space + time. The producer sits at cell 0;"
@@ -3229,6 +3249,10 @@
       ],
       "composites": [
         {
+          "name": "cell_collective",
+          "description": "Multicellularity first-cycle model: mean-field unicell/group population under adhesion, size-dependent predation/settling ecology, and oxygen-limited growth."
+        },
+        {
           "name": "reduced_nitrogen_reactor",
           "description": "A reusable FeS-mediated reduced-nitrogen module. The real ReducedNitrogenProductionProcess reduces NO3-/NO2- to NH4+ on an Fe/Ni/S catalyst (H2-dependent, temperature-windowed), adds a minor abiotic N2-fixation source, and draws ammonium into amino-acid precursors by reductive amination at a rate set by the carbon-fixation demand. Tracks the C:N supply ratio (carbon demand / reduced-N production) to test whether reduced nitrogen keeps pace with reduced carbon. fes_activity=0 / h2=0 are the no-mineral / no-reductant controls."
         },
@@ -3463,6 +3487,10 @@
           "description": "S4 \u2014 Compartmental energetic coupling: does internalization pay for itself?"
         },
         {
+          "name": "s02-ecological-selection",
+          "description": "Ecological selection"
+        },
+        {
           "name": "mw-s1-wall-rupture-deformability-tradeoff",
           "description": "Across wall-present, wall-attenuated, wall-free-with-cortex, and wall-free-without-cortex arms, where does the cell gain the deformability to enclose a partner without osmotic rupture?"
         },
@@ -3511,6 +3539,10 @@
           "description": "The Vent Environment: Does It Supply a Viable Feed?"
         },
         {
+          "name": "s01-formation",
+          "description": "Collective formation"
+        },
+        {
           "name": "og-heredity",
           "description": "Chemical Inheritance: Can a Chemical Difference Be Transmitted?"
         },
@@ -3539,6 +3571,10 @@
           "description": "Self-Compartmentation: Does Metabolism Build Its Own Boundary?"
         },
         {
+          "name": "s06-evolutionary-individuality",
+          "description": "Evolutionary individuality"
+        },
+        {
           "name": "og-evolvability",
           "description": "Evolvability and Selection: Is an Inherited Difference Selectable?"
         },
@@ -3559,8 +3595,16 @@
           "description": "Does the partnership create a capability neither free-living partner sustains alone, or only an additive benefit?"
         },
         {
+          "name": "s04-morphomechanics",
+          "description": "Morphomechanics"
+        },
+        {
           "name": "og-reproduction",
           "description": "Reproduction: Can Growth and Division Build a Lineage?"
+        },
+        {
+          "name": "s03-transport-limits",
+          "description": "Transport limits"
         },
         {
           "name": "study-selection-for-proximity",
@@ -3587,6 +3631,10 @@
           "description": "Independence from the Vent: Can a Lineage Escape Its Cradle?"
         },
         {
+          "name": "s05-differentiation",
+          "description": "Cell-state differentiation"
+        },
+        {
           "name": "mw-s5-division-sync-and-conflict-suppression",
           "description": "Do division synchronization, copy-number segregation, and conflict suppression make host and partner a single heritable individual?"
         },
@@ -3605,16 +3653,20 @@
           "description": "The Hydrothermal Vent Hypothesis"
         },
         {
+          "name": "multicellularity",
+          "description": "From Cells to Organisms"
+        },
+        {
           "name": "eukaryogenesis",
           "description": "The Endosymbiotic Transition"
         }
       ],
       "counts": {
-        "processes": 74,
-        "steps": 115,
-        "composites": 57,
-        "studies": 35,
-        "investigations": 2
+        "processes": 75,
+        "steps": 118,
+        "composites": 58,
+        "studies": 41,
+        "investigations": 3
       }
     },
     {
