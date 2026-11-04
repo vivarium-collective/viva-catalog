@@ -225,6 +225,18 @@
     "tags": []
   },
   {
+    "name": "viva-maboss",
+    "source": "https://github.com/vivarium-collective/viva-maboss.git",
+    "ref": "main",
+    "package": "viva_maboss",
+    "homepage": "https://github.com/vivarium-collective/viva-maboss",
+    "description": "Process-bigraph wrapper for MaBoSS: stochastic Boolean network simulation (cmaboss), the Boolean layer for multiscale composites",
+    "tags": [
+      "boolean-network",
+      "process-bigraph"
+    ]
+  },
+  {
     "name": "viva-martini",
     "source": "https://github.com/vivarium-collective/viva-martini.git",
     "ref": "main",
