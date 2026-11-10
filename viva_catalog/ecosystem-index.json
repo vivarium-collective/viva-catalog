@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T14:40:12+00:00",
+  "generated_at": "2026-11-10T13:57:09+00:00",
   "n_repos": 52,
   "n_cloned": 52,
   "repos": [
@@ -5362,6 +5362,11 @@
           "description": "P1 DOF fields \u2192 grid fields for the particle engine's rate lookups: u_grid = P\u00b7u."
         },
         {
+          "name": "_RegionReduction",
+          "kind": "step",
+          "description": "Grid fields \u2192 one volume-weighted integral per species over a region of the grid."
+        },
+        {
           "name": "SpatialExport",
           "kind": "step",
           "description": ""
@@ -5491,7 +5496,7 @@
       ],
       "counts": {
         "processes": 8,
-        "steps": 5,
+        "steps": 6,
         "composites": 8,
         "studies": 18,
         "investigations": 3
