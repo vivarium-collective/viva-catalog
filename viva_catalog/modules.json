@@ -72,15 +72,6 @@
     "tags": []
   },
   {
-    "name": "viva-casebook",
-    "source": "https://github.com/vivarium-collective/viva-casebook.git",
-    "ref": "main",
-    "package": "viva_casebook",
-    "homepage": "https://github.com/vivarium-collective/viva-casebook",
-    "description": "A casebook of capability-testing investigations for the vivarium model-building framework.",
-    "tags": []
-  },
-  {
     "name": "viva-caspule",
     "source": "https://github.com/vivarium-collective/viva-caspule.git",
     "ref": "main",
@@ -450,15 +441,6 @@
     "package": "viva_vcell_fvsolver",
     "homepage": "https://github.com/vivarium-collective/viva-vcell-fvsolver",
     "description": "process-bigraph wrapper around pyvcell / pyvcell-fvsolver \u2014 VCell's finite-volume 3D reaction-diffusion PDE solver as a PBG Process",
-    "tags": []
-  },
-  {
-    "name": "viva-yalla",
-    "source": "https://github.com/vivarium-collective/viva-yalla.git",
-    "ref": "main",
-    "package": "viva_yalla",
-    "homepage": "https://github.com/vivarium-collective/viva-yalla",
-    "description": "Process-bigraph wrapper for a NumPy port of ya||a's pair-wise agent-based morphogenesis simulator",
     "tags": []
   },
   {
