@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T13:10:26+00:00",
+  "generated_at": "2026-11-12T14:13:54+00:00",
   "n_repos": 50,
   "n_cloned": 50,
   "repos": [
@@ -5134,9 +5134,9 @@
           "description": "PDE half of a hybrid model on FEniCSx (Q1, structured mesh); same ports as FVReactionDiffusion."
         },
         {
-          "name": "SpatialRecorder",
+          "name": "_RecorderBase",
           "kind": "process",
-          "description": ""
+          "description": "Base of the recorders; ``FIELD_PORT`` and ``LAYOUT`` are fixed by the subclass."
         },
         {
           "name": "SplittingCoordinator",
