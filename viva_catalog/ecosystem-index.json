@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T14:13:54+00:00",
+  "generated_at": "2026-11-13T13:36:54+00:00",
   "n_repos": 50,
   "n_cloned": 50,
   "repos": [
@@ -2169,6 +2169,16 @@
           "description": "A second boundary class on the ``boundary`` face: a thioester/aminothiol"
         },
         {
+          "name": "PreEquilibratedCPMProcess",
+          "kind": "process",
+          "description": ""
+        },
+        {
+          "name": "GroupSelectionProcess",
+          "kind": "process",
+          "description": ""
+        },
+        {
           "name": "CoupledTransitionProcess",
           "kind": "process",
           "description": "Three-compartment coupled transition: lc <-> hc_un <-> hc_se."
@@ -2941,6 +2951,11 @@
           "description": "S5: high-fidelity template inheritance crosses the Eigen error threshold and persists; a"
         },
         {
+          "name": "ClusterFractureViz",
+          "kind": "visualization",
+          "description": "S04: animated lattice of a growing clonal cluster at weak vs strong adhesion + the"
+        },
+        {
           "name": "SpatialExchangeFieldViz",
           "kind": "visualization",
           "description": "M6: render the diffusing metabolite field in space + time. The producer sits at cell 0;"
@@ -2964,6 +2979,16 @@
           "name": "TransportSizeOptimumViz",
           "kind": "visualization",
           "description": "S03: with oxygen-limited growth the group fitness advantage is non-monotonic in size \u2014"
+        },
+        {
+          "name": "DifferentiationViz",
+          "kind": "visualization",
+          "description": "S05: germ/soma pattern over the O2 gradient (real composite) + out-of-sample gain bars."
+        },
+        {
+          "name": "IndividualityViz",
+          "kind": "visualization",
+          "description": "S06: clonal group selection evolves adhesion; drift null and mixed arm are weaker."
         },
         {
           "name": "ElectrochemistryMechanismMap",
@@ -3144,6 +3169,18 @@
         {
           "name": "og_31_membrane_benefit",
           "description": "Partial Gate C: does an endogenous membrane pay for itself? Puts the sustained (A1, NOT autocatalytic) carbon-fixing network in the Gate-B concentrating pore and adds a REDUCED membrane coupling - retention reduces effective washout (k_wash*(1-retention)), finite access reduces effective feed crossing (feed*access) - with Jordan-2019-calibrated vent retention/access (0.905/0.997, grounded not tuned). membrane=False is the matched ablation (retention 0, access 1). Benefit = net carbon flux / persistence(membrane) > (ablation). NOT the MD-resolved PMF coupling (that is study 32 / viva-md-membrane = full Gate C)."
+        },
+        {
+          "name": "s04_morphomechanics",
+          "description": "Multicellularity S04 (morphomechanics). A clonal cell cluster grows and divides on the Rust CPM engine; the adhesion knob sets homotypic contact energy. Strong adhesion keeps the cluster one cohesive body; weak adhesion lets growth fracture it into propagules. Emits n_propagules and largest_cluster_fraction."
+        },
+        {
+          "name": "s05_differentiation",
+          "description": "Multicellularity S05 (differentiation). A fixed 5x5 patch of germ cells consumes O2 that diffuses in from the medium; interior cells go hypoxic, their stemness ODE decays and they differentiate to soma (type 2), which draws less O2. Germ cells grow only where local O2 is above a threshold. Emits fate_counts and viable_biomass. TRANSIENT/quasi-stable gradient: the O2 profile relaxes during the first updates; readouts are taken at the pinned window."
+        },
+        {
+          "name": "s06_individuality",
+          "description": "Multicellularity S06 (individuality). Each update is one group generation: founder groups grow on the CPM engine, are scored by cohesion (toughness), and offspring groups are seeded from the selected groups with mutation. Arms: clonality (clonal|mixed) x selection (on|off). Emits mean_adhesion, among/within-group Price terms, delta_adhesion, mean_toughness and heritability per generation."
         },
         {
           "name": "og_28_prebiotic_reaction_atlas",
@@ -3356,6 +3393,10 @@
           "description": "Network Rescue: Does Pore Concentration Ignite the Reaction Network?"
         },
         {
+          "name": "s06-individuality",
+          "description": "Evolutionary individuality"
+        },
+        {
           "name": "og-autocatalysis-a2",
           "description": "Endogenous Autocatalysis: Does a Self-Amplifying Cycle Form?"
         },
@@ -3448,10 +3489,6 @@
           "description": "Membrane Division: Can a Vesicle Grow and Divide?"
         },
         {
-          "name": "s06-evolutionary-individuality",
-          "description": "Evolutionary individuality"
-        },
-        {
           "name": "mw-s1-wall-rupture-deformability-tradeoff",
           "description": "Across wall-present, wall-attenuated, wall-free-with-cortex, and wall-free-without-cortex arms, where does the cell gain the deformability to enclose a partner without osmotic rupture?"
         }
@@ -3471,9 +3508,9 @@
         }
       ],
       "counts": {
-        "processes": 75,
-        "steps": 118,
-        "composites": 58,
+        "processes": 77,
+        "steps": 121,
+        "composites": 61,
         "studies": 41,
         "investigations": 3
       }
