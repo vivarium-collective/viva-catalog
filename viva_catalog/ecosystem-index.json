@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T14:53:54+00:00",
+  "generated_at": "2026-11-20T14:34:30+00:00",
   "n_repos": 50,
   "n_cloned": 50,
   "repos": [
@@ -6093,7 +6093,7 @@
         {
           "name": "StochasticLineTension",
           "kind": "process",
-          "description": "Ornstein-Uhlenbeck line tension: each edge's stochastic share ``x`` follows"
+          "description": "Ornstein-Uhlenbeck line tension: each junction's stochastic share ``x`` follows"
         },
         {
           "name": "DifferentialAdhesion",
@@ -6104,6 +6104,16 @@
           "name": "CellJamming",
           "kind": "process",
           "description": "At ``trigger_time``, starts the ``cell_jamming`` ramp of every cell's"
+        },
+        {
+          "name": "ParameterGradient",
+          "kind": "process",
+          "description": "Creates a 1D gradient of chemical or mechanical signal."
+        },
+        {
+          "name": "AnisotropicTension",
+          "kind": "process",
+          "description": "Two-level line tension by edge orientation, shipped as ``update_parameter``"
         },
         {
           "name": "DirectionalLineTension",
@@ -6127,16 +6137,6 @@
         }
       ],
       "steps": [
-        {
-          "name": "ParameterGradient",
-          "kind": "step",
-          "description": "Creates a 1D gradient of chemical or mechanical signal."
-        },
-        {
-          "name": "AnisotropicTension",
-          "kind": "step",
-          "description": "Two-level line tension by edge orientation, shipped as ``update_parameter``"
-        },
         {
           "name": "DataFrameParquetEmitter",
           "kind": "emitter",
@@ -6185,7 +6185,7 @@
         },
         {
           "name": "anisotropic",
-          "description": "Flat sheet with an AnisotropicTension step that biases line tension along a chosen axis, driving oriented (anisotropic) tissue elongation."
+          "description": "Flat sheet with an AnisotropicTension process that biases line tension along a chosen axis, driving oriented (anisotropic) tissue elongation."
         },
         {
           "name": "HRA colon surface (3D)",
@@ -6197,7 +6197,7 @@
         },
         {
           "name": "gradient",
-          "description": "Flat sheet with stochastic line tension and a ParameterGradient step that imposes a linear spatial gradient of preferred perimeter along x."
+          "description": "Flat sheet with stochastic line tension and a ParameterGradient process that imposes a linear spatial gradient of preferred perimeter along x."
         },
         {
           "name": "HRA intestinal crypt (2D)",
@@ -6217,8 +6217,8 @@
         }
       ],
       "counts": {
-        "processes": 9,
-        "steps": 6,
+        "processes": 11,
+        "steps": 4,
         "composites": 11,
         "studies": 1,
         "investigations": 1
