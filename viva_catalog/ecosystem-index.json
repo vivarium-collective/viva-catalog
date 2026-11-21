@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T14:34:30+00:00",
+  "generated_at": "2026-11-21T13:53:23+00:00",
   "n_repos": 50,
   "n_cloned": 50,
   "repos": [
@@ -603,6 +603,11 @@
           "name": "MathExpressionStep",
           "kind": "step",
           "description": "Evaluate a set of user-configured mathematical expressions as a single Step."
+        },
+        {
+          "name": "TimeSeriesStep",
+          "kind": "step",
+          "description": "Write each named series' value at the input ``time`` (the latest sample at or before it)."
         }
       ],
       "composites": [],
@@ -610,7 +615,7 @@
       "investigations": [],
       "counts": {
         "processes": 3,
-        "steps": 1,
+        "steps": 2,
         "composites": 0,
         "studies": 0,
         "investigations": 0
