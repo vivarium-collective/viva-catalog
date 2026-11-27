@@ -153,6 +153,15 @@
     "tags": []
   },
   {
+    "name": "viva-chaste-studies",
+    "source": "https://github.com/vivarium-collective/viva-chaste-studies.git",
+    "ref": "main",
+    "package": "viva_chaste_studies",
+    "homepage": "https://github.com/vivarium-collective/viva-chaste-studies",
+    "description": "Studies and investigations for viva-chaste (Chaste cell-based engine); the simulator is the pinned pbg-chaste package. Osborne-2017 cell-based-comparison reproduction.",
+    "tags": []
+  },
+  {
     "name": "viva-cobra",
     "source": "https://github.com/vivarium-collective/viva-cobra.git",
     "ref": "main",
@@ -186,6 +195,15 @@
     "package": "pbg_compucell3d",
     "homepage": "https://github.com/vivarium-collective/viva-compucell3d",
     "description": "Process-bigraph wrapper for the CompuCell3D multicellular simulation environment",
+    "tags": []
+  },
+  {
+    "name": "viva-compucell3d-studies",
+    "source": "https://github.com/vivarium-collective/viva-compucell3d-studies.git",
+    "ref": "main",
+    "package": "viva_compucell3d_studies",
+    "homepage": "https://github.com/vivarium-collective/viva-compucell3d-studies",
+    "description": "Studies and investigations for viva-compucell3d (CompuCell3D cellular-Potts engine); the simulator is the pinned viva-compucell3d package. CPM demonstrations: sorting, chemotaxis, growth, invasion.",
     "tags": []
   },
   {
