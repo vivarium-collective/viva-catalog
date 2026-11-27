@@ -318,6 +318,15 @@
     "tags": []
   },
   {
+    "name": "viva-island-biogeography",
+    "source": "https://github.com/vivarium-collective/viva-island-biogeography.git",
+    "ref": "main",
+    "package": "viva_island_biogeography",
+    "homepage": "https://github.com/vivarium-collective/viva-island-biogeography",
+    "description": "Process-bigraph port of the island-biogeography Lotka-Volterra metacommunity model",
+    "tags": []
+  },
+  {
     "name": "viva-island-biogeography-sim",
     "source": "https://github.com/vivarium-collective/viva-island-biogeography-sim.git",
     "ref": "main",
