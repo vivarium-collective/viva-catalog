@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-27T15:49:29+00:00",
-  "n_repos": 70,
-  "n_cloned": 70,
+  "generated_at": "2026-11-27T17:11:21+00:00",
+  "n_repos": 74,
+  "n_cloned": 74,
   "repos": [
     {
       "name": "cdFBA",
@@ -192,6 +192,37 @@
       "reuses": [
         "spatio-flux"
       ],
+      "simulator_refs": []
+    },
+    {
+      "name": "engine-core",
+      "repo": "engine-core",
+      "source": "https://github.com/vivarium-collective/engine-core",
+      "homepage": "https://github.com/vivarium-collective/engine-core",
+      "description": "",
+      "tags": [],
+      "package": "engine_core",
+      "cloned": true,
+      "processes": [
+        {
+          "name": "EngineProcess",
+          "kind": "process",
+          "description": ""
+        }
+      ],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 1,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      },
+      "kind": "simulator",
+      "reuses": [],
       "simulator_refs": []
     },
     {
@@ -771,6 +802,168 @@
       "kind": "workspace",
       "reuses": [],
       "simulator_refs": []
+    },
+    {
+      "name": "spatio-flux-studies",
+      "repo": "spatio-flux-studies",
+      "source": "https://github.com/vivarium-collective/spatio-flux-studies",
+      "homepage": "https://github.com/vivarium-collective/spatio-flux-studies",
+      "description": "Studies and investigations for spatio-flux \u2014 the scientific workspace pinning the spatio-flux simulator package (inverted sim/studies split, mirrors viva-munk-studies).",
+      "tags": [],
+      "package": "spatio_flux_studies",
+      "cloned": true,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [
+        {
+          "name": "yeast_dfba",
+          "description": "Single-cell metabolism (yeast): dynamic FBA using iMM904 with extracellular glucose and biomass. Cross-model check of the dFBA pipeline."
+        },
+        {
+          "name": "monod_kinetics",
+          "description": "Field-only baseline: Monod uptake/growth on a well-mixed substrate pool (no spatial lattice, no particles). Use to sanity-check kinetics + mass balance."
+        },
+        {
+          "name": "comets_diffusion",
+          "description": "Two-phase coupling (no particles): spatial dFBA on a lattice with advection\u2013diffusion of substrates + biomass. The classic COMETS field-only scenario."
+        },
+        {
+          "name": "comets_br_particles_dfba",
+          "description": "Full COMETS-style spatial composite: lattice dFBA + advection\u2013diffusion + Brownian particles with internal dFBA + division. End-to-end coupled scenario."
+        },
+        {
+          "name": "fig-01",
+          "description": "What does Fig 1 \u2014 draft processes + multiscale composite depict, and does its bigraph-loom image generate?"
+        },
+        {
+          "name": "reference_demo_x2y2",
+          "description": "Different resolution for the spatio-flux reference demo"
+        },
+        {
+          "name": "newtonian_particles",
+          "description": "Physics-only baseline (Pymunk): rigid-body particles with collisions/crowding in continuous space. Use to validate contact dynamics + boundary enforcement."
+        },
+        {
+          "name": "spatial_many_dfba",
+          "description": "Spatial microenvironment (sitewise dFBA): a lattice where each site runs its own dFBA instance. Useful for validating lattice indexing + per-site state isolation."
+        },
+        {
+          "name": "diffusion_process",
+          "description": "Field transport primitive: finite-volume diffusion/advection on a 2D lattice. Use to validate boundary conditions, stability, and transport timescales."
+        },
+        {
+          "name": "fig-02",
+          "description": "What does Fig 2 \u2014 Milner bigraph (a) + process bigraph (b) depict, and does its bigraph-loom image generate?"
+        },
+        {
+          "name": "comets_br_particles_kinetics",
+          "description": "Three-way coupling: spatial dFBA fields + Brownian particle agents that run Monod kinetics locally + diffusion. End-to-end smoke test of the COMETS-style composite stack with kinetic agents."
+        },
+        {
+          "name": "spatial_cross_feeding_bridge",
+          "description": "Does a spatially-separated consumer (strain B) grow only where a producer (strain A) secretes a diffusing metabolite?"
+        },
+        {
+          "name": "ecoli_dfba",
+          "description": "Single-cell metabolism (large model): dynamic FBA using iAF1260 with tracked extracellular fields (glucose/formate) and biomass. Stress-tests solver + exchange wiring."
+        },
+        {
+          "name": "fig-07",
+          "description": "What does Fig 7 depict, and do its three panels' bigraph-loom images generate?"
+        },
+        {
+          "name": "biofilm_settling_metabolism",
+          "description": "When rigid-body cells settle under gravity while feeding, does growth become spatially structured by depth?"
+        },
+        {
+          "name": "brownian_particles",
+          "description": "Particle-only baseline: Brownian motion of agents with mass in continuous space (no fields, no metabolism). Checks integrator + particle state schema."
+        },
+        {
+          "name": "fig-04",
+          "description": "What does Fig 4 depict, and does its bigraph-loom image generate?"
+        },
+        {
+          "name": "nutrient_starvation_control",
+          "description": "With no carbon source, does the dynamic-FBA model correctly fail to grow \u2014 the falsification control that the growth signal is real, not an artifact?"
+        },
+        {
+          "name": "br_particles_kinetics",
+          "description": "Particle\u2013field coupling (kinetics): Brownian agents sample local lattice concentrations and apply Monod-style exchange, modifying both particle mass and fields."
+        },
+        {
+          "name": "spatioflux_reference_demo",
+          "description": "SpatioFlux demonstration reference composite: Newtonian motile particles + particle\u2013field exchange + internal multi-dFBA + Monod/diffusion fields + mass-aggregated division."
+        },
+        {
+          "name": "fig-05",
+          "description": "What do Fig 5a and Fig 5b depict, and do their bigraph-loom images generate?"
+        },
+        {
+          "name": "fig-08",
+          "description": "What does Fig 8 \u2014 the spatio-flux reference model depict, and does its bigraph-loom image generate?"
+        },
+        {
+          "name": "fig-06",
+          "description": "What orchestration patterns does Fig 6 depict?"
+        },
+        {
+          "name": "dfba_kinetics_community",
+          "description": "Hybrid community (well-mixed): mixes Monod-kinetic agents with dFBA agents in a shared environment. Demonstrates heterogeneous process composition under one schema."
+        },
+        {
+          "name": "comets_nt_particles_dfba",
+          "description": "Mechanochemical + metabolic coupling: Pymunk particles move/collide while COMETS fields diffuse; particles run metabolism (via exchange) against local concentrations."
+        },
+        {
+          "name": "spatial_dfba_process",
+          "description": "Spatial microenvironment (vectorized dFBA): one spatial dFBA process updates all lattice sites as a single structured state. Demonstrates batched execution + field coupling."
+        },
+        {
+          "name": "ecoli_core_dfba",
+          "description": "Single-cell metabolism baseline: dynamic FBA for E. coli core with external glucose/acetate and biomass over time (no space, no particles)."
+        },
+        {
+          "name": "community_dfba",
+          "description": "Multi-agent well-mixed community: several independent dFBA instances share the same extracellular pools, creating competition / cross-feeding dynamics without space."
+        },
+        {
+          "name": "fig-03",
+          "description": "What does Fig 3 \u2014 store diagram + place graph depict, and does its bigraph-loom image generate?"
+        },
+        {
+          "name": "br_particles_dfba",
+          "description": "Particle-embedded metabolism: Brownian agents carry internal dFBA; uptake/secretion couples to fields and biomass accumulates into particle mass/size."
+        }
+      ],
+      "investigations": [
+        {
+          "name": "spatio-flux-test-suite",
+          "description": "Spatio-Flux Test Suite \u2014 compositional multiscale scenarios"
+        },
+        {
+          "name": "paper-figures",
+          "description": "Process Bigraph paper \u2014 figures"
+        }
+      ],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 30,
+        "investigations": 2
+      },
+      "kind": "workspace",
+      "reuses": [
+        "spatio-flux"
+      ],
+      "simulator_refs": [
+        {
+          "repo": "spatio-flux",
+          "ref": "1.5.5"
+        }
+      ]
     },
     {
       "name": "viva-amici",
@@ -2175,6 +2368,242 @@
       "simulator_refs": []
     },
     {
+      "name": "viva-cpm-studies",
+      "repo": "viva-cpm-studies",
+      "source": "https://github.com/vivarium-collective/viva-cpm-studies",
+      "homepage": "https://github.com/vivarium-collective/viva-cpm-studies",
+      "description": "Studies and investigations built on viva-cpm (Rust-core Cellular Potts engine), pinned per study for reproducibility.",
+      "tags": [
+        "cellular-potts-model",
+        "vivarium"
+      ],
+      "package": "viva_cpm_studies",
+      "cloned": true,
+      "processes": [
+        {
+          "name": "ProtrusionEnclosureProcess",
+          "kind": "process",
+          "description": "Host/symbiont differential-adhesion wrapping on the Rust CPM engine."
+        },
+        {
+          "name": "InfectionProcess",
+          "kind": "process",
+          "description": "Influenza H -> I infection transition (Sego 2022 cellularization)."
+        },
+        {
+          "name": "SystemicODEProcess",
+          "kind": "process",
+          "description": "Global Price-2015 influenza immune ODE. Integrates the 10 systemic species {NB, N, T, X, A, B, P, W, G, O} with scipy LSODA over dt_seconds (default one 60 s MCS); the spatial species {H,I,M,K,E,L,C,V,DH} and derived vars {D, Sigma1, Sigma2, DI, R} are frozen as inputs. Emits the integrated state, the six Hill recruitment driver rates, and the T-activation signal sig_1 = a_11*T + a_12*D."
+        },
+        {
+          "name": "ImmuneProcess",
+          "kind": "process",
+          "description": "Off-lattice immune agents that chemotax up a field gradient."
+        },
+        {
+          "name": "EpitheliumProcess",
+          "kind": "process",
+          "description": "CPMProcess + all-field per-cell readout, raw fields, point deposit,"
+        }
+      ],
+      "steps": [],
+      "composites": [
+        {
+          "name": "recruitment",
+          "description": "Chemotactic recruitment (single CPMProcess). Source cells secrete a cue; responders chemotax up it. cue_rate=0 removes the cue; chemo_lambda=0 blocks the response."
+        },
+        {
+          "name": "gg1993",
+          "description": "Glazier & Graner (1993) CPM example (single CPMProcess). The `study` parameter selects which of the 11 paper examples to encode; its exact energies, temperature, area constraint and initial condition come from viva_cpm_studies.gg1993.params.STUDIES[study]."
+        },
+        {
+          "name": "protrusion_enclosure",
+          "description": "Eukaryogenesis S3 (protrusions to enclosure), campaign composite B. A host and a symbiont on the Rust CPM engine; sweeping host-symbiont adhesion j_hs across j_sM - j_hM moves the system through the wrapping transition. Emits enc/enclosure_fraction (1 = fully enclosed) and enc/enclosed."
+        },
+        {
+          "name": "epithelium",
+          "description": "Influenza-sego2022 subsystem 1/5 -- the epithelial tissue substrate: a confluent CPM epithelial sheet (single CPMProcess, no fields, no immune cells). Every other subsystem composes on top of this. Validates the substrate geometry, not a biology reproduction."
+        },
+        {
+          "name": "viral_infection",
+          "description": "Influenza-sego2022 subsystem 2/5 -- viral infection on the epithelium: composes the virus field (secretion/diffusion/decay from InfectedReleasing cells) + the stochastic H->I infection transition on top of the epithelial sheet. Live-demo scene; the lesion-spread + IFN/resistance measurements come from run.run_virus_infection / run_virus_infection_with_ifn."
+        },
+        {
+          "name": "innate_immunity",
+          "description": "Influenza-sego2022 subsystem 3/5 -- innate (macrophage) response: adds macrophages (type M) chemotaxing up the virus field toward the infection on top of the viral-infection scene (interior-placed clusters, an unbiased lambda=0-control geometry). Live-demo scene; the measured localization + chemokine/IL-10 signaling numbers come from run.run_macrophage_response / run_macrophage_signaling. chemotaxis_v_macro=0.0 reproduces the lambda=0 control."
+        },
+        {
+          "name": "cytotoxic_immunity",
+          "description": "Influenza-sego2022 subsystem 4/5 -- cytotoxic (NK + CD8+ T) response: adds NK (type K) + CD8+ (type E) cells chemotaxing up the macrophage-released chemokine field on top of the innate-immunity scene (three interior-placed clusters). Live-demo scene -- LOCALIZATION geometry/chemotaxis only, NO contact-killing step (not expressible in the declarative scene; see killing.contact_kill_rate / run.run_cytotoxic_response for the killing mechanism + measured numbers). chemotaxis_v_nk=chemotaxis_v_cd8=0.0 reproduces the localization control."
+        },
+        {
+          "name": "systemic_ode",
+          "description": "Influenza-sego2022 subsystem 5/5 -- the systemic Price-2015 global (non-spatial) ODE compartment (TNF, ROS, antibody, APC, IL-12, IFN-gamma, CD4+, B, neutrophils) coupled to the epithelial-infection substrate. The hybrid ODE integration + spatial<->ODE coupling + dynamic sig_1 feedback are a custom per-MCS loop (price_ode.GlobalODE), NOT expressible in this declarative scene -- the composite carries the coupled spatial substrate; the ODE mechanism + measured (calibration-pending) numbers come from run.run_global_coupling / run_full_model and viz.global_coupling_figure."
+        },
+        {
+          "name": "full_model",
+          "description": "Influenza-sego2022 -- Task 3.2 (influenza-immune-process-composite epic): the process-bigraph Composite wiring EpitheliumProcess + ImmuneProcess (off-lattice M/K/E agents) + SystemicODEProcess (the Price-2015 global ODE) into one runnable document -- the declarative 'swappable' alternative to run.run_full_model's custom per-MCS driver loop, which remains the source-faithful reference the capstone reproduction studies (repro-fig3b/5/7) use."
+        },
+        {
+          "name": "recruitment_receptor",
+          "description": "Chemotactic recruitment via a receptor-level response (single CPMProcess + one ReceptorSubcell per responder). Responders activate (naive(2) -> activated(3)) once local cue occupancy crosses threshold, and only activated cells chemotax. blocked=True zeroes the activated lambda even for cells that do activate."
+        },
+        {
+          "name": "recruitment_adaptive",
+          "description": "Adaptive receptor recruitment (fold-change detection): single CPMProcess + one AdaptiveReceptorSubcell per responder. Responders activate (naive(2) -> activated(3)) once response = max(0, theta - m) crosses threshold, where m is a slow per-cell setpoint adapting toward occupancy theta -- so a rising cue recruits regardless of background level, while a static background does not. blocked=True zeroes the activated lambda (receptor_gating); epsilon=0 disables adaptation (knockout, pure Hill occupancy)."
+        }
+      ],
+      "studies": [
+        {
+          "name": "repro-fig3b",
+          "description": "Implement `run.repro_fig3b(*, replicas=3, cells_per_side=35, steps=240,\nseed0=0) -> dict` (Task 9.2): loop `replicas` seeds through\n`run.run_full_model(cells_per_side=cells_per_side, steps=steps,\nseed=seed0+i, init_infection_frac=0.05)`; map each run's\n`counts`/`fields`/`ode` sections onto `targets/fig3b.json`'s exact\nobservable keys (`_FIG3B_OBSERVABLE_MAP`); ensemble-mean via\n`bands.aggregate_replicas`; evaluate via `bands.evaluate_study(ensemble,\n\"fig3b\")`. Add `tests/test_influenza_full_model.py::\ntest_repro_fig3b_runs_and_evaluates_bands` (reduced: `replicas=2,\ncells_per_side=15, steps=20`) asserting the ensemble/band_eval dict is\nwell-formed and the uninfected series is non-vacuous (declines under\ninfection) -- NOT that the bands pass, since reduced scale is not\nexpected to. Run that same reduced config directly (not the pytest\nassertions alone) to report the actual per-observable band_eval numbers\nin this study honestly.\n"
+        },
+        {
+          "name": "global-coupling",
+          "description": "Wire `price_ode.GlobalODE` (Task 8.1, the hybrid 10-species integrator,\ndiscrepancy #9) into `run.run_global_coupling`'s per-MCS loop: spatial->\nODE aggregate push (Task 8.2), ODE->spatial dynamic sig_1 feedback (Task\n8.3, discrepancy #11), ODE-driven recruitment (Task 8.4, discrepancy\n#12), and NK/CD8 LOCAL+NEARBY cytotoxic killing (Task 8.5). Measure sig_1's\ndynamic range vs the retired static stub, recruitment inflow/outflow\nrates and population trajectories (default vs boosted eta), and whether\nthe nearby-killing term fires via natural recruitment buildup vs a\ndocumented test-seam override\n(`tests/test_influenza_price_ode.py`, `tests/test_influenza_recruitment.py`,\n`tests/test_influenza_killing.py`, task-8.1 through task-8.5-report.md).\nA minimal in-package figure (`viva_cpm_studies/influenza/viz.py::\nglobal_coupling_figure`, Task 8.6) renders the systemic ODE species\n(T/X/A/P) and the spatial aggregates (I/M/K/E) plus dynamic sig_1 over\nMCS.\n"
+        },
+        {
+          "name": "s3-protrusion-enclosure",
+          "description": "Run the protrusion_enclosure CPM composite (campaign composite B) at strong vs weak host-symbiont adhesion, measure the enclosure fraction (host coverage of the symbiont boundary), and sweep the adhesion x symbiont-surface-tension plane to produce the enclosure phase diagram."
+        },
+        {
+          "name": "vacancy_cavity",
+          "description": "Simulate the sorting energies with A_l=20/A_d=40 and allowed vacancy nucleation to observe cavity formation at 200 MCS.\n"
+        },
+        {
+          "name": "recruitment-inhibited",
+          "description": "Repeat the baseline world with the responder chemotaxis strength set to zero (the\nintervention) and measure the recruitment index over 500 MC sweeps.\n"
+        },
+        {
+          "name": "cell_sorting",
+          "description": "Simulate the sorting energies from a random IC to 13500 MCS and measure boundary lengths, type correlations, <n> across temperature (2-80) and lambda (0.1-10).\n"
+        },
+        {
+          "name": "recruitment-receptor-baseline",
+          "description": "Simulate the receptor-recruitment world (the recruitment_receptor\ncomposite): naive(2)/activated(3) responder sub-types, each carrying a\nReceptorSubcell that computes Hill occupancy from the local cue field, and\nmeasure the recruitment index over 500 MC sweeps across 5 seeds.\n"
+        },
+        {
+          "name": "dispersal_separate",
+          "description": "Simulate gamma_ld=27 from a random IC and observe full light/dark cluster separation at 2000 MCS.\n"
+        },
+        {
+          "name": "ifn-resistance",
+          "description": "Wire the type-I IFN field (Task 3.2, `viva_cpm_studies/influenza/fields.py`\n`add_ifn_field`) and the pure per-cell resistance function (Task 3.3,\n`viva_cpm_studies/influenza/resistance.py::cell_resistance`) into a new\ndriver, `run.run_virus_infection_with_ifn` (Task 3.3), alongside the\nunmodified Increment-2 `run_virus_infection`, and compare their per-update\nseries (n_I, n_H, total_virus, plus `mean_resist` recorded only by the\nwith-IFN driver) at identical seed/parameters (Task 3.3's integration test\n`tests/test_influenza_virus_infection.py::test_ifn_resistance_slows_spread_vs_no_ifn`\nand the fuller with/without series in Task 3.3's report). A minimal\nin-package figure (`viva_cpm_studies/influenza/viz.py::ifn_resistance_figure`,\nTask 3.4) renders both series side by side plus the mean_resist trajectory.\n"
+        },
+        {
+          "name": "annealing",
+          "description": "Anneal the equilibrated all-light pattern at T=0 and measure bulk/total <n> and moments mu2-4 vs MCS to determine convergence speed.\n"
+        },
+        {
+          "name": "position_reversal",
+          "description": "Simulate with gamma_lM=23 from a random IC and measure medium type-correlations to detect position reversal.\n"
+        },
+        {
+          "name": "dispersal_sloughing",
+          "description": "Simulate gamma_lM<0 and observe light-cell dispersal into the medium at 480 MCS (unannealed).\n"
+        },
+        {
+          "name": "recruitment-baseline",
+          "description": "Simulate the CPM recruitment world (source slab + six responders in the gradient\nzone), equilibrate the secreted field, and measure the recruitment index \u2014\nfraction of responders within 15 px of the source \u2014 over 500 MC sweeps.\n"
+        },
+        {
+          "name": "epithelial-sheet-baseline",
+          "description": "Build the epithelial-sheet `load_world` spec (Task 1.1), instantiate and\nrelax the CPM world (Task 1.2), and measure step throughput on the full\n1mm^2 patch (Task 1.3). Wrap the geometry in a process-bigraph composite\n(`viva_cpm_studies.composites.influenza.epithelium`) so the\ndashboard can run a modest (0.1mm, 100-cell) live demo of the same\nsubstrate (Task 1.4, this study).\n"
+        },
+        {
+          "name": "recruitment-adversarial",
+          "description": "Run the world with competent responders but the source secretion turned off, and\nconfirm the recruitment index and metric correctly report no recruitment.\n"
+        },
+        {
+          "name": "partial_sorting",
+          "description": "Swap J_ll/J_ld so gamma_ld=7.5, simulate from a random IC to 2000 MCS, and compare against normal sorting to demonstrate incomplete sorting.\n"
+        },
+        {
+          "name": "repro-fig7-infection-fraction",
+          "description": "Implement `run.repro_fig7(*, fracs=(0.001,0.005,0.01,0.05), replicas=3,\ncells_per_side=35, steps=240, seed0=0) -> dict` (Task 9.4): for each\n`frac`, loop `replicas` seeds through `run.run_full_model(\ncells_per_side=cells_per_side, steps=steps, seed=seed0+frac_idx*replicas+r,\ninit_infection_frac=frac, init_viral_load=None)`; map each run's\n`counts`/`fields`/`ode` sections onto `targets/fig7.json`'s exact 4\nobservable keys (reusing `_FIG5_OBSERVABLE_MAP`); ensemble-mean via\n`bands.aggregate_replicas`; filter that fraction's own band subset from\nfig7.json's multi-scenario observable lists (`_fig7_target_subset`,\nraising `ValueError` rather than silently mixing scenarios if a fraction\nhas no matching entries); evaluate via `_evaluate_fig7_subset`. Add\n`tests/test_influenza_full_model.py::\ntest_repro_fig7_infection_fraction_sweep` (reduced:\n`fracs=(0.001,0.05), replicas=1, cells_per_side=12, steps=15`) asserting\nthe by_frac dict has exactly the tested fractions as keys, the monotone\ndose-response holds (`uninfected_final_frac(0.05) <=\nuninfected_final_frac(0.001) + 1e-9`), and `band_eval` is present -- NOT\nthat the bands pass. ALSO add\n`test_fig7_target_subset_scenario_grouping_guard`, a fast unit test\ndirectly exercising `_fig7_target_subset`'s filter (returns only the\nmatching-tag entries) and its raise (unmatched fraction), closing the\nTask-9.3-review-flagged gap that the guard was previously verified only\ninteractively. Run the reduced config directly (not the pytest assertions\nalone) to report the actual per-fraction, per-observable band_eval numbers\nin this study honestly.\n"
+        },
+        {
+          "name": "engulfment",
+          "description": "Simulate the sorting energies from a top-light/bottom-dark IC to 10000 MCS and measure homotypic and heterotypic fractional lengths to observe engulfment.\n"
+        },
+        {
+          "name": "immune-response",
+          "description": "Run the full immune layer (macrophage, NK, CD8+ T cells) on a ~900-cell\nepithelial sheet seeded with an infected patch, and confirm the immune cells\nchemotax toward the infection and cluster against the sheet.\n"
+        },
+        {
+          "name": "recruitment-receptor-blocked",
+          "description": "Repeat the receptor-recruitment world with blocked=True (the intervention)\nand measure the recruitment index over 500 MC sweeps across 5 seeds.\n"
+        },
+        {
+          "name": "checkerboard",
+          "description": "Simulate gamma_ld<0 from a random IC and measure fractional interface lengths, <n>, moments vs T (0-40) to characterize the checkerboard and its phase transitions.\n"
+        },
+        {
+          "name": "repro-fig5-viral-load",
+          "description": "Implement `run.repro_fig5(*, loads=(1,10,100,1000,10000), replicas=3,\ncells_per_side=35, steps=240, seed0=0) -> dict` (Task 9.3): for each\n`load`, loop `replicas` seeds through `run.run_full_model(\ncells_per_side=cells_per_side, steps=steps, seed=seed0+load_idx*replicas+r,\ninit_viral_load=load, init_infection_frac=None)`; map each run's\n`counts`/`fields`/`ode` sections onto `targets/fig5.json`'s exact 4\nobservable keys (`_FIG5_OBSERVABLE_MAP`); ensemble-mean via\n`bands.aggregate_replicas`; filter that load's own band subset from\nfig5.json's multi-scenario observable lists (`_fig5_target_subset`,\nraising `ValueError` rather than silently mixing scenarios if a load has\nno matching entries); evaluate via `_evaluate_fig5_subset`. Add\n`tests/test_influenza_full_model.py::test_repro_fig5_viral_load_sweep`\n(reduced: `loads=(1,10000), replicas=1, cells_per_side=12, steps=15`)\nasserting the by_load dict has exactly the tested loads as keys, the\nmonotone dose-response holds (`uninfected_final_frac(10000) <=\nuninfected_final_frac(1) + 1e-9`), and `band_eval` is present -- NOT\nthat the bands pass, since reduced scale is not expected to. Run that\nsame reduced config directly (not the pytest assertions alone) to report\nthe actual per-load, per-observable band_eval numbers in this study\nhonestly.\n"
+        },
+        {
+          "name": "recruitment-adaptive",
+          "description": "Author the acceptance contract for the adaptive-receptor rung of the\nfaithful chemotaxis mechanism ladder (viva_cpm_studies.model_building.\nmechanisms): three primary behavior tests plus a receptor-gating control,\nwith pass/fail bands set from real measured recruitment_index values\n(3-12 seeds) already gathered while calibrating the ladder. The loop\ndriver built in the next task runs mechanisms.simulate_condition against\nthese bands; this study does not itself constitute a completed run.\n"
+        },
+        {
+          "name": "dispersal_no_separate",
+          "description": "Simulate gamma_ld=21 from a random IC and show clusters do not separate, contrasting with the gamma_ld=27 case.\n"
+        },
+        {
+          "name": "global_equilibration",
+          "description": "Equilibrate a ~1000-cell brick tiling at T=5 and measure total boundary length, moments and light-Medium fraction to confirm a stable equilibrated IC.\n"
+        },
+        {
+          "name": "virus-field-infection",
+          "description": "Wire the virus field (Task 2.1, `viva_cpm_studies/influenza/fields.py`) and\nthe stochastic infection transition (Task 2.2,\n`viva_cpm_studies/influenza/transitions.py`) together over the Increment-1\nsheet, drive them for 60 updates from a small seeded lesion\n(`viva_cpm_studies/influenza/run.py::run_virus_infection`, Task 2.3), and\nreport the measured spread/locality/null-control behavior from the\nintegration test (`tests/test_influenza_virus_infection.py`). Wrap the\nsame mechanism as a process-bigraph composite\n(`viva_cpm_studies.composites.influenza.viral_infection`, CPMProcess +\nInfectionProcess wired through `fates`) for the dashboard live demo (Task\n2.4, this study) \u2014 measurements come from `run_virus_infection`, not the\nlive-demo composite (see caveat and Task 2.3's report on why the two\npaths use independent RNG streams and are not bit-identical).\n"
+        },
+        {
+          "name": "epithelial-fate",
+          "description": "Wire infected death (Task 4.2, `transitions.infected_death_step`) and the\ncellularized Allee effect (Task 4.3, `viva_cpm_studies/influenza/allee.py`)\ninto a new driver, `run.run_epithelial_fate` (Task 4.3), alongside the\nunmodified Increment-2/3 infection + IFN-resistance path, and measure the\nresulting n_H/n_I/n_D series plus the diagnostic n_allee_death/\nn_allee_recovery counters (Task 4.3's integration tests\n`tests/test_influenza_allee.py::test_lesion_forms_dead_region_grows_over_time`,\n`::test_dead_cell_surrounded_by_uninfected_recovers`,\n`::test_dead_cell_surrounded_by_dying_does_not_recover`, and the fuller\n200/500-step series in task-4.3-report.md). A minimal in-package figure\n(`viva_cpm_studies/influenza/viz.py::epithelial_fate_figure`, Task 4.4)\nrenders the cell-type composition over time plus cumulative Allee event\ncounts.\n"
+        },
+        {
+          "name": "parameter-provenance",
+          "description": "Produce a single, cited parameter file and supporting provenance\ndocumentation that later increments can consume without re-deriving\nconstants from the paper or source, and digitize the paper's Figs 3B, 5, 7\ninto acceptance-band targets for the eventual capstone reproduction.\n"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "endosymbiosis",
+          "description": "The Endosymbiotic Transition \u2014 enclosure mechanics (S3)"
+        },
+        {
+          "name": "glazier-graner-1993",
+          "description": "Glazier & Graner 1993 \u2014 differential-adhesion cell rearrangement"
+        },
+        {
+          "name": "influenza-sego2022",
+          "description": "Influenza infection & immune response (Sego 2022 reproduction)"
+        },
+        {
+          "name": "chemotactic-recruitment",
+          "description": "Chemotactic recruitment"
+        }
+      ],
+      "counts": {
+        "processes": 5,
+        "steps": 0,
+        "composites": 11,
+        "studies": 28,
+        "investigations": 4
+      },
+      "kind": "workspace",
+      "reuses": [
+        "viva-cpm"
+      ],
+      "simulator_refs": [
+        {
+          "repo": "viva-cpm",
+          "ref": "0.1.3"
+        }
+      ]
+    },
+    {
       "name": "viva-dynamic-networks",
       "repo": "viva-dynamic-networks",
       "source": "https://github.com/vivarium-collective/viva-dynamic-networks",
@@ -2558,6 +2987,11 @@
           "description": "Real dolfinx ALE incompressible Navier-Stokes (IPCS operator"
         },
         {
+          "name": "FenicsxReactionDiffusionProcess",
+          "kind": "process",
+          "description": "Multi-species reaction-diffusion on a structured grid (FEniCSx Q1, scipy stepping)."
+        },
+        {
           "name": "MovingBoundaryProcess",
           "kind": "process",
           "description": "Transient diffusion on a deforming (prescribed-ALE) domain: a unit"
@@ -2694,7 +3128,7 @@
         }
       ],
       "counts": {
-        "processes": 12,
+        "processes": 13,
         "steps": 4,
         "composites": 15,
         "studies": 7,
@@ -4229,26 +4663,16 @@
           "description": "Paper's oxygen->motility tumor model: grammar rules on a minimal oxygen-field + point-agent reference substrate (transient post-hypoxic migration)."
         }
       ],
-      "studies": [
-        {
-          "name": "hypoxia-motility",
-          "description": "Demonstrate end-to-end that viva_grammar.composites.hypoxia.hypoxia_motility reproduces the paper's qualitative hypoxia dynamics, with the grammar engine as a separate, pluggable process (the same role it will play for the MISM blueprint ABMs)."
-        }
-      ],
-      "investigations": [
-        {
-          "name": "grammar",
-          "description": "A human-interpretable grammar as a pluggable rule engine"
-        }
-      ],
+      "studies": [],
+      "investigations": [],
       "counts": {
         "processes": 3,
         "steps": 0,
         "composites": 1,
-        "studies": 1,
-        "investigations": 1
+        "studies": 0,
+        "investigations": 0
       },
-      "kind": "workspace",
+      "kind": "simulator",
       "reuses": [],
       "simulator_refs": []
     },
@@ -6585,7 +7009,7 @@
         {
           "name": "SmoldynHybrid",
           "kind": "process",
-          "description": "Particle half of a hybrid model."
+          "description": "pde-particle's binding of viva-smoldyn's field-coupled Smoldyn process."
         },
         {
           "name": "_RecorderBase",
@@ -6600,7 +7024,7 @@
         {
           "name": "FenicsxReactionDiffusion",
           "kind": "process",
-          "description": "PDE half of a hybrid model on FEniCSx (Q1, structured mesh); same ports as FVReactionDiffusion."
+          "description": "pde-particle's binding of viva-fenics's structured-grid RD process."
         },
         {
           "name": "SplittingCoordinator",
@@ -6775,7 +7199,10 @@
         "investigations": 3
       },
       "kind": "workspace",
-      "reuses": [],
+      "reuses": [
+        "viva-fenics",
+        "viva-smoldyn"
+      ],
       "simulator_refs": []
     },
     {
@@ -6952,7 +7379,9 @@
         "investigations": 0
       },
       "kind": "simulator",
-      "reuses": [],
+      "reuses": [
+        "engine-core"
+      ],
       "simulator_refs": []
     },
     {
@@ -7200,7 +7629,64 @@
           "description": "Tiny ReaDDy reaction-diffusion demo: a few species-A particles diffusing in a small periodic box with first-order decay. Emits total_particles, energy, and time each step."
         }
       ],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 1,
+        "steps": 1,
+        "composites": 2,
+        "studies": 0,
+        "investigations": 0
+      },
+      "kind": "simulator",
+      "reuses": [],
+      "simulator_refs": []
+    },
+    {
+      "name": "viva-showcase",
+      "repo": "viva-showcase",
+      "source": "https://github.com/vivarium-collective/viva-showcase",
+      "homepage": "https://github.com/vivarium-collective/viva-showcase",
+      "description": "Showcase of the viva ecosystem's simulators \u2014 one investigation per simulator demonstrating basic functionality.",
+      "tags": [],
+      "package": "viva_showcase",
+      "cloned": true,
+      "processes": [],
+      "steps": [],
+      "composites": [],
       "studies": [
+        {
+          "name": "membrane-deflation",
+          "description": "Membrane deflation"
+        },
+        {
+          "name": "membrane-patch",
+          "description": "Membrane patch"
+        },
+        {
+          "name": "membrane-demo",
+          "description": "Membrane demo"
+        },
+        {
+          "name": "lj-nve-demo",
+          "description": "Lj nve demo"
+        },
+        {
+          "name": "lj-nve-demo-with-viz",
+          "description": "Lj nve demo with viz"
+        },
+        {
+          "name": "hypoxia-motility",
+          "description": "Demonstrate end-to-end that viva_grammar.composites.hypoxia.hypoxia_motility reproduces the paper's qualitative hypoxia dynamics, with the grammar engine as a separate, pluggable process (the same role it will play for the MISM blueprint ABMs)."
+        },
+        {
+          "name": "decay-with-viz",
+          "description": "Decay with viz"
+        },
+        {
+          "name": "steady-state",
+          "description": "Steady state"
+        },
         {
           "name": "readdy-demo-with-viz",
           "description": "Readdy demo with viz"
@@ -7212,20 +7698,63 @@
       ],
       "investigations": [
         {
-          "name": "readdy-particle-reaction-diffusion-demo",
-          "description": "Readdy particle reaction diffusion demo"
+          "name": "mem3dg",
+          "description": "Showcase: viva-mem3dg \u2014 membrane mechanics"
+        },
+        {
+          "name": "lammps",
+          "description": "Showcase: viva-lammps \u2014 Lennard-Jones molecular dynamics"
+        },
+        {
+          "name": "grammar",
+          "description": "A human-interpretable grammar as a pluggable rule engine"
+        },
+        {
+          "name": "tellurium",
+          "description": "Showcase: viva-tellurium \u2014 SBML / RoadRunner ODE simulation"
+        },
+        {
+          "name": "readdy",
+          "description": "Showcase: viva-readdy \u2014 particle reaction\u2013diffusion"
         }
       ],
       "counts": {
-        "processes": 1,
-        "steps": 1,
-        "composites": 2,
-        "studies": 2,
-        "investigations": 1
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 10,
+        "investigations": 5
       },
       "kind": "workspace",
-      "reuses": [],
-      "simulator_refs": []
+      "reuses": [
+        "viva-grammar",
+        "viva-lammps",
+        "viva-mem3dg",
+        "viva-readdy",
+        "viva-tellurium"
+      ],
+      "simulator_refs": [
+        {
+          "repo": "viva-mem3dg",
+          "ref": "0.1.1"
+        },
+        {
+          "repo": "viva-lammps",
+          "ref": "0.1.1"
+        },
+        {
+          "repo": "viva-grammar",
+          "ref": "0.1.0"
+        },
+        {
+          "repo": "viva-tellurium",
+          "ref": "0.2.4"
+        },
+        {
+          "repo": "viva-readdy",
+          "ref": "0.1.0"
+        }
+      ]
     },
     {
       "name": "viva-simbio",
@@ -7337,6 +7866,11 @@
           "name": "SmoldynProcess",
           "kind": "process",
           "description": "Bridge Process wrapping a Smoldyn spatial stochastic simulation."
+        },
+        {
+          "name": "SmoldynHybridProcess",
+          "kind": "process",
+          "description": "Field-coupled Smoldyn particle process (virtualcell/Smoldyn ``pyhybrid``)."
         }
       ],
       "steps": [
@@ -7389,7 +7923,7 @@
         }
       ],
       "counts": {
-        "processes": 1,
+        "processes": 2,
         "steps": 1,
         "composites": 5,
         "studies": 3,
@@ -7454,30 +7988,16 @@
           "description": "Tiny Tellurium / Antimony decay demo: S1 -> S2 first-order kinetics. Emits species concentrations, reaction rates, and time each step."
         }
       ],
-      "studies": [
-        {
-          "name": "decay-with-viz",
-          "description": "Decay with viz"
-        },
-        {
-          "name": "steady-state",
-          "description": "Steady state"
-        }
-      ],
-      "investigations": [
-        {
-          "name": "tellurium-sbml-simulation",
-          "description": "Tellurium sbml simulation"
-        }
-      ],
+      "studies": [],
+      "investigations": [],
       "counts": {
         "processes": 1,
         "steps": 4,
         "composites": 3,
-        "studies": 2,
-        "investigations": 1
+        "studies": 0,
+        "investigations": 0
       },
-      "kind": "workspace",
+      "kind": "simulator",
       "reuses": [],
       "simulator_refs": []
     },

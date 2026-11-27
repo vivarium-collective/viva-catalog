@@ -27,6 +27,15 @@
     "tags": []
   },
   {
+    "name": "engine-core",
+    "source": "https://github.com/vivarium-collective/engine-core.git",
+    "ref": "main",
+    "package": "engine_core",
+    "homepage": "https://github.com/vivarium-collective/engine-core",
+    "description": "",
+    "tags": []
+  },
+  {
     "name": "mosaic-compose-sim",
     "source": "https://github.com/vivarium-collective/mosaic-compose-sim.git",
     "ref": "main",
@@ -42,6 +51,15 @@
     "package": "spatio_flux",
     "homepage": "https://github.com/vivarium-collective/spatio-flux",
     "description": "spatio-temporal microbial simulations with Vivarium 2.0",
+    "tags": []
+  },
+  {
+    "name": "spatio-flux-studies",
+    "source": "https://github.com/vivarium-collective/spatio-flux-studies.git",
+    "ref": "main",
+    "package": "spatio_flux_studies",
+    "homepage": "https://github.com/vivarium-collective/spatio-flux-studies",
+    "description": "Studies and investigations for spatio-flux \u2014 the scientific workspace pinning the spatio-flux simulator package (inverted sim/studies split, mirrors viva-munk-studies).",
     "tags": []
   },
   {
@@ -178,6 +196,18 @@
     "homepage": "https://github.com/vivarium-collective/viva-cpm",
     "description": "Vivarium-native Cellular Potts Model framework \u2014 with a fast Rust core",
     "tags": []
+  },
+  {
+    "name": "viva-cpm-studies",
+    "source": "https://github.com/vivarium-collective/viva-cpm-studies.git",
+    "ref": "main",
+    "package": "viva_cpm_studies",
+    "homepage": "https://github.com/vivarium-collective/viva-cpm-studies",
+    "description": "Studies and investigations built on viva-cpm (Rust-core Cellular Potts engine), pinned per study for reproducibility.",
+    "tags": [
+      "cellular-potts-model",
+      "vivarium"
+    ]
   },
   {
     "name": "viva-dynamic-networks",
@@ -549,6 +579,15 @@
     "package": "pbg_readdy",
     "homepage": "https://github.com/vivarium-collective/viva-readdy",
     "description": "Process-bigraph wrapper for the ReaDDy particle-based reaction-diffusion simulator",
+    "tags": []
+  },
+  {
+    "name": "viva-showcase",
+    "source": "https://github.com/vivarium-collective/viva-showcase.git",
+    "ref": "main",
+    "package": "viva_showcase",
+    "homepage": "https://github.com/vivarium-collective/viva-showcase",
+    "description": "Showcase of the viva ecosystem's simulators \u2014 one investigation per simulator demonstrating basic functionality.",
     "tags": []
   },
   {
