@@ -582,15 +582,6 @@
     "tags": []
   },
   {
-    "name": "viva-pulse",
-    "source": "https://github.com/vivarium-collective/viva-pulse.git",
-    "ref": "main",
-    "package": "viva_pulse",
-    "homepage": "https://github.com/vivarium-collective/viva-pulse",
-    "description": "Process-bigraph wrapper driving the real Kitware Pulse Physiology Engine",
-    "tags": []
-  },
-  {
     "name": "viva-pysces",
     "source": "https://github.com/vivarium-collective/viva-pysces.git",
     "ref": "main",
