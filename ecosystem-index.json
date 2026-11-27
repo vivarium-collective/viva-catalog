@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T18:04:21+00:00",
+  "generated_at": "2026-11-27T18:14:39+00:00",
   "n_repos": 78,
   "n_cloned": 78,
   "repos": [
@@ -1137,30 +1137,16 @@
           "description": "Real Artistoo CPM demonstrating differential-adhesion cell sorting: non-motile adhesive cells relax toward a compact aggregate driven by the adhesion + volume constraints."
         }
       ],
-      "studies": [
-        {
-          "name": "gg-02-sign-and-temperature-controls",
-          "description": "Sign and temperature controls (Fig 7 & Fig 9)"
-        },
-        {
-          "name": "gg-01-differential-adhesion-sorting",
-          "description": "Differential-adhesion cell sorting (Fig 12)"
-        }
-      ],
-      "investigations": [
-        {
-          "name": "glazier-graner-sorting",
-          "description": "Reproducing Glazier & Graner (1993) differential-adhesion cell sorting"
-        }
-      ],
+      "studies": [],
+      "investigations": [],
       "counts": {
         "processes": 2,
         "steps": 0,
         "composites": 5,
-        "studies": 2,
-        "investigations": 1
+        "studies": 0,
+        "investigations": 0
       },
-      "kind": "workspace",
+      "kind": "simulator",
       "reuses": [],
       "simulator_refs": []
     },
@@ -7622,6 +7608,18 @@
       "composites": [],
       "studies": [
         {
+          "name": "tstmd-contraction-reorientation",
+          "description": "Run seeded coupled simulations through the real engine and measure, over the contraction, the cell area, the adhesion-ring radius, the near-fiber radius, and fiber reorientation q/q0 \u2014 testing whether the ECM is dragged inward."
+        },
+        {
+          "name": "tstmd-network-connectivity",
+          "description": "Sweep the requested crosslink count over {0, 500, 2000, 5000, 10000, 20000} through the real engine and measure the giant-component fraction of the built network, testing whether it percolates."
+        },
+        {
+          "name": "exponential-decay",
+          "description": "Demonstrate end to end that pbg_amici.composites.exponential_decay.amici_exponential_decay compiles and runs the real AMICI/CVODES engine and emits a correct time-series, with AMICI acting as a pluggable process-bigraph process."
+        },
+        {
           "name": "membrane-deflation",
           "description": "Membrane deflation"
         },
@@ -7642,6 +7640,30 @@
           "description": "Lj nve demo with viz"
         },
         {
+          "name": "gg-02-sign-and-temperature-controls",
+          "description": "Sign and temperature controls (Fig 7 & Fig 9)"
+        },
+        {
+          "name": "gg-01-differential-adhesion-sorting",
+          "description": "Differential-adhesion cell sorting (Fig 12)"
+        },
+        {
+          "name": "network-demo-with-viz",
+          "description": "Network demo with viz"
+        },
+        {
+          "name": "network-demo",
+          "description": "Network demo"
+        },
+        {
+          "name": "mapk-brs-basics",
+          "description": "Reproduce the prior MAPK BRS live demo inside the workbench: run the MAPK\nsignalling cycle as a Milner-style Bigraphical Reactive System under\nGillespie SSA and surface its basic systems \u2014 the initial nested-cell\nbigraph, the seven redex\u2192reactum rewrite rules, the per-compartment\nsubstrate population time series, and the structural snapshots/animation of\nphospho-ERK translocating into the nucleus.\n"
+        },
+        {
+          "name": "vent-feasibility-gate",
+          "description": "Demonstrate end to end that viva_equilibrator.composites.feasibility.equilibrator_feasibility_gate runs the real eQuilibrator engine and emits per-reaction \u0394G' and feasibility, with eQuilibrator acting as a pluggable process-bigraph thermodynamics Step."
+        },
+        {
           "name": "hypoxia-motility",
           "description": "Demonstrate end-to-end that viva_grammar.composites.hypoxia.hypoxia_motility reproduces the paper's qualitative hypoxia dynamics, with the grammar engine as a separate, pluggable process (the same role it will play for the MISM blueprint ABMs)."
         },
@@ -7654,15 +7676,51 @@
           "description": "Steady state"
         },
         {
+          "name": "lotka-volterra",
+          "description": "Demonstrate end to end that pbg_simbio.composites.crn.simbio_lotka_volterra runs the real simbio ODE engine and emits correct species trajectories, with simbio acting as a pluggable process-bigraph process."
+        },
+        {
           "name": "readdy-demo-with-viz",
           "description": "Readdy demo with viz"
         },
         {
           "name": "readdy-demo",
           "description": "Readdy demo"
+        },
+        {
+          "name": "bond-network-with-viz",
+          "description": "Bond network with viz"
+        },
+        {
+          "name": "bond-network-demo",
+          "description": "Bond network demo"
+        },
+        {
+          "name": "toggle-switch",
+          "description": "Demonstrate end to end that viva_maboss.composites.toggle.maboss_toggle_switch runs the real MaBoSS engine and emits per-interval Boolean states and ensemble on-probabilities, with MaBoSS acting as a pluggable process-bigraph process."
+        },
+        {
+          "name": "repressilator-steady-state",
+          "description": "Demonstrate end to end that viva_copasi.composites.steady-state runs the real COPASI solver on a published model and emits correct species concentrations and reaction fluxes, with COPASI acting as a pluggable process-bigraph engine."
+        },
+        {
+          "name": "dfba-textbook-demo",
+          "description": "Dfba textbook demo"
+        },
+        {
+          "name": "dfba-textbook-with-viz",
+          "description": "Dfba textbook with viz"
         }
       ],
       "investigations": [
+        {
+          "name": "tstmd",
+          "description": "Cell-ECM mechanical reciprocity (Merks 3D CPM-ECM, 2D real-engine reproduction \u2014 FAILS: coupling gap)"
+        },
+        {
+          "name": "amici",
+          "description": "Showcase: viva-amici \u2014 AMICI/CVODES compiled ODE integration as a pluggable engine"
+        },
         {
           "name": "mem3dg",
           "description": "Showcase: viva-mem3dg \u2014 membrane mechanics"
@@ -7670,6 +7728,22 @@
         {
           "name": "lammps",
           "description": "Showcase: viva-lammps \u2014 Lennard-Jones molecular dynamics"
+        },
+        {
+          "name": "artistoo",
+          "description": "Reproducing Glazier & Graner (1993) differential-adhesion cell sorting"
+        },
+        {
+          "name": "medyan",
+          "description": "Showcase: viva-medyan \u2014 MEDYAN cytoskeletal-network mechanics"
+        },
+        {
+          "name": "reactive-system",
+          "description": "MAPK signalling as a Bigraphical Reactive System"
+        },
+        {
+          "name": "equilibrator",
+          "description": "Showcase: viva-equilibrator \u2014 eQuilibrator \u0394G' as a pluggable thermodynamics engine"
         },
         {
           "name": "grammar",
@@ -7680,26 +7754,65 @@
           "description": "Showcase: viva-tellurium \u2014 SBML / RoadRunner ODE simulation"
         },
         {
+          "name": "simbio",
+          "description": "Showcase: viva-simbio \u2014 simbio CRN/ODE integration as a pluggable engine"
+        },
+        {
           "name": "readdy",
           "description": "Showcase: viva-readdy \u2014 particle reaction\u2013diffusion"
+        },
+        {
+          "name": "caspule",
+          "description": "Caspule bond network dynamics"
+        },
+        {
+          "name": "maboss",
+          "description": "Showcase: viva-maboss \u2014 MaBoSS stochastic Boolean networks as a pluggable engine"
+        },
+        {
+          "name": "copasi",
+          "description": "Showcase: viva-copasi \u2014 COPASI/basico as a pluggable ODE + steady-state engine"
+        },
+        {
+          "name": "comets",
+          "description": "Showcase: viva-comets \u2014 COMETS dynamic FBA"
         }
       ],
       "counts": {
         "processes": 0,
         "steps": 0,
         "composites": 0,
-        "studies": 10,
-        "investigations": 5
+        "studies": 26,
+        "investigations": 16
       },
       "kind": "workspace",
       "reuses": [
+        "viva-amici",
+        "viva-artistoo",
+        "viva-caspule",
+        "viva-comets",
+        "viva-copasi",
+        "viva-equilibrator",
         "viva-grammar",
         "viva-lammps",
+        "viva-maboss",
+        "viva-medyan",
         "viva-mem3dg",
+        "viva-reactive-system",
         "viva-readdy",
-        "viva-tellurium"
+        "viva-simbio",
+        "viva-tellurium",
+        "viva-tstmd"
       ],
       "simulator_refs": [
+        {
+          "repo": "viva-tstmd",
+          "ref": "0.1.0"
+        },
+        {
+          "repo": "viva-amici",
+          "ref": "63ce10b"
+        },
         {
           "repo": "viva-mem3dg",
           "ref": "0.1.1"
@@ -7707,6 +7820,22 @@
         {
           "repo": "viva-lammps",
           "ref": "0.1.1"
+        },
+        {
+          "repo": "viva-artistoo",
+          "ref": "0.1.0"
+        },
+        {
+          "repo": "viva-medyan",
+          "ref": "0.1.0"
+        },
+        {
+          "repo": "viva-reactive-system",
+          "ref": "0.1.0"
+        },
+        {
+          "repo": "viva-equilibrator",
+          "ref": "0.1.0"
         },
         {
           "repo": "viva-grammar",
@@ -7717,7 +7846,27 @@
           "ref": "0.2.4"
         },
         {
+          "repo": "viva-simbio",
+          "ref": "c43ecf0"
+        },
+        {
           "repo": "viva-readdy",
+          "ref": "0.1.0"
+        },
+        {
+          "repo": "viva-caspule",
+          "ref": "0.1.0"
+        },
+        {
+          "repo": "viva-maboss",
+          "ref": "0.1.3"
+        },
+        {
+          "repo": "viva-copasi",
+          "ref": "0.2.2"
+        },
+        {
+          "repo": "viva-comets",
           "ref": "0.1.0"
         }
       ]
