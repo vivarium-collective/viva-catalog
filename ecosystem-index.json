@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T18:47:04+00:00",
+  "generated_at": "2026-11-27T19:10:21+00:00",
   "n_repos": 78,
   "n_cloned": 78,
   "repos": [
@@ -3035,50 +3035,16 @@
           "description": "Source-Diffusion-Degradation (SDD) morphogen gradient: DiffusionProcess (Dirichlet source boundary c=c0) \u2295 LinearDegradationProcess composition; steady state c(x)=c0*exp(-x/lambda), lambda=sqrt(D/k)."
         }
       ],
-      "studies": [
-        {
-          "name": "complex-geometry",
-          "description": "Build the `porous_lattice` composite (a single `PorousFlowStep`: gmsh\npillar-lattice geometry construction -> dolfinx Taylor-Hood import ->\nsteady Stokes solve -> Darcy permeability) for a baseline porosity plus 3\nporosity variants (sweeping `pillar_radius` at fixed 4x4 lattice density)\nand verify (a) every solve is approximately divergence-free and exactly\nno-slip on every pillar/wall boundary, and (b) the effective permeability\nk_eff decreases monotonically as porosity decreases across all 4 points.\n"
-        },
-        {
-          "name": "mesh-convergence",
-          "description": "Run a uniform-refinement sequence and a residual-based adaptive (AMR)\nsequence from the same coarse initial L-shaped mesh, fit the energy-norm-\nerror-vs-DOFs log-log slope for each, and confirm (a) the adaptive slope\nis substantially steeper (closer to the optimal -1/2) than the uniform\nslope (capped near -1/3), and (b) the adaptive mesh's cell density near\nthe re-entrant corner, relative to the far field, grows dramatically\nrelative to the initial mesh -- direct geometric evidence the estimator\nis doing its job, not just producing a better number by coincidence.\n"
-        },
-        {
-          "name": "moving-boundary",
-          "description": "Run the `peristalsis` composite (`PeristalticWallProcess` \u2295\n`PeristalticFlowProcess`, coupled through `mesh_displacement_y` /\n`mesh_velocity_y` / `wall_time` shared stores -- see\n`viva_fenics/processes/peristalsis.py`'s module docstring) at three\nocclusion amplitudes and verify (a) the baseline's post-transient,\ntime-averaged net flow rate Q (`mean_ux`, the domain-averaged\nx-velocity) is genuinely positive, and (b) Q increases monotonically\nacross the amplitude sweep.\n"
-        },
-        {
-          "name": "transient-diffusion",
-          "description": "Run the ``morphogen_gradient`` composite to steady state across THREE\ndecay-length regimes (D fixed, k swept: 1.0/2.0/4.0, giving\nlambda=0.316/0.224/0.158) and confirm (a) each regime's steady profile is\ngenuinely exponential -- a fitted decay length within 10% of the analytic\nlambda=sqrt(D/k), not just a qualitatively decreasing field -- (b) fields\nstay bounded in [0, c0] (no accumulate-vs-overwrite blow-up, no unphysical\nnegative concentration), and (c) French-flag threshold crossings\n(c=0.5*c0, c=0.1*c0) land within 10% of their analytic x-positions AND\nshift monotonically inward as k increases -- demonstrating lambda's\ncontrol over the positional-information map is a real, tunable property\nof the composed system, not a fixed artifact of one parameter set.\n"
-        },
-        {
-          "name": "poisson-validation",
-          "description": "For degree in {1, 2, 3} and a resolution sweep (mesh cells per side: 8,\n16, 32, 64), solve -div(grad(u)) = f on the unit square with f and the\nDirichlet BC derived from u_exact = sin(pi*x)*sin(pi*y), compute each\npoint's L2 error against the true exact solution, and fit the log-log\nconvergence rate (slope of log error vs log h) per degree. Confirm P1's\nrate lands near 2.0, P2's near 3.0, and P3's near 4.0 -- a rigorous\nmulti-order verification, not a single \"error is small\" checkbox.\n"
-        },
-        {
-          "name": "navier-stokes",
-          "description": "Run the `vortex_street` composite (real dolfinx IPCS on a gmsh-generated,\ncylinder-refined channel mesh) long enough to pass through the impulsive-\nstart transient into established periodic shedding, and verify (a) the\nlift coefficient genuinely oscillates (not just noisy/flat), (b) the mean\ndrag coefficient sits in the neighborhood of the DFG 2D-2 benchmark's\nCd_max~=3.22-3.24, and (c) the shedding frequency's Strouhal number sits\nin the neighborhood of the benchmark's St~=0.30.\n"
-        },
-        {
-          "name": "reaction-diffusion",
-          "description": "Run the ``turing_patterns`` composite (2x DiffusionProcess \u2295\nGrayScottReactionProcess) across three Gray-Scott parameter regimes and\nconfirm (a) the baseline regime's V field grows substantially more\nspatially heterogeneous over the run (pattern EMERGES from a near-uniform\nstart), (b) the resulting pattern is bounded and structurally\nnon-trivial -- a finite fraction of the domain organizes into pattern\nfeatures, not the whole domain and not none of it -- and (c) different\n(F, k) regimes produce measurably different pattern morphology (coverage\nfraction), demonstrating the composed system is a genuine, tunable Turing\nsystem, not a fixed numerical artifact.\n"
-        }
-      ],
-      "investigations": [
-        {
-          "name": "fenics-showcase",
-          "description": "FEniCS showcase: seven real dolfinx studies as composable pbg processes"
-        }
-      ],
+      "studies": [],
+      "investigations": [],
       "counts": {
         "processes": 14,
         "steps": 4,
         "composites": 15,
-        "studies": 7,
-        "investigations": 1
+        "studies": 0,
+        "investigations": 0
       },
-      "kind": "workspace",
+      "kind": "simulator",
       "reuses": [],
       "simulator_refs": []
     },
@@ -7590,6 +7556,34 @@
           "description": "Readdy demo"
         },
         {
+          "name": "complex-geometry",
+          "description": "Build the `porous_lattice` composite (a single `PorousFlowStep`: gmsh\npillar-lattice geometry construction -> dolfinx Taylor-Hood import ->\nsteady Stokes solve -> Darcy permeability) for a baseline porosity plus 3\nporosity variants (sweeping `pillar_radius` at fixed 4x4 lattice density)\nand verify (a) every solve is approximately divergence-free and exactly\nno-slip on every pillar/wall boundary, and (b) the effective permeability\nk_eff decreases monotonically as porosity decreases across all 4 points.\n"
+        },
+        {
+          "name": "mesh-convergence",
+          "description": "Run a uniform-refinement sequence and a residual-based adaptive (AMR)\nsequence from the same coarse initial L-shaped mesh, fit the energy-norm-\nerror-vs-DOFs log-log slope for each, and confirm (a) the adaptive slope\nis substantially steeper (closer to the optimal -1/2) than the uniform\nslope (capped near -1/3), and (b) the adaptive mesh's cell density near\nthe re-entrant corner, relative to the far field, grows dramatically\nrelative to the initial mesh -- direct geometric evidence the estimator\nis doing its job, not just producing a better number by coincidence.\n"
+        },
+        {
+          "name": "moving-boundary",
+          "description": "Run the `peristalsis` composite (`PeristalticWallProcess` \u2295\n`PeristalticFlowProcess`, coupled through `mesh_displacement_y` /\n`mesh_velocity_y` / `wall_time` shared stores -- see\n`viva_fenics/processes/peristalsis.py`'s module docstring) at three\nocclusion amplitudes and verify (a) the baseline's post-transient,\ntime-averaged net flow rate Q (`mean_ux`, the domain-averaged\nx-velocity) is genuinely positive, and (b) Q increases monotonically\nacross the amplitude sweep.\n"
+        },
+        {
+          "name": "transient-diffusion",
+          "description": "Run the ``morphogen_gradient`` composite to steady state across THREE\ndecay-length regimes (D fixed, k swept: 1.0/2.0/4.0, giving\nlambda=0.316/0.224/0.158) and confirm (a) each regime's steady profile is\ngenuinely exponential -- a fitted decay length within 10% of the analytic\nlambda=sqrt(D/k), not just a qualitatively decreasing field -- (b) fields\nstay bounded in [0, c0] (no accumulate-vs-overwrite blow-up, no unphysical\nnegative concentration), and (c) French-flag threshold crossings\n(c=0.5*c0, c=0.1*c0) land within 10% of their analytic x-positions AND\nshift monotonically inward as k increases -- demonstrating lambda's\ncontrol over the positional-information map is a real, tunable property\nof the composed system, not a fixed artifact of one parameter set.\n"
+        },
+        {
+          "name": "poisson-validation",
+          "description": "For degree in {1, 2, 3} and a resolution sweep (mesh cells per side: 8,\n16, 32, 64), solve -div(grad(u)) = f on the unit square with f and the\nDirichlet BC derived from u_exact = sin(pi*x)*sin(pi*y), compute each\npoint's L2 error against the true exact solution, and fit the log-log\nconvergence rate (slope of log error vs log h) per degree. Confirm P1's\nrate lands near 2.0, P2's near 3.0, and P3's near 4.0 -- a rigorous\nmulti-order verification, not a single \"error is small\" checkbox.\n"
+        },
+        {
+          "name": "navier-stokes",
+          "description": "Run the `vortex_street` composite (real dolfinx IPCS on a gmsh-generated,\ncylinder-refined channel mesh) long enough to pass through the impulsive-\nstart transient into established periodic shedding, and verify (a) the\nlift coefficient genuinely oscillates (not just noisy/flat), (b) the mean\ndrag coefficient sits in the neighborhood of the DFG 2D-2 benchmark's\nCd_max~=3.22-3.24, and (c) the shedding frequency's Strouhal number sits\nin the neighborhood of the benchmark's St~=0.30.\n"
+        },
+        {
+          "name": "reaction-diffusion",
+          "description": "Run the ``turing_patterns`` composite (2x DiffusionProcess \u2295\nGrayScottReactionProcess) across three Gray-Scott parameter regimes and\nconfirm (a) the baseline regime's V field grows substantially more\nspatially heterogeneous over the run (pattern EMERGES from a near-uniform\nstart), (b) the resulting pattern is bounded and structurally\nnon-trivial -- a finite fraction of the domain organizes into pattern\nfeatures, not the whole domain and not none of it -- and (c) different\n(F, k) regimes produce measurably different pattern morphology (coverage\nfraction), demonstrating the composed system is a genuine, tunable Turing\nsystem, not a fixed numerical artifact.\n"
+        },
+        {
           "name": "bond-network-with-viz",
           "description": "Bond network with viz"
         },
@@ -7664,6 +7658,10 @@
           "description": "Showcase: viva-readdy \u2014 particle reaction\u2013diffusion"
         },
         {
+          "name": "fenics",
+          "description": "FEniCS showcase: seven real dolfinx studies as composable pbg processes"
+        },
+        {
           "name": "caspule",
           "description": "Caspule bond network dynamics"
         },
@@ -7684,8 +7682,8 @@
         "processes": 0,
         "steps": 0,
         "composites": 0,
-        "studies": 26,
-        "investigations": 16
+        "studies": 33,
+        "investigations": 17
       },
       "kind": "workspace",
       "reuses": [
@@ -7695,6 +7693,7 @@
         "viva-comets",
         "viva-copasi",
         "viva-equilibrator",
+        "viva-fenics",
         "viva-grammar",
         "viva-lammps",
         "viva-maboss",
@@ -7754,6 +7753,10 @@
         {
           "repo": "viva-readdy",
           "ref": "0.1.0"
+        },
+        {
+          "repo": "viva-fenics",
+          "ref": "0.3.0"
         },
         {
           "repo": "viva-caspule",
