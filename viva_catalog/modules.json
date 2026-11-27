@@ -135,6 +135,15 @@
     "tags": []
   },
   {
+    "name": "viva-bioreactordesign-studies",
+    "source": "https://github.com/vivarium-collective/viva-bioreactordesign-studies.git",
+    "ref": "main",
+    "package": "viva_bioreactordesign_studies",
+    "homepage": "https://github.com/vivarium-collective/viva-bioreactordesign-studies",
+    "description": "Studies and investigations for viva-bioreactordesign (BiRD bioreactor engine); the simulator is the pinned viva-bioreactordesign package. bird-transport: cell-engine coupling for v2ecoli mbp.",
+    "tags": []
+  },
+  {
     "name": "viva-caspule",
     "source": "https://github.com/vivarium-collective/viva-caspule.git",
     "ref": "main",
