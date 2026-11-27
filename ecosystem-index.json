@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-27T17:27:26+00:00",
-  "n_repos": 76,
-  "n_cloned": 76,
+  "generated_at": "2026-11-27T18:04:21+00:00",
+  "n_repos": 78,
+  "n_cloned": 78,
   "repos": [
     {
       "name": "cdFBA",
@@ -1753,30 +1753,16 @@
           "description": "CASPULE bond-network demo with wired Visualization Steps. Each update produces a Plotly HTML figure of the running scalar trajectories (BondNetworkPlots) and a three.js orbitable 3D viewer of atom positions + bonds (BondNetwork3D), each written to its own store."
         }
       ],
-      "studies": [
-        {
-          "name": "bond-network-with-viz",
-          "description": "Bond network with viz"
-        },
-        {
-          "name": "bond-network-demo",
-          "description": "Bond network demo"
-        }
-      ],
-      "investigations": [
-        {
-          "name": "caspule-bond-network-dynamics",
-          "description": "Caspule bond network dynamics"
-        }
-      ],
+      "studies": [],
+      "investigations": [],
       "counts": {
         "processes": 1,
         "steps": 2,
         "composites": 2,
-        "studies": 2,
-        "investigations": 1
+        "studies": 0,
+        "investigations": 0
       },
-      "kind": "workspace",
+      "kind": "simulator",
       "reuses": [],
       "simulator_refs": []
     },
@@ -1884,6 +1870,60 @@
       "simulator_refs": []
     },
     {
+      "name": "viva-chaste-studies",
+      "repo": "viva-chaste-studies",
+      "source": "https://github.com/vivarium-collective/viva-chaste-studies",
+      "homepage": "https://github.com/vivarium-collective/viva-chaste-studies",
+      "description": "Studies and investigations for viva-chaste (Chaste cell-based engine); the simulator is the pinned pbg-chaste package. Osborne-2017 cell-based-comparison reproduction.",
+      "tags": [],
+      "package": "viva_chaste_studies",
+      "cloned": true,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [
+        {
+          "name": "cbc-03-random-motion-equivalence",
+          "description": "Compare the two forces analytically and numerically \u2014 against the C++ reference from cbc-01,\nwhich can instantiate the real RandomMotionForce \u2014 and either sanction DiffusionForce as the\nsubstitute with an explicit configuration recipe, or refute it and escalate.\n"
+        },
+        {
+          "name": "cbc-04-cell-sorting-reproduction",
+          "description": "Run the paper's sorting protocol across CP, OS, VT and VM at k_pert = 1 over 10 seeds, reduce\nheterotypicboundary.dat to fractional boundary length, and diff against the cbc-01 C++ baseline\nper model per timepoint.\n"
+        },
+        {
+          "name": "cbc-02-onlattice-wrapper-extension",
+          "description": "Extend the wrapper to dispatch OnLatticeSimulation alongside OffLatticeSimulation, add Potts\nand ghost-node populations, two-cell-type labelling, the differential-adhesion forces and\nupdate rules, and surface heterotypic boundary length on an output port.\n"
+        },
+        {
+          "name": "cbc-01-cxx-reference-baseline",
+          "description": "Build Chaste + CellBasedComparison2017, restore the paper parameters that the repo ships\ncommented out, run TestCellSortingLiteratePaper for all five models across 10 seeds, and\narchive the resulting heterotypicboundary.dat files as the investigation's reference dataset.\n"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "cellbased-comparison-2017",
+          "description": "Reproducing Osborne et al. 2017 cell-based model comparison"
+        }
+      ],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 4,
+        "investigations": 1
+      },
+      "kind": "workspace",
+      "reuses": [
+        "viva-chaste"
+      ],
+      "simulator_refs": [
+        {
+          "repo": "viva-chaste",
+          "ref": "0.1.0"
+        }
+      ]
+    },
+    {
       "name": "viva-cobra",
       "repo": "viva-cobra",
       "source": "https://github.com/vivarium-collective/viva-cobra",
@@ -1968,30 +2008,16 @@
           "description": "Tiny well-mixed dynamic FBA demo using cobra's `textbook` E. coli model. Each step solves FBA with Michaelis-Menten uptake bounds, updates biomass/media by explicit Euler, and emits scalar + map signals."
         }
       ],
-      "studies": [
-        {
-          "name": "dfba-textbook-demo",
-          "description": "Dfba textbook demo"
-        },
-        {
-          "name": "dfba-textbook-with-viz",
-          "description": "Dfba textbook with viz"
-        }
-      ],
-      "investigations": [
-        {
-          "name": "dynamic-fba-showcase",
-          "description": "Dynamic fba showcase"
-        }
-      ],
+      "studies": [],
+      "investigations": [],
       "counts": {
         "processes": 3,
         "steps": 1,
         "composites": 2,
-        "studies": 2,
-        "investigations": 1
+        "studies": 0,
+        "investigations": 0
       },
-      "kind": "workspace",
+      "kind": "simulator",
       "reuses": [],
       "simulator_refs": []
     },
@@ -2079,14 +2105,51 @@
       ],
       "composites": [
         {
+          "name": "spheroid-invasion-demo",
+          "description": "CompuCell3D tumor-spheroid-invasion demo: a proliferating seed (growth + mitosis) with low cell-medium adhesion spreads into a rough, invasive front rather than a compact mass, so mean surface rises faster than for compact growth. Same single CompuCell3DProcess with growth/division enabled and invasion-favouring contact energies. Emits cell counts, mean volume/surface, and MCS."
+        },
+        {
+          "name": "chemotaxis-demo",
+          "description": "CompuCell3D chemotaxis demo: type-1 source cells secrete a diffusible Signal field; type-2 responder cells (chemotaxis_lambda > 0) bias their motion up the gradient. Same single CompuCell3DProcess, with the chemotaxis + secretion terms enabled. Emits cell counts, mean volume/surface, and MCS."
+        },
+        {
           "name": "cell-sorting-demo",
           "description": "Tiny CompuCell3D cell-sorting demo: a small two-type blob driven by differential adhesion. Emits cell counts, average volume/surface, and MCS each update."
+        },
+        {
+          "name": "growth-division-demo",
+          "description": "CompuCell3D growth + mitosis demo: each cell target volume ramps upward (growth_rate_per_mcs > 0) and splits via the CPM mitosis steppable when it exceeds division_volume, so the population grows roughly geometrically. Same single CompuCell3DProcess with growth + division enabled. Emits cell counts, mean volume/surface, and MCS."
         },
         {
           "name": "cell-sorting-with-viz",
           "description": "CompuCell3D cell-sorting demo with a wired Visualization Step. Each update produces a Plotly HTML figure of the running scalar trajectories, written to the 'viz_html' store."
         }
       ],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 1,
+        "steps": 1,
+        "composites": 5,
+        "studies": 0,
+        "investigations": 0
+      },
+      "kind": "simulator",
+      "reuses": [],
+      "simulator_refs": []
+    },
+    {
+      "name": "viva-compucell3d-studies",
+      "repo": "viva-compucell3d-studies",
+      "source": "https://github.com/vivarium-collective/viva-compucell3d-studies",
+      "homepage": "https://github.com/vivarium-collective/viva-compucell3d-studies",
+      "description": "Studies and investigations for viva-compucell3d (CompuCell3D cellular-Potts engine); the simulator is the pinned viva-compucell3d package. CPM demonstrations: sorting, chemotaxis, growth, invasion.",
+      "tags": [],
+      "package": "viva_compucell3d_studies",
+      "cloned": true,
+      "processes": [],
+      "steps": [],
+      "composites": [],
       "studies": [
         {
           "name": "chemotaxis",
@@ -2112,15 +2175,22 @@
         }
       ],
       "counts": {
-        "processes": 1,
-        "steps": 1,
-        "composites": 2,
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
         "studies": 4,
         "investigations": 1
       },
       "kind": "workspace",
-      "reuses": [],
-      "simulator_refs": []
+      "reuses": [
+        "viva-compucell3d"
+      ],
+      "simulator_refs": [
+        {
+          "repo": "viva-compucell3d",
+          "ref": "0.1.0"
+        }
+      ]
     },
     {
       "name": "viva-copasi",
@@ -2221,220 +2291,20 @@
           "name": "ReceptorSubcell",
           "kind": "process",
           "description": "Minimal per-cell ligand-receptor occupancy model. Reads the local"
-        },
-        {
-          "name": "ProtrusionEnclosureProcess",
-          "kind": "process",
-          "description": "Host/symbiont differential-adhesion wrapping on the Rust CPM engine."
-        },
-        {
-          "name": "InfectionProcess",
-          "kind": "process",
-          "description": "Influenza H -> I infection transition (Sego 2022 cellularization)."
-        },
-        {
-          "name": "SystemicODEProcess",
-          "kind": "process",
-          "description": "Global Price-2015 influenza immune ODE. Integrates the 10 systemic species {NB, N, T, X, A, B, P, W, G, O} with scipy LSODA over dt_seconds (default one 60 s MCS); the spatial species {H,I,M,K,E,L,C,V,DH} and derived vars {D, Sigma1, Sigma2, DI, R} are frozen as inputs. Emits the integrated state, the six Hill recruitment driver rates, and the T-activation signal sig_1 = a_11*T + a_12*D."
-        },
-        {
-          "name": "ImmuneProcess",
-          "kind": "process",
-          "description": "Off-lattice immune agents that chemotax up a field gradient."
-        },
-        {
-          "name": "EpitheliumProcess",
-          "kind": "process",
-          "description": "CPMProcess + all-field per-cell readout, raw fields, point deposit,"
         }
       ],
       "steps": [],
-      "composites": [
-        {
-          "name": "recruitment",
-          "description": "Chemotactic recruitment (single CPMProcess). Source cells secrete a cue; responders chemotax up it. cue_rate=0 removes the cue; chemo_lambda=0 blocks the response."
-        },
-        {
-          "name": "gg1993",
-          "description": "Glazier & Graner (1993) CPM example (single CPMProcess). The `study` parameter selects which of the 11 paper examples to encode; its exact energies, temperature, area constraint and initial condition come from viva_cpm_studies.gg1993.params.STUDIES[study]."
-        },
-        {
-          "name": "protrusion_enclosure",
-          "description": "Eukaryogenesis S3 (protrusions to enclosure), campaign composite B. A host and a symbiont on the Rust CPM engine; sweeping host-symbiont adhesion j_hs across j_sM - j_hM moves the system through the wrapping transition. Emits enc/enclosure_fraction (1 = fully enclosed) and enc/enclosed."
-        },
-        {
-          "name": "epithelium",
-          "description": "Influenza-sego2022 subsystem 1/5 -- the epithelial tissue substrate: a confluent CPM epithelial sheet (single CPMProcess, no fields, no immune cells). Every other subsystem composes on top of this. Validates the substrate geometry, not a biology reproduction."
-        },
-        {
-          "name": "viral_infection",
-          "description": "Influenza-sego2022 subsystem 2/5 -- viral infection on the epithelium: composes the virus field (secretion/diffusion/decay from InfectedReleasing cells) + the stochastic H->I infection transition on top of the epithelial sheet. Live-demo scene; the lesion-spread + IFN/resistance measurements come from run.run_virus_infection / run_virus_infection_with_ifn."
-        },
-        {
-          "name": "innate_immunity",
-          "description": "Influenza-sego2022 subsystem 3/5 -- innate (macrophage) response: adds macrophages (type M) chemotaxing up the virus field toward the infection on top of the viral-infection scene (interior-placed clusters, an unbiased lambda=0-control geometry). Live-demo scene; the measured localization + chemokine/IL-10 signaling numbers come from run.run_macrophage_response / run_macrophage_signaling. chemotaxis_v_macro=0.0 reproduces the lambda=0 control."
-        },
-        {
-          "name": "cytotoxic_immunity",
-          "description": "Influenza-sego2022 subsystem 4/5 -- cytotoxic (NK + CD8+ T) response: adds NK (type K) + CD8+ (type E) cells chemotaxing up the macrophage-released chemokine field on top of the innate-immunity scene (three interior-placed clusters). Live-demo scene -- LOCALIZATION geometry/chemotaxis only, NO contact-killing step (not expressible in the declarative scene; see killing.contact_kill_rate / run.run_cytotoxic_response for the killing mechanism + measured numbers). chemotaxis_v_nk=chemotaxis_v_cd8=0.0 reproduces the localization control."
-        },
-        {
-          "name": "systemic_ode",
-          "description": "Influenza-sego2022 subsystem 5/5 -- the systemic Price-2015 global (non-spatial) ODE compartment (TNF, ROS, antibody, APC, IL-12, IFN-gamma, CD4+, B, neutrophils) coupled to the epithelial-infection substrate. The hybrid ODE integration + spatial<->ODE coupling + dynamic sig_1 feedback are a custom per-MCS loop (price_ode.GlobalODE), NOT expressible in this declarative scene -- the composite carries the coupled spatial substrate; the ODE mechanism + measured (calibration-pending) numbers come from run.run_global_coupling / run_full_model and viz.global_coupling_figure."
-        },
-        {
-          "name": "full_model",
-          "description": "Influenza-sego2022 -- Task 3.2 (influenza-immune-process-composite epic): the process-bigraph Composite wiring EpitheliumProcess + ImmuneProcess (off-lattice M/K/E agents) + SystemicODEProcess (the Price-2015 global ODE) into one runnable document -- the declarative 'swappable' alternative to run.run_full_model's custom per-MCS driver loop, which remains the source-faithful reference the capstone reproduction studies (repro-fig3b/5/7) use."
-        },
-        {
-          "name": "recruitment_receptor",
-          "description": "Chemotactic recruitment via a receptor-level response (single CPMProcess + one ReceptorSubcell per responder). Responders activate (naive(2) -> activated(3)) once local cue occupancy crosses threshold, and only activated cells chemotax. blocked=True zeroes the activated lambda even for cells that do activate."
-        },
-        {
-          "name": "recruitment_adaptive",
-          "description": "Adaptive receptor recruitment (fold-change detection): single CPMProcess + one AdaptiveReceptorSubcell per responder. Responders activate (naive(2) -> activated(3)) once response = max(0, theta - m) crosses threshold, where m is a slow per-cell setpoint adapting toward occupancy theta -- so a rising cue recruits regardless of background level, while a static background does not. blocked=True zeroes the activated lambda (receptor_gating); epsilon=0 disables adaptation (knockout, pure Hill occupancy)."
-        }
-      ],
-      "studies": [
-        {
-          "name": "repro-fig3b",
-          "description": "Implement `run.repro_fig3b(*, replicas=3, cells_per_side=35, steps=240,\nseed0=0) -> dict` (Task 9.2): loop `replicas` seeds through\n`run.run_full_model(cells_per_side=cells_per_side, steps=steps,\nseed=seed0+i, init_infection_frac=0.05)`; map each run's\n`counts`/`fields`/`ode` sections onto `targets/fig3b.json`'s exact\nobservable keys (`_FIG3B_OBSERVABLE_MAP`); ensemble-mean via\n`bands.aggregate_replicas`; evaluate via `bands.evaluate_study(ensemble,\n\"fig3b\")`. Add `tests/test_influenza_full_model.py::\ntest_repro_fig3b_runs_and_evaluates_bands` (reduced: `replicas=2,\ncells_per_side=15, steps=20`) asserting the ensemble/band_eval dict is\nwell-formed and the uninfected series is non-vacuous (declines under\ninfection) -- NOT that the bands pass, since reduced scale is not\nexpected to. Run that same reduced config directly (not the pytest\nassertions alone) to report the actual per-observable band_eval numbers\nin this study honestly.\n"
-        },
-        {
-          "name": "global-coupling",
-          "description": "Wire `price_ode.GlobalODE` (Task 8.1, the hybrid 10-species integrator,\ndiscrepancy #9) into `run.run_global_coupling`'s per-MCS loop: spatial->\nODE aggregate push (Task 8.2), ODE->spatial dynamic sig_1 feedback (Task\n8.3, discrepancy #11), ODE-driven recruitment (Task 8.4, discrepancy\n#12), and NK/CD8 LOCAL+NEARBY cytotoxic killing (Task 8.5). Measure sig_1's\ndynamic range vs the retired static stub, recruitment inflow/outflow\nrates and population trajectories (default vs boosted eta), and whether\nthe nearby-killing term fires via natural recruitment buildup vs a\ndocumented test-seam override\n(`tests/test_influenza_price_ode.py`, `tests/test_influenza_recruitment.py`,\n`tests/test_influenza_killing.py`, task-8.1 through task-8.5-report.md).\nA minimal in-package figure (`viva_cpm_studies/influenza/viz.py::\nglobal_coupling_figure`, Task 8.6) renders the systemic ODE species\n(T/X/A/P) and the spatial aggregates (I/M/K/E) plus dynamic sig_1 over\nMCS.\n"
-        },
-        {
-          "name": "s3-protrusion-enclosure",
-          "description": "Run the protrusion_enclosure CPM composite (campaign composite B) at strong vs weak host-symbiont adhesion, measure the enclosure fraction (host coverage of the symbiont boundary), and sweep the adhesion x symbiont-surface-tension plane to produce the enclosure phase diagram."
-        },
-        {
-          "name": "vacancy_cavity",
-          "description": "Simulate the sorting energies with A_l=20/A_d=40 and allowed vacancy nucleation to observe cavity formation at 200 MCS.\n"
-        },
-        {
-          "name": "recruitment-inhibited",
-          "description": "Repeat the baseline world with the responder chemotaxis strength set to zero (the\nintervention) and measure the recruitment index over 500 MC sweeps.\n"
-        },
-        {
-          "name": "cell_sorting",
-          "description": "Simulate the sorting energies from a random IC to 13500 MCS and measure boundary lengths, type correlations, <n> across temperature (2-80) and lambda (0.1-10).\n"
-        },
-        {
-          "name": "recruitment-receptor-baseline",
-          "description": "Simulate the receptor-recruitment world (the recruitment_receptor\ncomposite): naive(2)/activated(3) responder sub-types, each carrying a\nReceptorSubcell that computes Hill occupancy from the local cue field, and\nmeasure the recruitment index over 500 MC sweeps across 5 seeds.\n"
-        },
-        {
-          "name": "dispersal_separate",
-          "description": "Simulate gamma_ld=27 from a random IC and observe full light/dark cluster separation at 2000 MCS.\n"
-        },
-        {
-          "name": "ifn-resistance",
-          "description": "Wire the type-I IFN field (Task 3.2, `viva_cpm_studies/influenza/fields.py`\n`add_ifn_field`) and the pure per-cell resistance function (Task 3.3,\n`viva_cpm_studies/influenza/resistance.py::cell_resistance`) into a new\ndriver, `run.run_virus_infection_with_ifn` (Task 3.3), alongside the\nunmodified Increment-2 `run_virus_infection`, and compare their per-update\nseries (n_I, n_H, total_virus, plus `mean_resist` recorded only by the\nwith-IFN driver) at identical seed/parameters (Task 3.3's integration test\n`tests/test_influenza_virus_infection.py::test_ifn_resistance_slows_spread_vs_no_ifn`\nand the fuller with/without series in Task 3.3's report). A minimal\nin-package figure (`viva_cpm_studies/influenza/viz.py::ifn_resistance_figure`,\nTask 3.4) renders both series side by side plus the mean_resist trajectory.\n"
-        },
-        {
-          "name": "annealing",
-          "description": "Anneal the equilibrated all-light pattern at T=0 and measure bulk/total <n> and moments mu2-4 vs MCS to determine convergence speed.\n"
-        },
-        {
-          "name": "position_reversal",
-          "description": "Simulate with gamma_lM=23 from a random IC and measure medium type-correlations to detect position reversal.\n"
-        },
-        {
-          "name": "dispersal_sloughing",
-          "description": "Simulate gamma_lM<0 and observe light-cell dispersal into the medium at 480 MCS (unannealed).\n"
-        },
-        {
-          "name": "recruitment-baseline",
-          "description": "Simulate the CPM recruitment world (source slab + six responders in the gradient\nzone), equilibrate the secreted field, and measure the recruitment index \u2014\nfraction of responders within 15 px of the source \u2014 over 500 MC sweeps.\n"
-        },
-        {
-          "name": "epithelial-sheet-baseline",
-          "description": "Build the epithelial-sheet `load_world` spec (Task 1.1), instantiate and\nrelax the CPM world (Task 1.2), and measure step throughput on the full\n1mm^2 patch (Task 1.3). Wrap the geometry in a process-bigraph composite\n(`viva_cpm_studies.composites.influenza.epithelium`) so the\ndashboard can run a modest (0.1mm, 100-cell) live demo of the same\nsubstrate (Task 1.4, this study).\n"
-        },
-        {
-          "name": "recruitment-adversarial",
-          "description": "Run the world with competent responders but the source secretion turned off, and\nconfirm the recruitment index and metric correctly report no recruitment.\n"
-        },
-        {
-          "name": "partial_sorting",
-          "description": "Swap J_ll/J_ld so gamma_ld=7.5, simulate from a random IC to 2000 MCS, and compare against normal sorting to demonstrate incomplete sorting.\n"
-        },
-        {
-          "name": "repro-fig7-infection-fraction",
-          "description": "Implement `run.repro_fig7(*, fracs=(0.001,0.005,0.01,0.05), replicas=3,\ncells_per_side=35, steps=240, seed0=0) -> dict` (Task 9.4): for each\n`frac`, loop `replicas` seeds through `run.run_full_model(\ncells_per_side=cells_per_side, steps=steps, seed=seed0+frac_idx*replicas+r,\ninit_infection_frac=frac, init_viral_load=None)`; map each run's\n`counts`/`fields`/`ode` sections onto `targets/fig7.json`'s exact 4\nobservable keys (reusing `_FIG5_OBSERVABLE_MAP`); ensemble-mean via\n`bands.aggregate_replicas`; filter that fraction's own band subset from\nfig7.json's multi-scenario observable lists (`_fig7_target_subset`,\nraising `ValueError` rather than silently mixing scenarios if a fraction\nhas no matching entries); evaluate via `_evaluate_fig7_subset`. Add\n`tests/test_influenza_full_model.py::\ntest_repro_fig7_infection_fraction_sweep` (reduced:\n`fracs=(0.001,0.05), replicas=1, cells_per_side=12, steps=15`) asserting\nthe by_frac dict has exactly the tested fractions as keys, the monotone\ndose-response holds (`uninfected_final_frac(0.05) <=\nuninfected_final_frac(0.001) + 1e-9`), and `band_eval` is present -- NOT\nthat the bands pass. ALSO add\n`test_fig7_target_subset_scenario_grouping_guard`, a fast unit test\ndirectly exercising `_fig7_target_subset`'s filter (returns only the\nmatching-tag entries) and its raise (unmatched fraction), closing the\nTask-9.3-review-flagged gap that the guard was previously verified only\ninteractively. Run the reduced config directly (not the pytest assertions\nalone) to report the actual per-fraction, per-observable band_eval numbers\nin this study honestly.\n"
-        },
-        {
-          "name": "engulfment",
-          "description": "Simulate the sorting energies from a top-light/bottom-dark IC to 10000 MCS and measure homotypic and heterotypic fractional lengths to observe engulfment.\n"
-        },
-        {
-          "name": "immune-response",
-          "description": "Run the full immune layer (macrophage, NK, CD8+ T cells) on a ~900-cell\nepithelial sheet seeded with an infected patch, and confirm the immune cells\nchemotax toward the infection and cluster against the sheet.\n"
-        },
-        {
-          "name": "recruitment-receptor-blocked",
-          "description": "Repeat the receptor-recruitment world with blocked=True (the intervention)\nand measure the recruitment index over 500 MC sweeps across 5 seeds.\n"
-        },
-        {
-          "name": "checkerboard",
-          "description": "Simulate gamma_ld<0 from a random IC and measure fractional interface lengths, <n>, moments vs T (0-40) to characterize the checkerboard and its phase transitions.\n"
-        },
-        {
-          "name": "repro-fig5-viral-load",
-          "description": "Implement `run.repro_fig5(*, loads=(1,10,100,1000,10000), replicas=3,\ncells_per_side=35, steps=240, seed0=0) -> dict` (Task 9.3): for each\n`load`, loop `replicas` seeds through `run.run_full_model(\ncells_per_side=cells_per_side, steps=steps, seed=seed0+load_idx*replicas+r,\ninit_viral_load=load, init_infection_frac=None)`; map each run's\n`counts`/`fields`/`ode` sections onto `targets/fig5.json`'s exact 4\nobservable keys (`_FIG5_OBSERVABLE_MAP`); ensemble-mean via\n`bands.aggregate_replicas`; filter that load's own band subset from\nfig5.json's multi-scenario observable lists (`_fig5_target_subset`,\nraising `ValueError` rather than silently mixing scenarios if a load has\nno matching entries); evaluate via `_evaluate_fig5_subset`. Add\n`tests/test_influenza_full_model.py::test_repro_fig5_viral_load_sweep`\n(reduced: `loads=(1,10000), replicas=1, cells_per_side=12, steps=15`)\nasserting the by_load dict has exactly the tested loads as keys, the\nmonotone dose-response holds (`uninfected_final_frac(10000) <=\nuninfected_final_frac(1) + 1e-9`), and `band_eval` is present -- NOT\nthat the bands pass, since reduced scale is not expected to. Run that\nsame reduced config directly (not the pytest assertions alone) to report\nthe actual per-load, per-observable band_eval numbers in this study\nhonestly.\n"
-        },
-        {
-          "name": "recruitment-adaptive",
-          "description": "Author the acceptance contract for the adaptive-receptor rung of the\nfaithful chemotaxis mechanism ladder (viva_cpm_studies.model_building.\nmechanisms): three primary behavior tests plus a receptor-gating control,\nwith pass/fail bands set from real measured recruitment_index values\n(3-12 seeds) already gathered while calibrating the ladder. The loop\ndriver built in the next task runs mechanisms.simulate_condition against\nthese bands; this study does not itself constitute a completed run.\n"
-        },
-        {
-          "name": "dispersal_no_separate",
-          "description": "Simulate gamma_ld=21 from a random IC and show clusters do not separate, contrasting with the gamma_ld=27 case.\n"
-        },
-        {
-          "name": "global_equilibration",
-          "description": "Equilibrate a ~1000-cell brick tiling at T=5 and measure total boundary length, moments and light-Medium fraction to confirm a stable equilibrated IC.\n"
-        },
-        {
-          "name": "virus-field-infection",
-          "description": "Wire the virus field (Task 2.1, `viva_cpm_studies/influenza/fields.py`) and\nthe stochastic infection transition (Task 2.2,\n`viva_cpm_studies/influenza/transitions.py`) together over the Increment-1\nsheet, drive them for 60 updates from a small seeded lesion\n(`viva_cpm_studies/influenza/run.py::run_virus_infection`, Task 2.3), and\nreport the measured spread/locality/null-control behavior from the\nintegration test (`tests/test_influenza_virus_infection.py`). Wrap the\nsame mechanism as a process-bigraph composite\n(`viva_cpm_studies.composites.influenza.viral_infection`, CPMProcess +\nInfectionProcess wired through `fates`) for the dashboard live demo (Task\n2.4, this study) \u2014 measurements come from `run_virus_infection`, not the\nlive-demo composite (see caveat and Task 2.3's report on why the two\npaths use independent RNG streams and are not bit-identical).\n"
-        },
-        {
-          "name": "epithelial-fate",
-          "description": "Wire infected death (Task 4.2, `transitions.infected_death_step`) and the\ncellularized Allee effect (Task 4.3, `viva_cpm_studies/influenza/allee.py`)\ninto a new driver, `run.run_epithelial_fate` (Task 4.3), alongside the\nunmodified Increment-2/3 infection + IFN-resistance path, and measure the\nresulting n_H/n_I/n_D series plus the diagnostic n_allee_death/\nn_allee_recovery counters (Task 4.3's integration tests\n`tests/test_influenza_allee.py::test_lesion_forms_dead_region_grows_over_time`,\n`::test_dead_cell_surrounded_by_uninfected_recovers`,\n`::test_dead_cell_surrounded_by_dying_does_not_recover`, and the fuller\n200/500-step series in task-4.3-report.md). A minimal in-package figure\n(`viva_cpm_studies/influenza/viz.py::epithelial_fate_figure`, Task 4.4)\nrenders the cell-type composition over time plus cumulative Allee event\ncounts.\n"
-        },
-        {
-          "name": "parameter-provenance",
-          "description": "Produce a single, cited parameter file and supporting provenance\ndocumentation that later increments can consume without re-deriving\nconstants from the paper or source, and digitize the paper's Figs 3B, 5, 7\ninto acceptance-band targets for the eventual capstone reproduction.\n"
-        }
-      ],
-      "investigations": [
-        {
-          "name": "endosymbiosis",
-          "description": "The Endosymbiotic Transition \u2014 enclosure mechanics (S3)"
-        },
-        {
-          "name": "glazier-graner-1993",
-          "description": "Glazier & Graner 1993 \u2014 differential-adhesion cell rearrangement"
-        },
-        {
-          "name": "influenza-sego2022",
-          "description": "Influenza infection & immune response (Sego 2022 reproduction)"
-        },
-        {
-          "name": "chemotactic-recruitment",
-          "description": "Chemotactic recruitment"
-        }
-      ],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
       "counts": {
-        "processes": 10,
+        "processes": 5,
         "steps": 0,
-        "composites": 11,
-        "studies": 28,
-        "investigations": 4
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
       },
-      "kind": "workspace",
+      "kind": "simulator",
       "reuses": [
         "viva-tellurium"
       ],
@@ -5487,30 +5357,16 @@
           "description": "Model-plugin seam demo: the general `LammpsModelProcess` driving the registered `lj-box` LennardJonesBox plugin. Same tiny LJ NVE box as lj-nve-demo, but built through the model seam instead of a hand-written input script. Emits temperature and the three energies each step."
         }
       ],
-      "studies": [
-        {
-          "name": "lj-nve-demo",
-          "description": "Lj nve demo"
-        },
-        {
-          "name": "lj-nve-demo-with-viz",
-          "description": "Lj nve demo with viz"
-        }
-      ],
-      "investigations": [
-        {
-          "name": "lammps-lennard-jones-molecular-dynamics",
-          "description": "Lammps lennard jones molecular dynamics"
-        }
-      ],
+      "studies": [],
+      "investigations": [],
       "counts": {
         "processes": 5,
         "steps": 1,
         "composites": 3,
-        "studies": 2,
-        "investigations": 1
+        "studies": 0,
+        "investigations": 0
       },
-      "kind": "workspace",
+      "kind": "simulator",
       "reuses": [],
       "simulator_refs": []
     },
@@ -5880,30 +5736,16 @@
           "description": "MEDYAN-style network demo with a wired Visualization Step. Each update produces a Plotly HTML figure of the running scalar network metrics, written to the 'viz_html' store."
         }
       ],
-      "studies": [
-        {
-          "name": "network-demo-with-viz",
-          "description": "Network demo with viz"
-        },
-        {
-          "name": "network-demo",
-          "description": "Network demo"
-        }
-      ],
-      "investigations": [
-        {
-          "name": "medyan-cytoskeletal-network-mechanics",
-          "description": "Medyan cytoskeletal network mechanics"
-        }
-      ],
+      "studies": [],
+      "investigations": [],
       "counts": {
         "processes": 2,
         "steps": 1,
         "composites": 2,
-        "studies": 2,
-        "investigations": 1
+        "studies": 0,
+        "investigations": 0
       },
-      "kind": "workspace",
+      "kind": "simulator",
       "reuses": [],
       "simulator_refs": []
     },
@@ -5957,34 +5799,16 @@
           "description": "Mem3DG membrane mechanics demo: an icosphere relaxes under bending rigidity, surface tension, and osmotic pressure. Bundles two Visualization Steps: MembranePlots (Plotly time-series of energies/area/volume) and Membrane3D (three.js orbitable mesh viewer)."
         }
       ],
-      "studies": [
-        {
-          "name": "membrane-deflation",
-          "description": "Membrane deflation"
-        },
-        {
-          "name": "membrane-patch",
-          "description": "Membrane patch"
-        },
-        {
-          "name": "membrane-demo",
-          "description": "Membrane demo"
-        }
-      ],
-      "investigations": [
-        {
-          "name": "membrane-mechanics-with-mem3dg",
-          "description": "Membrane mechanics with mem3dg"
-        }
-      ],
+      "studies": [],
+      "investigations": [],
       "counts": {
         "processes": 1,
         "steps": 2,
         "composites": 5,
-        "studies": 3,
-        "investigations": 1
+        "studies": 0,
+        "investigations": 0
       },
-      "kind": "workspace",
+      "kind": "simulator",
       "reuses": [],
       "simulator_refs": []
     },
@@ -7725,26 +7549,16 @@
           "description": "MAPK signalling cycle as a Milner-style Bigraphical Reactive System. MEK phosphorylates ERK in the cytoplasm; phospho-ERK translocates through the nuclear pore into the nucleus; nuclear phosphatases close the cycle. Seven redex \u2192 reactum rewrite rules fire under Gillespie SSA over a nested cell bigraph (Cell \u2283 Cytoplasm \u2283 {Nucleus, ERLumen})."
         }
       ],
-      "studies": [
-        {
-          "name": "mapk-brs-basics",
-          "description": "Reproduce the prior MAPK BRS live demo inside the workbench: run the MAPK\nsignalling cycle as a Milner-style Bigraphical Reactive System under\nGillespie SSA and surface its basic systems \u2014 the initial nested-cell\nbigraph, the seven redex\u2192reactum rewrite rules, the per-compartment\nsubstrate population time series, and the structural snapshots/animation of\nphospho-ERK translocating into the nucleus.\n"
-        }
-      ],
-      "investigations": [
-        {
-          "name": "mapk-signalling",
-          "description": "MAPK signalling as a Bigraphical Reactive System"
-        }
-      ],
+      "studies": [],
+      "investigations": [],
       "counts": {
         "processes": 1,
         "steps": 3,
         "composites": 1,
-        "studies": 1,
-        "investigations": 1
+        "studies": 0,
+        "investigations": 0
       },
-      "kind": "workspace",
+      "kind": "simulator",
       "reuses": [],
       "simulator_refs": []
     },
@@ -8207,30 +8021,16 @@
           "description": "Real TST-MD coupled CPM + bead-spring ECM run (via viva-tstmd / Docker)."
         }
       ],
-      "studies": [
-        {
-          "name": "tstmd-contraction-reorientation",
-          "description": "Run seeded coupled simulations through the real engine and measure, over the contraction, the cell area, the adhesion-ring radius, the near-fiber radius, and fiber reorientation q/q0 \u2014 testing whether the ECM is dragged inward."
-        },
-        {
-          "name": "tstmd-network-connectivity",
-          "description": "Sweep the requested crosslink count over {0, 500, 2000, 5000, 10000, 20000} through the real engine and measure the giant-component fraction of the built network, testing whether it percolates."
-        }
-      ],
-      "investigations": [
-        {
-          "name": "merks-ecm-reciprocity-2d",
-          "description": "Cell-ECM mechanical reciprocity (Merks 3D CPM-ECM, 2D real-engine reproduction \u2014 FAILS: coupling gap)"
-        }
-      ],
+      "studies": [],
+      "investigations": [],
       "counts": {
         "processes": 1,
         "steps": 0,
         "composites": 1,
-        "studies": 2,
-        "investigations": 1
+        "studies": 0,
+        "investigations": 0
       },
-      "kind": "workspace",
+      "kind": "simulator",
       "reuses": [
         "viva-cpm"
       ],
