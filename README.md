@@ -3,6 +3,12 @@
 The **ecosystem ledger** for the [vivarium](https://github.com/vivarium-collective) /
 [process-bigraph](https://github.com/vivarium-collective/process-bigraph) workbench.
 
+> **▶ Browse the live module catalog:
+> [vivarium-collective.github.io/viva-docs/catalog](https://vivarium-collective.github.io/viva-docs/catalog/)**
+> — every registered module grouped by kind, with its processes, composites,
+> studies, and investigations, searchable. Rendered live from this ledger, so a
+> repo appears as soon as it carries the `viva-marketplace` topic.
+
 It answers two questions for the [vivarium-workbench](https://github.com/vivarium-collective/vivarium-workbench)
 Registry, so a workbench can browse the **whole ecosystem** — not just what's
 installed locally — and offer **Install to use**:
