@@ -308,6 +308,72 @@ def _detect_package(root: Path, fallback: str) -> str:
     return fallback
 
 
+_REQ_NAME = re.compile(r"^\s*([A-Za-z0-9][A-Za-z0-9._-]*)")
+
+
+def _canon(name: str) -> str:
+    """PEP 503 canonical distribution name, for matching deps/pins to repos.
+    Collapses runs of - _ . to a single - and lowercases, so ``viva_genesis``,
+    ``viva-genesis`` and ``Viva.Genesis`` all match."""
+    return re.sub(r"[-_.]+", "-", (name or "").strip()).lower()
+
+
+def _parse_pyproject_deps(root: Path) -> set:
+    """Distribution names this repo depends on, canonicalized: from
+    ``[project.dependencies]`` + every ``[project.optional-dependencies]`` group
+    (engines live in extras as often as in the core list) + ``[tool.uv.sources]``
+    keys (git overrides that name catalog repos)."""
+    try:
+        import tomllib
+    except ModuleNotFoundError:  # py<3.11
+        return set()
+    pp = root / "pyproject.toml"
+    if not pp.is_file():
+        return set()
+    try:
+        data = tomllib.loads(pp.read_text(encoding="utf-8"))
+    except Exception:  # noqa: BLE001
+        return set()
+    proj = data.get("project", {}) if isinstance(data, dict) else {}
+    reqs = list(proj.get("dependencies", []) or [])
+    for grp in (proj.get("optional-dependencies", {}) or {}).values():
+        reqs.extend(grp or [])
+    names = set()
+    for r in reqs:
+        if isinstance(r, str):
+            m = _REQ_NAME.match(r)
+            if m:
+                names.add(_canon(m.group(1)))
+    uv_sources = (data.get("tool", {}) or {}).get("uv", {}).get("sources", {})
+    if isinstance(uv_sources, dict):
+        names.update(_canon(k) for k in uv_sources)
+    return names
+
+
+def _scan_study_sim_refs(root: Path) -> list:
+    """The simulator each study pins — the ``simulator: {package, ref}`` block of
+    every ``studies/*/study.yaml`` (``package`` is a distribution name). Unique by
+    (package, ref)."""
+    out, seen = [], set()
+    if not yaml:
+        return out
+    for spec in root.rglob("studies/*/study.yaml"):
+        if ".git" in spec.parts:
+            continue
+        try:
+            d = yaml.safe_load(spec.read_text(encoding="utf-8")) or {}
+        except Exception:  # noqa: BLE001
+            continue
+        sim = d.get("simulator") if isinstance(d, dict) else None
+        if isinstance(sim, dict) and sim.get("package"):
+            ref = "" if sim.get("ref") is None else str(sim.get("ref"))
+            key = (_canon(str(sim["package"])), ref)
+            if key not in seen:
+                seen.add(key)
+                out.append({"package": str(sim["package"]), "ref": ref})
+    return out
+
+
 def harvest_repo(module: dict, timeout: float) -> dict:
     name = module.get("name") or module.get("package") or ""
     source = module.get("source") or module.get("homepage") or ""
@@ -322,6 +388,7 @@ def harvest_repo(module: dict, timeout: float) -> dict:
         "package": fallback_pkg,
         "cloned": False, "processes": [], "steps": [], "composites": [],
         "studies": [], "investigations": [],
+        "_deps": [], "_sim_refs": [],  # resolved to reuses / simulator_refs in main()
     }
     with tempfile.TemporaryDirectory() as td:
         dest = Path(td) / repo
@@ -337,6 +404,8 @@ def harvest_repo(module: dict, timeout: float) -> dict:
                                            ("objective", "purpose", "title", "description"))
             entry["investigations"] = _scan_specs(dest, "investigations", "investigation.yaml",
                                                   ("title", "description", "objective"))
+            entry["_deps"] = sorted(_parse_pyproject_deps(dest))
+            entry["_sim_refs"] = _scan_study_sim_refs(dest)
     entry["counts"] = {k: len(entry[k]) for k in
                        ("processes", "steps", "composites", "studies", "investigations")}
     entry["kind"] = derive_kind(entry["counts"])
@@ -385,6 +454,25 @@ def main(argv=None) -> int:
               f"proc={c['processes']} step={c['steps']} comp={c['composites']} "
               f"study={c['studies']} inv={c['investigations']}", file=sys.stderr)
         repos.append(entry)
+
+    # Resolve cross-repo edges now that every repo is known. Both map a
+    # DISTRIBUTION name (what deps and study pins reference — equal to the repo
+    # name) to a repo; unresolved names (private/un-topic'd/external, e.g.
+    # process-bigraph) simply aren't nodes, so they drop rather than dangle.
+    #   reuses         — repo -> catalog repos it declares a dependency on
+    #   simulator_refs — workspace repo -> the sim repo(s) its studies pin
+    dist_to_repo = {_canon(r["name"]): r["name"] for r in repos}
+    for r in repos:
+        deps = r.pop("_deps", []) or []
+        r["reuses"] = sorted({dist_to_repo[d] for d in deps
+                              if d in dist_to_repo and dist_to_repo[d] != r["name"]})
+        resolved, seen = [], set()
+        for sr in (r.pop("_sim_refs", []) or []):
+            repo = dist_to_repo.get(_canon(sr.get("package", "")))
+            if repo and repo != r["name"] and (repo, sr.get("ref", "")) not in seen:
+                seen.add((repo, sr.get("ref", "")))
+                resolved.append({"repo": repo, "ref": sr.get("ref", "")})
+        r["simulator_refs"] = resolved
 
     index = {
         "generated_at": args.stamp or datetime.now(timezone.utc).isoformat(timespec="seconds"),

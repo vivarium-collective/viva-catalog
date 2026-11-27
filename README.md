@@ -45,6 +45,19 @@ and scans its source into the index. No PR needed. See
   makes sim/studies splits install correctly: `viva-genesis-sim` installs
   `viva_genesis` (not `viva_genesis_sim`), because the un-suffixed package keeps
   the studies' composite refs resolving across the split.
+- **reuses** — the other catalog repos this one *declares* a dependency on, from
+  `[project.dependencies]` + every `[project.optional-dependencies]` group +
+  `[tool.uv.sources]`, intersected with the registry (distribution name → repo).
+  Declared deps, not import scanning — so a repo with its own CPM *processes* but
+  no viva-cpm *dependency* gets no edge, while one that pins the real engine in an
+  extra does. Names that don't resolve to a catalog repo (external / private)
+  simply aren't edges.
+- **simulator_refs** — for a workspace, the sim repo(s) its studies pin:
+  `[{repo, ref}]` resolved from each `studies/*/study.yaml` `simulator.package`,
+  deduped (all of a program's studies usually pin one sim).
+
+Together `reuses` + `simulator_refs` are the two edge types of the **ecosystem
+map** (who provides what, who reuses it, what science depends on it).
 
 This gives complete coverage across the ecosystem whether or not a repo publishes
 a workbench dashboard. Repos that can't be cloned are still listed (empty
