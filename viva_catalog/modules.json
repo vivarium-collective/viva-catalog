@@ -1,5 +1,41 @@
 [
   {
+    "name": "cdFBA",
+    "source": "https://github.com/vivarium-collective/cdFBA.git",
+    "ref": "main",
+    "package": "cdFBA",
+    "homepage": "https://github.com/vivarium-collective/cdFBA",
+    "description": "Community Dynamic Flux Balance Analysis using process-bigraph",
+    "tags": []
+  },
+  {
+    "name": "CRM-FBA",
+    "source": "https://github.com/vivarium-collective/CRM-FBA.git",
+    "ref": "main",
+    "package": "CRM_FBA",
+    "homepage": "https://github.com/vivarium-collective/CRM-FBA",
+    "description": "Consumer Resource Model-coupled dynamic Flux Balance Analysis as process-bigraph composite simulations.",
+    "tags": []
+  },
+  {
+    "name": "discovery-showcase",
+    "source": "https://github.com/vivarium-collective/discovery-showcase.git",
+    "ref": "main",
+    "package": "discovery_showcase",
+    "homepage": "https://github.com/vivarium-collective/discovery-showcase",
+    "description": "Discovery Engine showcase: example-led development program (Episodes 01-10) for A discovery engine for multiscale systems biology.",
+    "tags": []
+  },
+  {
+    "name": "mosaic-compose-sim",
+    "source": "https://github.com/vivarium-collective/mosaic-compose-sim.git",
+    "ref": "main",
+    "package": "mosaic_compose_sim",
+    "homepage": "https://github.com/vivarium-collective/mosaic-compose-sim",
+    "description": "Simulator (composition layer) for MOSAIC \u2014 couples dFBA/gLV/PKPD/ABM models; extracted from mosaic-compose, installs as the mosaic_compose package.",
+    "tags": []
+  },
+  {
     "name": "spatio-flux",
     "source": "https://github.com/vivarium-collective/spatio-flux.git",
     "ref": "main",
@@ -90,6 +126,15 @@
     "tags": []
   },
   {
+    "name": "viva-cobra",
+    "source": "https://github.com/vivarium-collective/viva-cobra.git",
+    "ref": "main",
+    "package": "viva_cobra",
+    "homepage": "https://github.com/vivarium-collective/viva-cobra",
+    "description": "COBRApy flux-balance analysis as process-bigraph components: FBA step, Michaelis-Menten uptake process, and a dynamic-FBA composite.",
+    "tags": []
+  },
+  {
     "name": "viva-comets",
     "source": "https://github.com/vivarium-collective/viva-comets.git",
     "ref": "main",
@@ -135,6 +180,15 @@
     "tags": []
   },
   {
+    "name": "viva-dynamic-networks",
+    "source": "https://github.com/vivarium-collective/viva-dynamic-networks.git",
+    "ref": "main",
+    "package": "viva_dynamic_networks",
+    "homepage": "https://github.com/vivarium-collective/viva-dynamic-networks",
+    "description": "Dynamic networks as process-bigraph reactions: a catalog of network-reconfiguring rules + SBML reactors on evolving networks",
+    "tags": []
+  },
+  {
     "name": "viva-emitters",
     "source": "https://github.com/vivarium-collective/viva-emitters.git",
     "ref": "main",
@@ -171,6 +225,15 @@
     "tags": []
   },
   {
+    "name": "viva-fipy",
+    "source": "https://github.com/vivarium-collective/viva-fipy.git",
+    "ref": "main",
+    "package": "viva_fipy",
+    "homepage": "https://github.com/vivarium-collective/viva-fipy",
+    "description": "Genuine FiPy finite-volume engine as reusable primitives + a general reaction-advection-diffusion process-bigraph process.",
+    "tags": []
+  },
+  {
     "name": "viva-genesis",
     "source": "https://github.com/vivarium-collective/viva-genesis.git",
     "ref": "main",
@@ -180,12 +243,66 @@
     "tags": []
   },
   {
+    "name": "viva-genesis-sim",
+    "source": "https://github.com/vivarium-collective/viva-genesis-sim.git",
+    "ref": "main",
+    "package": "viva_genesis_sim",
+    "homepage": "https://github.com/vivarium-collective/viva-genesis-sim",
+    "description": "Simulator for the viva-genesis research program \u2014 process-bigraph composites, processes, and genuine-engine bridges (origin of life, eukaryogenesis, multicellularity). Extracted from viva-genesis; installs as the viva_genesis package.",
+    "tags": []
+  },
+  {
+    "name": "viva-grammar",
+    "source": "https://github.com/vivarium-collective/viva-grammar.git",
+    "ref": "main",
+    "package": "viva_grammar",
+    "homepage": "https://github.com/vivarium-collective/viva-grammar",
+    "description": "Generic, ABM-agnostic implementation of the Macklin/PhysiCell cell-behavior hypothesis grammar (Cell 2025) as a process-bigraph module",
+    "tags": []
+  },
+  {
     "name": "viva-human-atlas",
     "source": "https://github.com/vivarium-collective/viva-human-atlas.git",
     "ref": "main",
     "package": "viva_human_atlas",
     "homepage": "https://github.com/vivarium-collective/viva-human-atlas",
     "description": "HRA/WPP modeling workspace",
+    "tags": []
+  },
+  {
+    "name": "viva-hybrid",
+    "source": "https://github.com/vivarium-collective/viva-hybrid.git",
+    "ref": "main",
+    "package": "viva_hybrid",
+    "homepage": "https://github.com/vivarium-collective/viva-hybrid",
+    "description": "Trial: pure-Rust hybrid ODE/SSA engine (SBML + partition metadata) vs Python baselines",
+    "tags": []
+  },
+  {
+    "name": "viva-iirabm",
+    "source": "https://github.com/vivarium-collective/viva-iirabm.git",
+    "ref": "main",
+    "package": "viva_iirabm",
+    "homepage": "https://github.com/vivarium-collective/viva-iirabm",
+    "description": "Process-bigraph wrapper for the An & Cockrell IIRABM; reproduces the 2018 sepsis-controllability paper (PLoS Comput Biol e1005876)",
+    "tags": []
+  },
+  {
+    "name": "viva-island-biogeography-sim",
+    "source": "https://github.com/vivarium-collective/viva-island-biogeography-sim.git",
+    "ref": "main",
+    "package": "viva_island_biogeography_sim",
+    "homepage": "https://github.com/vivarium-collective/viva-island-biogeography-sim",
+    "description": "Simulator for the viva-island-biogeography research program \u2014 processes, composites, and evaluators extracted from viva-island-biogeography; installs as the viva_island_biogeography package.",
+    "tags": []
+  },
+  {
+    "name": "viva-julia-diffeqs",
+    "source": "https://github.com/vivarium-collective/viva-julia-diffeqs.git",
+    "ref": "main",
+    "package": "viva_julia_diffeqs",
+    "homepage": "https://github.com/vivarium-collective/viva-julia-diffeqs",
+    "description": "Process-bigraph wrapper for Julia's DifferentialEquations.jl SBML simulation \u2014 the Julia counterpart to viva-tellurium and viva-copasi",
     "tags": []
   },
   {
@@ -213,6 +330,15 @@
     "package": "viva_lumenoid",
     "homepage": "https://github.com/vivarium-collective/viva-lumenoid",
     "description": "collagen IV basement-membrane network (AICS Lumenoids v1)",
+    "tags": []
+  },
+  {
+    "name": "viva-lumenoid-sim",
+    "source": "https://github.com/vivarium-collective/viva-lumenoid-sim.git",
+    "ref": "main",
+    "package": "viva_lumenoid_sim",
+    "homepage": "https://github.com/vivarium-collective/viva-lumenoid-sim",
+    "description": "Simulator for viva-lumenoid \u2014 collagen IV basement-membrane mechanics + Tyssue vertex coupling; extracted from viva-lumenoid, installs as the viva_lumenoid package.",
     "tags": []
   },
   {
@@ -273,12 +399,30 @@
     "tags": []
   },
   {
+    "name": "viva-multicell-blueprint-sim",
+    "source": "https://github.com/vivarium-collective/viva-multicell-blueprint-sim.git",
+    "ref": "main",
+    "package": "viva_multicell_blueprint_sim",
+    "homepage": "https://github.com/vivarium-collective/viva-multicell-blueprint-sim",
+    "description": "Simulator for the viva-multicell-blueprint research program \u2014 backend-neutral multicellular blueprint engine (CPM / vertex / center-based / particle / subcellular ODE + Boolean). Extracted from viva-multicell-blueprint; installs as the viva_multicell_blueprint package.",
+    "tags": []
+  },
+  {
     "name": "viva-munk",
     "source": "https://github.com/vivarium-collective/viva-munk.git",
     "ref": "main",
     "package": "viva_munk",
     "homepage": "https://github.com/vivarium-collective/viva-munk",
     "description": "vivarium wrapper for pymunk",
+    "tags": []
+  },
+  {
+    "name": "viva-munk-studies",
+    "source": "https://github.com/vivarium-collective/viva-munk-studies.git",
+    "ref": "main",
+    "package": "viva_munk_studies",
+    "homepage": "https://github.com/vivarium-collective/viva-munk-studies",
+    "description": "Studies and investigations for viva-munk (pymunk 2D multi-cell physics); the simulator is the pinned viva-munk package. Onboarding to the vivarium-workbench.",
     "tags": []
   },
   {
@@ -354,6 +498,24 @@
     "tags": []
   },
   {
+    "name": "viva-phreeqc",
+    "source": "https://github.com/vivarium-collective/viva-phreeqc.git",
+    "ref": "main",
+    "package": "viva_phreeqc",
+    "homepage": "https://github.com/vivarium-collective/viva-phreeqc",
+    "description": "Genuine USGS PHREEQC (IPhreeqc) engine as a reusable, config-driven process-bigraph bridge.",
+    "tags": []
+  },
+  {
+    "name": "viva-pulse",
+    "source": "https://github.com/vivarium-collective/viva-pulse.git",
+    "ref": "main",
+    "package": "viva_pulse",
+    "homepage": "https://github.com/vivarium-collective/viva-pulse",
+    "description": "Process-bigraph wrapper driving the real Kitware Pulse Physiology Engine",
+    "tags": []
+  },
+  {
     "name": "viva-pysces",
     "source": "https://github.com/vivarium-collective/viva-pysces.git",
     "ref": "main",
@@ -423,6 +585,15 @@
     "package": "viva_torch",
     "homepage": "https://github.com/vivarium-collective/viva-torch",
     "description": "Neural-network surrogate Processes for process-bigraph \u2014 learn a drop-in approximation of any Process/Composite",
+    "tags": []
+  },
+  {
+    "name": "viva-tstmd",
+    "source": "https://github.com/vivarium-collective/viva-tstmd.git",
+    "ref": "main",
+    "package": "viva_tstmd",
+    "homepage": "https://github.com/vivarium-collective/viva-tstmd",
+    "description": "Process-bigraph bridge to the real TST-MD engine (hybrid cellular Potts + bead-spring ECM; Tsingos et al. 2023), run CPU-only via Docker. The 2D engine behind the Merks 3D CPM-ECM reproduction.",
     "tags": []
   },
   {

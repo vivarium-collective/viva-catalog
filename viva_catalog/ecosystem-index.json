@@ -1,8 +1,297 @@
 {
-  "generated_at": "2026-11-26T15:59:39+00:00",
-  "n_repos": 50,
-  "n_cloned": 50,
+  "generated_at": "2026-11-27T14:47:43+00:00",
+  "n_repos": 69,
+  "n_cloned": 69,
   "repos": [
+    {
+      "name": "cdFBA",
+      "repo": "cdFBA",
+      "source": "https://github.com/vivarium-collective/cdFBA",
+      "homepage": "https://github.com/vivarium-collective/cdFBA",
+      "description": "Community Dynamic Flux Balance Analysis using process-bigraph",
+      "tags": [],
+      "cloned": true,
+      "processes": [
+        {
+          "name": "dFBA",
+          "kind": "process",
+          "description": "Performs single time-step of dynamic FBA"
+        },
+        {
+          "name": "StaticConcentration",
+          "kind": "process",
+          "description": "The StaticConcentration process maintains the concentration of given substrates at a fixed value at each time-step"
+        },
+        {
+          "name": "WaveFunction",
+          "kind": "process",
+          "description": "The WaveFunction process maintains the concentration of given substrates based on a wave-function"
+        },
+        {
+          "name": "Injector",
+          "kind": "process",
+          "description": "The Injector process injects a given amount of a given substrate at regular intervals into the shared environment"
+        }
+      ],
+      "steps": [
+        {
+          "name": "UpdateEnvironment",
+          "kind": "step",
+          "description": ""
+        },
+        {
+          "name": "EnvironmentMonitor",
+          "kind": "step",
+          "description": "Monitors parameters in the shared environment and performs add and remove operations to"
+        }
+      ],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 4,
+        "steps": 2,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "CRM-FBA",
+      "repo": "CRM-FBA",
+      "source": "https://github.com/vivarium-collective/CRM-FBA",
+      "homepage": "https://github.com/vivarium-collective/CRM-FBA",
+      "description": "Consumer Resource Model-coupled dynamic Flux Balance Analysis as process-bigraph composite simulations.",
+      "tags": [],
+      "cloned": true,
+      "processes": [
+        {
+          "name": "CRMProcess",
+          "kind": "process",
+          "description": ""
+        },
+        {
+          "name": "CRMDynamicFBAMonolithic",
+          "kind": "process",
+          "description": "Original single-process CRM-coupled dynamic FBA."
+        }
+      ],
+      "steps": [],
+      "composites": [
+        {
+          "name": "crm_fba_community",
+          "description": "Two-species E. coli community (glucose + acetate specialists) sharing one glucose/acetate pool: niche differentiation by acetate cross-feeding."
+        }
+      ],
+      "studies": [
+        {
+          "name": "two-species-community",
+          "description": "Simulate the two-species crm_fba_community composite on the E. coli core GSM and measure per-species biomass and the shared glucose/acetate pools to determine whether the acetate specialist's growth is sustained by the glucose specialist's acetate overflow (niche differentiation) rather than by direct competition for glucose."
+        }
+      ],
+      "investigations": [
+        {
+          "name": "community-cross-feeding",
+          "description": "Cross-feeding in a two-species community"
+        }
+      ],
+      "counts": {
+        "processes": 2,
+        "steps": 0,
+        "composites": 1,
+        "studies": 1,
+        "investigations": 1
+      }
+    },
+    {
+      "name": "discovery-showcase",
+      "repo": "discovery-showcase",
+      "source": "https://github.com/vivarium-collective/discovery-showcase",
+      "homepage": "https://github.com/vivarium-collective/discovery-showcase",
+      "description": "Discovery Engine showcase: example-led development program (Episodes 01-10) for A discovery engine for multiscale systems biology.",
+      "tags": [],
+      "cloned": true,
+      "processes": [
+        {
+          "name": "MonodGrowth",
+          "kind": "process",
+          "description": "Well-mixed Monod batch growth with product inhibition and a density cap."
+        },
+        {
+          "name": "PathwayProcess",
+          "kind": "process",
+          "description": "Two-step metabolic pathway S -> I -> P with optional product-feedback inhibition."
+        }
+      ],
+      "steps": [],
+      "composites": [
+        {
+          "name": "monod_batch",
+          "description": "Well-mixed Monod batch culture: MonodGrowth on biomass/substrate/byproduct, with toggleable product inhibition and density cap (the growth-limitation baseline)."
+        },
+        {
+          "name": "pathway_pulse",
+          "description": "Two-step metabolic pathway S->I->P with optional product-feedback inhibition, pulsed with substrate after equilibration. The peak intermediate I discriminates the feedback mechanism; used to grade the structural revision through the engine."
+        }
+      ],
+      "studies": [
+        {
+          "name": "spatial-colony",
+          "description": "Does a spatial dynamic-FBA colony grow and accumulate an inhibitory byproduct across space?"
+        },
+        {
+          "name": "growth-plateau",
+          "description": "Why does the batch culture stop growing, and which intervention identifies the cause?"
+        },
+        {
+          "name": "pathway-revision",
+          "description": "Does the structural revision (added product feedback) generalize to a held-out pulse through the engine?"
+        },
+        {
+          "name": "particle-colony",
+          "description": "Do particles carrying their own metabolism grow in biomass and proliferate by division?"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "agent-based-colony",
+          "description": "Agent-based colony \u2014 do particles carrying their own metabolism grow and divide into a colony?"
+        },
+        {
+          "name": "spatial-metabolism",
+          "description": "Spatial metabolism \u2014 does a spatial dFBA colony grow and self-inhibit across space?"
+        },
+        {
+          "name": "metabolic-feedback",
+          "description": "Metabolic feedback \u2014 is a model inadequacy fixed by refitting parameters or by revising structure?"
+        },
+        {
+          "name": "growth-limitation",
+          "description": "Growth limitation \u2014 what stops a batch culture, and can the engine recover it?"
+        }
+      ],
+      "counts": {
+        "processes": 2,
+        "steps": 0,
+        "composites": 2,
+        "studies": 4,
+        "investigations": 4
+      }
+    },
+    {
+      "name": "mosaic-compose-sim",
+      "repo": "mosaic-compose-sim",
+      "source": "https://github.com/vivarium-collective/mosaic-compose-sim",
+      "homepage": "https://github.com/vivarium-collective/mosaic-compose-sim",
+      "description": "Simulator (composition layer) for MOSAIC \u2014 couples dFBA/gLV/PKPD/ABM models; extracted from mosaic-compose, installs as the mosaic_compose package.",
+      "tags": [],
+      "cloned": true,
+      "processes": [],
+      "steps": [
+        {
+          "name": "CryptSpatialMap",
+          "kind": "visualization",
+          "description": "Scatter of the Potts crypt cells, colored by cell type (spatial snapshot)."
+        },
+        {
+          "name": "CryptCensus",
+          "kind": "step",
+          "description": "Emit per-fate cell counts (stem / goblet / absorptive) as scalars each tick."
+        },
+        {
+          "name": "CountCells",
+          "kind": "step",
+          "description": "Count Cells \u2014 population readout: N = number of agents in the colony store, written each tick as the current colony size."
+        },
+        {
+          "name": "OneCarbonHomocysteine",
+          "kind": "visualization",
+          "description": "Homocysteine vs estradiol over the menstrual cycle (Kim 2021 reimplementation)."
+        },
+        {
+          "name": "EstrogenEnterohepatic",
+          "kind": "visualization",
+          "description": "Systemic / conjugate / gut-lumen estrogen compartments over time."
+        },
+        {
+          "name": "CocultureCompetition",
+          "kind": "visualization",
+          "description": "Two organisms' biomass (log) + the shared glucose pool over the active window."
+        },
+        {
+          "name": "AmineCrossfeeding",
+          "kind": "visualization",
+          "description": "Lactobacillus/Gardnerella/amine-pool/pH dynamics of the BV amine cross-feeding ODE."
+        },
+        {
+          "name": "GLVCompetition",
+          "kind": "visualization",
+          "description": "Lactobacillus vs Gardnerella relative abundance over time (gLV competition)."
+        },
+        {
+          "name": "DFBAGrowth",
+          "kind": "visualization",
+          "description": "Biomass growth + substrate depletion over time (dynamic FBA), dual y-axis."
+        },
+        {
+          "name": "GLVPhasePortrait",
+          "kind": "visualization",
+          "description": "(Gardnerella, Lactobacillus) phase-space trajectory colored by time."
+        },
+        {
+          "name": "BiofilmColonyGrowth",
+          "kind": "visualization",
+          "description": "Colony size (cell count) over time for the agent-based biofilm."
+        }
+      ],
+      "composites": [
+        {
+          "name": "mosaic_dfba_ecoli_core",
+          "description": "Dynamic-FBA metabolic-arm template: Michaelis-Menten uptake constraining COBRApy FBA on the E. coli core GEM (diauxic glucose -> acetate overflow). The reusable MOSAIC metabolic-module pattern \u2014 swap in a tissue/microbe GEM."
+        },
+        {
+          "name": "mosaic_dfba_lactobacillus",
+          "description": "Dynamic-FBA of a lactic-acid bacterium (L. lactis iNF517) as a vaginal-microbiome metabolic proxy for Aim 1 (Lactobacillus-dominant, lactate-producing states): Michaelis-Menten uptake constraining COBRApy FBA on glucose + glutamate."
+        },
+        {
+          "name": "mosaic_crypt_cpm",
+          "description": "Spatial Cellular-Potts colonic crypt (viva-cpm) over the HRA crypt FTU: Wnt-secreting stem niche at the base, goblet/absorptive differentiation along the gradient. Lattice spatial model. Renders a cell-type map (spatial snapshot) and emits per-fate cell counts."
+        },
+        {
+          "name": "mosaic_biofilm_colony",
+          "description": "Spatial agent-based biofilm (viva-munk's biofilm_document): rod cells grow by an adder rule (~40-min doubling) and divide, pushing on each other via pymunk physics as the colony packs a 2-D chamber. The ABM / spatial model type. Emits colony size (cell count); viva-munk's MultibodyViz renders the spatial colony."
+        },
+        {
+          "name": "mosaic_estrogen_enterohepatic",
+          "description": "Estrogen enterohepatic recycling as a kinetic / PK-PD ODE \u2014 hepatic conjugation, biliary delivery, microbial beta-glucuronidase deconjugation (estrobolome), and reabsorption. Model authored inline as Antimony (shown in the study's Model tab); the `gus` parameter tunes how strongly the gut microbiome raises systemic estrogen exposure."
+        },
+        {
+          "name": "mosaic_onecarbon_cycle",
+          "description": "Hepatic one-carbon / methionine cycle over the menstrual cycle \u2014 a faithful recreation of Kim, Nijhout & Reed 2021 (PLOS Comp Biol): estradiol activates CBS (transsulfuration), so homocysteine varies inversely with estradiol (lowest at the ovulatory E2 peak). Built on the curated Reed2004 methionine-cycle SBML (BioModels BIOMD0000000698) + Kim's h(E2) CBS forcing and a Fourier-fit menstrual E2(t). Integrated with libroadrunner/CVODE via viva-tellurium."
+        },
+        {
+          "name": "mosaic_glv_vaginal",
+          "description": "Vaginal microbiome community dynamics as a generalized Lotka-Volterra (gLV) ODE \u2014 Lactobacillus vs Gardnerella competitive bistability (BV). Model authored inline as Antimony (shown in the study's Model tab); integrated with libroadrunner/CVODE via viva-tellurium."
+        },
+        {
+          "name": "mosaic_dfba_coculture",
+          "description": "Process-bigraph COMPOSITION: two dynamic-FBA organisms (E. coli core + Lactobacillus iNF517) sharing one substrate pool and competing for glucose. Each model runs standalone in its own study; here they are coupled through a shared `substrates` store (FBA writes consumption deltas, so competition composes additively \u2014 no custom coupling process)."
+        },
+        {
+          "name": "mosaic_amine_crossfeeding",
+          "description": "BV biogenic-amine cross-feeding as a mechanistic ODE \u2014 Gardnerella-derived amines inhibit Lactobacillus growth and suppress lactic acid (raising pH), while Lactobacillus degrades amines and acidifies (lowering pH). The two-way loop is bistable: a protective acidic Lactobacillus state vs a BV state with a ~mM amine pool. Amine inhibition anchored to Borgogna 2021; degradation + pH coupling from Puebla-Barragan 2021. Authored inline as Antimony; integrated with libroadrunner/CVODE via viva-tellurium."
+        }
+      ],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 11,
+        "composites": 9,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
     {
       "name": "spatio-flux",
       "repo": "spatio-flux",
@@ -1255,6 +1544,44 @@
       }
     },
     {
+      "name": "viva-cobra",
+      "repo": "viva-cobra",
+      "source": "https://github.com/vivarium-collective/viva-cobra",
+      "homepage": "https://github.com/vivarium-collective/viva-cobra",
+      "description": "COBRApy flux-balance analysis as process-bigraph components: FBA step, Michaelis-Menten uptake process, and a dynamic-FBA composite.",
+      "tags": [],
+      "cloned": true,
+      "processes": [
+        {
+          "name": "DynamicFBAProcess",
+          "kind": "process",
+          "description": "Dynamic FBA as one temporal Process: each interval, Michaelis-Menten uptake rates V\u2090 = Vmax\u2090\u00b7S\u2090/(Km\u2090+S\u2090), each capped at what its pool can supply over the step, set the exchange lower bounds, COBRApy solves the FBA LP, and the growth rate and exchange fluxes are integrated over the interval into biomass and substrate deltas."
+        },
+        {
+          "name": "MichaelisMentenUptakeProcess",
+          "kind": "process",
+          "description": "Michaelis-Menten (Monod) substrate uptake \u2014 a saturating per-resource uptake rate V\u2090 = Vmax\u2090\u00b7S\u2090/(Km\u2090 + S\u2090) that rises linearly at low substrate and plateaus at Vmax\u2090 once S\u2090 \u226b Km\u2090."
+        }
+      ],
+      "steps": [
+        {
+          "name": "FBAStep",
+          "kind": "step",
+          "description": "Steady-state flux-balance analysis (FBA) LP: maximize the biomass objective c\u1d40v subject to the mass-balance constraint S\u00b7v = 0 and flux bounds lb \u2264 v \u2264 ub, with exchange lower bounds driven by the incoming uptake rates (lb = -u), each capped at what its pool can supply over the step. The optimal growth rate \u03bc and exchange fluxes are integrated over the interval \u0394t into biomass and substrate deltas."
+        }
+      ],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 2,
+        "steps": 1,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
       "name": "viva-comets",
       "repo": "viva-comets",
       "source": "https://github.com/vivarium-collective/viva-comets",
@@ -1748,6 +2075,174 @@
       }
     },
     {
+      "name": "viva-dynamic-networks",
+      "repo": "viva-dynamic-networks",
+      "source": "https://github.com/vivarium-collective/viva-dynamic-networks",
+      "homepage": "https://github.com/vivarium-collective/viva-dynamic-networks",
+      "description": "Dynamic networks as process-bigraph reactions: a catalog of network-reconfiguring rules + SBML reactors on evolving networks",
+      "tags": [],
+      "cloned": true,
+      "processes": [
+        {
+          "name": "NetworkSBMLReactors",
+          "kind": "process",
+          "description": "A COPASI/SBML reactor at every node; emits per-node reaction deltas."
+        },
+        {
+          "name": "NetworkTransport",
+          "kind": "process",
+          "description": "Diffuse node species along edges (Fickian flux D\u00b7weight\u00b7(X_j \u2212 X_i))."
+        },
+        {
+          "name": "SpeciesSyncMetric",
+          "kind": "process",
+          "description": "Emit across-node synchrony + amplitude observables for one species."
+        },
+        {
+          "name": "NetworkDynamicsProcess",
+          "kind": "process",
+          "description": "Apply one dynamic-network reaction per step to a bigraph-stored graph."
+        },
+        {
+          "name": "NetworkMetrics",
+          "kind": "process",
+          "description": "Derive scalar graph metrics each step \u2192 a persistable observable series."
+        }
+      ],
+      "steps": [
+        {
+          "name": "NetworkEvolution",
+          "kind": "visualization",
+          "description": "Accumulate ``(nodes, edges)`` each tick; render the Plotly animation."
+        }
+      ],
+      "composites": [
+        {
+          "name": "growing_repressilator_network",
+          "description": "Dynamics on a GROWING topology: forest-fire growth adds Repressilator reactor-nodes over time while protein diffusion couples them \u2014 newcomers join at their own phase and entrain. (Forest-fire growth gives the dense local coupling that lets the growing network synchronise at a numerically stable D.)"
+        },
+        {
+          "name": "rewiring_repressilator_network",
+          "description": "Dynamics on a REWIRING topology: a ring of Repressilator reactors whose edges are continuously small-world-rewired while the coupled oscillators run."
+        },
+        {
+          "name": "erdos_renyi",
+          "description": "Random growth (Erd\u0151s\u2013R\u00e9nyi): a node arrives each step and links to each existing node with probability p. Poisson degrees; the null baseline every other rule is read against."
+        },
+        {
+          "name": "preferential_attachment",
+          "description": "Barab\u00e1si\u2013Albert: a node arrives each step with m edges to existing nodes chosen with probability \u221d degree \u2014 scale-free hubs emerge ('rich get richer')."
+        },
+        {
+          "name": "fitness_attachment",
+          "description": "Bianconi\u2013Barab\u00e1si: preferential attachment weighted by an intrinsic per-node fitness \u03b7 \u2014 a fit latecomer can overtake older hubs."
+        },
+        {
+          "name": "duplication_divergence",
+          "description": "Duplication\u2013divergence: a new node copies a random node's edges, retaining each with probability q (optional parent link with probability p) \u2014 reproduces protein-network topology."
+        },
+        {
+          "name": "forest_fire",
+          "description": "Forest-fire growth: a new node burns recursively outward from a random ambassador \u2014 densification and shrinking diameter."
+        },
+        {
+          "name": "small_world_rewire",
+          "description": "Watts\u2013Strogatz: on a ring lattice, rewire a random edge with probability p each step \u2014 a tidy ring dissolves into a small world (high clustering, short paths)."
+        },
+        {
+          "name": "adaptive_rewire",
+          "description": "Gross\u2013Blasius coevolution: opinions spread voter-style while, with rate w, nodes cut ties to differing neighbours and reconnect to like-minded ones \u2014 topology and state co-adapt."
+        },
+        {
+          "name": "activity_driven",
+          "description": "Perra activity-driven temporal network: each step all edges reset, then each node fires with probability \u221d its activity and links to m random others \u2014 a blinking contact sequence."
+        },
+        {
+          "name": "repressilator_network_coupled",
+          "description": "A ring of Repressilator reactors (SBML at each node, via viva-copasi) coupled by protein diffusion along the edges \u2014 the oscillators synchronise."
+        },
+        {
+          "name": "repressilator_network_uncoupled",
+          "description": "The same ring of Repressilator reactors with diffusion off (D=0) \u2014 independent oscillators that stay out of phase."
+        }
+      ],
+      "studies": [
+        {
+          "name": "12-coevolving-rewiring-network",
+          "description": "Run the rewiring_repressilator_network composite \u2014 SBML reactors + transport on a topology that a PBG reaction reconfigures during the run \u2014 and measure synchrony.\n"
+        },
+        {
+          "name": "03-small-world-rewiring",
+          "description": "Run the small_world_rewire reaction and show how it reconfigures the network, measuring its signature structural observables.\n"
+        },
+        {
+          "name": "10-sbml-nodes-uncoupled",
+          "description": "Run the repressilator_network_uncoupled composite (SBML reactors + inter-node transport) and measure across-node synchrony.\n"
+        },
+        {
+          "name": "02-preferential-attachment",
+          "description": "Run the preferential_attachment reaction and show how it reconfigures the network, measuring its signature structural observables.\n"
+        },
+        {
+          "name": "13-quorum-sensing-coupling",
+          "description": "Extend the node SBML model with a signaling species and diffuse only that molecule; compare synchronisation to study 09.\n"
+        },
+        {
+          "name": "01-erdos-renyi-random-growth",
+          "description": "Run the erdos_renyi reaction and show how it reconfigures the network, measuring its signature structural observables.\n"
+        },
+        {
+          "name": "07-adaptive-coevolution",
+          "description": "Run the adaptive_rewire reaction and show how it reconfigures the network, measuring its signature structural observables.\n"
+        },
+        {
+          "name": "05-duplication-divergence",
+          "description": "Run the duplication_divergence reaction and show how it reconfigures the network, measuring its signature structural observables.\n"
+        },
+        {
+          "name": "04-fitness-condensation",
+          "description": "Run the fitness_attachment reaction and show how it reconfigures the network, measuring its signature structural observables.\n"
+        },
+        {
+          "name": "11-coevolving-growing-network",
+          "description": "Run the growing_repressilator_network composite \u2014 SBML reactors + transport on a topology that a PBG reaction reconfigures during the run \u2014 and measure synchrony.\n"
+        },
+        {
+          "name": "09-sbml-nodes-coupled",
+          "description": "Run the repressilator_network_coupled composite (SBML reactors + inter-node transport) and measure across-node synchrony.\n"
+        },
+        {
+          "name": "15-sbml-adaptive-coevolution",
+          "description": "Couple an SBML-observable-driven rewiring rule to the Family-B reactors, so topology and continuous state co-adapt (the continuous generalisation of study 07).\n"
+        },
+        {
+          "name": "14-brusselator-model-agnostic",
+          "description": "Vendor a Brusselator SBML, point the reactors at it, and reproduce a Family-B/C study to demonstrate model-independence.\n"
+        },
+        {
+          "name": "08-activity-driven-temporal",
+          "description": "Run the activity_driven reaction and show how it reconfigures the network, measuring its signature structural observables.\n"
+        },
+        {
+          "name": "06-forest-fire-densification",
+          "description": "Run the forest_fire reaction and show how it reconfigures the network, measuring its signature structural observables.\n"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "dynamic-networks",
+          "description": "Dynamic Networks \u2014 a catalog of network-reconfiguring rules"
+        }
+      ],
+      "counts": {
+        "processes": 5,
+        "steps": 1,
+        "composites": 12,
+        "studies": 15,
+        "investigations": 1
+      }
+    },
+    {
       "name": "viva-emitters",
       "repo": "viva-emitters",
       "source": "https://github.com/vivarium-collective/viva-emitters",
@@ -2085,11 +2580,237 @@
       }
     },
     {
+      "name": "viva-fipy",
+      "repo": "viva-fipy",
+      "source": "https://github.com/vivarium-collective/viva-fipy",
+      "homepage": "https://github.com/vivarium-collective/viva-fipy",
+      "description": "Genuine FiPy finite-volume engine as reusable primitives + a general reaction-advection-diffusion process-bigraph process.",
+      "tags": [],
+      "cloned": true,
+      "processes": [
+        {
+          "name": "FipyTransportProcess",
+          "kind": "process",
+          "description": "Generic 2-D reaction-advection-diffusion ``dc/dt = D\u2207\u00b2c \u2212 u\u00b7\u2207c + source`` solved"
+        }
+      ],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 1,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
       "name": "viva-genesis",
       "repo": "viva-genesis",
       "source": "https://github.com/vivarium-collective/viva-genesis",
       "homepage": "https://github.com/vivarium-collective/viva-genesis",
       "description": "Origins-of-life simulation campaigns in Vivarium",
+      "tags": [],
+      "cloned": true,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [
+        {
+          "name": "og-vent-specificity",
+          "description": "Vent Specificity: Are the Gates Vent-Specific or Generic?"
+        },
+        {
+          "name": "og-energetics",
+          "description": "Proto-Energetics: Can a System Capture and Couple Free Energy?"
+        },
+        {
+          "name": "og-independence",
+          "description": "Independence from the Vent: Can a Lineage Escape Its Cradle?"
+        },
+        {
+          "name": "s03-transport-limits",
+          "description": "Transport limits"
+        },
+        {
+          "name": "og-operating-window",
+          "description": "Operating Window: Can Pore and Membrane Concentration Rescue the Pool?"
+        },
+        {
+          "name": "og-carbon-fixation",
+          "description": "Carbon Fixation: Does H2 Reduce CO2 at the Vent?"
+        },
+        {
+          "name": "s01-formation",
+          "description": "Collective formation"
+        },
+        {
+          "name": "og-vent-interface",
+          "description": "The Mineral Interface: Does It Sustain Flux Within a DIC Window?"
+        },
+        {
+          "name": "s4-compartmental-energetic-coupling",
+          "description": "S4 \u2014 Compartmental energetic coupling: does internalization pay for itself?"
+        },
+        {
+          "name": "s2-ecology-to-proximity",
+          "description": "S2 \u2014 Ecology to proximity: when does cross-feeding select for persistent contact?"
+        },
+        {
+          "name": "og-reproduction",
+          "description": "Reproduction: Can Growth and Division Build a Lineage?"
+        },
+        {
+          "name": "og-self-maintaining-individual",
+          "description": "Self-Maintaining Individuality: Does the Chemistry\u2013Boundary Loop Close?"
+        },
+        {
+          "name": "og-nutrient-bottlenecks",
+          "description": "Nutrient Bottlenecks: Are Nitrogen and Phosphorus Available with Carbon?"
+        },
+        {
+          "name": "study-selection-for-proximity",
+          "description": "Does exchange increase the fitness of contact-seeking phenotypes?"
+        },
+        {
+          "name": "s05-differentiation",
+          "description": "Cell-state differentiation"
+        },
+        {
+          "name": "s04-morphomechanics",
+          "description": "Morphomechanics"
+        },
+        {
+          "name": "og-autocatalysis-a2",
+          "description": "Endogenous Autocatalysis: Does a Self-Amplifying Cycle Form?"
+        },
+        {
+          "name": "study-bidirectional-syntrophy",
+          "description": "Does obligate bidirectional syntrophy add a constraint beyond proximity?"
+        },
+        {
+          "name": "s5-symbiont-to-organelle",
+          "description": "S5 \u2014 From symbiont to organelle: when does integration become heritable?"
+        },
+        {
+          "name": "s1-metabolic-partnership",
+          "description": "S1 \u2014 Metabolic partnership: can an archaeal-bacterial pair gain fitness from exchange?"
+        },
+        {
+          "name": "og-evolvable-lineages",
+          "description": "Evolvable Lineages: Can a Granted Individual Evolve?"
+        },
+        {
+          "name": "study-enclosure-mechanics",
+          "description": "Can selected contact transition to stable enclosure under physical constraints?"
+        },
+        {
+          "name": "study-vertical-transmission-stability",
+          "description": "Is the established endosymbiosis evolutionarily stable?"
+        },
+        {
+          "name": "mw-s5-division-sync-and-conflict-suppression",
+          "description": "Do division synchronization, copy-number segregation, and conflict suppression make host and partner a single heritable individual?"
+        },
+        {
+          "name": "study-spatial-exchange-proximity",
+          "description": "Does contact mechanistically confer an exchange advantage?"
+        },
+        {
+          "name": "og-ecology",
+          "description": "Protocell Ecology: Does Community Function Precede the Cell?"
+        },
+        {
+          "name": "og-self-compartmentation",
+          "description": "Self-Compartmentation: Does Metabolism Build Its Own Boundary?"
+        },
+        {
+          "name": "og-network-rescue",
+          "description": "Network Rescue: Does Pore Concentration Ignite the Reaction Network?"
+        },
+        {
+          "name": "og-network-persistence",
+          "description": "Network Persistence: Does the Carbon-Fixing Network Sustain Itself?"
+        },
+        {
+          "name": "og-spatial-concentration",
+          "description": "Spatial Concentration: Does a Pore Enrich a Dilute Feed?"
+        },
+        {
+          "name": "og-precursor-pool",
+          "description": "Precursor Pool: Can Vent Chemistry Build a Functional Pool?"
+        },
+        {
+          "name": "og-evolvability",
+          "description": "Evolvability and Selection: Is an Inherited Difference Selectable?"
+        },
+        {
+          "name": "mw-s3-emergent-capability-vs-additive-benefit",
+          "description": "Does the partnership create a capability neither free-living partner sustains alone, or only an additive benefit?"
+        },
+        {
+          "name": "s3-protrusions-to-enclosure",
+          "description": "S3 \u2014 Protrusions to enclosure: can protrusion mechanics reach stable wrapping?"
+        },
+        {
+          "name": "study-contact-to-enclosure-coupling",
+          "description": "Do the same conditions that select proximity also permit enclosure?"
+        },
+        {
+          "name": "og-vent-environment",
+          "description": "The Vent Environment: Does It Supply a Viable Feed?"
+        },
+        {
+          "name": "mw-s1-wall-rupture-deformability-tradeoff",
+          "description": "Across wall-present, wall-attenuated, wall-free-with-cortex, and wall-free-without-cortex arms, where does the cell gain the deformability to enclose a partner without osmotic rupture?"
+        },
+        {
+          "name": "s02-ecological-selection",
+          "description": "Ecological selection"
+        },
+        {
+          "name": "og-heredity",
+          "description": "Chemical Inheritance: Can a Chemical Difference Be Transmitted?"
+        },
+        {
+          "name": "mem-m4-growth-division-propensity",
+          "description": "Membrane Division: Can a Vesicle Grow and Divide?"
+        },
+        {
+          "name": "s06-individuality",
+          "description": "Evolutionary individuality"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "origins-of-life-vent",
+          "description": "The Hydrothermal Vent Hypothesis"
+        },
+        {
+          "name": "multicellularity",
+          "description": "From Cells to Organisms"
+        },
+        {
+          "name": "eukaryogenesis",
+          "description": "The Endosymbiotic Transition"
+        }
+      ],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 41,
+        "investigations": 3
+      }
+    },
+    {
+      "name": "viva-genesis-sim",
+      "repo": "viva-genesis-sim",
+      "source": "https://github.com/vivarium-collective/viva-genesis-sim",
+      "homepage": "https://github.com/vivarium-collective/viva-genesis-sim",
+      "description": "Simulator for the viva-genesis research program \u2014 process-bigraph composites, processes, and genuine-engine bridges (origin of life, eukaryogenesis, multicellularity). Extracted from viva-genesis; installs as the viva_genesis package.",
       "tags": [],
       "cloned": true,
       "processes": [
@@ -2349,11 +3070,6 @@
           "description": "Rule-generated open C/H/O reaction universe integrated by the real"
         },
         {
-          "name": "NullNetworkProcess",
-          "kind": "process",
-          "description": "Matched null control: the universe's compounds, reaction count, arity,"
-        },
-        {
           "name": "CarbonFixationProcess",
           "kind": "process",
           "description": "Lab-calibrated mineral-catalyzed CO2 reduction, gated by thermodynamic"
@@ -2367,16 +3083,6 @@
           "name": "RoadRunnerNetworkProcess",
           "kind": "process",
           "description": "Real libRoadRunner rTCA-fragment CSTR. Reads the upstream feed"
-        },
-        {
-          "name": "RTCANetworkProcess",
-          "kind": "process",
-          "description": "The curated mechanistic rTCA network on the real libRoadRunner engine \u2014"
-        },
-        {
-          "name": "RTCANullProcess",
-          "kind": "process",
-          "description": "Degree-preserving matched null of the rTCA network (same compounds,"
         },
         {
           "name": "OsmoticGrowthDivisionProcess",
@@ -2422,11 +3128,6 @@
           "name": "ProtocellNetworkProcess",
           "kind": "process",
           "description": "The Phase-3 reaction universe inside ONE protocell, masked to a lineage"
-        },
-        {
-          "name": "ProtocellNullNetworkProcess",
-          "kind": "process",
-          "description": "The ``null_network`` class of the proto_ecology face: the Phase-3 matched"
         },
         {
           "name": "CrossFeedingMetacommunityProcess",
@@ -3332,192 +4033,66 @@
           "description": "og-07's metacommunity rebuilt on real chemistry (Phase 8): N protocells in the agents map, each running the Phase-3 rule-generated reaction universe (libRoadRunner, eQuilibrator dG') masked to its lineage's catalyst repertoire (fixer: CO2 reduction + carboxylations; reducer: hydrogenations; condenser: aldol / formose; generalist: all), pointed at fixed cells of a pore whose background the Phase-4 localization class shapes species by species. A SpatialCouplingStep fires the exchange rules of a bigraphical reactive system every tick (uptake / secretion through size- and charge-dependent permeabilities, pore diffusion, feed / washout) and counts the firings; an EcologyReducerStep recomputes og-07's gate readouts from the agents (present vs produced functions); an EcologyElementLedgerProcess audits C / N / P over agents + field. coupling=private is the isolated counterfactual; model_proto_ecology=null_network the rewired control."
         }
       ],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 73,
+        "steps": 121,
+        "composites": 61,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "viva-grammar",
+      "repo": "viva-grammar",
+      "source": "https://github.com/vivarium-collective/viva-grammar",
+      "homepage": "https://github.com/vivarium-collective/viva-grammar",
+      "description": "Generic, ABM-agnostic implementation of the Macklin/PhysiCell cell-behavior hypothesis grammar (Cell 2025) as a process-bigraph module",
+      "tags": [],
+      "cloned": true,
+      "processes": [
+        {
+          "name": "ReferenceSubstrateProcess",
+          "kind": "process",
+          "description": ""
+        },
+        {
+          "name": "GrammarRulesProcess",
+          "kind": "process",
+          "description": ""
+        },
+        {
+          "name": "BlueprintGrammarProcess",
+          "kind": "process",
+          "description": "GrammarRulesProcess configured as a blueprint RulesProcess drop-in."
+        }
+      ],
+      "steps": [],
+      "composites": [
+        {
+          "name": "hypoxia_motility",
+          "description": "Paper's oxygen->motility tumor model: grammar rules on a minimal oxygen-field + point-agent reference substrate (transient post-hypoxic migration)."
+        }
+      ],
       "studies": [
         {
-          "name": "og-vent-specificity",
-          "description": "Vent Specificity: Are the Gates Vent-Specific or Generic?"
-        },
-        {
-          "name": "og-energetics",
-          "description": "Proto-Energetics: Can a System Capture and Couple Free Energy?"
-        },
-        {
-          "name": "og-independence",
-          "description": "Independence from the Vent: Can a Lineage Escape Its Cradle?"
-        },
-        {
-          "name": "s03-transport-limits",
-          "description": "Transport limits"
-        },
-        {
-          "name": "og-operating-window",
-          "description": "Operating Window: Can Pore and Membrane Concentration Rescue the Pool?"
-        },
-        {
-          "name": "og-carbon-fixation",
-          "description": "Carbon Fixation: Does H2 Reduce CO2 at the Vent?"
-        },
-        {
-          "name": "s01-formation",
-          "description": "Collective formation"
-        },
-        {
-          "name": "og-vent-interface",
-          "description": "The Mineral Interface: Does It Sustain Flux Within a DIC Window?"
-        },
-        {
-          "name": "s4-compartmental-energetic-coupling",
-          "description": "S4 \u2014 Compartmental energetic coupling: does internalization pay for itself?"
-        },
-        {
-          "name": "s2-ecology-to-proximity",
-          "description": "S2 \u2014 Ecology to proximity: when does cross-feeding select for persistent contact?"
-        },
-        {
-          "name": "og-reproduction",
-          "description": "Reproduction: Can Growth and Division Build a Lineage?"
-        },
-        {
-          "name": "og-self-maintaining-individual",
-          "description": "Self-Maintaining Individuality: Does the Chemistry\u2013Boundary Loop Close?"
-        },
-        {
-          "name": "og-nutrient-bottlenecks",
-          "description": "Nutrient Bottlenecks: Are Nitrogen and Phosphorus Available with Carbon?"
-        },
-        {
-          "name": "study-selection-for-proximity",
-          "description": "Does exchange increase the fitness of contact-seeking phenotypes?"
-        },
-        {
-          "name": "s05-differentiation",
-          "description": "Cell-state differentiation"
-        },
-        {
-          "name": "s04-morphomechanics",
-          "description": "Morphomechanics"
-        },
-        {
-          "name": "og-autocatalysis-a2",
-          "description": "Endogenous Autocatalysis: Does a Self-Amplifying Cycle Form?"
-        },
-        {
-          "name": "study-bidirectional-syntrophy",
-          "description": "Does obligate bidirectional syntrophy add a constraint beyond proximity?"
-        },
-        {
-          "name": "s5-symbiont-to-organelle",
-          "description": "S5 \u2014 From symbiont to organelle: when does integration become heritable?"
-        },
-        {
-          "name": "s1-metabolic-partnership",
-          "description": "S1 \u2014 Metabolic partnership: can an archaeal-bacterial pair gain fitness from exchange?"
-        },
-        {
-          "name": "og-evolvable-lineages",
-          "description": "Evolvable Lineages: Can a Granted Individual Evolve?"
-        },
-        {
-          "name": "study-enclosure-mechanics",
-          "description": "Can selected contact transition to stable enclosure under physical constraints?"
-        },
-        {
-          "name": "study-vertical-transmission-stability",
-          "description": "Is the established endosymbiosis evolutionarily stable?"
-        },
-        {
-          "name": "mw-s5-division-sync-and-conflict-suppression",
-          "description": "Do division synchronization, copy-number segregation, and conflict suppression make host and partner a single heritable individual?"
-        },
-        {
-          "name": "study-spatial-exchange-proximity",
-          "description": "Does contact mechanistically confer an exchange advantage?"
-        },
-        {
-          "name": "og-ecology",
-          "description": "Protocell Ecology: Does Community Function Precede the Cell?"
-        },
-        {
-          "name": "og-self-compartmentation",
-          "description": "Self-Compartmentation: Does Metabolism Build Its Own Boundary?"
-        },
-        {
-          "name": "og-network-rescue",
-          "description": "Network Rescue: Does Pore Concentration Ignite the Reaction Network?"
-        },
-        {
-          "name": "og-network-persistence",
-          "description": "Network Persistence: Does the Carbon-Fixing Network Sustain Itself?"
-        },
-        {
-          "name": "og-spatial-concentration",
-          "description": "Spatial Concentration: Does a Pore Enrich a Dilute Feed?"
-        },
-        {
-          "name": "og-precursor-pool",
-          "description": "Precursor Pool: Can Vent Chemistry Build a Functional Pool?"
-        },
-        {
-          "name": "og-evolvability",
-          "description": "Evolvability and Selection: Is an Inherited Difference Selectable?"
-        },
-        {
-          "name": "mw-s3-emergent-capability-vs-additive-benefit",
-          "description": "Does the partnership create a capability neither free-living partner sustains alone, or only an additive benefit?"
-        },
-        {
-          "name": "s3-protrusions-to-enclosure",
-          "description": "S3 \u2014 Protrusions to enclosure: can protrusion mechanics reach stable wrapping?"
-        },
-        {
-          "name": "study-contact-to-enclosure-coupling",
-          "description": "Do the same conditions that select proximity also permit enclosure?"
-        },
-        {
-          "name": "og-vent-environment",
-          "description": "The Vent Environment: Does It Supply a Viable Feed?"
-        },
-        {
-          "name": "mw-s1-wall-rupture-deformability-tradeoff",
-          "description": "Across wall-present, wall-attenuated, wall-free-with-cortex, and wall-free-without-cortex arms, where does the cell gain the deformability to enclose a partner without osmotic rupture?"
-        },
-        {
-          "name": "s02-ecological-selection",
-          "description": "Ecological selection"
-        },
-        {
-          "name": "og-heredity",
-          "description": "Chemical Inheritance: Can a Chemical Difference Be Transmitted?"
-        },
-        {
-          "name": "mem-m4-growth-division-propensity",
-          "description": "Membrane Division: Can a Vesicle Grow and Divide?"
-        },
-        {
-          "name": "s06-individuality",
-          "description": "Evolutionary individuality"
+          "name": "hypoxia-motility",
+          "description": "Demonstrate end-to-end that viva_grammar.composites.hypoxia.hypoxia_motility reproduces the paper's qualitative hypoxia dynamics, with the grammar engine as a separate, pluggable process (the same role it will play for the MISM blueprint ABMs)."
         }
       ],
       "investigations": [
         {
-          "name": "origins-of-life-vent",
-          "description": "The Hydrothermal Vent Hypothesis"
-        },
-        {
-          "name": "multicellularity",
-          "description": "From Cells to Organisms"
-        },
-        {
-          "name": "eukaryogenesis",
-          "description": "The Endosymbiotic Transition"
+          "name": "grammar",
+          "description": "A human-interpretable grammar as a pluggable rule engine"
         }
       ],
       "counts": {
-        "processes": 77,
-        "steps": 121,
-        "composites": 61,
-        "studies": 41,
-        "investigations": 3
+        "processes": 3,
+        "steps": 0,
+        "composites": 1,
+        "studies": 1,
+        "investigations": 1
       }
     },
     {
@@ -3824,6 +4399,232 @@
       }
     },
     {
+      "name": "viva-hybrid",
+      "repo": "viva-hybrid",
+      "source": "https://github.com/vivarium-collective/viva-hybrid",
+      "homepage": "https://github.com/vivarium-collective/viva-hybrid",
+      "description": "Trial: pure-Rust hybrid ODE/SSA engine (SBML + partition metadata) vs Python baselines",
+      "tags": [],
+      "cloned": true,
+      "processes": [],
+      "steps": [
+        {
+          "name": "RustHybridStep",
+          "kind": "step",
+          "description": "Run a hybrid ODE/SSA model (given as an IR JSON file) through the Rust engine."
+        }
+      ],
+      "composites": [
+        {
+          "name": "rust_hybrid_benchmark",
+          "description": "Rust hybrid ODE/SSA engine on the bursting gene-expression benchmark; emits per-species final means plus the engine's own simulate wall-time and RK4-step / stochastic-event counts."
+        }
+      ],
+      "studies": [
+        {
+          "name": "speedup-landscape",
+          "description": "Speedup landscape: event density x stochastic fraction"
+        },
+        {
+          "name": "rust-engine-in-workbench",
+          "description": "Wrap the Rust engine as a pbg Step, expose it as a composite generator, run it through\nthe workbench; establish the integration and the plain-Python speedup baseline.\n"
+        },
+        {
+          "name": "regime-frontier",
+          "description": "Regime frontier: system size x stochastic fraction"
+        },
+        {
+          "name": "copy-number-frontier",
+          "description": "Copy-number frontier: does high copy open a faithful-and-fast window?"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "rust-hybrid-regime-map",
+          "description": "Rust hybrid engine: regime map"
+        }
+      ],
+      "counts": {
+        "processes": 0,
+        "steps": 1,
+        "composites": 1,
+        "studies": 4,
+        "investigations": 1
+      }
+    },
+    {
+      "name": "viva-iirabm",
+      "repo": "viva-iirabm",
+      "source": "https://github.com/vivarium-collective/viva-iirabm",
+      "homepage": "https://github.com/vivarium-collective/viva-iirabm",
+      "description": "Process-bigraph wrapper for the An & Cockrell IIRABM; reproduces the 2018 sepsis-controllability paper (PLoS Comput Biol e1005876)",
+      "tags": [],
+      "cloned": true,
+      "processes": [
+        {
+          "name": "IIRABMProcess",
+          "kind": "process",
+          "description": "Replay one real IIRABM simulation as a process-bigraph Process."
+        }
+      ],
+      "steps": [],
+      "composites": [
+        {
+          "name": "iirabm_baseline",
+          "description": "Untreated IIRABM sepsis trajectory (one seed). Defaults = the paper's trained 82%-death parameter set (I2/H0.1/T5/E2/inj33)."
+        },
+        {
+          "name": "iirabm_treated",
+          "description": "IIRABM sepsis trajectory under a multi-stage cytokine intervention. 'intervention' selects a named genome (e.g. the digitized Fig 2 8-stage GA solution)."
+        }
+      ],
+      "studies": [
+        {
+          "name": "fig4-nonresponder-dynamics",
+          "description": "Fig 4 \u2014 responder vs non-responder dynamics"
+        },
+        {
+          "name": "fig2-ga-intervention",
+          "description": "Fig 2 / Table 1 \u2014 GA-identified intervention lowers mortality"
+        },
+        {
+          "name": "fig3-generalizability",
+          "description": "Fig 3 \u2014 generalizability of a fixed intervention (subsampled)"
+        },
+        {
+          "name": "fig6-stochastic-trajectories",
+          "description": "Fig 6 \u2014 baseline stochastic trajectories (~82% mortality)"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "iirabm",
+          "description": "Reproducing Cockrell & An (2018): controllability of sepsis in the IIRABM"
+        }
+      ],
+      "counts": {
+        "processes": 1,
+        "steps": 0,
+        "composites": 2,
+        "studies": 4,
+        "investigations": 1
+      }
+    },
+    {
+      "name": "viva-island-biogeography-sim",
+      "repo": "viva-island-biogeography-sim",
+      "source": "https://github.com/vivarium-collective/viva-island-biogeography-sim",
+      "homepage": "https://github.com/vivarium-collective/viva-island-biogeography-sim",
+      "description": "Simulator for the viva-island-biogeography research program \u2014 processes, composites, and evaluators extracted from viva-island-biogeography; installs as the viva_island_biogeography package.",
+      "tags": [],
+      "cloned": true,
+      "processes": [
+        {
+          "name": "GeneralDynamicModelProcess",
+          "kind": "process",
+          "description": "One oceanic island under the General Dynamic Model (Whittaker et al. 2008)."
+        },
+        {
+          "name": "RescueEffectProcess",
+          "kind": "process",
+          "description": "One island under the MacArthur-Wilson model *with* the rescue effect."
+        },
+        {
+          "name": "NeutralMetacommunityProcess",
+          "kind": "process",
+          "description": "One island under Hubbell's (2001) zero-sum neutral metacommunity."
+        },
+        {
+          "name": "IslandProcess",
+          "kind": "process",
+          "description": "A single island's time-stepped discrete Lotka-Volterra dynamics."
+        },
+        {
+          "name": "MigrationProcess",
+          "kind": "process",
+          "description": "The metacommunity migration coupler (port of ``IslandManager.simulate``'s"
+        },
+        {
+          "name": "MacArthurWilsonEquilibriumProcess",
+          "kind": "process",
+          "description": "One island under the canonical MacArthur-Wilson equilibrium model."
+        }
+      ],
+      "steps": [],
+      "composites": [
+        {
+          "name": "microbial_island",
+          "description": "MacArthur-Wilson equilibrium model in a microbial regime: a large mainland taxa pool, fast colonization + extinction (high turnover), and a shallow area-extinction exponent giving the observed flat microbial taxa-area slope (z ~ 0.02-0.1; Horner-Devine 2004, Bell 2005). Reuses MacArthurWilsonEquilibriumProcess with no new process."
+        },
+        {
+          "name": "general_dynamic_model",
+          "description": "General Dynamic Model of oceanic island biogeography (Whittaker, Triantis & Ladle 2008): a few islands with time-varying area (ontogeny) staggered along a t_peak age gradient. Each island grows then erodes, so species richness overshoots and then declines \u2014 a humped trajectory the static MacArthur-Wilson equilibrium cannot produce."
+        },
+        {
+          "name": "mw_equilibrium",
+          "description": "Canonical MacArthur-Wilson equilibrium model: independent islands drawing from a mainland species pool, each relaxing to S* set by area (extinction) and isolation (colonization). One run yields the rate-crossing equilibrium, the species-area power law, and turnover."
+        },
+        {
+          "name": "island_archipelago",
+          "description": "Lotka-Volterra island biogeography: a mainland + smaller distant islands, each with discrete LV population dynamics, coupled by distance-stochastic inter-island migration and random species introduction."
+        },
+        {
+          "name": "island_food_web",
+          "description": "Food-web island biogeography: identical archipelago topology, but species interactions come from a random trophic food web (producers/primary/secondary consumers) with antisymmetric predator-prey couplings."
+        },
+        {
+          "name": "rescue_effect",
+          "description": "Brown & Kodric-Brown (1977) rescue-effect archipelago: identical islands (same area and isolation) differing only in how strongly incoming propagules rescue present species from extinction. Coupling the immigration and extinction curves raises equilibrium richness and damps turnover; rescue_strength=0 reduces to the independent-curves MacArthur-Wilson equilibrium."
+        },
+        {
+          "name": "neutral_metacommunity",
+          "description": "Hubbell (2001) zero-sum neutral metacommunity: independent fixed-J islands over an area gradient, each evolving by Moran dispersal-drift from a shared species pool. Richness and the species-abundance distribution emerge with no niche differences and no colonization/extinction rate asymmetry \u2014 the neutral counterpoint to MacArthur-Wilson."
+        }
+      ],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 6,
+        "steps": 0,
+        "composites": 7,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "viva-julia-diffeqs",
+      "repo": "viva-julia-diffeqs",
+      "source": "https://github.com/vivarium-collective/viva-julia-diffeqs",
+      "homepage": "https://github.com/vivarium-collective/viva-julia-diffeqs",
+      "description": "Process-bigraph wrapper for Julia's DifferentialEquations.jl SBML simulation \u2014 the Julia counterpart to viva-tellurium and viva-copasi",
+      "tags": [],
+      "cloned": true,
+      "processes": [
+        {
+          "name": "JuliaDiffEqProcess",
+          "kind": "process",
+          "description": "Bridge Process wrapping a DifferentialEquations.jl SBML simulation."
+        }
+      ],
+      "steps": [
+        {
+          "name": "JuliaDiffEqUTCStep",
+          "kind": "step",
+          "description": "One-shot uniform time course as a zero-time Step."
+        }
+      ],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 1,
+        "steps": 1,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
       "name": "viva-ketchup",
       "repo": "viva-ketchup",
       "source": "https://github.com/vivarium-collective/viva-ketchup",
@@ -3956,6 +4757,93 @@
       "description": "collagen IV basement-membrane network (AICS Lumenoids v1)",
       "tags": [],
       "cloned": true,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [
+        {
+          "name": "bm-r5-explicit-3d-confinement",
+          "description": "Do growing 3D epithelial cells become taller when the basement membrane relaxes slowly?\n"
+        },
+        {
+          "name": "bm-r3-network-expansion-supply",
+          "description": "Implement a rod-insertion mechanism in the collagen network, verify it supplies material correctly (atom count grows, inserted rods crosslink in), and run the three supply modes under a growth protocol to test the Fig 2B-C ordering across seeds.\n"
+        },
+        {
+          "name": "bm-e4-feedback-predictions",
+          "description": "Test growth-driven turnover, spatial BM heterogeneity, contractility-dependent confinement, partial adhesion and network failure, each against one-way, uncoupled and uniform-material controls, and report where the bidirectionally coupled predictions depart from the paper.\n"
+        },
+        {
+          "name": "bm-r2-collagen-network-rheology",
+          "description": "Is basement-membrane stress relaxation proportional to collagen IV molecular residence (turnover) time?\n"
+        },
+        {
+          "name": "bm-v3-junction-bending-rigidity",
+          "description": "Can more crosslink connectivity rigidify the v1 network, or is bending required?"
+        },
+        {
+          "name": "bm-r4-coupled-2d-epithelium",
+          "description": "Do the paper's confinement regimes survive explicit cell topology and heterogeneous growth in a spatial 2D epithelium?\n"
+        },
+        {
+          "name": "bm-v2-stress-vs-strainrate",
+          "description": "What is \u03c3(\u03b5\u0307), and where does the network cross from viscous to elastic?"
+        },
+        {
+          "name": "bm-v5-porosity-bundling",
+          "description": "Does the v1 network reproduce the measured pore-size and bundling of a real BM?"
+        },
+        {
+          "name": "bm-e2-actin-adhesion-collagen",
+          "description": "Couple active cortical contractility (E1) to reversible basal linkers and a collagen IV BM patch; measure traction, linker occupation, network deformation and relative relaxation; begin with a single-cell patch before multicellular coupling.\n"
+        },
+        {
+          "name": "bm-v1-stage1-modulus-remodelling",
+          "description": "Can the clean-room collagen IV network separate an elastic modulus from a viscous remodelling time, as the paper's staged protocol does?\n"
+        },
+        {
+          "name": "bm-v4-junction-bending",
+          "description": "Does junction bending yield the measurable modulus the vertex model needs?"
+        },
+        {
+          "name": "bm-e3-closed-3d-lumenoid",
+          "description": "How do lumen pressure/volume and a basement-membrane shell set cell shape and curvature- dependent growth in a closed 3D lumenoid?\n"
+        },
+        {
+          "name": "bm-r1-published-tissue-baseline",
+          "description": "Reimplement the paper's fixed-volume prism/surface-tension tissue model and viscoelastic BM; sweep relative stiffness and the relaxation/doubling-time ratio; compare qualitatively and quantitatively to Barrientos et al. Figure 1G-J.\n"
+        },
+        {
+          "name": "bm-e1-actomyosin-cortex",
+          "description": "Build a coarse filament/crosslink/motor LAMMPS model on a 2D cell-sized patch; measure tension, strain response and relaxation; map these onto Tyssue cortical-energy parameters. NEW extension - the paper does not explicitly simulate actin.\n"
+        },
+        {
+          "name": "bm-r6-perlecan-growth-perturbations",
+          "description": "Use inferred collagen lifetime distributions for control, perlecan gain/loss and growth-rate conditions; propagate parameter uncertainty through relaxation and shape; compare relative cell morphology and uncertainty to Fig 7 while keeping inferred vs predicted outcomes distinct.\n"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "basement-membrane-v1",
+          "description": "From collagen IV turnover to multiscale epithelial morphogenesis (BM v1 \u2192 lumenoid)"
+        }
+      ],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 15,
+        "investigations": 1
+      }
+    },
+    {
+      "name": "viva-lumenoid-sim",
+      "repo": "viva-lumenoid-sim",
+      "source": "https://github.com/vivarium-collective/viva-lumenoid-sim",
+      "homepage": "https://github.com/vivarium-collective/viva-lumenoid-sim",
+      "description": "Simulator for viva-lumenoid \u2014 collagen IV basement-membrane mechanics + Tyssue vertex coupling; extracted from viva-lumenoid, installs as the viva_lumenoid package.",
+      "tags": [],
+      "cloned": true,
       "processes": [
         {
           "name": "BasalAdhesion",
@@ -4054,80 +4942,14 @@
           "description": "R6 \u2014 turnover->relaxation->shape inference pipeline: an inferred collagen IV lifetime (modulated by perlecan) sets the BM relaxation time, which the reduced-order prism model turns into a predicted cell shape. Inferred (relaxation) and predicted (shape) are kept distinct; conditions are control / perlecan gain-loss / growth rate."
         }
       ],
-      "studies": [
-        {
-          "name": "bm-r5-explicit-3d-confinement",
-          "description": "Do growing 3D epithelial cells become taller when the basement membrane relaxes slowly?\n"
-        },
-        {
-          "name": "bm-r3-network-expansion-supply",
-          "description": "Implement a rod-insertion mechanism in the collagen network, verify it supplies material correctly (atom count grows, inserted rods crosslink in), and run the three supply modes under a growth protocol to test the Fig 2B-C ordering across seeds.\n"
-        },
-        {
-          "name": "bm-e4-feedback-predictions",
-          "description": "Test growth-driven turnover, spatial BM heterogeneity, contractility-dependent confinement, partial adhesion and network failure, each against one-way, uncoupled and uniform-material controls, and report where the bidirectionally coupled predictions depart from the paper.\n"
-        },
-        {
-          "name": "bm-r2-collagen-network-rheology",
-          "description": "Is basement-membrane stress relaxation proportional to collagen IV molecular residence (turnover) time?\n"
-        },
-        {
-          "name": "bm-v3-junction-bending-rigidity",
-          "description": "Can more crosslink connectivity rigidify the v1 network, or is bending required?"
-        },
-        {
-          "name": "bm-r4-coupled-2d-epithelium",
-          "description": "Do the paper's confinement regimes survive explicit cell topology and heterogeneous growth in a spatial 2D epithelium?\n"
-        },
-        {
-          "name": "bm-v2-stress-vs-strainrate",
-          "description": "What is \u03c3(\u03b5\u0307), and where does the network cross from viscous to elastic?"
-        },
-        {
-          "name": "bm-v5-porosity-bundling",
-          "description": "Does the v1 network reproduce the measured pore-size and bundling of a real BM?"
-        },
-        {
-          "name": "bm-e2-actin-adhesion-collagen",
-          "description": "Couple active cortical contractility (E1) to reversible basal linkers and a collagen IV BM patch; measure traction, linker occupation, network deformation and relative relaxation; begin with a single-cell patch before multicellular coupling.\n"
-        },
-        {
-          "name": "bm-v1-stage1-modulus-remodelling",
-          "description": "Can the clean-room collagen IV network separate an elastic modulus from a viscous remodelling time, as the paper's staged protocol does?\n"
-        },
-        {
-          "name": "bm-v4-junction-bending",
-          "description": "Does junction bending yield the measurable modulus the vertex model needs?"
-        },
-        {
-          "name": "bm-e3-closed-3d-lumenoid",
-          "description": "How do lumen pressure/volume and a basement-membrane shell set cell shape and curvature- dependent growth in a closed 3D lumenoid?\n"
-        },
-        {
-          "name": "bm-r1-published-tissue-baseline",
-          "description": "Reimplement the paper's fixed-volume prism/surface-tension tissue model and viscoelastic BM; sweep relative stiffness and the relaxation/doubling-time ratio; compare qualitatively and quantitatively to Barrientos et al. Figure 1G-J.\n"
-        },
-        {
-          "name": "bm-e1-actomyosin-cortex",
-          "description": "Build a coarse filament/crosslink/motor LAMMPS model on a 2D cell-sized patch; measure tension, strain response and relaxation; map these onto Tyssue cortical-energy parameters. NEW extension - the paper does not explicitly simulate actin.\n"
-        },
-        {
-          "name": "bm-r6-perlecan-growth-perturbations",
-          "description": "Use inferred collagen lifetime distributions for control, perlecan gain/loss and growth-rate conditions; propagate parameter uncertainty through relaxation and shape; compare relative cell morphology and uncertainty to Fig 7 while keeping inferred vs predicted outcomes distinct.\n"
-        }
-      ],
-      "investigations": [
-        {
-          "name": "basement-membrane-v1",
-          "description": "From collagen IV turnover to multiscale epithelial morphogenesis (BM v1 \u2192 lumenoid)"
-        }
-      ],
+      "studies": [],
+      "investigations": [],
       "counts": {
         "processes": 6,
         "steps": 2,
         "composites": 13,
-        "studies": 15,
-        "investigations": 1
+        "studies": 0,
+        "investigations": 0
       }
     },
     {
@@ -4764,6 +5586,175 @@
       }
     },
     {
+      "name": "viva-multicell-blueprint-sim",
+      "repo": "viva-multicell-blueprint-sim",
+      "source": "https://github.com/vivarium-collective/viva-multicell-blueprint-sim",
+      "homepage": "https://github.com/vivarium-collective/viva-multicell-blueprint-sim",
+      "description": "Simulator for the viva-multicell-blueprint research program \u2014 backend-neutral multicellular blueprint engine (CPM / vertex / center-based / particle / subcellular ODE + Boolean). Extracted from viva-multicell-blueprint; installs as the viva_multicell_blueprint package.",
+      "tags": [],
+      "cloned": true,
+      "processes": [
+        {
+          "name": "SceneModelProcess",
+          "kind": "process",
+          "description": "One orchestrating process for a whole scene."
+        },
+        {
+          "name": "MechanicsBackend",
+          "kind": "process",
+          "description": "Process contract both CPMBackend and VertexBackend satisfy."
+        },
+        {
+          "name": "RulesProcess",
+          "kind": "process",
+          "description": ""
+        },
+        {
+          "name": "FatefulTissueProcess",
+          "kind": "process",
+          "description": "Dividing tyssue + per-cell confined particles + per-cell ODE\u2192MaBoSS fate that"
+        },
+        {
+          "name": "ParticleConsensusProcess",
+          "kind": "process",
+          "description": "Tri-coupled consensus tissue + a Smoldyn sim confined inside each consensus cell."
+        },
+        {
+          "name": "SubcellularProcess",
+          "kind": "process",
+          "description": ""
+        },
+        {
+          "name": "FatefulConsensusProcess",
+          "kind": "process",
+          "description": "Tri-coupled consensus tissue + a per-cell metabolism\u2192fate chain driven by cell area."
+        },
+        {
+          "name": "TriCoupledProcess",
+          "kind": "process",
+          "description": "Three coupled mechanics paradigms on one shared cell set (see module docstring)."
+        },
+        {
+          "name": "FieldProcess",
+          "kind": "process",
+          "description": "Reaction-diffusion fields on a common grid."
+        },
+        {
+          "name": "ImmuneRecruitmentProcess",
+          "kind": "process",
+          "description": "Turns ``recruit_drivers`` inflow rates into spawn events."
+        },
+        {
+          "name": "BoundedParticlesProcess",
+          "kind": "process",
+          "description": ""
+        },
+        {
+          "name": "DivergenceCompareProcess",
+          "kind": "process",
+          "description": ""
+        },
+        {
+          "name": "HeterotypicRegionsProcess",
+          "kind": "process",
+          "description": "A vertex epithelium on a munk mesenchyme, coupled at their basal interface."
+        },
+        {
+          "name": "SystemicODEProcess",
+          "kind": "process",
+          "description": "Config: ``consts`` (the price_ode params block ``{constants:{NAME:{base,scale}},"
+        }
+      ],
+      "steps": [
+        {
+          "name": "SpatialVideoStep",
+          "kind": "step",
+          "description": "Config:"
+        },
+        {
+          "name": "CellCountStep",
+          "kind": "step",
+          "description": "Config: ``count_map`` {ODE input -> [cell types]}, ``healthy_types`` (types"
+        },
+        {
+          "name": "CellActuationMergeStep",
+          "kind": "step",
+          "description": ""
+        }
+      ],
+      "composites": [
+        {
+          "name": "fateful_tissue",
+          "description": "The full-stack crown: a dividing tyssue where each cell runs a Smoldyn particle sim (split on division) AND an ODE metabolism whose metabolite pins a MaBoSS fate network \u2014 and the fate network's 'divide' output drives the tissue division. Biology decides when the tissue divides. Writes a fate-coloured flipbook + GIF to reports/assets/<overlay_out>.html."
+        },
+        {
+          "name": "particle_consensus",
+          "description": "Smoldyn particles confined inside a tri-coupled consensus tissue: each cell runs an A+B<->C particle sim bounded by a boundary three tissue simulators agree on (vertex shape, munk-consensus position, CPM area). Writes a flipbook to reports/assets/<overlay_out>.html."
+        },
+        {
+          "name": "fateful_consensus",
+          "description": "Grand unification: a tri-coupled consensus tissue (CPM owns area, vertex owns shape, munk owns position) where every cell runs an SBML-ODE metabolism whose metabolite pins a MaBoSS fate network \u2014 and each cell's CPM AREA sets its metabolic rate, so tissue mechanics drives sub-cellular fate. Three tissue + two sub-cellular simulators in one composite; writes a fate-coloured consensus flipbook to reports/assets/<overlay_out>.html."
+        },
+        {
+          "name": "sego_crossparadigm",
+          "description": "Sego 2022 influenza blueprint compiled onto a mechanics backend (cpm|vertex|munk): the shared field/rules/ODE/recruitment mechanism plus the one backend-specific mechanics node."
+        },
+        {
+          "name": "sego_crossparadigm_large",
+          "description": "Scaled-up Sego 2022 influenza preset: a biology-preserving ~2.4x linear scale-up of 'sego_crossparadigm' (120x120 patch, 15x15 ~225-cell epithelial block) -- a bigger tissue, the SAME field/rules/ODE/recruitment mechanism. A heavier starting point to run from in the Blueprint Studio."
+        },
+        {
+          "name": "tri_coupled",
+          "description": "All three mechanics paradigms on one shared cell set, coupled into a consensus: CPM (voxel) owns area, vertex (polygon) owns shape, munk (center-based disc) owns position. Writes an overlay of all three per cell to reports/assets/<overlay_out>.html."
+        },
+        {
+          "name": "blueprint_pipeline",
+          "description": "Backend-neutral blueprint compiled onto a mechanics backend (cpm|vertex|munk): fields/rules/ODE/immune mechanism, plus an optional per-cell subcellular layer arbitrated into the mechanics inputs by the actuation merge."
+        },
+        {
+          "name": "coupled_fate_oscillator",
+          "description": "One cell, two coupled sub-cellular sims: an SBML-ODE metabolism and a MaBoSS Boolean fate network form a metabolism\u2194fate feedback oscillator (C builds \u2192 pins high_C \u2192 divide fires \u2192 division resets metabolism \u2192 repeat). Runs a small tissue of these coupled cells."
+        },
+        {
+          "name": "coupled_particle_catalysis",
+          "description": "One cell, two coupled sub-cellular sims: a Smoldyn particle population (A+B\u2192C, confined to the cell polygon) catalyses an SBML-ODE reaction S\u2192P \u2014 the live particle C count sets the ODE rate constant each step (mode B), so P accumulates faster as the particle population builds. Runs a small tissue of these coupled cells."
+        },
+        {
+          "name": "coupled_triple_cell",
+          "description": "One cell running ALL THREE sub-cellular formalisms, coupled by all three modes: a Smoldyn particle population catalyses an SBML-ODE metabolism (mode B), whose metabolite C pins a MaBoSS fate input (mode A), whose 'divide' output resets the metabolism (mode C). Particles \u2192 metabolism \u2192 fate \u2192 division, in a single cell."
+        },
+        {
+          "name": "bounded_particles",
+          "description": "Smoldyn particle sims confined inside tyssue cells: each vertex cell is a moving polygon with its own reflective Smoldyn sim (A+B<->C); molecules split into daughters on division. Writes a cell-coloured overlay to reports/assets/<overlay_out>.html."
+        },
+        {
+          "name": "divergence_compare",
+          "description": "One blueprint run four ways from the same init: CPM, vertex and center-based each ALONE (top row) vs the tri-coupled consensus (bottom row), as a 3x2 animation showing how the paradigms diverge. Writes a flipbook + GIF to reports/assets/<overlay_out>.html."
+        },
+        {
+          "name": "grammar_rules_demo",
+          "description": "Stage-2 demo: a grammar-shaped blueprint compiled onto a mechanics backend (cpm|vertex|munk) with viva-grammar's BlueprintGrammarProcess swapped into the rules slot in place of RulesProcess \u2014 the published cell-behavior grammar (pressure/contact -> transform/divide/die) driving the real ABM."
+        },
+        {
+          "name": "heterotypic_regions",
+          "description": "Two tissue types, two physics: a vertex-simulated epithelium (sheet) sitting on a center-based munk mesenchyme (loose cells), coupled at their interface \u2014 the epithelium's basal edge is a reflective floor the mesenchyme presses up against. Writes a flipbook to reports/assets/<overlay_out>.html."
+        },
+        {
+          "name": "scene_model",
+          "description": "A scene of cells, each bound by type to a model in its own formalism (SBML-ODE, Smoldyn particles, MaBoSS Boolean) sharing one extracellular field."
+        }
+      ],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 14,
+        "steps": 3,
+        "composites": 15,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
       "name": "viva-munk",
       "repo": "viva-munk",
       "source": "https://github.com/vivarium-collective/viva-munk",
@@ -4888,6 +5879,27 @@
           "description": "Quorum-sensing autoinducer feedback in a growing colony."
         }
       ],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 11,
+        "steps": 4,
+        "composites": 9,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "viva-munk-studies",
+      "repo": "viva-munk-studies",
+      "source": "https://github.com/vivarium-collective/viva-munk-studies",
+      "homepage": "https://github.com/vivarium-collective/viva-munk-studies",
+      "description": "Studies and investigations for viva-munk (pymunk 2D multi-cell physics); the simulator is the pinned viva-munk package. Onboarding to the vivarium-workbench.",
+      "tags": [],
+      "cloned": true,
+      "processes": [],
+      "steps": [],
+      "composites": [],
       "studies": [
         {
           "name": "bending-pressure",
@@ -4933,9 +5945,9 @@
         }
       ],
       "counts": {
-        "processes": 11,
-        "steps": 4,
-        "composites": 9,
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
         "studies": 9,
         "investigations": 1
       }
@@ -5492,6 +6504,137 @@
       }
     },
     {
+      "name": "viva-phreeqc",
+      "repo": "viva-phreeqc",
+      "source": "https://github.com/vivarium-collective/viva-phreeqc",
+      "homepage": "https://github.com/vivarium-collective/viva-phreeqc",
+      "description": "Genuine USGS PHREEQC (IPhreeqc) engine as a reusable, config-driven process-bigraph bridge.",
+      "tags": [],
+      "cloned": true,
+      "processes": [
+        {
+          "name": "PhreeqcProcess",
+          "kind": "process",
+          "description": "Run a real PHREEQC speciation each step from a config-supplied recipe."
+        }
+      ],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 1,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "viva-pulse",
+      "repo": "viva-pulse",
+      "source": "https://github.com/vivarium-collective/viva-pulse",
+      "homepage": "https://github.com/vivarium-collective/viva-pulse",
+      "description": "Process-bigraph wrapper driving the real Kitware Pulse Physiology Engine",
+      "tags": [],
+      "cloned": true,
+      "processes": [
+        {
+          "name": "PulseProcess",
+          "kind": "process",
+          "description": "Time-stepped bridge to the real Pulse whole-body adult engine."
+        },
+        {
+          "name": "PulseCircuitProcess",
+          "kind": "process",
+          "description": "Bridge to one real Pulse engine, exposing the selected circuit modules."
+        }
+      ],
+      "steps": [
+        {
+          "name": "MapFluidController",
+          "kind": "step",
+          "description": "Proportional fluid-resuscitation controller on mean arterial pressure."
+        },
+        {
+          "name": "CohortBloodLoss",
+          "kind": "visualization",
+          "description": "Scatter of starting blood volume vs percent lost; hover shows the loss and MAP change."
+        },
+        {
+          "name": "HemorrhageSeverityResponse",
+          "kind": "visualization",
+          "description": "Small multiples of final blood loss, heart rate and MAP vs severity, and MAP vs time."
+        },
+        {
+          "name": "FluidResuscitationResponse",
+          "kind": "visualization",
+          "description": "MAP, blood volume and commanded infusion over time, untreated vs the two"
+        }
+      ],
+      "composites": [
+        {
+          "name": "pulse_cardiovascular",
+          "description": "The Pulse cardiovascular circuit (with its renal and tissue branches) in the real whole-body engine: per-compartment pressures, volumes and flows plus hemodynamic vitals, driven by circuit resistance/compliance multipliers and a hemorrhage."
+        },
+        {
+          "name": "pulse_respiratory",
+          "description": "The Pulse respiratory (airway) circuit, alone in the VentilationMechanics engine or coupled in the whole-body engine: breathing mechanics plus per-compartment lung and pleural pressures, volumes and flows, driven by resistance/compliance multipliers and intubation."
+        },
+        {
+          "name": "pulse_mechanical_ventilation",
+          "description": "A patient on a pressure-control mechanical ventilator in the real Pulse engine: the respiratory circuit combined with the ventilator circuit, emitting breathing mechanics, lung compartments and the ventilator's monitor values. Defaults follow Pulse's HowTo_VentilationMechanics (intubated; PC-AC 19/5 cmH2O, 12 bpm)."
+        },
+        {
+          "name": "pulse_thermal",
+          "description": "The Pulse temperature circuit (internal core/skin joined to clothing, enclosure and ambient air) in the real whole-body engine: core and skin temperature, sweat, metabolic rate, heat-loss rates and per-compartment temperatures and heat flows, driven by the environmental conditions and by active heating, cooling or an applied skin temperature."
+        },
+        {
+          "name": "pulse_supplemental_oxygen",
+          "description": "Supplemental oxygen (nasal cannula, simple mask or non-rebreather mask) in the real whole-body engine: the device circuit combined with the respiratory circuit, emitting breathing mechanics, lung compartments, inspired oxygen and arterial blood gases."
+        },
+        {
+          "name": "pulse_whole_body_circuits",
+          "description": "Every circuit module on one real whole-body Pulse engine: cardiovascular (with renal and tissue branches), respiratory, mechanical ventilator, thermal and supplemental oxygen, so effects that cross circuits appear in one run. All setpoints start at their baselines; the ventilator and oxygen start disconnected, and only one of them can be connected at a time."
+        },
+        {
+          "name": "pulse_hemorrhage",
+          "description": "Untreated hemorrhage in the real Pulse whole-body adult engine; emits vital signs every second."
+        },
+        {
+          "name": "pulse_resuscitation",
+          "description": "Hemorrhage in the real Pulse engine with a closed-loop MAP-targeted IV fluid controller."
+        }
+      ],
+      "studies": [
+        {
+          "name": "fluid-resuscitation",
+          "description": "Run the same bleed (StandardMale, RightLeg, severity 0.8, 600 s) untreated\n(pulse_hemorrhage), with the MAP-targeted saline controller\n(pulse_resuscitation, target 90 mmHg, gain 25 mL/min per mmHg, cap 250 mL/min)\nand with the same controller infusing whole blood.\n"
+        },
+        {
+          "name": "hemorrhage-severity-sweep",
+          "description": "Run pulse_hemorrhage for 600 s at severity 0.0, 0.2, 0.4, 0.6, 0.8 and 1.0\n(RightLeg, StandardMale) and compare the final vitals across the grid.\n"
+        },
+        {
+          "name": "patient-cohort",
+          "description": "Run pulse_hemorrhage (RightLeg, severity 0.8, 600 s) once from each of the 21\nstabilized states in Pulse's install (bin/states/*@0s.json) and compare the\nfinal vitals and the fraction of blood lost.\n"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "pulse-hemorrhage",
+          "description": "Hemorrhage and resuscitation in the Pulse engine"
+        }
+      ],
+      "counts": {
+        "processes": 2,
+        "steps": 4,
+        "composites": 8,
+        "studies": 3,
+        "investigations": 1
+      }
+    },
+    {
       "name": "viva-pysces",
       "repo": "viva-pysces",
       "source": "https://github.com/vivarium-collective/viva-pysces",
@@ -5903,6 +7046,52 @@
         "composites": 0,
         "studies": 0,
         "investigations": 0
+      }
+    },
+    {
+      "name": "viva-tstmd",
+      "repo": "viva-tstmd",
+      "source": "https://github.com/vivarium-collective/viva-tstmd",
+      "homepage": "https://github.com/vivarium-collective/viva-tstmd",
+      "description": "Process-bigraph bridge to the real TST-MD engine (hybrid cellular Potts + bead-spring ECM; Tsingos et al. 2023), run CPU-only via Docker. The 2D engine behind the Merks 3D CPM-ECM reproduction.",
+      "tags": [],
+      "cloned": true,
+      "processes": [
+        {
+          "name": "TstmdEcmProcess",
+          "kind": "process",
+          "description": "One equilibrium run of the real TST-MD coupled model."
+        }
+      ],
+      "steps": [],
+      "composites": [
+        {
+          "name": "tstmd_coupled",
+          "description": "Real TST-MD coupled CPM + bead-spring ECM run (via viva-tstmd / Docker)."
+        }
+      ],
+      "studies": [
+        {
+          "name": "tstmd-contraction-reorientation",
+          "description": "Run seeded coupled simulations through the real engine and measure, over the contraction, the cell area, the adhesion-ring radius, the near-fiber radius, and fiber reorientation q/q0 \u2014 testing whether the ECM is dragged inward."
+        },
+        {
+          "name": "tstmd-network-connectivity",
+          "description": "Sweep the requested crosslink count over {0, 500, 2000, 5000, 10000, 20000} through the real engine and measure the giant-component fraction of the built network, testing whether it percolates."
+        }
+      ],
+      "investigations": [
+        {
+          "name": "merks-ecm-reciprocity-2d",
+          "description": "Cell-ECM mechanical reciprocity (Merks 3D CPM-ECM, 2D real-engine reproduction \u2014 FAILS: coupling gap)"
+        }
+      ],
+      "counts": {
+        "processes": 1,
+        "steps": 0,
+        "composites": 1,
+        "studies": 2,
+        "investigations": 1
       }
     },
     {
