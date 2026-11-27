@@ -12,7 +12,7 @@
     "name": "CRM-FBA",
     "source": "https://github.com/vivarium-collective/CRM-FBA.git",
     "ref": "main",
-    "package": "CRM_FBA",
+    "package": "crm_dfba",
     "homepage": "https://github.com/vivarium-collective/CRM-FBA",
     "description": "Consumer Resource Model-coupled dynamic Flux Balance Analysis as process-bigraph composite simulations.",
     "tags": []
@@ -21,7 +21,7 @@
     "name": "discovery-showcase",
     "source": "https://github.com/vivarium-collective/discovery-showcase.git",
     "ref": "main",
-    "package": "discovery_showcase",
+    "package": "viva_discovery_showcase",
     "homepage": "https://github.com/vivarium-collective/discovery-showcase",
     "description": "Discovery Engine showcase: example-led development program (Episodes 01-10) for A discovery engine for multiscale systems biology.",
     "tags": []
@@ -30,7 +30,7 @@
     "name": "mosaic-compose-sim",
     "source": "https://github.com/vivarium-collective/mosaic-compose-sim.git",
     "ref": "main",
-    "package": "mosaic_compose_sim",
+    "package": "mosaic_compose",
     "homepage": "https://github.com/vivarium-collective/mosaic-compose-sim",
     "description": "Simulator (composition layer) for MOSAIC \u2014 couples dFBA/gLV/PKPD/ABM models; extracted from mosaic-compose, installs as the mosaic_compose package.",
     "tags": []
@@ -57,7 +57,7 @@
     "name": "viva-artistoo",
     "source": "https://github.com/vivarium-collective/viva-artistoo.git",
     "ref": "main",
-    "package": "viva_artistoo",
+    "package": "pbg_artistoo",
     "homepage": "https://github.com/vivarium-collective/viva-artistoo",
     "description": "Process-bigraph wrapper for the Artistoo Cellular Potts Model (real simulator via a Node.js bridge)",
     "tags": []
@@ -111,7 +111,7 @@
     "name": "viva-caspule",
     "source": "https://github.com/vivarium-collective/viva-caspule.git",
     "ref": "main",
-    "package": "viva_caspule",
+    "package": "pbg_caspule",
     "homepage": "https://github.com/vivarium-collective/viva-caspule",
     "description": "Process-bigraph wrapper for CASPULE (a LAMMPS variant with dynamic bond formation/breaking)",
     "tags": []
@@ -120,7 +120,7 @@
     "name": "viva-chaste",
     "source": "https://github.com/vivarium-collective/viva-chaste.git",
     "ref": "main",
-    "package": "viva_chaste",
+    "package": "pbg_chaste",
     "homepage": "https://github.com/vivarium-collective/viva-chaste",
     "description": "Process-bigraph wrapper for the Chaste cell-based simulator, run via the chaste/pychaste Docker image.",
     "tags": []
@@ -138,7 +138,7 @@
     "name": "viva-comets",
     "source": "https://github.com/vivarium-collective/viva-comets.git",
     "ref": "main",
-    "package": "viva_comets",
+    "package": "pbg_comets",
     "homepage": "https://github.com/vivarium-collective/viva-comets",
     "description": "Process-bigraph wrapper for COMETS (dynamic FBA + 2D spatial microbial ecosystems)",
     "tags": []
@@ -147,7 +147,7 @@
     "name": "viva-composite-nfsim-caspule",
     "source": "https://github.com/vivarium-collective/viva-composite-nfsim-caspule.git",
     "ref": "main",
-    "package": "viva_composite_nfsim_caspule",
+    "package": "pbg_composite_nfsim_caspule",
     "homepage": "https://github.com/vivarium-collective/viva-composite-nfsim-caspule",
     "description": "Process-bigraph composite: CASPULE bond-aware MD coupled to NFSim rule-based kinetics through a configurable observable detector that converts spatial bond clusters into non-spatial species counts.",
     "tags": []
@@ -156,7 +156,7 @@
     "name": "viva-compucell3d",
     "source": "https://github.com/vivarium-collective/viva-compucell3d.git",
     "ref": "main",
-    "package": "viva_compucell3d",
+    "package": "pbg_compucell3d",
     "homepage": "https://github.com/vivarium-collective/viva-compucell3d",
     "description": "Process-bigraph wrapper for the CompuCell3D multicellular simulation environment",
     "tags": []
@@ -246,7 +246,7 @@
     "name": "viva-genesis-sim",
     "source": "https://github.com/vivarium-collective/viva-genesis-sim.git",
     "ref": "main",
-    "package": "viva_genesis_sim",
+    "package": "viva_genesis",
     "homepage": "https://github.com/vivarium-collective/viva-genesis-sim",
     "description": "Simulator for the viva-genesis research program \u2014 process-bigraph composites, processes, and genuine-engine bridges (origin of life, eukaryogenesis, multicellularity). Extracted from viva-genesis; installs as the viva_genesis package.",
     "tags": []
@@ -291,7 +291,7 @@
     "name": "viva-island-biogeography-sim",
     "source": "https://github.com/vivarium-collective/viva-island-biogeography-sim.git",
     "ref": "main",
-    "package": "viva_island_biogeography_sim",
+    "package": "viva_island_biogeography",
     "homepage": "https://github.com/vivarium-collective/viva-island-biogeography-sim",
     "description": "Simulator for the viva-island-biogeography research program \u2014 processes, composites, and evaluators extracted from viva-island-biogeography; installs as the viva_island_biogeography package.",
     "tags": []
@@ -318,7 +318,7 @@
     "name": "viva-lammps",
     "source": "https://github.com/vivarium-collective/viva-lammps.git",
     "ref": "main",
-    "package": "viva_lammps",
+    "package": "pbg_lammps",
     "homepage": "https://github.com/vivarium-collective/viva-lammps",
     "description": "Process-bigraph wrapper for the LAMMPS molecular dynamics simulator",
     "tags": []
@@ -336,7 +336,7 @@
     "name": "viva-lumenoid-sim",
     "source": "https://github.com/vivarium-collective/viva-lumenoid-sim.git",
     "ref": "main",
-    "package": "viva_lumenoid_sim",
+    "package": "viva_lumenoid",
     "homepage": "https://github.com/vivarium-collective/viva-lumenoid-sim",
     "description": "Simulator for viva-lumenoid \u2014 collagen IV basement-membrane mechanics + Tyssue vertex coupling; extracted from viva-lumenoid, installs as the viva_lumenoid package.",
     "tags": []
@@ -357,7 +357,7 @@
     "name": "viva-martini",
     "source": "https://github.com/vivarium-collective/viva-martini.git",
     "ref": "main",
-    "package": "viva_martini",
+    "package": "pbg_martini",
     "homepage": "https://github.com/vivarium-collective/viva-martini",
     "description": "Process-bigraph wrapper for the Martini coarse-grained force field \u2014 membrane systems, micelles, protein-lipid complexes, and vesicles",
     "tags": []
@@ -366,7 +366,7 @@
     "name": "viva-medyan",
     "source": "https://github.com/vivarium-collective/viva-medyan.git",
     "ref": "main",
-    "package": "viva_medyan",
+    "package": "pbg_medyan",
     "homepage": "https://github.com/vivarium-collective/viva-medyan",
     "description": "Process-bigraph wrapper for the MEDYAN cytoskeleton simulator: pure-Python re-implementation + a subprocess-driven bridge to the real MEDYAN C++ binary (with checkpoint-restart and HDF5 vesicle support).",
     "tags": []
@@ -375,7 +375,7 @@
     "name": "viva-mem3dg",
     "source": "https://github.com/vivarium-collective/viva-mem3dg.git",
     "ref": "main",
-    "package": "viva_mem3dg",
+    "package": "pbg_mem3dg",
     "homepage": "https://github.com/vivarium-collective/viva-mem3dg",
     "description": "Process-bigraph wrapper for Mem3DG membrane mechanics simulator",
     "tags": []
@@ -384,7 +384,7 @@
     "name": "viva-membrane-actin-composite",
     "source": "https://github.com/vivarium-collective/viva-membrane-actin-composite.git",
     "ref": "main",
-    "package": "viva_membrane_actin_composite",
+    "package": "pbg_membrane_actin_composite",
     "homepage": "https://github.com/vivarium-collective/viva-membrane-actin-composite",
     "description": "Process-bigraph composite: pbg-mem3dg + pbg-readdy as a Brownian ratchet (actin pushing on membrane, closed-loop)",
     "tags": []
@@ -399,10 +399,19 @@
     "tags": []
   },
   {
+    "name": "viva-multicell-blueprint",
+    "source": "https://github.com/vivarium-collective/viva-multicell-blueprint.git",
+    "ref": "main",
+    "package": "viva_multicell_blueprint",
+    "homepage": "https://github.com/vivarium-collective/viva-multicell-blueprint",
+    "description": "",
+    "tags": []
+  },
+  {
     "name": "viva-multicell-blueprint-sim",
     "source": "https://github.com/vivarium-collective/viva-multicell-blueprint-sim.git",
     "ref": "main",
-    "package": "viva_multicell_blueprint_sim",
+    "package": "viva_multicell_blueprint",
     "homepage": "https://github.com/vivarium-collective/viva-multicell-blueprint-sim",
     "description": "Simulator for the viva-multicell-blueprint research program \u2014 backend-neutral multicellular blueprint engine (CPM / vertex / center-based / particle / subcellular ODE + Boolean). Extracted from viva-multicell-blueprint; installs as the viva_multicell_blueprint package.",
     "tags": []
@@ -429,7 +438,7 @@
     "name": "viva-nfsim",
     "source": "https://github.com/vivarium-collective/viva-nfsim.git",
     "ref": "main",
-    "package": "viva_nfsim",
+    "package": "pbg_nfsim",
     "homepage": "https://github.com/vivarium-collective/viva-nfsim",
     "description": "A process-bigraph wrapper for BioNetGen/NFSim",
     "tags": []
@@ -456,7 +465,7 @@
     "name": "viva-oxidizeme",
     "source": "https://github.com/vivarium-collective/viva-oxidizeme.git",
     "ref": "main",
-    "package": "viva_oxidizeme",
+    "package": "pbg_oxidizeme",
     "homepage": "https://github.com/vivarium-collective/viva-oxidizeme",
     "description": "Process-bigraph wrapper for OxidizeME \u2014 a genome-scale ME-model of E. coli with ROS damage/repair (Yang et al. 2019 PNAS / Palsson lab)",
     "tags": []
@@ -465,7 +474,7 @@
     "name": "viva-parsimony",
     "source": "https://github.com/vivarium-collective/viva-parsimony.git",
     "ref": "main",
-    "package": "viva_parsimony",
+    "package": "pbg_parsimony",
     "homepage": "https://github.com/vivarium-collective/viva-parsimony",
     "description": "Reusable process-bigraph packing of 3D structural models (parsimony engine wrapper)",
     "tags": []
@@ -483,7 +492,7 @@
     "name": "viva-pennylane-adversarial",
     "source": "https://github.com/vivarium-collective/viva-pennylane-adversarial.git",
     "ref": "main",
-    "package": "viva_pennylane_adversarial",
+    "package": "pbg_pennylane_adversarial",
     "homepage": "https://github.com/vivarium-collective/viva-pennylane-adversarial",
     "description": "",
     "tags": []
@@ -492,7 +501,7 @@
     "name": "viva-pennylane-data-reuploading",
     "source": "https://github.com/vivarium-collective/viva-pennylane-data-reuploading.git",
     "ref": "main",
-    "package": "viva_pennylane_data_reuploading",
+    "package": "pbg_pennylane_data_reuploading",
     "homepage": "https://github.com/vivarium-collective/viva-pennylane-data-reuploading",
     "description": "",
     "tags": []
@@ -528,7 +537,7 @@
     "name": "viva-reactive-system",
     "source": "https://github.com/vivarium-collective/viva-reactive-system.git",
     "ref": "main",
-    "package": "viva_reactive_system",
+    "package": "pbg_reactive_system",
     "homepage": "https://github.com/vivarium-collective/viva-reactive-system",
     "description": "Process-bigraph wrapper for Milner-style Bigraphical Reactive Systems, with a worked MAPK signalling example.",
     "tags": []
@@ -537,7 +546,7 @@
     "name": "viva-readdy",
     "source": "https://github.com/vivarium-collective/viva-readdy.git",
     "ref": "main",
-    "package": "viva_readdy",
+    "package": "pbg_readdy",
     "homepage": "https://github.com/vivarium-collective/viva-readdy",
     "description": "Process-bigraph wrapper for the ReaDDy particle-based reaction-diffusion simulator",
     "tags": []
@@ -591,7 +600,7 @@
     "name": "viva-tstmd",
     "source": "https://github.com/vivarium-collective/viva-tstmd.git",
     "ref": "main",
-    "package": "viva_tstmd",
+    "package": "pbg_tstmd",
     "homepage": "https://github.com/vivarium-collective/viva-tstmd",
     "description": "Process-bigraph bridge to the real TST-MD engine (hybrid cellular Potts + bead-spring ECM; Tsingos et al. 2023), run CPU-only via Docker. The 2D engine behind the Merks 3D CPM-ECM reproduction.",
     "tags": []
@@ -609,7 +618,7 @@
     "name": "viva-vcell-fvsolver",
     "source": "https://github.com/vivarium-collective/viva-vcell-fvsolver.git",
     "ref": "main",
-    "package": "viva_vcell_fvsolver",
+    "package": "pbg_vcell_fvsolver",
     "homepage": "https://github.com/vivarium-collective/viva-vcell-fvsolver",
     "description": "process-bigraph wrapper around pyvcell / pyvcell-fvsolver \u2014 VCell's finite-volume 3D reaction-diffusion PDE solver as a PBG Process",
     "tags": []
