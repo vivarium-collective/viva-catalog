@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T14:52:01+00:00",
+  "generated_at": "2026-11-27T15:05:46+00:00",
   "n_repos": 69,
   "n_cloned": 69,
   "repos": [
@@ -54,7 +54,8 @@
         "composites": 0,
         "studies": 0,
         "investigations": 0
-      }
+      },
+      "kind": "simulator"
     },
     {
       "name": "CRM-FBA",
@@ -101,7 +102,8 @@
         "composites": 1,
         "studies": 1,
         "investigations": 1
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "discovery-showcase",
@@ -176,7 +178,8 @@
         "composites": 2,
         "studies": 4,
         "investigations": 4
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "mosaic-compose-sim",
@@ -290,7 +293,8 @@
         "composites": 9,
         "studies": 0,
         "investigations": 0
-      }
+      },
+      "kind": "simulator"
     },
     {
       "name": "spatio-flux",
@@ -742,7 +746,8 @@
         "composites": 22,
         "studies": 30,
         "investigations": 2
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-amici",
@@ -793,7 +798,8 @@
         "composites": 3,
         "studies": 0,
         "investigations": 0
-      }
+      },
+      "kind": "simulator"
     },
     {
       "name": "viva-artistoo",
@@ -860,7 +866,8 @@
         "composites": 5,
         "studies": 2,
         "investigations": 1
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-basic-processes",
@@ -908,7 +915,8 @@
         "composites": 0,
         "studies": 0,
         "investigations": 0
-      }
+      },
+      "kind": "simulator"
     },
     {
       "name": "viva-bbe-systems",
@@ -1059,7 +1067,8 @@
         "composites": 5,
         "studies": 14,
         "investigations": 5
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-biofilm",
@@ -1147,7 +1156,8 @@
         "composites": 4,
         "studies": 5,
         "investigations": 3
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-biomodels",
@@ -1290,7 +1300,8 @@
         "composites": 4,
         "studies": 2,
         "investigations": 1
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-bioreactordesign",
@@ -1381,7 +1392,8 @@
         "composites": 5,
         "studies": 4,
         "investigations": 1
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-caspule",
@@ -1442,7 +1454,8 @@
         "composites": 2,
         "studies": 2,
         "investigations": 1
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-chaste",
@@ -1541,7 +1554,8 @@
         "composites": 11,
         "studies": 4,
         "investigations": 1
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-cobra",
@@ -1579,7 +1593,8 @@
         "composites": 0,
         "studies": 0,
         "investigations": 0
-      }
+      },
+      "kind": "simulator"
     },
     {
       "name": "viva-comets",
@@ -1645,7 +1660,8 @@
         "composites": 2,
         "studies": 2,
         "investigations": 1
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-composite-nfsim-caspule",
@@ -1700,7 +1716,8 @@
         "composites": 2,
         "studies": 2,
         "investigations": 1
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-compucell3d",
@@ -1764,7 +1781,8 @@
         "composites": 2,
         "studies": 4,
         "investigations": 1
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-copasi",
@@ -1825,7 +1843,8 @@
         "composites": 3,
         "studies": 0,
         "investigations": 0
-      }
+      },
+      "kind": "simulator"
     },
     {
       "name": "viva-cpm",
@@ -2072,7 +2091,8 @@
         "composites": 11,
         "studies": 28,
         "investigations": 4
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-dynamic-networks",
@@ -2240,7 +2260,8 @@
         "composites": 12,
         "studies": 15,
         "investigations": 1
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-emitters",
@@ -2287,7 +2308,8 @@
         "composites": 0,
         "studies": 0,
         "investigations": 0
-      }
+      },
+      "kind": "simulator"
     },
     {
       "name": "viva-equilibrator",
@@ -2319,7 +2341,8 @@
         "composites": 1,
         "studies": 0,
         "investigations": 0
-      }
+      },
+      "kind": "simulator"
     },
     {
       "name": "viva-expressions",
@@ -2379,7 +2402,8 @@
         "composites": 4,
         "studies": 1,
         "investigations": 1
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-fenics",
@@ -2577,7 +2601,8 @@
         "composites": 15,
         "studies": 7,
         "investigations": 1
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-fipy",
@@ -2604,7 +2629,8 @@
         "composites": 0,
         "studies": 0,
         "investigations": 0
-      }
+      },
+      "kind": "simulator"
     },
     {
       "name": "viva-genesis",
@@ -2803,7 +2829,8 @@
         "composites": 0,
         "studies": 41,
         "investigations": 3
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-genesis-sim",
@@ -4041,7 +4068,8 @@
         "composites": 61,
         "studies": 0,
         "investigations": 0
-      }
+      },
+      "kind": "simulator"
     },
     {
       "name": "viva-grammar",
@@ -4093,7 +4121,8 @@
         "composites": 1,
         "studies": 1,
         "investigations": 1
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-human-atlas",
@@ -4396,7 +4425,8 @@
         "composites": 8,
         "studies": 21,
         "investigations": 4
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-hybrid",
@@ -4450,7 +4480,8 @@
         "composites": 1,
         "studies": 4,
         "investigations": 1
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-iirabm",
@@ -4508,7 +4539,8 @@
         "composites": 2,
         "studies": 4,
         "investigations": 1
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-island-biogeography-sim",
@@ -4589,7 +4621,8 @@
         "composites": 7,
         "studies": 0,
         "investigations": 0
-      }
+      },
+      "kind": "simulator"
     },
     {
       "name": "viva-julia-diffeqs",
@@ -4622,7 +4655,8 @@
         "composites": 0,
         "studies": 0,
         "investigations": 0
-      }
+      },
+      "kind": "simulator"
     },
     {
       "name": "viva-ketchup",
@@ -4667,7 +4701,8 @@
         "composites": 3,
         "studies": 0,
         "investigations": 0
-      }
+      },
+      "kind": "simulator"
     },
     {
       "name": "viva-lammps",
@@ -4747,7 +4782,8 @@
         "composites": 3,
         "studies": 2,
         "investigations": 1
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-lumenoid",
@@ -4834,7 +4870,8 @@
         "composites": 0,
         "studies": 15,
         "investigations": 1
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-lumenoid-sim",
@@ -4950,7 +4987,8 @@
         "composites": 13,
         "studies": 0,
         "investigations": 0
-      }
+      },
+      "kind": "simulator"
     },
     {
       "name": "viva-maboss",
@@ -4985,7 +5023,8 @@
         "composites": 1,
         "studies": 0,
         "investigations": 0
-      }
+      },
+      "kind": "simulator"
     },
     {
       "name": "viva-martini",
@@ -5046,7 +5085,8 @@
         "composites": 2,
         "studies": 0,
         "investigations": 0
-      }
+      },
+      "kind": "simulator"
     },
     {
       "name": "viva-medyan",
@@ -5107,7 +5147,8 @@
         "composites": 2,
         "studies": 2,
         "investigations": 1
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-mem3dg",
@@ -5184,7 +5225,8 @@
         "composites": 5,
         "studies": 3,
         "investigations": 1
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-membrane-actin-composite",
@@ -5337,7 +5379,8 @@
         "composites": 6,
         "studies": 6,
         "investigations": 1
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-mgen",
@@ -5583,7 +5626,8 @@
         "composites": 3,
         "studies": 10,
         "investigations": 2
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-multicell-blueprint-sim",
@@ -5752,7 +5796,8 @@
         "composites": 15,
         "studies": 0,
         "investigations": 0
-      }
+      },
+      "kind": "simulator"
     },
     {
       "name": "viva-munk",
@@ -5887,7 +5932,8 @@
         "composites": 9,
         "studies": 0,
         "investigations": 0
-      }
+      },
+      "kind": "simulator"
     },
     {
       "name": "viva-munk-studies",
@@ -5950,7 +5996,8 @@
         "composites": 0,
         "studies": 9,
         "investigations": 1
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-nfsim",
@@ -5997,7 +6044,8 @@
         "composites": 2,
         "studies": 0,
         "investigations": 0
-      }
+      },
+      "kind": "simulator"
     },
     {
       "name": "viva-opencor",
@@ -6049,7 +6097,8 @@
         "composites": 2,
         "studies": 0,
         "investigations": 0
-      }
+      },
+      "kind": "simulator"
     },
     {
       "name": "viva-openmm",
@@ -6082,7 +6131,8 @@
         "composites": 0,
         "studies": 0,
         "investigations": 0
-      }
+      },
+      "kind": "simulator"
     },
     {
       "name": "viva-oxidizeme",
@@ -6114,7 +6164,8 @@
         "composites": 1,
         "studies": 0,
         "investigations": 0
-      }
+      },
+      "kind": "simulator"
     },
     {
       "name": "viva-parsimony",
@@ -6151,7 +6202,8 @@
         "composites": 1,
         "studies": 0,
         "investigations": 0
-      }
+      },
+      "kind": "simulator"
     },
     {
       "name": "viva-pde-particle",
@@ -6363,7 +6415,8 @@
         "composites": 8,
         "studies": 18,
         "investigations": 3
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-pennylane-adversarial",
@@ -6407,7 +6460,8 @@
         "composites": 4,
         "studies": 0,
         "investigations": 0
-      }
+      },
+      "kind": "simulator"
     },
     {
       "name": "viva-pennylane-data-reuploading",
@@ -6501,7 +6555,8 @@
         "composites": 7,
         "studies": 3,
         "investigations": 1
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-phreeqc",
@@ -6528,7 +6583,8 @@
         "composites": 0,
         "studies": 0,
         "investigations": 0
-      }
+      },
+      "kind": "simulator"
     },
     {
       "name": "viva-pulse",
@@ -6632,7 +6688,8 @@
         "composites": 8,
         "studies": 3,
         "investigations": 1
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-pysces",
@@ -6670,7 +6727,8 @@
         "composites": 0,
         "studies": 0,
         "investigations": 0
-      }
+      },
+      "kind": "simulator"
     },
     {
       "name": "viva-reactive-system",
@@ -6728,7 +6786,8 @@
         "composites": 1,
         "studies": 1,
         "investigations": 1
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-readdy",
@@ -6784,7 +6843,8 @@
         "composites": 2,
         "studies": 2,
         "investigations": 1
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-simbio",
@@ -6845,7 +6905,8 @@
         "composites": 3,
         "studies": 0,
         "investigations": 0
-      }
+      },
+      "kind": "simulator"
     },
     {
       "name": "viva-simularium",
@@ -6872,7 +6933,8 @@
         "composites": 0,
         "studies": 0,
         "investigations": 0
-      }
+      },
+      "kind": "simulator"
     },
     {
       "name": "viva-smoldyn",
@@ -6944,7 +7006,8 @@
         "composites": 5,
         "studies": 3,
         "investigations": 1
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-tellurium",
@@ -7019,7 +7082,8 @@
         "composites": 3,
         "studies": 2,
         "investigations": 1
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-torch",
@@ -7046,7 +7110,8 @@
         "composites": 0,
         "studies": 0,
         "investigations": 0
-      }
+      },
+      "kind": "simulator"
     },
     {
       "name": "viva-tstmd",
@@ -7092,7 +7157,8 @@
         "composites": 1,
         "studies": 2,
         "investigations": 1
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-tumor-tcell",
@@ -7207,7 +7273,8 @@
         "composites": 5,
         "studies": 5,
         "investigations": 1
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "viva-vcell-fvsolver",
@@ -7263,7 +7330,8 @@
         "composites": 2,
         "studies": 2,
         "investigations": 1
-      }
+      },
+      "kind": "workspace"
     },
     {
       "name": "vivarium-tyssue",
@@ -7416,7 +7484,8 @@
         "composites": 11,
         "studies": 1,
         "investigations": 1
-      }
+      },
+      "kind": "workspace"
     }
   ]
 }
