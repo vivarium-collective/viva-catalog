@@ -225,6 +225,26 @@ def _scan_specs(root: Path, kind: str, spec_name: str, desc_keys) -> list:
     return out
 
 
+def derive_kind(counts: dict) -> str:
+    """Classify a repo from its scanned artifact counts, so consumers can group
+    the ledger without re-deriving it:
+
+      - ``workspace``  — carries its own studies / investigations (a research
+        program: a simulator, or a pinned one, plus the questions asked of it).
+      - ``simulator``  — ships processes / steps / composites but no studies
+        (a simulator wrapped as Processes, or a reusable composite / library).
+      - ``other``      — neither (emitters, utilities, infrastructure).
+    """
+    studies = (counts.get("studies", 0) or 0) + (counts.get("investigations", 0) or 0)
+    sim = ((counts.get("processes", 0) or 0) + (counts.get("steps", 0) or 0)
+           + (counts.get("composites", 0) or 0))
+    if studies > 0:
+        return "workspace"
+    if sim > 0:
+        return "simulator"
+    return "other"
+
+
 def harvest_repo(module: dict, timeout: float) -> dict:
     name = module.get("name") or module.get("package") or ""
     source = module.get("source") or module.get("homepage") or ""
@@ -252,6 +272,7 @@ def harvest_repo(module: dict, timeout: float) -> dict:
                                                   ("title", "description", "objective"))
     entry["counts"] = {k: len(entry[k]) for k in
                        ("processes", "steps", "composites", "studies", "investigations")}
+    entry["kind"] = derive_kind(entry["counts"])
     return entry
 
 
