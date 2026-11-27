@@ -245,15 +245,81 @@ def derive_kind(counts: dict) -> str:
     return "other"
 
 
+_SKIP_PKG_DIRS = {
+    "tests", "test", "docs", "doc", "examples", "example", "scripts", "build",
+    "dist", "notebooks", "data", "assets", ".github", ".git", "venv", ".venv",
+    "node_modules", "site", "__pycache__",
+}
+
+
+def _detect_package(root: Path, fallback: str) -> str:
+    """Recover the real importable package a repo installs, rather than guessing
+    it from the repo name.
+
+    This matters for sim/studies splits: a repo like ``viva-genesis-sim`` keeps
+    the un-suffixed package ``viva_genesis`` (so study composite refs resolve
+    across the split), so ``name.replace('-', '_')`` would give the WRONG,
+    un-installable name. We read it from ``pyproject.toml`` (hatch / setuptools
+    explicit package lists), then fall back to the single top-level importable
+    directory, then to the name-derived guess.
+    """
+    # 1) pyproject.toml explicit package declarations.
+    try:
+        import tomllib
+    except ModuleNotFoundError:  # py<3.11
+        tomllib = None
+    pyproject = root / "pyproject.toml"
+    if tomllib and pyproject.is_file():
+        try:
+            data = tomllib.loads(pyproject.read_text(encoding="utf-8"))
+        except Exception:  # noqa: BLE001
+            data = {}
+        tool = data.get("tool", {}) if isinstance(data, dict) else {}
+        # hatch:  [tool.hatch.build.targets.wheel] packages = ["viva_genesis"]
+        wheel = (tool.get("hatch", {}).get("build", {})
+                 .get("targets", {}).get("wheel", {}))
+        pkgs = wheel.get("packages")
+        if isinstance(pkgs, list) and pkgs and isinstance(pkgs[0], str):
+            return Path(pkgs[0]).name
+        # setuptools:  [tool.setuptools] packages = ["viva_foo", ...]
+        st_pkgs = tool.get("setuptools", {}).get("packages")
+        if isinstance(st_pkgs, list) and st_pkgs and isinstance(st_pkgs[0], str):
+            # take the shortest top-level (not a sub-package "a.b")
+            tops = sorted({p.split(".")[0] for p in st_pkgs if isinstance(p, str)}, key=len)
+            if tops:
+                return tops[0]
+
+    # 2) single top-level importable directory.
+    cands = []
+    for child in sorted(root.iterdir() if root.is_dir() else []):
+        if (child.is_dir() and child.name not in _SKIP_PKG_DIRS
+                and not child.name.startswith(".")
+                and (child / "__init__.py").is_file()):
+            cands.append(child.name)
+    if len(cands) == 1:
+        return cands[0]
+    if len(cands) > 1:
+        # prefer one matching the name-derived guess or a known package prefix
+        preferred = [c for c in cands if c == fallback or c.startswith(("viva_", "pbg_"))]
+        if len(preferred) == 1:
+            return preferred[0]
+
+    # 3) name-derived guess.
+    return fallback
+
+
 def harvest_repo(module: dict, timeout: float) -> dict:
     name = module.get("name") or module.get("package") or ""
     source = module.get("source") or module.get("homepage") or ""
     ref = module.get("ref") or ""
     org, repo = _org_repo(source)
+    # Name-derived guess; corrected from the source below when the repo clones.
+    fallback_pkg = module.get("package") or name.replace("-", "_")
     entry = {
         "name": name, "repo": repo, "source": re.sub(r"\.git$", "", source),
         "homepage": module.get("homepage") or f"https://github.com/{org}/{repo}",
         "description": module.get("description") or "", "tags": module.get("tags") or [],
+        "package": fallback_pkg,
         "cloned": False, "processes": [], "steps": [], "composites": [],
         "studies": [], "investigations": [],
     }
@@ -262,6 +328,7 @@ def harvest_repo(module: dict, timeout: float) -> dict:
         if _clone(re.sub(r"^git@github\.com:", "https://github.com/", source) or f"https://github.com/{org}/{repo}.git",
                   ref, dest, timeout):
             entry["cloned"] = True
+            entry["package"] = _detect_package(dest, fallback_pkg)
             comps, procs, steps = _scan_python(dest)
             entry["composites"] = comps
             entry["processes"] = procs
@@ -327,6 +394,25 @@ def main(argv=None) -> int:
     }
     Path(args.out).write_text(json.dumps(index, indent=2) + "\n", encoding="utf-8")
     print(f"wrote {args.out}: {index['n_repos']} repos, {index['n_cloned']} cloned", file=sys.stderr)
+
+    # Back-patch modules.json with the real packages recovered from source, so the
+    # install metadata is correct for sim/studies splits (e.g. viva-genesis-sim
+    # installs viva_genesis, not viva_genesis_sim). Only for cloned repos; a full
+    # discovery rebuild is idempotent (re-derives the guess, then re-corrects).
+    if not only:
+        detected = {r["name"]: r["package"] for r in repos if r.get("cloned")}
+        changed = 0
+        for m in modules:
+            if isinstance(m, dict) and m.get("name") in detected:
+                pkg = detected[m["name"]]
+                if m.get("package") != pkg:
+                    m["package"] = pkg
+                    changed += 1
+        if changed:
+            (PKG / "modules.json").write_text(
+                json.dumps(modules, indent=2) + "\n", encoding="utf-8")
+            print(f"corrected {changed} package name(s) in modules.json from source",
+                  file=sys.stderr)
     return 0
 
 
