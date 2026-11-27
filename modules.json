@@ -36,6 +36,15 @@
     "tags": []
   },
   {
+    "name": "mosaic-compose",
+    "source": "https://github.com/vivarium-collective/mosaic-compose.git",
+    "ref": "main",
+    "package": "mosaic_compose",
+    "homepage": "https://github.com/vivarium-collective/mosaic-compose",
+    "description": "MOSAIC \u2014 composition layer coupling metabolic, microbiome-community, PKPD, and agent-based models through hormone homeostasis (BV + MASLD)",
+    "tags": []
+  },
+  {
     "name": "mosaic-compose-sim",
     "source": "https://github.com/vivarium-collective/mosaic-compose-sim.git",
     "ref": "main",
