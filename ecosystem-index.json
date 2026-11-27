@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-27T15:05:46+00:00",
-  "n_repos": 69,
-  "n_cloned": 69,
+  "generated_at": "2026-11-27T15:14:32+00:00",
+  "n_repos": 70,
+  "n_cloned": 70,
   "repos": [
     {
       "name": "cdFBA",
@@ -10,6 +10,7 @@
       "homepage": "https://github.com/vivarium-collective/cdFBA",
       "description": "Community Dynamic Flux Balance Analysis using process-bigraph",
       "tags": [],
+      "package": "cdFBA",
       "cloned": true,
       "processes": [
         {
@@ -64,6 +65,7 @@
       "homepage": "https://github.com/vivarium-collective/CRM-FBA",
       "description": "Consumer Resource Model-coupled dynamic Flux Balance Analysis as process-bigraph composite simulations.",
       "tags": [],
+      "package": "crm_dfba",
       "cloned": true,
       "processes": [
         {
@@ -112,6 +114,7 @@
       "homepage": "https://github.com/vivarium-collective/discovery-showcase",
       "description": "Discovery Engine showcase: example-led development program (Episodes 01-10) for A discovery engine for multiscale systems biology.",
       "tags": [],
+      "package": "viva_discovery_showcase",
       "cloned": true,
       "processes": [
         {
@@ -188,6 +191,7 @@
       "homepage": "https://github.com/vivarium-collective/mosaic-compose-sim",
       "description": "Simulator (composition layer) for MOSAIC \u2014 couples dFBA/gLV/PKPD/ABM models; extracted from mosaic-compose, installs as the mosaic_compose package.",
       "tags": [],
+      "package": "mosaic_compose",
       "cloned": true,
       "processes": [],
       "steps": [
@@ -303,6 +307,7 @@
       "homepage": "https://github.com/vivarium-collective/spatio-flux",
       "description": "spatio-temporal microbial simulations with Vivarium 2.0",
       "tags": [],
+      "package": "spatio_flux",
       "cloned": true,
       "processes": [
         {
@@ -756,6 +761,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-amici",
       "description": "Process-bigraph wrapper for AMICI (CVODES-based ODE/DAE simulator). Real bridge to https://github.com/AMICI-dev/AMICI.",
       "tags": [],
+      "package": "viva_amici",
       "cloned": true,
       "processes": [
         {
@@ -808,6 +814,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-artistoo",
       "description": "Process-bigraph wrapper for the Artistoo Cellular Potts Model (real simulator via a Node.js bridge)",
       "tags": [],
+      "package": "pbg_artistoo",
       "cloned": true,
       "processes": [
         {
@@ -876,6 +883,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-basic-processes",
       "description": "Reusable, composite-agnostic process-bigraph processes (Clock, Intervention, MathExpression) that auto-register into any pbg workspace",
       "tags": [],
+      "package": "viva_basic_processes",
       "cloned": true,
       "processes": [
         {
@@ -925,6 +933,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-bbe-systems",
       "description": "Minimal brain-body-environment models reproduced as runnable process-bigraph composites",
       "tags": [],
+      "package": "viva_bbe_systems",
       "cloned": true,
       "processes": [
         {
@@ -1077,6 +1086,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-biofilm",
       "description": "Rust implementation of individual-based biofilm framework, for vivarium workspaces.",
       "tags": [],
+      "package": "viva_biofilm",
       "cloned": true,
       "processes": [
         {
@@ -1166,6 +1176,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-biomodels",
       "description": "BIOMODELS regression \u2014 drives investigations against the BioModels corpus",
       "tags": [],
+      "package": "viva_biomodels",
       "cloned": true,
       "processes": [],
       "steps": [
@@ -1310,6 +1321,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-bioreactordesign",
       "description": "Process-bigraph wrapper for BioReactorDesign (BiRD) bioreactor simulation",
       "tags": [],
+      "package": "viva_bioreactordesign",
       "cloned": true,
       "processes": [
         {
@@ -1402,6 +1414,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-caspule",
       "description": "Process-bigraph wrapper for CASPULE (a LAMMPS variant with dynamic bond formation/breaking)",
       "tags": [],
+      "package": "pbg_caspule",
       "cloned": true,
       "processes": [
         {
@@ -1464,6 +1477,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-chaste",
       "description": "Process-bigraph wrapper for the Chaste cell-based simulator, run via the chaste/pychaste Docker image.",
       "tags": [],
+      "package": "pbg_chaste",
       "cloned": true,
       "processes": [
         {
@@ -1564,6 +1578,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-cobra",
       "description": "COBRApy flux-balance analysis as process-bigraph components: FBA step, Michaelis-Menten uptake process, and a dynamic-FBA composite.",
       "tags": [],
+      "package": "viva_cobra",
       "cloned": true,
       "processes": [
         {
@@ -1603,6 +1618,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-comets",
       "description": "Process-bigraph wrapper for COMETS (dynamic FBA + 2D spatial microbial ecosystems)",
       "tags": [],
+      "package": "pbg_comets",
       "cloned": true,
       "processes": [
         {
@@ -1670,6 +1686,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-composite-nfsim-caspule",
       "description": "Process-bigraph composite: CASPULE bond-aware MD coupled to NFSim rule-based kinetics through a configurable observable detector that converts spatial bond clusters into non-spatial species counts.",
       "tags": [],
+      "package": "pbg_composite_nfsim_caspule",
       "cloned": true,
       "processes": [],
       "steps": [
@@ -1726,6 +1743,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-compucell3d",
       "description": "Process-bigraph wrapper for the CompuCell3D multicellular simulation environment",
       "tags": [],
+      "package": "pbg_compucell3d",
       "cloned": true,
       "processes": [
         {
@@ -1791,6 +1809,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-copasi",
       "description": "process-bigraph-compatible COPASI Steps and Processes for SBML simulation",
       "tags": [],
+      "package": "viva_copasi",
       "cloned": true,
       "processes": [
         {
@@ -1853,6 +1872,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-cpm",
       "description": "Vivarium-native Cellular Potts Model framework \u2014 with a fast Rust core",
       "tags": [],
+      "package": "viva_cpm",
       "cloned": true,
       "processes": [
         {
@@ -2101,6 +2121,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-dynamic-networks",
       "description": "Dynamic networks as process-bigraph reactions: a catalog of network-reconfiguring rules + SBML reactors on evolving networks",
       "tags": [],
+      "package": "viva_dynamic_networks",
       "cloned": true,
       "processes": [
         {
@@ -2270,6 +2291,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-emitters",
       "description": "emitter library for vivarium simulations",
       "tags": [],
+      "package": "viva_emitters",
       "cloned": true,
       "processes": [],
       "steps": [
@@ -2318,6 +2340,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-equilibrator",
       "description": "Process-bigraph wrapper for eQuilibrator (component-contribution transformed Gibbs energies)",
       "tags": [],
+      "package": "viva_equilibrator",
       "cloned": true,
       "processes": [],
       "steps": [
@@ -2351,6 +2374,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-expressions",
       "description": "Assemble process-bigraph models of dynamical systems from expected outputs and behavior",
       "tags": [],
+      "package": "viva_expressions",
       "cloned": true,
       "processes": [
         {
@@ -2412,6 +2436,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-fenics",
       "description": "Process-bigraph wrapper for FEniCSx (dolfinx)",
       "tags": [],
+      "package": "viva_fenics",
       "cloned": true,
       "processes": [
         {
@@ -2611,6 +2636,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-fipy",
       "description": "Genuine FiPy finite-volume engine as reusable primitives + a general reaction-advection-diffusion process-bigraph process.",
       "tags": [],
+      "package": "viva_fipy",
       "cloned": true,
       "processes": [
         {
@@ -2639,6 +2665,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-genesis",
       "description": "Origins-of-life simulation campaigns in Vivarium",
       "tags": [],
+      "package": "viva_genesis",
       "cloned": true,
       "processes": [],
       "steps": [],
@@ -2839,6 +2866,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-genesis-sim",
       "description": "Simulator for the viva-genesis research program \u2014 process-bigraph composites, processes, and genuine-engine bridges (origin of life, eukaryogenesis, multicellularity). Extracted from viva-genesis; installs as the viva_genesis package.",
       "tags": [],
+      "package": "viva_genesis",
       "cloned": true,
       "processes": [
         {
@@ -4078,6 +4106,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-grammar",
       "description": "Generic, ABM-agnostic implementation of the Macklin/PhysiCell cell-behavior hypothesis grammar (Cell 2025) as a process-bigraph module",
       "tags": [],
+      "package": "viva_grammar",
       "cloned": true,
       "processes": [
         {
@@ -4131,6 +4160,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-human-atlas",
       "description": "HRA/WPP modeling workspace",
       "tags": [],
+      "package": "viva_human_atlas",
       "cloned": true,
       "processes": [
         {
@@ -4435,6 +4465,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-hybrid",
       "description": "Trial: pure-Rust hybrid ODE/SSA engine (SBML + partition metadata) vs Python baselines",
       "tags": [],
+      "package": "viva_hybrid",
       "cloned": true,
       "processes": [],
       "steps": [
@@ -4490,6 +4521,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-iirabm",
       "description": "Process-bigraph wrapper for the An & Cockrell IIRABM; reproduces the 2018 sepsis-controllability paper (PLoS Comput Biol e1005876)",
       "tags": [],
+      "package": "viva_iirabm",
       "cloned": true,
       "processes": [
         {
@@ -4549,6 +4581,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-island-biogeography-sim",
       "description": "Simulator for the viva-island-biogeography research program \u2014 processes, composites, and evaluators extracted from viva-island-biogeography; installs as the viva_island_biogeography package.",
       "tags": [],
+      "package": "viva_island_biogeography",
       "cloned": true,
       "processes": [
         {
@@ -4631,6 +4664,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-julia-diffeqs",
       "description": "Process-bigraph wrapper for Julia's DifferentialEquations.jl SBML simulation \u2014 the Julia counterpart to viva-tellurium and viva-copasi",
       "tags": [],
+      "package": "viva_julia_diffeqs",
       "cloned": true,
       "processes": [
         {
@@ -4665,6 +4699,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-ketchup",
       "description": "Process-bigraph wrapper for KETCHUP kinetic parameter estimation (real ktools/IPOPT bridge; k-ecoli74/307 steady-state + FDH/BDH time-series)",
       "tags": [],
+      "package": "viva_ketchup",
       "cloned": true,
       "processes": [],
       "steps": [
@@ -4711,6 +4746,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-lammps",
       "description": "Process-bigraph wrapper for the LAMMPS molecular dynamics simulator",
       "tags": [],
+      "package": "pbg_lammps",
       "cloned": true,
       "processes": [
         {
@@ -4792,6 +4828,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-lumenoid",
       "description": "collagen IV basement-membrane network (AICS Lumenoids v1)",
       "tags": [],
+      "package": "viva_lumenoid",
       "cloned": true,
       "processes": [],
       "steps": [],
@@ -4880,6 +4917,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-lumenoid-sim",
       "description": "Simulator for viva-lumenoid \u2014 collagen IV basement-membrane mechanics + Tyssue vertex coupling; extracted from viva-lumenoid, installs as the viva_lumenoid package.",
       "tags": [],
+      "package": "viva_lumenoid",
       "cloned": true,
       "processes": [
         {
@@ -5000,6 +5038,7 @@
         "boolean-network",
         "process-bigraph"
       ],
+      "package": "viva_maboss",
       "cloned": true,
       "processes": [
         {
@@ -5033,6 +5072,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-martini",
       "description": "Process-bigraph wrapper for the Martini coarse-grained force field \u2014 membrane systems, micelles, protein-lipid complexes, and vesicles",
       "tags": [],
+      "package": "pbg_martini",
       "cloned": true,
       "processes": [],
       "steps": [
@@ -5095,6 +5135,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-medyan",
       "description": "Process-bigraph wrapper for the MEDYAN cytoskeleton simulator: pure-Python re-implementation + a subprocess-driven bridge to the real MEDYAN C++ binary (with checkpoint-restart and HDF5 vesicle support).",
       "tags": [],
+      "package": "pbg_medyan",
       "cloned": true,
       "processes": [
         {
@@ -5157,6 +5198,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-mem3dg",
       "description": "Process-bigraph wrapper for Mem3DG membrane mechanics simulator",
       "tags": [],
+      "package": "pbg_mem3dg",
       "cloned": true,
       "processes": [
         {
@@ -5235,6 +5277,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-membrane-actin-composite",
       "description": "Process-bigraph composite: pbg-mem3dg + pbg-readdy as a Brownian ratchet (actin pushing on membrane, closed-loop)",
       "tags": [],
+      "package": "pbg_membrane_actin_composite",
       "cloned": true,
       "processes": [
         {
@@ -5389,6 +5432,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-mgen",
       "description": "Viva-native (process-bigraph) reproduction of the Karr et al. 2012 Mycoplasma genitalium whole-cell model",
       "tags": [],
+      "package": "viva_mgen",
       "cloned": true,
       "processes": [
         {
@@ -5630,12 +5674,122 @@
       "kind": "workspace"
     },
     {
+      "name": "viva-multicell-blueprint",
+      "repo": "viva-multicell-blueprint",
+      "source": "https://github.com/vivarium-collective/viva-multicell-blueprint",
+      "homepage": "https://github.com/vivarium-collective/viva-multicell-blueprint",
+      "description": "",
+      "tags": [],
+      "package": "viva_multicell_blueprint",
+      "cloned": true,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [
+        {
+          "name": "particles-in-consensus",
+          "description": "Particles in a consensus tissue: Smoldyn molecules bounded by a boundary three tissue simulators agree on"
+        },
+        {
+          "name": "bounded-particles-cpm",
+          "description": "Smoldyn particles bounded by Cellular Potts (CPM) voxel cells: confinement, conservation across division, reaction equilibrium"
+        },
+        {
+          "name": "tri-coupled-consensus",
+          "description": "Tri-coupled consensus: CPM, vertex and center-based mechanics on one shared cell set"
+        },
+        {
+          "name": "fateful-consensus",
+          "description": "Fateful consensus: a tri-coupled tissue where cell area drives each cell's metabolism\u2192fate"
+        },
+        {
+          "name": "mibitof-tricoupled-consensus",
+          "description": "Do three mechanics paradigms (CPM, vertex, center-based) stay coupled into one consensus when initialized from REAL MIBI-TOF spatial-omics imaging (human colon-carcinoma tissue)?"
+        },
+        {
+          "name": "heterotypic-regions",
+          "description": "Heterotypic tissue regions: a vertex epithelium on a munk mesenchyme, coupled at an interface"
+        },
+        {
+          "name": "coupled-triple-cell",
+          "description": "Coupled cell: all three sub-cellular formalisms and all three coupling modes in one cell"
+        },
+        {
+          "name": "subcellular-layer-grow-divide",
+          "description": "Does the pluggable per-cell subcellular (tellurium ODE) layer grow AND divide cells uniformly across cpm, vertex and munk through `blueprint_pipeline`?\n"
+        },
+        {
+          "name": "blueprint-pipeline-fidelity",
+          "description": "Can one versioned, backend-neutral blueprint be compiled by `blueprint_pipeline` and materialized faithfully on CPM, vertex and center-based, with the biological specification kept separate from backend and run parameters?\n"
+        },
+        {
+          "name": "substrate-behavior-at-scale",
+          "description": "Now that center-based (munk) cells move and interact and the tissue is large enough for real spatial dynamics, which substrate reproduces the CPM's interaction pattern, and on which axes does each diverge?\n"
+        },
+        {
+          "name": "fateful-tissue",
+          "description": "Fateful tissue: a dividing tyssue whose divisions are decided by each cell's own metabolism\u2192fate chain"
+        },
+        {
+          "name": "scene-model-mixed-formalism",
+          "description": "Model-definition format: one scene, three cell types, three formalisms (ODE, Smoldyn particles, MaBoSS) sharing an extracellular field"
+        },
+        {
+          "name": "cross-paradigm-equivalence",
+          "description": "Under replication, are the three mechanical substrates EQUIVALENT (not merely \"not-distinguishable\") on cell fate and on exact spatial position when one backend-neutral blueprint is run through `blueprint_pipeline`, and does the test correctly REJECT when mechanics (not the shared mechanism) drives the outcome?\n"
+        },
+        {
+          "name": "bounded-particles-munk",
+          "description": "Smoldyn particles bounded by center-based (viva-munk) discs: confinement, conservation across division, reaction equilibrium"
+        },
+        {
+          "name": "coupled-particle-catalysis",
+          "description": "Coupled cell: a Smoldyn particle population catalyses an ODE (particle count sets the ODE rate)"
+        },
+        {
+          "name": "paradigm-divergence-mibitof",
+          "description": "From the SAME initial state (real MIBI-TOF colon tissue), how far do the three mechanics paradigms (CPM, vertex, center-based) diverge when run alone, and does the tri-coupled consensus keep them registered over a long run (120 steps)?"
+        },
+        {
+          "name": "bounded-particles-vertex",
+          "description": "Smoldyn particles bounded by tyssue (vertex) polygons: confinement, conservation across division, reaction equilibrium"
+        },
+        {
+          "name": "coupled-fate-oscillator",
+          "description": "Coupled cell: an ODE metabolism and a MaBoSS fate network form a metabolism\u2194fate oscillator"
+        },
+        {
+          "name": "dose-response-crossparadigm",
+          "description": "Do the two substrates agree on the SIGN of the dose response over initial viral load (more load -> more infection), robustly across seeds?\n"
+        }
+      ],
+      "investigations": [
+        {
+          "name": "influenza-crossparadigm",
+          "description": "Blueprint to pipeline to three substrates: one backend-neutral blueprint, run faithfully on CPM, vertex and center-based, with a pluggable subcellular layer"
+        },
+        {
+          "name": "composition-atlas",
+          "description": "A composition atlas: building cell and tissue models by coupling simulators in every direction"
+        }
+      ],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 19,
+        "investigations": 2
+      },
+      "kind": "workspace"
+    },
+    {
       "name": "viva-multicell-blueprint-sim",
       "repo": "viva-multicell-blueprint-sim",
       "source": "https://github.com/vivarium-collective/viva-multicell-blueprint-sim",
       "homepage": "https://github.com/vivarium-collective/viva-multicell-blueprint-sim",
       "description": "Simulator for the viva-multicell-blueprint research program \u2014 backend-neutral multicellular blueprint engine (CPM / vertex / center-based / particle / subcellular ODE + Boolean). Extracted from viva-multicell-blueprint; installs as the viva_multicell_blueprint package.",
       "tags": [],
+      "package": "viva_multicell_blueprint",
       "cloned": true,
       "processes": [
         {
@@ -5806,6 +5960,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-munk",
       "description": "vivarium wrapper for pymunk",
       "tags": [],
+      "package": "viva_munk",
       "cloned": true,
       "processes": [
         {
@@ -5942,6 +6097,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-munk-studies",
       "description": "Studies and investigations for viva-munk (pymunk 2D multi-cell physics); the simulator is the pinned viva-munk package. Onboarding to the vivarium-workbench.",
       "tags": [],
+      "package": "viva_munk_studies",
       "cloned": true,
       "processes": [],
       "steps": [],
@@ -6006,6 +6162,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-nfsim",
       "description": "A process-bigraph wrapper for BioNetGen/NFSim",
       "tags": [],
+      "package": "pbg_nfsim",
       "cloned": true,
       "processes": [
         {
@@ -6054,6 +6211,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-opencor",
       "description": "Process-bigraph wrappers for OpenCOR / CellML (Physiome models) via libOpenCOR \u2014 the CellML counterpart to viva-copasi / viva-tellurium",
       "tags": [],
+      "package": "viva_opencor",
       "cloned": true,
       "processes": [
         {
@@ -6107,6 +6265,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-openmm",
       "description": "process-bigraph OpenMM MD wrapper (Martini CG + all-atom solvated relax)",
       "tags": [],
+      "package": "viva_openmm",
       "cloned": true,
       "processes": [
         {
@@ -6141,6 +6300,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-oxidizeme",
       "description": "Process-bigraph wrapper for OxidizeME \u2014 a genome-scale ME-model of E. coli with ROS damage/repair (Yang et al. 2019 PNAS / Palsson lab)",
       "tags": [],
+      "package": "pbg_oxidizeme",
       "cloned": true,
       "processes": [],
       "steps": [
@@ -6174,6 +6334,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-parsimony",
       "description": "Reusable process-bigraph packing of 3D structural models (parsimony engine wrapper)",
       "tags": [],
+      "package": "pbg_parsimony",
       "cloned": true,
       "processes": [],
       "steps": [
@@ -6212,6 +6373,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-pde-particle",
       "description": "PDE/particle hybrid co-simulation (FEniCSx/finite volume + Smoldyn) with process-bigraph, benchmarked against vcell-fvsolver's embedded hybrid solver",
       "tags": [],
+      "package": "viva_pde_particle",
       "cloned": true,
       "processes": [
         {
@@ -6425,6 +6587,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-pennylane-adversarial",
       "description": "",
       "tags": [],
+      "package": "pbg_pennylane_adversarial",
       "cloned": true,
       "processes": [
         {
@@ -6470,6 +6633,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-pennylane-data-reuploading",
       "description": "",
       "tags": [],
+      "package": "pbg_pennylane_data_reuploading",
       "cloned": true,
       "processes": [
         {
@@ -6565,6 +6729,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-phreeqc",
       "description": "Genuine USGS PHREEQC (IPhreeqc) engine as a reusable, config-driven process-bigraph bridge.",
       "tags": [],
+      "package": "viva_phreeqc",
       "cloned": true,
       "processes": [
         {
@@ -6593,6 +6758,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-pulse",
       "description": "Process-bigraph wrapper driving the real Kitware Pulse Physiology Engine",
       "tags": [],
+      "package": "viva_pulse",
       "cloned": true,
       "processes": [
         {
@@ -6698,6 +6864,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-pysces",
       "description": "Process-bigraph wrapper for PySCeS (Python Simulator for Cellular Systems)",
       "tags": [],
+      "package": "viva_pysces",
       "cloned": true,
       "processes": [
         {
@@ -6737,6 +6904,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-reactive-system",
       "description": "Process-bigraph wrapper for Milner-style Bigraphical Reactive Systems, with a worked MAPK signalling example.",
       "tags": [],
+      "package": "pbg_reactive_system",
       "cloned": true,
       "processes": [
         {
@@ -6796,6 +6964,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-readdy",
       "description": "Process-bigraph wrapper for the ReaDDy particle-based reaction-diffusion simulator",
       "tags": [],
+      "package": "pbg_readdy",
       "cloned": true,
       "processes": [
         {
@@ -6853,6 +7022,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-simbio",
       "description": "Process-bigraph wrapper for simbio (Chemical Reaction Network simulation) \u2014 load models from Antimony, simulate with simbio",
       "tags": [],
+      "package": "viva_simbio",
       "cloned": true,
       "processes": [
         {
@@ -6915,6 +7085,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-simularium",
       "description": "Generic Simularium adapters for viva / process-bigraph: emitted trajectories -> .simularium",
       "tags": [],
+      "package": "viva_simularium",
       "cloned": true,
       "processes": [],
       "steps": [
@@ -6943,6 +7114,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-smoldyn",
       "description": "Process-bigraph wrapper for the Smoldyn particle-based spatial stochastic simulator",
       "tags": [],
+      "package": "viva_smoldyn",
       "cloned": true,
       "processes": [
         {
@@ -7016,6 +7188,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-tellurium",
       "description": "Process-bigraph wrapper for Tellurium / libroadrunner SBML & Antimony simulation",
       "tags": [],
+      "package": "viva_tellurium",
       "cloned": true,
       "processes": [
         {
@@ -7092,6 +7265,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-torch",
       "description": "Neural-network surrogate Processes for process-bigraph \u2014 learn a drop-in approximation of any Process/Composite",
       "tags": [],
+      "package": "viva_torch",
       "cloned": true,
       "processes": [
         {
@@ -7120,6 +7294,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-tstmd",
       "description": "Process-bigraph bridge to the real TST-MD engine (hybrid cellular Potts + bead-spring ECM; Tsingos et al. 2023), run CPU-only via Docker. The 2D engine behind the Merks 3D CPM-ECM reproduction.",
       "tags": [],
+      "package": "pbg_tstmd",
       "cloned": true,
       "processes": [
         {
@@ -7167,6 +7342,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-tumor-tcell",
       "description": "Process-bigraph port of the tumor-tcell tumor-microenvironment ABM, with viva-munk physics",
       "tags": [],
+      "package": "viva_tumor_tcell",
       "cloned": true,
       "processes": [
         {
@@ -7283,6 +7459,7 @@
       "homepage": "https://github.com/vivarium-collective/viva-vcell-fvsolver",
       "description": "process-bigraph wrapper around pyvcell / pyvcell-fvsolver \u2014 VCell's finite-volume 3D reaction-diffusion PDE solver as a PBG Process",
       "tags": [],
+      "package": "pbg_vcell_fvsolver",
       "cloned": true,
       "processes": [
         {
@@ -7340,6 +7517,7 @@
       "homepage": "https://github.com/vivarium-collective/vivarium-tyssue",
       "description": "Vivarium Implementation of a Tyssue Euler Methods",
       "tags": [],
+      "package": "vivarium_tyssue",
       "cloned": true,
       "processes": [
         {
