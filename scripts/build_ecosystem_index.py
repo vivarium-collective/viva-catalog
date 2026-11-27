@@ -456,12 +456,22 @@ def main(argv=None) -> int:
         repos.append(entry)
 
     # Resolve cross-repo edges now that every repo is known. Both map a
-    # DISTRIBUTION name (what deps and study pins reference — equal to the repo
-    # name) to a repo; unresolved names (private/un-topic'd/external, e.g.
-    # process-bigraph) simply aren't nodes, so they drop rather than dangle.
+    # DISTRIBUTION name (what deps and study pins reference) to a repo; unresolved
+    # names (private/un-topic'd/external, e.g. process-bigraph) simply aren't nodes,
+    # so they drop rather than dangle.
     #   reuses         — repo -> catalog repos it declares a dependency on
     #   simulator_refs — workspace repo -> the sim repo(s) its studies pin
+    # Map BOTH the repo name AND its real package/dist name to the repo: a repo whose
+    # published dist name differs from the repo name (e.g. the legacy pbg-* dists:
+    # pbg-artistoo -> viva-artistoo) is the same node, so a dep or study pin naming
+    # either resolves. Repo-name mapping wins on any collision (setdefault), so a
+    # sim's un-suffixed package (viva_genesis in viva-genesis-sim) never shadows the
+    # studies repo of the same name (viva-genesis).
     dist_to_repo = {_canon(r["name"]): r["name"] for r in repos}
+    for r in repos:
+        pkg = r.get("package")
+        if pkg:
+            dist_to_repo.setdefault(_canon(pkg), r["name"])
     for r in repos:
         deps = r.pop("_deps", []) or []
         r["reuses"] = sorted({dist_to_repo[d] for d in deps
