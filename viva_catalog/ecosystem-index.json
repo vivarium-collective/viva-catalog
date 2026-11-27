@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T15:14:32+00:00",
+  "generated_at": "2026-11-27T15:45:04+00:00",
   "n_repos": 70,
   "n_cloned": 70,
   "repos": [
@@ -56,7 +56,9 @@
         "studies": 0,
         "investigations": 0
       },
-      "kind": "simulator"
+      "kind": "simulator",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "CRM-FBA",
@@ -105,7 +107,11 @@
         "studies": 1,
         "investigations": 1
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [
+        "viva-cobra"
+      ],
+      "simulator_refs": []
     },
     {
       "name": "discovery-showcase",
@@ -182,7 +188,11 @@
         "studies": 4,
         "investigations": 4
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [
+        "spatio-flux"
+      ],
+      "simulator_refs": []
     },
     {
       "name": "mosaic-compose-sim",
@@ -298,7 +308,13 @@
         "studies": 0,
         "investigations": 0
       },
-      "kind": "simulator"
+      "kind": "simulator",
+      "reuses": [
+        "viva-cobra",
+        "viva-munk",
+        "viva-tellurium"
+      ],
+      "simulator_refs": []
     },
     {
       "name": "spatio-flux",
@@ -752,7 +768,9 @@
         "studies": 30,
         "investigations": 2
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-amici",
@@ -805,7 +823,9 @@
         "studies": 0,
         "investigations": 0
       },
-      "kind": "simulator"
+      "kind": "simulator",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-artistoo",
@@ -874,7 +894,9 @@
         "studies": 2,
         "investigations": 1
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-basic-processes",
@@ -924,7 +946,9 @@
         "studies": 0,
         "investigations": 0
       },
-      "kind": "simulator"
+      "kind": "simulator",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-bbe-systems",
@@ -1077,7 +1101,9 @@
         "studies": 14,
         "investigations": 5
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-biofilm",
@@ -1167,7 +1193,11 @@
         "studies": 5,
         "investigations": 3
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [
+        "viva-emitters"
+      ],
+      "simulator_refs": []
     },
     {
       "name": "viva-biomodels",
@@ -1312,7 +1342,17 @@
         "studies": 2,
         "investigations": 1
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [
+        "viva-amici",
+        "viva-basic-processes",
+        "viva-copasi",
+        "viva-emitters",
+        "viva-pysces",
+        "viva-simbio",
+        "viva-tellurium"
+      ],
+      "simulator_refs": []
     },
     {
       "name": "viva-bioreactordesign",
@@ -1405,7 +1445,9 @@
         "studies": 4,
         "investigations": 1
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-caspule",
@@ -1468,7 +1510,9 @@
         "studies": 2,
         "investigations": 1
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-chaste",
@@ -1569,7 +1613,9 @@
         "studies": 4,
         "investigations": 1
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-cobra",
@@ -1609,7 +1655,9 @@
         "studies": 0,
         "investigations": 0
       },
-      "kind": "simulator"
+      "kind": "simulator",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-comets",
@@ -1677,7 +1725,9 @@
         "studies": 2,
         "investigations": 1
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-composite-nfsim-caspule",
@@ -1734,7 +1784,9 @@
         "studies": 2,
         "investigations": 1
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-compucell3d",
@@ -1800,7 +1852,9 @@
         "studies": 4,
         "investigations": 1
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-copasi",
@@ -1863,7 +1917,9 @@
         "studies": 0,
         "investigations": 0
       },
-      "kind": "simulator"
+      "kind": "simulator",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-cpm",
@@ -2112,7 +2168,11 @@
         "studies": 28,
         "investigations": 4
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [
+        "viva-tellurium"
+      ],
+      "simulator_refs": []
     },
     {
       "name": "viva-dynamic-networks",
@@ -2282,7 +2342,11 @@
         "studies": 15,
         "investigations": 1
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [
+        "viva-copasi"
+      ],
+      "simulator_refs": []
     },
     {
       "name": "viva-emitters",
@@ -2331,7 +2395,9 @@
         "studies": 0,
         "investigations": 0
       },
-      "kind": "simulator"
+      "kind": "simulator",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-equilibrator",
@@ -2365,7 +2431,9 @@
         "studies": 0,
         "investigations": 0
       },
-      "kind": "simulator"
+      "kind": "simulator",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-expressions",
@@ -2427,7 +2495,12 @@
         "studies": 1,
         "investigations": 1
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [
+        "viva-biomodels",
+        "viva-tellurium"
+      ],
+      "simulator_refs": []
     },
     {
       "name": "viva-fenics",
@@ -2627,7 +2700,9 @@
         "studies": 7,
         "investigations": 1
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-fipy",
@@ -2656,7 +2731,9 @@
         "studies": 0,
         "investigations": 0
       },
-      "kind": "simulator"
+      "kind": "simulator",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-genesis",
@@ -2857,7 +2934,16 @@
         "studies": 41,
         "investigations": 3
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [
+        "viva-genesis-sim"
+      ],
+      "simulator_refs": [
+        {
+          "repo": "viva-genesis-sim",
+          "ref": "0.1.5"
+        }
+      ]
     },
     {
       "name": "viva-genesis-sim",
@@ -4097,7 +4183,18 @@
         "studies": 0,
         "investigations": 0
       },
-      "kind": "simulator"
+      "kind": "simulator",
+      "reuses": [
+        "viva-basic-processes",
+        "viva-cpm",
+        "viva-equilibrator",
+        "viva-fenics",
+        "viva-fipy",
+        "viva-openmm",
+        "viva-phreeqc",
+        "viva-tellurium"
+      ],
+      "simulator_refs": []
     },
     {
       "name": "viva-grammar",
@@ -4151,7 +4248,9 @@
         "studies": 1,
         "investigations": 1
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-human-atlas",
@@ -4456,7 +4555,13 @@
         "studies": 21,
         "investigations": 4
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [
+        "viva-biomodels",
+        "viva-copasi",
+        "viva-tellurium"
+      ],
+      "simulator_refs": []
     },
     {
       "name": "viva-hybrid",
@@ -4512,7 +4617,9 @@
         "studies": 4,
         "investigations": 1
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-iirabm",
@@ -4572,7 +4679,9 @@
         "studies": 4,
         "investigations": 1
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-island-biogeography-sim",
@@ -4655,7 +4764,9 @@
         "studies": 0,
         "investigations": 0
       },
-      "kind": "simulator"
+      "kind": "simulator",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-julia-diffeqs",
@@ -4690,7 +4801,9 @@
         "studies": 0,
         "investigations": 0
       },
-      "kind": "simulator"
+      "kind": "simulator",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-ketchup",
@@ -4737,7 +4850,9 @@
         "studies": 0,
         "investigations": 0
       },
-      "kind": "simulator"
+      "kind": "simulator",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-lammps",
@@ -4819,7 +4934,9 @@
         "studies": 2,
         "investigations": 1
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-lumenoid",
@@ -4908,7 +5025,19 @@
         "studies": 15,
         "investigations": 1
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [
+        "viva-lammps",
+        "viva-lumenoid-sim",
+        "viva-simularium",
+        "viva-smoldyn"
+      ],
+      "simulator_refs": [
+        {
+          "repo": "viva-lumenoid-sim",
+          "ref": "0.1.0"
+        }
+      ]
     },
     {
       "name": "viva-lumenoid-sim",
@@ -5026,7 +5155,12 @@
         "studies": 0,
         "investigations": 0
       },
-      "kind": "simulator"
+      "kind": "simulator",
+      "reuses": [
+        "viva-lammps",
+        "viva-smoldyn"
+      ],
+      "simulator_refs": []
     },
     {
       "name": "viva-maboss",
@@ -5063,7 +5197,9 @@
         "studies": 0,
         "investigations": 0
       },
-      "kind": "simulator"
+      "kind": "simulator",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-martini",
@@ -5126,7 +5262,9 @@
         "studies": 0,
         "investigations": 0
       },
-      "kind": "simulator"
+      "kind": "simulator",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-medyan",
@@ -5189,7 +5327,9 @@
         "studies": 2,
         "investigations": 1
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-mem3dg",
@@ -5268,7 +5408,9 @@
         "studies": 3,
         "investigations": 1
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-membrane-actin-composite",
@@ -5423,7 +5565,12 @@
         "studies": 6,
         "investigations": 1
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [
+        "viva-mem3dg",
+        "viva-readdy"
+      ],
+      "simulator_refs": []
     },
     {
       "name": "viva-mgen",
@@ -5671,7 +5818,11 @@
         "studies": 10,
         "investigations": 2
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [
+        "viva-parsimony"
+      ],
+      "simulator_refs": []
     },
     {
       "name": "viva-multicell-blueprint",
@@ -5780,7 +5931,20 @@
         "studies": 19,
         "investigations": 2
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [
+        "viva-cpm",
+        "viva-multicell-blueprint-sim",
+        "viva-munk",
+        "viva-tellurium",
+        "vivarium-tyssue"
+      ],
+      "simulator_refs": [
+        {
+          "repo": "viva-multicell-blueprint-sim",
+          "ref": "0.1.0"
+        }
+      ]
     },
     {
       "name": "viva-multicell-blueprint-sim",
@@ -5951,7 +6115,16 @@
         "studies": 0,
         "investigations": 0
       },
-      "kind": "simulator"
+      "kind": "simulator",
+      "reuses": [
+        "viva-cpm",
+        "viva-grammar",
+        "viva-maboss",
+        "viva-munk",
+        "viva-tellurium",
+        "vivarium-tyssue"
+      ],
+      "simulator_refs": []
     },
     {
       "name": "viva-munk",
@@ -6088,7 +6261,11 @@
         "studies": 0,
         "investigations": 0
       },
-      "kind": "simulator"
+      "kind": "simulator",
+      "reuses": [
+        "viva-emitters"
+      ],
+      "simulator_refs": []
     },
     {
       "name": "viva-munk-studies",
@@ -6153,7 +6330,16 @@
         "studies": 9,
         "investigations": 1
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [
+        "viva-munk"
+      ],
+      "simulator_refs": [
+        {
+          "repo": "viva-munk",
+          "ref": "0.1.0"
+        }
+      ]
     },
     {
       "name": "viva-nfsim",
@@ -6202,7 +6388,9 @@
         "studies": 0,
         "investigations": 0
       },
-      "kind": "simulator"
+      "kind": "simulator",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-opencor",
@@ -6256,7 +6444,9 @@
         "studies": 0,
         "investigations": 0
       },
-      "kind": "simulator"
+      "kind": "simulator",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-openmm",
@@ -6291,7 +6481,9 @@
         "studies": 0,
         "investigations": 0
       },
-      "kind": "simulator"
+      "kind": "simulator",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-oxidizeme",
@@ -6325,7 +6517,9 @@
         "studies": 0,
         "investigations": 0
       },
-      "kind": "simulator"
+      "kind": "simulator",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-parsimony",
@@ -6364,7 +6558,9 @@
         "studies": 0,
         "investigations": 0
       },
-      "kind": "simulator"
+      "kind": "simulator",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-pde-particle",
@@ -6578,7 +6774,9 @@
         "studies": 18,
         "investigations": 3
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-pennylane-adversarial",
@@ -6624,7 +6822,9 @@
         "studies": 0,
         "investigations": 0
       },
-      "kind": "simulator"
+      "kind": "simulator",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-pennylane-data-reuploading",
@@ -6720,7 +6920,9 @@
         "studies": 3,
         "investigations": 1
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-phreeqc",
@@ -6749,7 +6951,9 @@
         "studies": 0,
         "investigations": 0
       },
-      "kind": "simulator"
+      "kind": "simulator",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-pulse",
@@ -6855,7 +7059,9 @@
         "studies": 3,
         "investigations": 1
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-pysces",
@@ -6895,7 +7101,9 @@
         "studies": 0,
         "investigations": 0
       },
-      "kind": "simulator"
+      "kind": "simulator",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-reactive-system",
@@ -6955,7 +7163,9 @@
         "studies": 1,
         "investigations": 1
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-readdy",
@@ -7013,7 +7223,9 @@
         "studies": 2,
         "investigations": 1
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-simbio",
@@ -7076,7 +7288,9 @@
         "studies": 0,
         "investigations": 0
       },
-      "kind": "simulator"
+      "kind": "simulator",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-simularium",
@@ -7105,7 +7319,9 @@
         "studies": 0,
         "investigations": 0
       },
-      "kind": "simulator"
+      "kind": "simulator",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-smoldyn",
@@ -7179,7 +7395,12 @@
         "studies": 3,
         "investigations": 1
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [
+        "viva-emitters",
+        "viva-simularium"
+      ],
+      "simulator_refs": []
     },
     {
       "name": "viva-tellurium",
@@ -7256,7 +7477,9 @@
         "studies": 2,
         "investigations": 1
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-torch",
@@ -7285,7 +7508,9 @@
         "studies": 0,
         "investigations": 0
       },
-      "kind": "simulator"
+      "kind": "simulator",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "viva-tstmd",
@@ -7333,7 +7558,11 @@
         "studies": 2,
         "investigations": 1
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [
+        "viva-cpm"
+      ],
+      "simulator_refs": []
     },
     {
       "name": "viva-tumor-tcell",
@@ -7450,7 +7679,11 @@
         "studies": 5,
         "investigations": 1
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [
+        "viva-munk"
+      ],
+      "simulator_refs": []
     },
     {
       "name": "viva-vcell-fvsolver",
@@ -7508,7 +7741,9 @@
         "studies": 2,
         "investigations": 1
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [],
+      "simulator_refs": []
     },
     {
       "name": "vivarium-tyssue",
@@ -7663,7 +7898,15 @@
         "studies": 1,
         "investigations": 1
       },
-      "kind": "workspace"
+      "kind": "workspace",
+      "reuses": [
+        "viva-biomodels",
+        "viva-copasi",
+        "viva-emitters",
+        "viva-simbio",
+        "viva-tellurium"
+      ],
+      "simulator_refs": []
     }
   ]
 }
