@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T19:10:21+00:00",
+  "generated_at": "2026-11-28T14:44:39+00:00",
   "n_repos": 78,
   "n_cloned": 78,
   "repos": [
@@ -21,12 +21,12 @@
         {
           "name": "StaticConcentration",
           "kind": "process",
-          "description": "The StaticConcentration process maintains the concentration of given substrates at a fixed value at each time-step"
+          "description": "Declares fixed concentration targets for given substrates."
         },
         {
           "name": "WaveFunction",
           "kind": "process",
-          "description": "The WaveFunction process maintains the concentration of given substrates based on a wave-function"
+          "description": "Declares a time-varying (wave) concentration target for given substrates."
         },
         {
           "name": "Injector",
@@ -38,7 +38,7 @@
         {
           "name": "UpdateEnvironment",
           "kind": "step",
-          "description": ""
+          "description": "The single writer of the shared environment's counts."
         },
         {
           "name": "EnvironmentMonitor",
@@ -210,13 +210,24 @@
           "description": ""
         }
       ],
-      "steps": [],
+      "steps": [
+        {
+          "name": "UniformTimeCourseStep",
+          "kind": "step",
+          "description": "One-shot uniform-time-course contract for SBML/ODE backends."
+        },
+        {
+          "name": "SteadyStateStep",
+          "kind": "step",
+          "description": "One-shot steady-state contract for SBML/ODE backends."
+        }
+      ],
       "composites": [],
       "studies": [],
       "investigations": [],
       "counts": {
         "processes": 1,
-        "steps": 0,
+        "steps": 2,
         "composites": 0,
         "studies": 0,
         "investigations": 0
@@ -1064,6 +1075,11 @@
           "name": "AmiciSteadyStateStep",
           "kind": "step",
           "description": "One-shot steady-state solve via AMICI."
+        },
+        {
+          "name": "AmiciFullReportUTCStep",
+          "kind": "step",
+          "description": "One-shot full-report uniform time course via AMICI."
         }
       ],
       "composites": [
@@ -1084,13 +1100,15 @@
       "investigations": [],
       "counts": {
         "processes": 1,
-        "steps": 2,
+        "steps": 3,
         "composites": 3,
         "studies": 0,
         "investigations": 0
       },
       "kind": "simulator",
-      "reuses": [],
+      "reuses": [
+        "engine-core"
+      ],
       "simulator_refs": []
     },
     {
@@ -1483,29 +1501,9 @@
           "description": "All-pairs nRMSE across simulators per (biomodel_id, sedml_doc)."
         },
         {
-          "name": "BiomodelsCopasiStep",
-          "kind": "step",
-          "description": "Adapter: runtime ``model_source`` \u2192 ``pbg_copasi.CopasiUTCStep``."
-        },
-        {
-          "name": "BiomodelsTelluriumStep",
-          "kind": "step",
-          "description": "Adapter: runtime ``model_source`` \u2192 ``pbg_tellurium.TelluriumUTCStep``."
-        },
-        {
           "name": "BiomodelsSimbioStep",
           "kind": "step",
           "description": "Adapter: runtime ``model_source`` \u2192 ``viva_simbio.SimbioUTCStep``."
-        },
-        {
-          "name": "BiomodelsPyscesStep",
-          "kind": "step",
-          "description": "Adapter: runtime ``model_source`` \u2192 PySCeS, emitting the full report set."
-        },
-        {
-          "name": "BiomodelsAmiciStep",
-          "kind": "step",
-          "description": "Adapter: runtime ``model_source`` \u2192 AMICI, emitting the full report set."
         },
         {
           "name": "BiomodelsCopasiSteadyStateStep",
@@ -1589,13 +1587,14 @@
       ],
       "counts": {
         "processes": 0,
-        "steps": 18,
+        "steps": 14,
         "composites": 4,
         "studies": 2,
         "investigations": 1
       },
       "kind": "workspace",
       "reuses": [
+        "engine-core",
         "viva-amici",
         "viva-basic-processes",
         "viva-copasi",
@@ -2224,6 +2223,11 @@
           "name": "ParameterEstimationStep",
           "kind": "step",
           "description": "One-shot parameter estimation via COPASI's Parameter Estimation task."
+        },
+        {
+          "name": "CopasiFullReportUTCStep",
+          "kind": "step",
+          "description": "One-shot uniform time course via basico/COPASI, reporting the FULL variable set."
         }
       ],
       "composites": [
@@ -2244,13 +2248,15 @@
       "investigations": [],
       "counts": {
         "processes": 1,
-        "steps": 4,
+        "steps": 5,
         "composites": 3,
         "studies": 0,
         "investigations": 0
       },
       "kind": "simulator",
-      "reuses": [],
+      "reuses": [
+        "engine-core"
+      ],
       "simulator_refs": []
     },
     {
@@ -7348,6 +7354,11 @@
           "name": "PyscesSteadyStateStep",
           "kind": "step",
           "description": "One-shot steady-state solve via PySCeS."
+        },
+        {
+          "name": "PyscesFullReportUTCStep",
+          "kind": "step",
+          "description": "One-shot full-report uniform time course via PySCeS."
         }
       ],
       "composites": [],
@@ -7355,13 +7366,15 @@
       "investigations": [],
       "counts": {
         "processes": 1,
-        "steps": 2,
+        "steps": 3,
         "composites": 0,
         "studies": 0,
         "investigations": 0
       },
       "kind": "simulator",
-      "reuses": [],
+      "reuses": [
+        "engine-core"
+      ],
       "simulator_refs": []
     },
     {
@@ -7992,6 +8005,11 @@
           "name": "TelluriumSteadyStateStep",
           "kind": "step",
           "description": "Steady-state solve via Tellurium / roadrunner."
+        },
+        {
+          "name": "TelluriumFullReportUTCStep",
+          "kind": "step",
+          "description": "One-shot full-report uniform time course via libroadrunner."
         }
       ],
       "composites": [
@@ -8012,13 +8030,15 @@
       "investigations": [],
       "counts": {
         "processes": 1,
-        "steps": 4,
+        "steps": 5,
         "composites": 3,
         "studies": 0,
         "investigations": 0
       },
       "kind": "simulator",
-      "reuses": [],
+      "reuses": [
+        "engine-core"
+      ],
       "simulator_refs": []
     },
     {
